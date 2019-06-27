@@ -26,11 +26,23 @@ public class GameController : MonoBehaviour {
 		{
 			mainCam.enabled = false;
 			characterCam.enabled = true;
+			LockCursor();
 
 			return;
 		}
 
 		characterCam.enabled = false;
         mainCam.enabled = true;
+		UnlockCursor();
     }
+
+	public void LockCursor () {
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
+	}
+
+	public void UnlockCursor () {
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+	}
 }
