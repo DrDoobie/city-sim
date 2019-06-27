@@ -7,17 +7,19 @@ public class GridSystem : MonoBehaviour {
 	public float gridSize;
 	public Transform target;
 	public Transform prefab;
+    private GameController gameController;
 	private BuildingSystem buildingSystem;
     private BuildingPrefab buildingPrefab;
 	Vector3 truePos;
 
 	private void Start () {
+        gameController = FindObjectOfType<GameController>();
 		buildingSystem = FindObjectOfType<BuildingSystem>();
         buildingPrefab = prefab.GetComponent<BuildingPrefab>();
 	}
  
 	private void LateUpdate () {
-        if(buildingSystem.buildMode)
+        if(buildingSystem.buildMode && gameController.omni)
 		{
             TargetController();
 			GridController();

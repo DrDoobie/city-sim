@@ -15,6 +15,7 @@ public class BuildingSystem : MonoBehaviour {
 	private void Update () {
 		if(!gameController.omni)
 		{
+			uiGroup.SetActive(false);
 			buildMode = false;
 
 			return;
