@@ -6,28 +6,35 @@ public class PrefabGhost : MonoBehaviour {
 
 	public Material[] material;
 	private Renderer rend;
-	public bool placeable = true;
+	private BuildingPrefab buildingPrefab;
+	private bool placeable = true;
 
 	private void Start () {
 		rend = GetComponent<Renderer>();
 		rend.enabled = true;
 		rend.sharedMaterial = material[0];
+
+		buildingPrefab = transform.parent.GetComponent<BuildingPrefab>();
 	}
 
 	private void Update () {
-		transform.parent.GetComponent<BuildingPrefab>().placeable = placeable;
+        Controller();
+    }
 
-		if(!placeable)
-		{
-			rend.sharedMaterial = material[1];
+    private void Controller() {
+        buildingPrefab.placeable = placeable;
 
-			return;
-		}
+        if (!placeable)
+        {
+            rend.sharedMaterial = material[1];
 
-		rend.sharedMaterial = material[0];
-	}
+            return;
+        }
 
-	private void OnTriggerEnter (Collider other)
+        rend.sharedMaterial = material[0];
+    }
+
+    private void OnTriggerEnter (Collider other)
 	{
 		placeable = false;
 	}
