@@ -8,10 +8,12 @@ public class GridSystem : MonoBehaviour {
 	public Transform target;
 	public Transform prefab;
 	private BuildingSystem buildingSystem;
+    private BuildingPrefab buildingPrefab;
 	Vector3 truePos;
 
 	private void Start () {
 		buildingSystem = FindObjectOfType<BuildingSystem>();
+        buildingPrefab = prefab.GetComponent<BuildingPrefab>();
 	}
  
 	private void LateUpdate () {
@@ -47,9 +49,9 @@ public class GridSystem : MonoBehaviour {
     }
 
     private void PlacementController () {
-        if(Input.GetButtonDown("Fire1"))
+        if(Input.GetButtonDown("Fire1") && buildingPrefab.placeable)
         {
-            Instantiate(prefab, prefab.position, prefab.rotation);
+            Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
         }
     }
 }
