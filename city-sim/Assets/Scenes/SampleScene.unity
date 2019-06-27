@@ -590,7 +590,7 @@ MeshRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1257661837}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -719,7 +719,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1502083259}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1292202514}
@@ -958,6 +958,51 @@ Prefab:
     - target: {fileID: 4947246620589514, guid: 674bf3280ab793440b9cd7cae13f9a18, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
+        type: 2}
+      propertyPath: jumpMultiplier
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
+        type: 2}
+      propertyPath: jumpCurve.m_Curve.Array.data[0].value
+      value: 0.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
+        type: 2}
+      propertyPath: jumpCurve.m_Curve.Array.data[0].time
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
+        type: 2}
+      propertyPath: jumpCurve.m_Curve.Array.data[0].inSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
+        type: 2}
+      propertyPath: jumpCurve.m_Curve.Array.data[0].outSlope
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
+        type: 2}
+      propertyPath: jumpCurve.m_Curve.Array.data[0].outWeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
+        type: 2}
+      propertyPath: jumpCurve.m_Curve.Array.data[1].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
+        type: 2}
+      propertyPath: jumpCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
+        type: 2}
+      propertyPath: movementSpeed
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 674bf3280ab793440b9cd7cae13f9a18, type: 2}
