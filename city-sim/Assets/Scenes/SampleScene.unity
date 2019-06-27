@@ -653,7 +653,6 @@ MonoBehaviour:
   material:
   - {fileID: 2100000, guid: 0f828ceefef85624c8fe1c736e93792f, type: 2}
   - {fileID: 2100000, guid: 62d04b94d3f32f64d802f0079e92a993, type: 2}
-  placeable: 1
 --- !u!1 &1292202513
 GameObject:
   m_ObjectHideFlags: 0
