@@ -6,6 +6,7 @@ public class GameController : MonoBehaviour {
 
 	public bool omni = true;
 	private Camera mainCam, characterCam;
+	private BuildingSystem buildingSystem;
 
 	private void Start () {
 		mainCam = Camera.main;

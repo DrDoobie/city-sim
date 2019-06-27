@@ -5,15 +5,50 @@ using UnityEngine;
 public class GridSystem : MonoBehaviour {
 
 	public float gridSize;
-	public GameObject target;
-	public GameObject prefab;
+	public Transform target;
+	public Transform prefab;
+	private BuildingSystem buildingSystem;
 	Vector3 truePos;
+
+	private void Start () {
+		buildingSystem = FindObjectOfType<BuildingSystem>();
+	}
  
 	private void LateUpdate () {
-		truePos.x = (Mathf.Floor(target.transform.position.x / gridSize) * gridSize);
-		truePos.y = (Mathf.Floor(target.transform.position.y / gridSize) * gridSize);
-		truePos.z = (Mathf.Floor(target.transform.position.z / gridSize) * gridSize);
+        if(buildingSystem.buildMode)
+		{
+			GridController();
+		}
+    }
 
-		prefab.transform.position = truePos;
-	}
+	private void Update ()
+    {
+        if(buildingSystem.buildMode)
+		{
+			TargetController();
+		}
+    }
+
+    private void TargetController () {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
+        if(Physics.Raycast(ray, out hit, 9))
+        {
+            target.position = hit.point;
+
+			Vector3 temp = target.position;
+			temp.y = 0.0f;
+
+			target.position = temp;
+        }
+    }
+
+    private void GridController () {
+        truePos.x = (Mathf.Floor(target.position.x / gridSize) * gridSize);
+        truePos.y = (Mathf.Floor(target.position.y / gridSize) * gridSize);
+        truePos.z = (Mathf.Floor(target.position.z / gridSize) * gridSize);
+
+        prefab.transform.position = truePos;
+    }
 }
