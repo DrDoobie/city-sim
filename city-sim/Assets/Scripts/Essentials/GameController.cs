@@ -16,7 +16,7 @@ public class GameController : MonoBehaviour {
         CameraController();
     }
 
-    private void CameraController() {
+    private void CameraController () {
 		if(Input.GetButtonDown("Camera Switch"))
 		{
 			omni = !omni;
