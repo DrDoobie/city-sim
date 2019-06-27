@@ -57,7 +57,7 @@ LightmapSettings:
   m_LightmapEditorSettings:
     serializedVersion: 10
     m_Resolution: 2
-    m_BakeResolution: 10
+    m_BakeResolution: 4
     m_AtlasSize: 512
     m_AO: 0
     m_AOMaxDistance: 1
@@ -436,7 +436,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -39.183655}
+  m_AnchoredPosition: {x: 0, y: -39.183594}
   m_SizeDelta: {x: 388.14813, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &567714005
@@ -770,7 +770,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeable: 0
-  prefab: {fileID: 1942334325406490, guid: ba54367035a9dd7469f6d484cf5cb501, type: 2}
+  prefab: {fileID: 1383452401805264, guid: b7e07776c62718b40ba56e834fb4868c, type: 2}
 --- !u!1 &1544778787
 GameObject:
   m_ObjectHideFlags: 0
