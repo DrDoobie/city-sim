@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMotor : MonoBehaviour
 {
     private bool isJumping;
+    private GameController gameController;
     private CharacterController controller;
     [SerializeField] private float movementSpeed = 5.0f, jumpMultiplier = 2.5f, slopeForce = 2.0f;
     [SerializeField] private AnimationCurve jumpCurve;
@@ -31,10 +32,14 @@ public class PlayerMotor : MonoBehaviour
 
 	private void Awake () {
 		controller = GetComponent<CharacterController>();
+        gameController = FindObjectOfType<GameController>();
 	}
 
     private void Update() {
-        MovementController();
+        if(!gameController.omni)
+        {
+            MovementController();
+        }
     }
 
     private void MovementController()

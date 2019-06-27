@@ -10,14 +10,19 @@ public class MainCamera : MonoBehaviour {
 	public float maxFov = 90.0f;
 	public float fovSensitivity = 20.0f;
 	private Camera cam;
+    private GameController gameController;
 
 	private void Start () {
 		cam = GetComponent<Camera>();
+        gameController = FindObjectOfType<GameController>();
 	}
 
 	private void Update () {
-        CameraMovement();
-        CameraZoom();
+        if(gameController.omni)
+        {
+            CameraMovement();
+            CameraZoom();
+        }
     }
 
     private void CameraMovement () {
