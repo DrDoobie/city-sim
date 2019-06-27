@@ -17,15 +17,9 @@ public class GridSystem : MonoBehaviour {
 	private void LateUpdate () {
         if(buildingSystem.buildMode)
 		{
+            TargetController();
 			GridController();
-		}
-    }
-
-	private void Update ()
-    {
-        if(buildingSystem.buildMode)
-		{
-			TargetController();
+            PlacementController();
 		}
     }
 
@@ -50,5 +44,12 @@ public class GridSystem : MonoBehaviour {
         truePos.z = (Mathf.Floor(target.position.z / gridSize) * gridSize);
 
         prefab.transform.position = truePos;
+    }
+
+    private void PlacementController () {
+        if(Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(prefab, prefab.position, prefab.rotation);
+        }
     }
 }
