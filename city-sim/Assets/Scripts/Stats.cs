@@ -8,6 +8,7 @@ public class Stats : MonoBehaviour {
 	public int day;
 	public float hour = 0.0f, minute = 0.0f, second = 0.0f, secondChange, changeMultiplier;
 	public float money = 0.0f;
+	public int wood = 0, stone = 0;
 	public Text timeText, moneyText;
 
 	string LeadingZero (int n) {
