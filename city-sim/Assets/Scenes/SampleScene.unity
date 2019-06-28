@@ -385,7 +385,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 121.71234, y: -56.815063}
+  m_AnchoredPosition: {x: 178.44, y: -56.18506}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &239500699
@@ -1134,7 +1134,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 121.712326, y: 0}
+  m_AnchoredPosition: {x: 178.439, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &943473096
@@ -1182,7 +1182,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Time: 16:20'
+  m_Text: 'Day: 1 - 16:20:00'
 --- !u!222 &943473098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1402,7 +1402,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 121.712326, y: 0}
+  m_AnchoredPosition: {x: 178.439, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1186485900
@@ -1961,6 +1961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeable: 0
+  price: 5
   prefab: {fileID: 1942334325406490, guid: ba54367035a9dd7469f6d484cf5cb501, type: 2}
 --- !u!1 &1544778787
 GameObject:
@@ -2207,6 +2208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1963207490}
   - component: {fileID: 1963207491}
+  - component: {fileID: 1963207492}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: GameController
@@ -2241,6 +2243,26 @@ MonoBehaviour:
   omni: 1
   isPaused: 0
   pauseScale: 0.001
+--- !u!114 &1963207492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963207489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e64bb12d5419a0f4cae3a5deb69d77cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  day: 1
+  hour: 0
+  minute: 0
+  second: 0
+  secondChange: 3600
+  changeMultiplier: 0.01
+  money: 0
+  timeText: {fileID: 943473097}
+  moneyText: {fileID: 1186485901}
 --- !u!1 &2005746340
 GameObject:
   m_ObjectHideFlags: 0

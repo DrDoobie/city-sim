@@ -7,6 +7,7 @@ public class GridSystem : MonoBehaviour {
 	public float gridSize = 0.5f, rotDegree = 30.0f;
 	public Transform selectedObj, target, prefab;
     private GameController gameController;
+    private Stats stats;
 	private BuildingSystem buildingSystem;
     private BuildingPrefab buildingPrefab;
     private PrefabGhost prefabGhost;
@@ -14,6 +15,7 @@ public class GridSystem : MonoBehaviour {
 
 	private void Start () {
         gameController = FindObjectOfType<GameController>();
+        stats = FindObjectOfType<Stats>();
 		buildingSystem = FindObjectOfType<BuildingSystem>();
         buildingPrefab = prefab.GetComponent<BuildingPrefab>();
         prefabGhost = FindObjectOfType<PrefabGhost>();
@@ -55,6 +57,7 @@ public class GridSystem : MonoBehaviour {
         if(Input.GetButtonDown("Fire1") && buildingPrefab.placeable)
         {
             Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
+            stats.money -= buildingPrefab.price;
         }
 
         if(Input.GetButtonDown("Rotate"))
