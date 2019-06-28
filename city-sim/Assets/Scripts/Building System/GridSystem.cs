@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GridSystem : MonoBehaviour {
 
-	public float gridSize;
+	public float gridSize = 0.5f, rotDegree = 30.0f;
 	public Transform target;
 	public Transform prefab;
     private GameController gameController;
@@ -54,6 +54,11 @@ public class GridSystem : MonoBehaviour {
         if(Input.GetButtonDown("Fire1") && buildingPrefab.placeable)
         {
             Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
+        }
+
+        if(Input.GetButtonDown("Rotate"))
+        {
+            prefab.transform.Rotate(0.0f, rotDegree, 0.0f);
         }
     }
 }

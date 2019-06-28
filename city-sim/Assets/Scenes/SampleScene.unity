@@ -694,6 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridSize: 0.5
+  rotDegree: 30
   target: {fileID: 1147430643}
   prefab: {fileID: 633530194}
 --- !u!1 &1502083259
@@ -770,7 +771,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeable: 0
-  prefab: {fileID: 1383452401805264, guid: b7e07776c62718b40ba56e834fb4868c, type: 2}
+  prefab: {fileID: 1942334325406490, guid: ba54367035a9dd7469f6d484cf5cb501, type: 2}
 --- !u!1 &1544778787
 GameObject:
   m_ObjectHideFlags: 0
