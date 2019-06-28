@@ -695,6 +695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gridSize: 0.5
   rotDegree: 90
+  selectedObj: {fileID: 0}
   target: {fileID: 1147430643}
   prefab: {fileID: 633530194}
 --- !u!1 &1502083259

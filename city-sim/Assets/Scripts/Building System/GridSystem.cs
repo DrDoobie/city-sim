@@ -5,17 +5,18 @@ using UnityEngine;
 public class GridSystem : MonoBehaviour {
 
 	public float gridSize = 0.5f, rotDegree = 30.0f;
-	public Transform target;
-	public Transform prefab;
+	public Transform selectedObj, target, prefab;
     private GameController gameController;
 	private BuildingSystem buildingSystem;
     private BuildingPrefab buildingPrefab;
+    private PrefabGhost prefabGhost;
 	Vector3 truePos;
 
 	private void Start () {
         gameController = FindObjectOfType<GameController>();
 		buildingSystem = FindObjectOfType<BuildingSystem>();
         buildingPrefab = prefab.GetComponent<BuildingPrefab>();
+        prefabGhost = FindObjectOfType<PrefabGhost>();
 	}
  
 	private void LateUpdate () {
@@ -59,6 +60,12 @@ public class GridSystem : MonoBehaviour {
         if(Input.GetButtonDown("Rotate"))
         {
             prefab.transform.Rotate(0.0f, rotDegree, 0.0f);
+        }
+
+        if(Input.GetButtonDown("Delete") && selectedObj != null)
+        {
+            Destroy(selectedObj.parent.gameObject);
+            prefabGhost.placeable = true;
         }
     }
 }
