@@ -124,7 +124,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -217,15 +217,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79f04ab02a12ab14eb97b696222d37e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
-  jumpMultiplier: 2.5
+  movementSpeed: 3
+  jumpMultiplier: 4
   slopeForce: 2
   jumpCurve:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: -0.033332825
-      value: 0.91874695
+      time: 0
+      value: 0.75
       inSlope: 2
       outSlope: 2
       tangentMode: 0
@@ -234,7 +234,7 @@ MonoBehaviour:
       outWeight: 0
     - serializedVersion: 3
       time: 1
-      value: 0.012500763
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0

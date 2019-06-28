@@ -2151,51 +2151,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
-        type: 2}
-      propertyPath: jumpMultiplier
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
-        type: 2}
-      propertyPath: jumpCurve.m_Curve.Array.data[0].value
-      value: 0.75
-      objectReference: {fileID: 0}
-    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
-        type: 2}
-      propertyPath: jumpCurve.m_Curve.Array.data[0].time
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
-        type: 2}
-      propertyPath: jumpCurve.m_Curve.Array.data[0].inSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
-        type: 2}
-      propertyPath: jumpCurve.m_Curve.Array.data[0].outSlope
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
-        type: 2}
-      propertyPath: jumpCurve.m_Curve.Array.data[0].outWeight
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
-        type: 2}
-      propertyPath: jumpCurve.m_Curve.Array.data[1].value
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
-        type: 2}
-      propertyPath: jumpCurve.m_Curve.Array.data[1].time
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114513700396806238, guid: 674bf3280ab793440b9cd7cae13f9a18,
-        type: 2}
-      propertyPath: movementSpeed
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 674bf3280ab793440b9cd7cae13f9a18, type: 2}
   m_IsPrefabAsset: 0
