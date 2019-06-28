@@ -9,7 +9,7 @@ public class Stats : MonoBehaviour {
 	public float hour = 0.0f, minute = 0.0f, second = 0.0f, secondChange, changeMultiplier;
 	public float money = 0.0f;
 	public int wood = 0, stone = 0;
-	public Text timeText, moneyText;
+	public Text timeText, moneyText, woodText, stoneText;
 
 	string LeadingZero (int n) {
     	return n.ToString().PadLeft(2, '0');
@@ -22,6 +22,8 @@ public class Stats : MonoBehaviour {
 
 	private void TextController () {
 		moneyText.text = "Money: " + "$" + money;
+		woodText.text = "Wood: " + wood;
+		stoneText.text = "Stone: " + stone;
 	}
 
 	private void TimeController () {
