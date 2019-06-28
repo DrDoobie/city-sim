@@ -57,6 +57,21 @@ public class GridSystem : MonoBehaviour {
         if(Input.GetButtonDown("Fire1") && buildingPrefab.placeable)
         {
             Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
+
+            if(buildingPrefab.costWood)
+            {
+                stats.wood -= (int)buildingPrefab.price;
+
+                return;
+            }
+
+            if(buildingPrefab.costStone)
+            {
+                stats.stone -= (int)buildingPrefab.price;
+
+                return;
+            }
+
             stats.money -= buildingPrefab.price;
         }
 
