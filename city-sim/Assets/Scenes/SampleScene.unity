@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 186074867}
   - component: {fileID: 186074866}
   - component: {fileID: 186074865}
+  - component: {fileID: 186074868}
   m_Layer: 5
   m_Name: Prefab.button (1)
   m_TagString: Untagged
@@ -289,7 +290,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 186074866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 186074868}
+        m_MethodName: SelectPrefab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &186074866
@@ -326,6 +338,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 186074863}
   m_CullTransparentMesh: 0
+--- !u!114 &186074868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 186074863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e006a65e4c33b45b52b60606b25996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1520702621166304, guid: 653ff71e716e40c419b8fd7fa1cf235b, type: 2}
 --- !u!1 &370327275
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +625,7 @@ GameObject:
   - component: {fileID: 544567587}
   - component: {fileID: 544567586}
   - component: {fileID: 544567585}
+  - component: {fileID: 544567588}
   m_Layer: 5
   m_Name: Prefab.button
   m_TagString: Untagged
@@ -665,7 +690,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 544567586}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 544567588}
+        m_MethodName: SelectPrefab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &544567586
@@ -702,6 +738,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 544567583}
   m_CullTransparentMesh: 0
+--- !u!114 &544567588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 544567583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e006a65e4c33b45b52b60606b25996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1942334325406490, guid: ba54367035a9dd7469f6d484cf5cb501, type: 2}
 --- !u!1 &567714003
 GameObject:
   m_ObjectHideFlags: 0
@@ -982,6 +1030,7 @@ GameObject:
   - component: {fileID: 1059057321}
   - component: {fileID: 1059057320}
   - component: {fileID: 1059057319}
+  - component: {fileID: 1059057322}
   m_Layer: 5
   m_Name: Prefab.button (2)
   m_TagString: Untagged
@@ -1046,7 +1095,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1059057320}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1059057322}
+        m_MethodName: SelectPrefab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1059057320
@@ -1083,6 +1143,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1059057317}
   m_CullTransparentMesh: 0
+--- !u!114 &1059057322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1059057317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e006a65e4c33b45b52b60606b25996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1543959918665868, guid: bb2dbe46702843b4cb24e8cca691a47d, type: 2}
 --- !u!1 &1147430642
 GameObject:
   m_ObjectHideFlags: 0
@@ -1878,6 +1950,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   omni: 1
+  isPaused: 0
+  pauseScale: 0.001
 --- !u!1 &2005746340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,6 +1963,7 @@ GameObject:
   - component: {fileID: 2005746344}
   - component: {fileID: 2005746343}
   - component: {fileID: 2005746342}
+  - component: {fileID: 2005746345}
   m_Layer: 5
   m_Name: Prefab.button (3)
   m_TagString: Untagged
@@ -1953,7 +2028,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2005746343}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2005746345}
+        m_MethodName: SelectPrefab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2005746343
@@ -1990,6 +2076,18 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2005746340}
   m_CullTransparentMesh: 0
+--- !u!114 &2005746345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2005746340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7e006a65e4c33b45b52b60606b25996, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 1985766691399938, guid: a6b8632b201bfe242bc026c57bd1f082, type: 2}
 --- !u!1 &2100986846
 GameObject:
   m_ObjectHideFlags: 0

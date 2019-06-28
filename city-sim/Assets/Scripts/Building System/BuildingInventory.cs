@@ -19,7 +19,7 @@ public class BuildingInventory : MonoBehaviour {
 
 			return;
 		}
-
+		
 		uiGroup.SetActive(true);
 	}
 }

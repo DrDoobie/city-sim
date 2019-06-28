@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
 
-	public bool omni = true;
+	public bool omni = true, isPaused;
+	public float pauseScale;
 	private Camera mainCam, characterCam;
 	private BuildingSystem buildingSystem;
 
@@ -14,8 +15,25 @@ public class GameController : MonoBehaviour {
 	}
 
 	private void Update () {
+		PauseController();
         CameraController();
     }
+
+	private void PauseController () {
+		if(Input.GetButtonDown("Pause"))
+		{
+			isPaused = !isPaused;
+		}
+
+		if(isPaused)
+		{
+			Time.timeScale = pauseScale;
+
+			return;
+		}
+
+		Time.timeScale = 1.0f;
+	}
 
     private void CameraController () {
 		if(Input.GetButtonDown("Camera Switch"))

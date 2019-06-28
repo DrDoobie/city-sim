@@ -13,15 +13,18 @@ public class BuildingSystem : MonoBehaviour {
 	}
 
 	private void Update () {
-		if(!gameController.omni)
+		if(!gameController.isPaused)
 		{
-			uiGroup.SetActive(false);
-			buildMode = false;
+			if(!gameController.omni)
+			{
+				uiGroup.SetActive(false);
+				buildMode = false;
 
-			return;
+				return;
+			}
+
+			BuildingController();
 		}
-
-		BuildingController();
 	}
 
 	private void BuildingController () {

@@ -20,7 +20,7 @@ public class GridSystem : MonoBehaviour {
 	}
  
 	private void LateUpdate () {
-        if(buildingSystem.buildMode && gameController.omni)
+        if(buildingSystem.buildMode && gameController.omni && !gameController.isPaused)
 		{
             TargetController();
 			GridController();
