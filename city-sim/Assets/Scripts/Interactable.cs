@@ -23,6 +23,7 @@ public class Interactable : MonoBehaviour {
 			stats.stone += amount;
 		}
 
+		Debug.Log("Destroyed " + this.transform.name);
 		Destroy(this.gameObject);
 	}
 }

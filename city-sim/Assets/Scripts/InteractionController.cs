@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractionController : MonoBehaviour {
 
-    public GameObject selected;
+    public GameObject selectionRing, selected;
 	private GameController gameController;
 	private BuildingSystem buildingSystem;
 
@@ -15,6 +15,8 @@ public class InteractionController : MonoBehaviour {
 
 	private void Update ()
     {
+        SelectionController();
+
         if(Input.GetButtonDown("Fire1") && (!buildingSystem.buildMode && gameController.omni))
 		{
 			Click();
@@ -29,6 +31,18 @@ public class InteractionController : MonoBehaviour {
                 interactable.Harvest();
             }
         }
+    }
+
+    private void SelectionController () {
+        if(selected == null)
+        {
+            selectionRing.SetActive(false);
+
+            return;
+        }
+
+        selectionRing.transform.position = selected.transform.position;
+        selectionRing.SetActive(true);
     }
 
     private void Click () {
