@@ -56,25 +56,29 @@ public class GridSystem : MonoBehaviour {
     private void PlacementController () {
         if(Input.GetButtonDown("Fire1") && buildingPrefab.placeable)
         {
-            Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
-
             ObjectPrefab objPrefab = buildingPrefab.prefab.GetComponent<ObjectPrefab>();
 
-            if(objPrefab.costWood)
+            if(objPrefab.costWood && (stats.wood >= objPrefab.price))
             {
                 stats.wood -= (int)objPrefab.price;
+                Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
 
                 return;
             }
 
-            if(objPrefab.costStone)
+            if(objPrefab.costStone && (stats.stone >= objPrefab.price))
             {
                 stats.stone -= (int)objPrefab.price;
+                Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
 
                 return;
             }
 
-            stats.money -= objPrefab.price;
+            if(stats.money >= objPrefab.price)
+            {
+                stats.money -= objPrefab.price;
+                Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
+            }
         }
 
         if(Input.GetButtonDown("Rotate"))
