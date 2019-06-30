@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BuildingPrefab : MonoBehaviour {
 
-	public bool placeable, costWood, costStone;
-	public float price;
+	public bool placeable;
 	public GameObject prefab;
 }

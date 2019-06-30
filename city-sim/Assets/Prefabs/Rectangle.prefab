@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4454429549548810}
+  - component: {fileID: 114461540904441590}
   m_Layer: 0
   m_Name: Rectangle
   m_TagString: Untagged
@@ -141,3 +142,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114461540904441590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1543959918665868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 999df301b128f684e8fce17015f5f9a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  costWood: 0
+  costStone: 1
+  price: 2

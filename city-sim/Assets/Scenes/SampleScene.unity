@@ -2954,9 +2954,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placeable: 0
-  costWood: 1
-  costStone: 0
-  price: 5
   prefab: {fileID: 1942334325406490, guid: ba54367035a9dd7469f6d484cf5cb501, type: 2}
 --- !u!1 &1544778787
 GameObject:

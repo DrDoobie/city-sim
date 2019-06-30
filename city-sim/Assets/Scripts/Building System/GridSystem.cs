@@ -58,21 +58,23 @@ public class GridSystem : MonoBehaviour {
         {
             Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
 
-            if(buildingPrefab.costWood)
+            ObjectPrefab objPrefab = buildingPrefab.prefab.GetComponent<ObjectPrefab>();
+
+            if(objPrefab.costWood)
             {
-                stats.wood -= (int)buildingPrefab.price;
+                stats.wood -= (int)objPrefab.price;
 
                 return;
             }
 
-            if(buildingPrefab.costStone)
+            if(objPrefab.costStone)
             {
-                stats.stone -= (int)buildingPrefab.price;
+                stats.stone -= (int)objPrefab.price;
 
                 return;
             }
 
-            stats.money -= buildingPrefab.price;
+            stats.money -= objPrefab.price;
         }
 
         if(Input.GetButtonDown("Rotate"))
