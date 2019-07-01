@@ -11,12 +11,10 @@ public class MainCamera : MonoBehaviour {
 	public float fovSensitivity = 20.0f;
 	private Camera cam;
     private GameController gameController;
-    private BuildingSystem buildingSystem;
 
 	private void Start () {
 		cam = GetComponent<Camera>();
         gameController = FindObjectOfType<GameController>();
-        buildingSystem = FindObjectOfType<BuildingSystem>();
 	}
 
 	private void Update () {
@@ -61,7 +59,7 @@ public class MainCamera : MonoBehaviour {
             pos.x += (speed * Time.deltaTime);
         }
 
-        if(!buildingSystem.buildMode)
+        if(!gameController.buildingSystem.buildMode)
         {
             if(Input.mousePosition.y >= (Screen.height - panLimit))
             {

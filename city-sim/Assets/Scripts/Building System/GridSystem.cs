@@ -7,25 +7,17 @@ public class GridSystem : MonoBehaviour {
 	public float gridSize = 0.5f, rotDegree = 30.0f;
 	public Transform selectedObj, target, prefab;
     private GameController gameController;
-    private Stats stats;
-	private BuildingSystem buildingSystem;
-    private BuildingPrefab buildingPrefab;
     private ObjectPrefab objPrefab;
-    private PrefabGhost prefabGhost;
 	Vector3 truePos;
 
 	private void Start () {
         gameController = FindObjectOfType<GameController>();
-        stats = FindObjectOfType<Stats>();
-		buildingSystem = FindObjectOfType<BuildingSystem>();
-        buildingPrefab = prefab.GetComponent<BuildingPrefab>();
-        prefabGhost = FindObjectOfType<PrefabGhost>();
 	}
  
 	private void LateUpdate () {
         CostController();
 
-        if(buildingSystem.buildMode && gameController.omni && !gameController.isPaused)
+        if(gameController.buildingSystem.buildMode && gameController.omni && !gameController.isPaused)
 		{
             TargetController();
 			GridController();
@@ -57,52 +49,52 @@ public class GridSystem : MonoBehaviour {
     }
 
     private void CostController () {
-        objPrefab = buildingPrefab.prefab.GetComponent<ObjectPrefab>();
+        objPrefab = gameController.buildingPrefab.prefab.GetComponent<ObjectPrefab>();
 
-        if(objPrefab.objectType == "wood" && (stats.wood >= objPrefab.price))
+        if(objPrefab.objectType == "wood" && (gameController.stats.wood >= objPrefab.price))
         {
-            buildingPrefab.canAfford = true;
+            gameController.buildingPrefab.canAfford = true;
             
             return;
         }
 
-        if(objPrefab.objectType == "stone" && (stats.stone >= objPrefab.price))
+        if(objPrefab.objectType == "stone" && (gameController.stats.stone >= objPrefab.price))
         {
-            buildingPrefab.canAfford = true;
+            gameController.buildingPrefab.canAfford = true;
 
             return;
         }
 
-        if(objPrefab.objectType == "money" && (stats.money >= objPrefab.price))
+        if(objPrefab.objectType == "money" && (gameController.stats.money >= objPrefab.price))
         {
-            buildingPrefab.canAfford = true;
+            gameController.buildingPrefab.canAfford = true;
 
             return;
         }
 
-        buildingPrefab.canAfford = false;
+        gameController.buildingPrefab.canAfford = false;
     }
 
     private void PlacementController () 
     {
-        if(Input.GetButtonDown("Fire1") && (buildingPrefab.placeable && buildingPrefab.canAfford)) //Want to fix this dirty code, look into c# dictionary functions
+        if(Input.GetButtonDown("Fire1") && (gameController.buildingPrefab.placeable && gameController.buildingPrefab.canAfford)) //Want to fix this dirty code, look into c# dictionary functions
         {
             if(objPrefab.objectType == "wood")
             {
-                stats.wood -= objPrefab.price;
+                gameController.stats.wood -= objPrefab.price;
             }
 
             if(objPrefab.objectType == "stone")
             {
-                stats.stone -= objPrefab.price;
+                gameController.stats.stone -= objPrefab.price;
             }
 
             if(objPrefab.objectType == "money")
             {
-                stats.money -= objPrefab.price;
+                gameController.stats.money -= objPrefab.price;
             }
 
-            Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
+            Instantiate(gameController.buildingPrefab.prefab, prefab.position, prefab.rotation);
         }
 
         if(Input.GetButtonDown("Rotate"))
@@ -113,7 +105,7 @@ public class GridSystem : MonoBehaviour {
         if(Input.GetButtonDown("Delete") && selectedObj != null)
         {
             Destroy(selectedObj.parent.gameObject);
-            prefabGhost.placeable = true;
+            gameController.prefabGhost.placeable = true;
         }
     }
 }

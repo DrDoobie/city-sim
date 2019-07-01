@@ -4513,6 +4513,12 @@ MonoBehaviour:
   isPaused: 0
   pauseScale: 0.001
   pauseMenu: {fileID: 1421851472}
+  stats: {fileID: 0}
+  interactionController: {fileID: 0}
+  gridSystem: {fileID: 0}
+  buildingSystem: {fileID: 0}
+  buildingPrefab: {fileID: 0}
+  prefabGhost: {fileID: 0}
 --- !u!114 &1963207492
 MonoBehaviour:
   m_ObjectHideFlags: 0

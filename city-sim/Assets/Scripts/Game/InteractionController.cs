@@ -6,18 +6,16 @@ public class InteractionController : MonoBehaviour {
 
     public GameObject selectionRing, selected;
 	private GameController gameController;
-	private BuildingSystem buildingSystem;
 
 	private void Start () {
 		gameController = FindObjectOfType<GameController>();
-		buildingSystem = FindObjectOfType<BuildingSystem>();
 	}
 
 	private void Update ()
     {
         SelectionController();
 
-        if(Input.GetButtonDown("Fire1") && (!buildingSystem.buildMode && gameController.omni))
+        if(Input.GetButtonDown("Fire1") && (!gameController.buildingSystem.buildMode && gameController.omni))
 		{
 			Click();
 		}

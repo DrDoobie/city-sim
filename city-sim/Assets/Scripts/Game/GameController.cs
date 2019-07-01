@@ -8,12 +8,23 @@ public class GameController : MonoBehaviour {
 	public float pauseScale;
 	public GameObject pauseMenu;
 	private Camera mainCam, characterCam;
-	private BuildingSystem buildingSystem;
+	[HideInInspector] public Stats stats;
+	[HideInInspector] public InteractionController interactionController;
+	[HideInInspector] public GridSystem gridSystem;
+	[HideInInspector] public BuildingSystem buildingSystem;
+	[HideInInspector] public BuildingPrefab buildingPrefab;
+	[HideInInspector] public PrefabGhost prefabGhost;
 
 	private void Start () {
 		mainCam = Camera.main;
 		characterCam = GameObject.FindWithTag("CharacterCamera").GetComponent<Camera>();
+
+		stats = FindObjectOfType<Stats>();
+		interactionController = FindObjectOfType<InteractionController>();
+		gridSystem = FindObjectOfType<GridSystem>();
 		buildingSystem = FindObjectOfType<BuildingSystem>();
+		buildingPrefab = FindObjectOfType<BuildingPrefab>();
+		prefabGhost = FindObjectOfType<PrefabGhost>();
 	}
 
 	private void Update () {

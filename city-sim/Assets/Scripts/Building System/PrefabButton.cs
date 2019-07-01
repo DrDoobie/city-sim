@@ -5,13 +5,13 @@ using UnityEngine;
 public class PrefabButton : MonoBehaviour {
 
 	public GameObject prefab;
-	private BuildingPrefab buildingPrefab;
+	private GameController gameController;
 
 	private void Awake () {
-		buildingPrefab = FindObjectOfType<BuildingPrefab>();
+		gameController = FindObjectOfType<GameController>();
 	}
 
 	public void SelectPrefab () {
-		buildingPrefab.prefab = prefab;
+		gameController.buildingPrefab.prefab = prefab;
 	}
 }

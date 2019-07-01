@@ -7,18 +7,14 @@ public class PrefabGhost : MonoBehaviour {
 	public Material[] material;
 	private Transform selectedObj;
 	private Renderer rend;
-	private BuildingSystem buildingSystem;
-	private GridSystem gridSystem;
-	private BuildingPrefab buildingPrefab;
+	private GameController gameController;
 	[HideInInspector] public bool placeable = true;
 
 	private void Start () {
 		rend = GetComponent<Renderer>();
 		rend.sharedMaterial = material[0];
 
-		buildingSystem = FindObjectOfType<BuildingSystem>();
-		gridSystem = FindObjectOfType<GridSystem>();
-		buildingPrefab = transform.parent.GetComponent<BuildingPrefab>();
+		gameController = FindObjectOfType<GameController>();
 	}
 
 	private void Update () {
@@ -26,7 +22,7 @@ public class PrefabGhost : MonoBehaviour {
     }
 
     private void Controller() {
-		if(!buildingSystem.buildMode)
+		if(!gameController.buildingSystem.buildMode)
 		{
 			rend.enabled = false;
 			
@@ -34,8 +30,8 @@ public class PrefabGhost : MonoBehaviour {
 			rend.enabled = true;
 		}
 
-		gridSystem.selectedObj = selectedObj;
-        buildingPrefab.placeable = placeable;
+		gameController.gridSystem.selectedObj = selectedObj;
+        gameController.buildingPrefab.placeable = placeable;
 
         if (!placeable)
         {

@@ -13,11 +13,9 @@ public class BuildingSystem : MonoBehaviour {
 	public Color[] color;
 	public Vector3 costTextOffset;
 	private GameController gameController;
-	private BuildingPrefab buildingPrefab;
 
 	private void Start () {
 		gameController = FindObjectOfType<GameController>();
-		buildingPrefab = FindObjectOfType<BuildingPrefab>();
 	}
 
 	private void Update () {
@@ -38,7 +36,9 @@ public class BuildingSystem : MonoBehaviour {
 	}
 
 	private void uiController () {
-		if(buildingPrefab.canAfford)
+		ObjectPrefab objPrefab = gameController.buildingPrefab.prefab.GetComponent<ObjectPrefab>();
+
+		if(gameController.buildingPrefab.canAfford)
 		{
 			costText.color = color[0];
 
@@ -47,7 +47,7 @@ public class BuildingSystem : MonoBehaviour {
 		}
 
 		costText.gameObject.SetActive(true);
-		costText.text = "Cost: " + buildingPrefab.prefab.GetComponent<ObjectPrefab>().price + " " + buildingPrefab.prefab.GetComponent<ObjectPrefab>().objectType;
+		costText.text = "Cost: " + objPrefab.price + " " + objPrefab.objectType;
 
 		if(gameController.isPaused)
 		{

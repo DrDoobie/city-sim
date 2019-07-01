@@ -6,28 +6,26 @@ public class Interactable : MonoBehaviour {
 
 	public bool wood, stone;
 	public int amount;
-	private InteractionController interactionController;
-	private Stats stats;
+	private GameController gameController;
 
 	private void Awake () {
-		interactionController = FindObjectOfType<InteractionController>();
-		stats = FindObjectOfType<Stats>();
+		gameController = FindObjectOfType<GameController>();
 	}
 
 	public void Harvest () {
 		if(wood)
 		{
-			stats.wood += amount;
+			gameController.stats.wood += amount;
 		}
 		
 		if(stone)
 		{
-			stats.stone += amount;
+			gameController.stats.stone += amount;
 		}
 
-		if(interactionController.selected != null)
+		if(gameController.interactionController.selected != null)
 		{
-			interactionController.selected = null;
+			gameController.interactionController.selected = null;
 		}
 
 		Debug.Log("Harvested " + this.transform.name);
