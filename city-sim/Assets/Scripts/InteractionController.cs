@@ -24,6 +24,11 @@ public class InteractionController : MonoBehaviour {
     }
 
     private void SelectionController () {
+        if(!gameController.omni)
+        {
+            selected = null;
+        }
+
         if(selected == null)
         {
             selectionRing.SetActive(false);
@@ -39,7 +44,7 @@ public class InteractionController : MonoBehaviour {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        if(Physics.Raycast(ray, out hit))
         {
             if(hit.transform.gameObject.GetComponent<Interactable>())
             {
