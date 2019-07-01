@@ -54,7 +54,7 @@ public class BuildingSystem : MonoBehaviour {
 			return;
 		}
 
-		costText.GetComponent<RectTransform>().localPosition = (Input.mousePosition - (costTextOffset * 100));
+		costText.GetComponent<RectTransform>().position = (Input.mousePosition + costTextOffset);
 	}
 
 	private void BuildingController () {
