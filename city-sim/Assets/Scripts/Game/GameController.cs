@@ -6,12 +6,14 @@ public class GameController : MonoBehaviour {
 
 	public bool omni = true, isPaused;
 	public float pauseScale;
+	public GameObject pauseMenu;
 	private Camera mainCam, characterCam;
 	private BuildingSystem buildingSystem;
 
 	private void Start () {
 		mainCam = Camera.main;
 		characterCam = GameObject.FindWithTag("CharacterCamera").GetComponent<Camera>();
+		buildingSystem = FindObjectOfType<BuildingSystem>();
 	}
 
 	private void Update () {
@@ -27,11 +29,17 @@ public class GameController : MonoBehaviour {
 
 		if(isPaused)
 		{
+			if(!buildingSystem.buildMode)
+			{
+				pauseMenu.SetActive(true);
+			}
+
 			Time.timeScale = pauseScale;
 
 			return;
 		}
 
+		pauseMenu.SetActive(false);
 		Time.timeScale = 1.0f;
 	}
 
