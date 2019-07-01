@@ -39,22 +39,22 @@ public class MainCamera : MonoBehaviour {
         //Some ugly ass code here, need to fix asap but I'm too high
         Vector3 pos = transform.position;
 
-        if(Input.GetKey(KeyCode.W))
+        if(Input.GetButton("Up"))
         {
             pos.z += (speed * Time.deltaTime);
         }
 
-        if(Input.GetKey(KeyCode.S))
+        if(Input.GetButton("Down"))
         {
             pos.z -= (speed * Time.deltaTime);
         }
 
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetButton("Left"))
         {
             pos.x -= (speed * Time.deltaTime);
         }
 
-        if(Input.GetKey(KeyCode.D))
+        if(Input.GetButton("Right"))
         {
             pos.x += (speed * Time.deltaTime);
         }
