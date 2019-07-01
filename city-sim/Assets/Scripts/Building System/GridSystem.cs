@@ -10,6 +10,7 @@ public class GridSystem : MonoBehaviour {
     private Stats stats;
 	private BuildingSystem buildingSystem;
     private BuildingPrefab buildingPrefab;
+    private ObjectPrefab objPrefab;
     private PrefabGhost prefabGhost;
 	Vector3 truePos;
 
@@ -22,6 +23,8 @@ public class GridSystem : MonoBehaviour {
 	}
  
 	private void LateUpdate () {
+        CostController();
+
         if(buildingSystem.buildMode && gameController.omni && !gameController.isPaused)
 		{
             TargetController();
@@ -53,27 +56,52 @@ public class GridSystem : MonoBehaviour {
         prefab.transform.position = truePos;
     }
 
-    private void PlacementController () {
-        ObjectPrefab objPrefab = buildingPrefab.prefab.GetComponent<ObjectPrefab>();
+    private void CostController () {
+        objPrefab = buildingPrefab.prefab.GetComponent<ObjectPrefab>();
 
         if(objPrefab.objectType == "wood" && (stats.wood >= objPrefab.price))
         {
             buildingPrefab.canAfford = true;
+            
+            return;
         }
 
         if(objPrefab.objectType == "stone" && (stats.stone >= objPrefab.price))
         {
             buildingPrefab.canAfford = true;
+
+            return;
         }
 
         if(objPrefab.objectType == "money" && (stats.money >= objPrefab.price))
         {
             buildingPrefab.canAfford = true;
+
+            return;
         }
 
-        if(Input.GetButtonDown("Fire1") && (buildingPrefab.placeable && buildingPrefab.canAfford))
+        buildingPrefab.canAfford = false;
+    }
+
+    private void PlacementController () 
+    {
+        if(Input.GetButtonDown("Fire1") && (buildingPrefab.placeable && buildingPrefab.canAfford)) //Want to fix this dirty code, look into c# dictionary functions
         {
-            stats.money -= objPrefab.price;
+            if(objPrefab.objectType == "wood")
+            {
+                stats.wood -= objPrefab.price;
+            }
+
+            if(objPrefab.objectType == "stone")
+            {
+                stats.stone -= objPrefab.price;
+            }
+
+            if(objPrefab.objectType == "money")
+            {
+                stats.money -= objPrefab.price;
+            }
+
             Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
         }
 
