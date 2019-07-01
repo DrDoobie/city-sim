@@ -21,16 +21,6 @@ public class InteractionController : MonoBehaviour {
 		{
 			Click();
 		}
-
-        if(selected != null)
-        {
-            Interactable interactable = selected.GetComponent<Interactable>();
-
-            if(Input.GetButtonDown("Fire2"))
-            {
-                interactable.Harvest();
-            }
-        }
     }
 
     private void SelectionController () {
@@ -53,6 +43,14 @@ public class InteractionController : MonoBehaviour {
         {
             if(hit.transform.gameObject.GetComponent<Interactable>())
             {
+                if(hit.transform.gameObject == selected)
+                {
+                    Interactable interactable = selected.GetComponent<Interactable>();
+                    interactable.Harvest();
+
+                    return;
+                }
+
                 selected = hit.transform.gameObject;
 
                 return;
