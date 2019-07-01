@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class ObjectPrefab : MonoBehaviour {
 
-	public bool costWood, costStone;
+	public string objectType;
 	public float price;
 }

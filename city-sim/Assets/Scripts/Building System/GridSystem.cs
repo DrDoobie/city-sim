@@ -54,31 +54,27 @@ public class GridSystem : MonoBehaviour {
     }
 
     private void PlacementController () {
-        if(Input.GetButtonDown("Fire1") && buildingPrefab.placeable)
+        ObjectPrefab objPrefab = buildingPrefab.prefab.GetComponent<ObjectPrefab>();
+
+        if(objPrefab.objectType == "wood" && (stats.wood >= objPrefab.price))
         {
-            ObjectPrefab objPrefab = buildingPrefab.prefab.GetComponent<ObjectPrefab>();
+            buildingPrefab.canAfford = true;
+        }
 
-            if(objPrefab.costWood && (stats.wood >= objPrefab.price))
-            {
-                stats.wood -= (int)objPrefab.price;
-                Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
+        if(objPrefab.objectType == "stone" && (stats.stone >= objPrefab.price))
+        {
+            buildingPrefab.canAfford = true;
+        }
 
-                return;
-            }
+        if(objPrefab.objectType == "money" && (stats.money >= objPrefab.price))
+        {
+            buildingPrefab.canAfford = true;
+        }
 
-            if(objPrefab.costStone && (stats.stone >= objPrefab.price))
-            {
-                stats.stone -= (int)objPrefab.price;
-                Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
-
-                return;
-            }
-
-            if(stats.money >= objPrefab.price)
-            {
-                stats.money -= objPrefab.price;
-                Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
-            }
+        if(Input.GetButtonDown("Fire1") && (buildingPrefab.placeable && buildingPrefab.canAfford))
+        {
+            stats.money -= objPrefab.price;
+            Instantiate(buildingPrefab.prefab, prefab.position, prefab.rotation);
         }
 
         if(Input.GetButtonDown("Rotate"))

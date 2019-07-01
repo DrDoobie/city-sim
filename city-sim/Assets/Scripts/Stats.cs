@@ -7,13 +7,8 @@ public class Stats : MonoBehaviour {
 
 	public int day;
 	public float hour = 0.0f, minute = 0.0f, second = 0.0f, secondChange, changeMultiplier;
-	public float money = 0.0f;
-	public int wood = 0, stone = 0;
+	public float money = 0.0f, wood = 0.0f, stone = 0.0f;
 	public Text timeText, moneyText, woodText, stoneText;
-
-	string LeadingZero (int n) {
-    	return n.ToString().PadLeft(2, '0');
-  	}
 
 	private void Update () {
 		TextController();

@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
+
 public class BuildingSystem : MonoBehaviour {
 
 	public bool buildMode = false;
 	public GameObject uiGroup;
 	public Text costText;
+	public Color[] color;
 	public Vector3 costTextOffset;
 	private GameController gameController;
 	private BuildingPrefab buildingPrefab;
@@ -34,6 +38,14 @@ public class BuildingSystem : MonoBehaviour {
 	}
 
 	private void uiController () {
+		if(buildingPrefab.canAfford)
+		{
+			costText.color = color[0];
+
+		} else {
+			costText.color = color[1];
+		}
+
 		if(gameController.isPaused)
 		{
 			costText.gameObject.SetActive(false);
@@ -44,7 +56,7 @@ public class BuildingSystem : MonoBehaviour {
 		costText.GetComponent<RectTransform>().localPosition = (Input.mousePosition - (costTextOffset * 100));
 
 		costText.gameObject.SetActive(true);
-		costText.text = "Cost: " + buildingPrefab.prefab.GetComponent<ObjectPrefab>().price;
+		costText.text = "Cost: " + buildingPrefab.prefab.GetComponent<ObjectPrefab>().price + " " + buildingPrefab.prefab.GetComponent<ObjectPrefab>().objectType;
 	}
 
 	private void BuildingController () {
