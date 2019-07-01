@@ -22,7 +22,7 @@ public class BuildingSystem : MonoBehaviour {
 
 	private void Update () {
 		uiController();
-
+		
 		if(!gameController.isPaused)
 		{
 			if(!gameController.omni)
@@ -46,17 +46,15 @@ public class BuildingSystem : MonoBehaviour {
 			costText.color = color[1];
 		}
 
+		costText.gameObject.SetActive(true);
+		costText.text = "Cost: " + buildingPrefab.prefab.GetComponent<ObjectPrefab>().price + " " + buildingPrefab.prefab.GetComponent<ObjectPrefab>().objectType;
+
 		if(gameController.isPaused)
 		{
-			costText.gameObject.SetActive(false);
-
 			return;
 		}
 
 		costText.GetComponent<RectTransform>().localPosition = (Input.mousePosition - (costTextOffset * 100));
-
-		costText.gameObject.SetActive(true);
-		costText.text = "Cost: " + buildingPrefab.prefab.GetComponent<ObjectPrefab>().price + " " + buildingPrefab.prefab.GetComponent<ObjectPrefab>().objectType;
 	}
 
 	private void BuildingController () {
