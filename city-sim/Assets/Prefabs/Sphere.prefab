@@ -66,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1985766691399938}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -2.3206868, y: -9.246049e-17, z: 4.1640506}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4153954972524976}
@@ -141,9 +141,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999df301b128f684e8fce17015f5f9a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  id: 3
   objectType: wood
   price: 4
-  id: 3
 --- !u!135 &135909734276604028
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -5,19 +5,18 @@ using UnityEngine;
 public class PrefabGhost : MonoBehaviour {
 
 	public Material[] material;
+	public bool ghostSpawned;
 	private Transform selectedObj;
 	private Renderer rend;
 	private GameController gameController;
 	[HideInInspector] public bool placeable = true;
 
 	private void Start () {
-		rend = GetComponent<Renderer>();
-		rend.sharedMaterial = material[0];
-
 		gameController = FindObjectOfType<GameController>();
 	}
 
 	private void Update () {
+		GhostController();
         Controller();
     }
 
@@ -44,6 +43,28 @@ public class PrefabGhost : MonoBehaviour {
 
         rend.sharedMaterial = material[0];
     }
+	
+	private void GhostController () {
+		Transform ghostTransform = gameController.prefabDatabase.prefab[gameController.buildingPrefab.prefab].obj.transform.GetChild(0);
+
+		if(ghostSpawned)
+		{
+			return;
+		}
+
+		Transform ghost = Instantiate(ghostTransform);
+		
+		Destroy(ghost.GetComponent<BoxCollider>());
+		Destroy(ghost.GetComponent<Rigidbody>());
+
+		ghost.gameObject.layer = 2;
+		ghost.transform.parent = this.transform;
+
+		rend = ghost.GetComponent<Renderer>();
+		rend.sharedMaterial = material[0];
+
+		ghostSpawned = true;
+	}
 
     private void OnTriggerStay (Collider other)
 	{
