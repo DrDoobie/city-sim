@@ -155,3 +155,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: money
   price: 2
+  id: 2

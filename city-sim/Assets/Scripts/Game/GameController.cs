@@ -7,8 +7,9 @@ public class GameController : MonoBehaviour {
 	public bool omni = true, isPaused;
 	public float pauseScale;
 	public GameObject pauseMenu;
-	private Camera mainCam, characterCam;
+	public Camera mainCam, characterCam;
 	[HideInInspector] public Stats stats;
+	[HideInInspector] public PrefabDatabase prefabDatabase;
 	[HideInInspector] public InteractionController interactionController;
 	[HideInInspector] public GridSystem gridSystem;
 	[HideInInspector] public BuildingSystem buildingSystem;
@@ -17,14 +18,27 @@ public class GameController : MonoBehaviour {
 
 	private void Start () {
 		mainCam = Camera.main;
-		characterCam = GameObject.FindWithTag("CharacterCamera").GetComponent<Camera>();
 
 		stats = FindObjectOfType<Stats>();
+		Debug.Log("Successfully located " + stats);
+
+		prefabDatabase = FindObjectOfType<PrefabDatabase>();
+		Debug.Log("Successfully located " + prefabDatabase);
+
 		interactionController = FindObjectOfType<InteractionController>();
+		Debug.Log("Successfully located " + interactionController);
+
 		gridSystem = FindObjectOfType<GridSystem>();
+		Debug.Log("Successfully located " + gridSystem);
+
 		buildingSystem = FindObjectOfType<BuildingSystem>();
+		Debug.Log("Successfully located " + buildingSystem);
+
 		buildingPrefab = FindObjectOfType<BuildingPrefab>();
+		Debug.Log("Successfully located " + buildingPrefab);
+
 		prefabGhost = FindObjectOfType<PrefabGhost>();
+		Debug.Log("Successfully located " + prefabGhost);
 	}
 
 	private void Update () {
@@ -58,6 +72,11 @@ public class GameController : MonoBehaviour {
 		if(Input.GetButtonDown("Camera Switch"))
 		{
 			omni = !omni;
+
+		} else if(!characterCam.gameObject.activeInHierarchy) {
+			Debug.Log("Erro: no character camera found");
+
+			return;
 		}
 
 		if(!omni)

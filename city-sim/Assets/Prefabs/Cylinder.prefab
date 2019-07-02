@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: stone
   price: 5
+  id: 1
 --- !u!136 &136188900143283416
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -7,7 +7,7 @@ public class GridSystem : MonoBehaviour {
 	public float gridSize = 0.5f, rotDegree = 30.0f;
 	public Transform selectedObj, target, prefab;
     private GameController gameController;
-    private ObjectPrefab objPrefab;
+    private PrefabID objPrefab;
 	Vector3 truePos;
 
 	private void Start () {
@@ -49,7 +49,7 @@ public class GridSystem : MonoBehaviour {
     }
 
     private void CostController () {
-        objPrefab = gameController.buildingPrefab.prefab.GetComponent<ObjectPrefab>();
+        objPrefab = gameController.prefabDatabase.prefab[gameController.buildingPrefab.prefab];
 
         if(objPrefab.objectType == "wood" && (gameController.stats.wood >= objPrefab.price))
         {
@@ -94,7 +94,14 @@ public class GridSystem : MonoBehaviour {
                 gameController.stats.money -= objPrefab.price;
             }
 
-            Instantiate(gameController.buildingPrefab.prefab, prefab.position, prefab.rotation);
+            Instantiate(gameController.prefabDatabase.prefab[gameController.buildingPrefab.prefab].obj, prefab.position, prefab.rotation);
+            Debug.Log("Success");
+
+        } else if(Input.GetButtonDown("Fire1") && !gameController.buildingPrefab.placeable) {
+            Debug.Log("Error: not enough space");
+
+        } else if(Input.GetButtonDown("Fire1") && !gameController.buildingPrefab.canAfford) {
+            Debug.Log("Error: can't afford");
         }
 
         if(Input.GetButtonDown("Rotate"))
@@ -104,6 +111,7 @@ public class GridSystem : MonoBehaviour {
 
         if(Input.GetButtonDown("Delete") && selectedObj != null)
         {
+            gameController.stats.money += 1.0f;
             Destroy(selectedObj.parent.gameObject);
             gameController.prefabGhost.placeable = true;
         }

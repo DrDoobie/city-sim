@@ -9,7 +9,7 @@ public class BuildingSystem : MonoBehaviour {
 
 	public bool buildMode = false;
 	public GameObject uiGroup;
-	public Text costText;
+	public Text infoText;
 	public Color[] color;
 	public Vector3 costTextOffset;
 	private GameController gameController;
@@ -36,25 +36,25 @@ public class BuildingSystem : MonoBehaviour {
 	}
 
 	private void uiController () {
-		ObjectPrefab objPrefab = gameController.buildingPrefab.prefab.GetComponent<ObjectPrefab>();
+		PrefabID objPrefab = gameController.prefabDatabase.prefab[gameController.buildingPrefab.prefab];
 
 		if(gameController.buildingPrefab.canAfford)
 		{
-			costText.color = color[0];
+			infoText.color = color[0];
 
 		} else {
-			costText.color = color[1];
+			infoText.color = color[1];
 		}
 
-		costText.gameObject.SetActive(true);
-		costText.text = "Cost: " + objPrefab.price + " " + objPrefab.objectType;
+		infoText.gameObject.SetActive(true);
+		infoText.text = "Prefab: " + gameController.prefabDatabase.prefab[gameController.buildingPrefab.prefab] + "\nCost: " + objPrefab.price + " " + objPrefab.objectType;
 
 		if(gameController.isPaused)
 		{
 			return;
 		}
 
-		costText.GetComponent<RectTransform>().position = (Input.mousePosition + costTextOffset);
+		infoText.GetComponent<RectTransform>().position = (Input.mousePosition + costTextOffset);
 	}
 
 	private void BuildingController () {

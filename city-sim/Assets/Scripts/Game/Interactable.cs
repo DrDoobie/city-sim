@@ -27,8 +27,7 @@ public class Interactable : MonoBehaviour {
 		{
 			gameController.interactionController.selected = null;
 		}
-
-		Debug.Log("Successfully harvested: " + this.transform.name);
+		
 		Destroy(this.gameObject);
 	}
 }

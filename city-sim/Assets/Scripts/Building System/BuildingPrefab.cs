@@ -5,5 +5,5 @@ using UnityEngine;
 public class BuildingPrefab : MonoBehaviour {
 
 	public bool placeable, canAfford;
-	public GameObject prefab;
+	public int prefab;
 }

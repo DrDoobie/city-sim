@@ -143,6 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectType: wood
   price: 4
+  id: 3
 --- !u!135 &135909734276604028
 SphereCollider:
   m_ObjectHideFlags: 1

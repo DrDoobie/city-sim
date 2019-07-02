@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PrefabButton : MonoBehaviour {
 
-	public GameObject prefab;
+	public int prefab;
 	private GameController gameController;
 
 	private void Awake () {
@@ -13,5 +13,6 @@ public class PrefabButton : MonoBehaviour {
 
 	public void SelectPrefab () {
 		gameController.buildingPrefab.prefab = prefab;
+		Debug.Log("Selected " + gameController.prefabDatabase.prefab[prefab].prefabName + " prefab");
 	}
 }
