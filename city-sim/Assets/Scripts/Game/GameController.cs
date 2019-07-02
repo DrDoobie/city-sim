@@ -74,6 +74,15 @@ public class GameController : MonoBehaviour {
 		UnlockCursor();
     }
 
+	public void Pause () {
+		isPaused = !isPaused;
+	}
+
+	public void Quit () {
+		Application.Quit();
+		Debug.Log("Quitting Game...");
+	}
+
 	public void LockCursor () {
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
