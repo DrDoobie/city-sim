@@ -14,5 +14,5 @@ MonoBehaviour:
   prefabName: Cube
   objectType: wood
   obj: {fileID: 1942334325406490, guid: ba54367035a9dd7469f6d484cf5cb501, type: 2}
-  price: 5
+  price: 1
   id: 0

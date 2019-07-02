@@ -33,8 +33,10 @@ public class PrefabGhost : MonoBehaviour {
 		gameController.gridSystem.selectedObj = selectedObj;
         gameController.buildingPrefab.placeable = placeable;
 
-        if (!placeable)
+        if(!placeable)
         {
+
+
             rend.sharedMaterial = material[1];
 
             return;
@@ -43,8 +45,15 @@ public class PrefabGhost : MonoBehaviour {
         rend.sharedMaterial = material[0];
     }
 
-    private void OnTriggerEnter (Collider other)
+    private void OnTriggerStay (Collider other)
 	{
+		if(other == null)
+		{
+			placeable = true;
+			
+			return;
+		}
+
 		placeable = false;
 		selectedObj = other.transform;
 	}
