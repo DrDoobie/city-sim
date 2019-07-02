@@ -7,7 +7,7 @@ public class PrefabGhost : MonoBehaviour {
 	public Material[] material;
 	public bool ghostSpawned;
 	private Transform selectedObj;
-	private Renderer rend;
+	public Renderer rend;
 	private GameController gameController;
 	[HideInInspector] public bool placeable = true;
 
@@ -20,22 +20,25 @@ public class PrefabGhost : MonoBehaviour {
         Controller();
     }
 
-    private void Controller() {
-		if(!gameController.buildingSystem.buildMode)
-		{
-			rend.enabled = false;
-			
-		} else {
-			rend.enabled = true;
-		}
+	private void GhostController () {
+        Transform ghostTransform = gameController.prefabDatabase.prefab[gameController.buildingPrefab.prefab].obj.transform.GetChild(0);
 
+        if(ghostSpawned)
+        {
+            return;
+        }
+
+		//Detect a change in selected prefab and spawn ghost accordingly
+
+        SpawnGhost(ghostTransform);
+    }
+
+	private void Controller () {
 		gameController.gridSystem.selectedObj = selectedObj;
         gameController.buildingPrefab.placeable = placeable;
 
         if(!placeable)
         {
-
-
             rend.sharedMaterial = material[1];
 
             return;
@@ -43,28 +46,19 @@ public class PrefabGhost : MonoBehaviour {
 
         rend.sharedMaterial = material[0];
     }
-	
-	private void GhostController () {
-		Transform ghostTransform = gameController.prefabDatabase.prefab[gameController.buildingPrefab.prefab].obj.transform.GetChild(0);
 
-		if(ghostSpawned)
-		{
-			return;
-		}
+    private void SpawnGhost (Transform ghostTransform) {
+        Transform ghost = Instantiate(ghostTransform);
 
-		Transform ghost = Instantiate(ghostTransform);
-		
-		Destroy(ghost.GetComponent<BoxCollider>());
-		Destroy(ghost.GetComponent<Rigidbody>());
-
-		ghost.gameObject.layer = 2;
-		ghost.transform.parent = this.transform;
+        Destroy(ghost.GetComponent<BoxCollider>());
+        Destroy(ghost.GetComponent<Rigidbody>());
 
 		rend = ghost.GetComponent<Renderer>();
-		rend.sharedMaterial = material[0];
 
-		ghostSpawned = true;
-	}
+        ghost.gameObject.layer = 2;
+        ghost.transform.parent = this.transform;
+        ghostSpawned = true;
+    }
 
     private void OnTriggerStay (Collider other)
 	{
