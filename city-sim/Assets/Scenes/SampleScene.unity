@@ -3968,6 +3968,101 @@ Prefab:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1208157171}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[0]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[1]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[2]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[3]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[4]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[5]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[6]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[7]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[8]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[9]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[10]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[11]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[12]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[13]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[14]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[15]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[16]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 114394757676930986, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: _quads.Array.data[17]._mat
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
+    - target: {fileID: 23448931729099562, guid: 40cfe4c957da68142a66cc2ffeb05cb1,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fc5a77fa1deff594385d51c86f018e60, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 40cfe4c957da68142a66cc2ffeb05cb1, type: 2}
   m_IsPrefabAsset: 0
