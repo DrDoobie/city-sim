@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Interactable : MonoBehaviour {
 
@@ -13,7 +14,9 @@ public class Interactable : MonoBehaviour {
 	}
 
 	public void Harvest () {
-		if(wood)
+		gameController.player.GetComponent<NavMeshAgent>().SetDestination(transform.position);
+
+		/*if(wood)
 		{
 			gameController.stats.wood += amount;
 		}
@@ -28,6 +31,6 @@ public class Interactable : MonoBehaviour {
 			gameController.interactionController.selected = null;
 		}
 		
-		Destroy(this.gameObject);
+		Destroy(this.gameObject); */
 	}
 }

@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
 	[HideInInspector] public BuildingSystem buildingSystem;
 	[HideInInspector] public BuildingPrefab buildingPrefab;
 	[HideInInspector] public PrefabGhost prefabGhost;
+	[HideInInspector] public GameObject player;
 
 	private void Start () {
 		mainCam = Camera.main;
@@ -39,6 +40,8 @@ public class GameController : MonoBehaviour {
 
 		prefabGhost = FindObjectOfType<PrefabGhost>();
 		Debug.Log("Successfully located " + prefabGhost);
+
+		player = GameObject.FindGameObjectWithTag("Player");
 	}
 
 	private void Update () {
