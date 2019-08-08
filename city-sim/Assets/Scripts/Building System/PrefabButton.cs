@@ -13,6 +13,8 @@ public class PrefabButton : MonoBehaviour {
 
 	public void SelectPrefab () {
 		gameController.buildingPrefab.prefab = prefab;
+		gameController.prefabGhost.ResetGhost();
+
 		Debug.Log("Selected " + gameController.prefabDatabase.prefab[prefab].prefabName + " prefab");
 	}
 }

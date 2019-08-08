@@ -47,6 +47,17 @@ public class PrefabGhost : MonoBehaviour {
         rend.sharedMaterial = material[0];
     }
 
+	public void ResetGhost () {
+		if(!ghostSpawned)
+		{
+			return;
+		}
+
+		Destroy(rend.gameObject);
+		rend = null;
+		ghostSpawned = false;
+	}
+
     private void SpawnGhost (Transform ghostTransform) {
         Transform ghost = Instantiate(ghostTransform);
 
