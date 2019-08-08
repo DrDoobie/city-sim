@@ -48,18 +48,18 @@ public class PrefabGhost : MonoBehaviour {
     }
 
 	public void ResetGhost () {
-		if(!ghostSpawned)
+		if(!ghostSpawned || rend == null)
 		{
 			return;
 		}
 
 		Destroy(rend.gameObject);
-		rend = null;
 		ghostSpawned = false;
+		rend = null;
 	}
 
     private void SpawnGhost (Transform ghostTransform) {
-        Transform ghost = Instantiate(ghostTransform);
+        Transform ghost = Instantiate(ghostTransform, transform.position, transform.rotation);
 
         Destroy(ghost.GetComponent<BoxCollider>());
         Destroy(ghost.GetComponent<Rigidbody>());
