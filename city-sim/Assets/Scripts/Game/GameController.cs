@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GameController : MonoBehaviour {
 
@@ -84,15 +85,19 @@ public class GameController : MonoBehaviour {
 
 		if(!omni)
 		{
+			player.GetComponent<NavMeshAgent>().enabled = false;
 			mainCam.enabled = false;
 			characterCam.enabled = true;
+
 			LockCursor();
 
 			return;
 		}
 
+		player.GetComponent<NavMeshAgent>().enabled = true;
 		characterCam.enabled = false;
         mainCam.enabled = true;
+
 		UnlockCursor();
     }
 
