@@ -21,6 +21,18 @@ public class PrefabGhost : MonoBehaviour {
     }
 
 	private void GhostController () {
+		if(rend != null)
+		{
+			if(!gameController.buildingSystem.buildMode)
+			{
+				rend.gameObject.SetActive(false);
+
+				return;
+			}
+			
+			rend.gameObject.SetActive(true);
+		}
+
         Transform ghostTransform = gameController.prefabDatabase.prefab[gameController.buildingPrefab.prefab].obj.transform.GetChild(0);
 
         if(ghostSpawned)
