@@ -32,7 +32,7 @@ public class BuildingSystem : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, 1000.0f))
+        if(Physics.Raycast(ray, out hit))
         {
             int posX = (int)Mathf.Round(hit.point.x);
             int posZ = (int)Mathf.Round(hit.point.z);
