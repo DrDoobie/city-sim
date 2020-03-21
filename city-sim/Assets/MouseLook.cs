@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
-    public float mouseSens = 20.0f;
+    public float mouseSens = 5.0f;
     public Transform playerBod;
     private float xRotation = 0.0f;
 
@@ -22,8 +22,8 @@ public class MouseLook : MonoBehaviour
 
     private void LookController ()
     {
-        float mouseX = Input.GetAxis("Mouse X") * ((mouseSens * 10.0f) * Time.deltaTime);
-        float mouseY = Input.GetAxis("Mouse Y") * ((mouseSens * 10.0f) * Time.deltaTime);
+        float mouseX = Input.GetAxis("Mouse X") * mouseSens;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSens;
 
         //Future reference, this is where to invert mouse y
         xRotation -= mouseY;
