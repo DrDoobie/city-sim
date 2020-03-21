@@ -20,10 +20,10 @@ public class MouseLook : MonoBehaviour
         LookController();
     }
 
-    private void LookController ()
+    private void LookController()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSens;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSens;
+        float mouseX = (Input.GetAxis("Mouse X") * mouseSens);
+        float mouseY = (Input.GetAxis("Mouse Y") * mouseSens);
 
         //Future reference, this is where to invert mouse y
         xRotation -= mouseY;
