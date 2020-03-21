@@ -22,6 +22,11 @@ public class SelectionController : MonoBehaviour
 
     private void SelectionSystem()
     {
+        if(Input.GetButtonDown("ModeSwitch") && (selectedObj != null))
+        {
+            Deselect();
+        }
+
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -29,22 +34,22 @@ public class SelectionController : MonoBehaviour
         {
             if(Input.GetButtonDown("Fire1") && hit.transform.CompareTag(tag))
             {
+                //This is handling deselection
                 if(hit.transform == selectedObj)
                 {
-                    selectedObj.GetComponent<Renderer>().material = ogMaterial;
-
-                    selectedObj = null;
-
+                    Deselect();
                     return;
                 }
 
-                if(selectedObj != null)
+                //Storing last selected object values
+                if (selectedObj != null)
                 {
                     _selectedObj = selectedObj;
 
                     _selectedObj.GetComponent<Renderer>().material = ogMaterial;
                 }
 
+                //Selecting new object
                 selectedObj = hit.transform;
 
                 Renderer selectionRenderer = selectedObj.GetComponent<Renderer>();
@@ -57,5 +62,14 @@ public class SelectionController : MonoBehaviour
                 }
             }
         }
+    }
+
+    private void Deselect()
+    {
+        selectedObj.GetComponent<Renderer>().material = ogMaterial;
+
+        selectedObj = null;
+
+        return;
     }
 }
