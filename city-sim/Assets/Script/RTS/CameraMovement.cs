@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float panSpeed = 10.0f, panBorderThickness = 10.0f;
+    public float panSpeed = 10.0f, panBorderThickness = 10.0f, scrollSpeed = 5.0f, minY = 1.0f, maxY = 20.0f;
+    public Vector2 panLimit;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,13 @@ public class CameraMovement : MonoBehaviour
             pos.x += (panSpeed * Time.deltaTime);
         }
 
-        transform.position = pos;
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        pos.y -= scroll * (scrollSpeed * 100.0f) * Time.deltaTime;
+
+        pos.x = Mathf.Clamp(pos.x, -panLimit.x, panLimit.x);
+        pos.y = Mathf.Clamp(pos.y, minY, maxY);
+        pos.z = Mathf.Clamp(pos.z, -panLimit.y, panLimit.y);
+
+        transform.position = pos;  
     }
 }
