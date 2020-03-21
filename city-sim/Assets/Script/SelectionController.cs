@@ -8,8 +8,8 @@ public class SelectionController : MonoBehaviour
     public Material[] materials;
     
     string tag = "Selectable";
-    [SerializeField] Transform _selectedObj;
-    [SerializeField] Material ogMaterial;
+    Transform _selectedObj;
+    Material ogMaterial;
 
     // Update is called once per frame
     void Update()

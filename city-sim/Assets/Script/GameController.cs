@@ -56,8 +56,6 @@ public class GameController : MonoBehaviour
 
             fpsCam.GetComponent<AudioListener>().enabled = false;
 
-            player.GetComponent<PlayerMovement>().enabled = false;
-
             return;
         }
 
@@ -70,7 +68,5 @@ public class GameController : MonoBehaviour
         rtsCam.GetComponent<AudioListener>().enabled = false;
 
         fpsCam.GetComponent<AudioListener>().enabled = true;
-
-        player.GetComponent<PlayerMovement>().enabled = true;
     }
 }
