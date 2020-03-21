@@ -14,7 +14,7 @@ public class SelectionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!GameController.Instance.buildMode)
+        if(!GameController.Instance.buildMode && GameController.Instance.rtsMode)
         {
             SelectionSystem();
         }
@@ -29,10 +29,19 @@ public class SelectionController : MonoBehaviour
         {
             if(Input.GetButtonDown("Fire1") && hit.transform.CompareTag(tag))
             {
+                if(hit.transform == selectedObj)
+                {
+                    selectedObj.GetComponent<Renderer>().material = ogMaterial;
+
+                    selectedObj = null;
+
+                    return;
+                }
+
                 if(selectedObj != null)
                 {
                     _selectedObj = selectedObj;
-                    
+
                     _selectedObj.GetComponent<Renderer>().material = ogMaterial;
                 }
 
