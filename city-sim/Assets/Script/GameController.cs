@@ -30,6 +30,8 @@ public class GameController : MonoBehaviour
 
         if (rtsMode)
         {
+            Cursor.lockState = CursorLockMode.None;
+
             rtsCam.GetComponent<Camera>().enabled = true;
 
             fpsCam.GetComponent<Camera>().enabled = false;
@@ -42,6 +44,8 @@ public class GameController : MonoBehaviour
 
             return;
         }
+
+        Cursor.lockState = CursorLockMode.Locked;
 
         rtsCam.GetComponent<Camera>().enabled = false;
 
