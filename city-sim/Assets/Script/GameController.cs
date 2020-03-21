@@ -30,6 +30,7 @@ public class GameController : MonoBehaviour
         if (rtsMode)
         {
             rtsCam.GetComponent<Camera>().enabled = true;
+
             fpsCam.GetComponent<Camera>().enabled = false;
 
             player.GetComponent<PlayerMovement>().enabled = false;
@@ -38,6 +39,7 @@ public class GameController : MonoBehaviour
         }
 
         rtsCam.GetComponent<Camera>().enabled = false;
+        
         fpsCam.GetComponent<Camera>().enabled = true;
 
         player.GetComponent<PlayerMovement>().enabled = true;
