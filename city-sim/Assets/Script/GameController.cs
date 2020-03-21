@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; }
 
-    public bool rtsMode = true;
+    public bool rtsMode = true, buildMode = false;
     public Camera rtsCam, fpsCam;
     public Transform player;
 
@@ -34,13 +34,18 @@ public class GameController : MonoBehaviour
 
     private void ModeController()
     {
-        if (Input.GetButtonDown("ModeSwitch"))
+        if(Input.GetButtonDown("ModeSwitch"))
         {
             rtsMode = !rtsMode;
         }
 
-        if (rtsMode)
+        if(rtsMode)
         {
+            if(Input.GetButtonDown("BuildMode"))
+            {
+                buildMode = !buildMode;
+            }
+
             Cursor.lockState = CursorLockMode.None;
 
             rtsCam.GetComponent<Camera>().enabled = true;

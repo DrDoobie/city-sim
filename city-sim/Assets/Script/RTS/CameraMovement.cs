@@ -6,17 +6,14 @@ public class CameraMovement : MonoBehaviour
 {
     public float panSpeed = 10.0f, panBorderThickness = 10.0f, scrollSpeed = 5.0f, minY = 1.0f, maxY = 20.0f;
     public Vector2 panLimit;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {
-        MovementController();
+        if(GameController.Instance.rtsMode)
+        {
+            MovementController();
+        }
     }
 
     private void MovementController()
