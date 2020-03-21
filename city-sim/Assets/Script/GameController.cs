@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public static GameController Instance { get; private set; }
+
     public bool rtsMode = true;
     public Camera rtsCam, fpsCam;
     public Transform player;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        if(Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+
+        } else {
+            Destroy(gameObject);
+        }
+
         rtsMode = true;
         fpsCam.GetComponent<AudioListener>().enabled = false;
     }

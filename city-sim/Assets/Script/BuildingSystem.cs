@@ -13,17 +13,25 @@ public class BuildingSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(GameController.Instance.rtsMode)
+        {
+            BuildController();
+        }
+    }
+
+    private void BuildController()
+    {
         mousePos = Input.mousePosition;
 
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, 1000.0f))
+        if (Physics.Raycast(ray, out hit, 1000.0f))
         {
             int posX = (int)Mathf.Round(hit.point.x);
             int posZ = (int)Mathf.Round(hit.point.z);
 
-            if(posX != lastPosX || posZ != lastPosZ)
+            if (posX != lastPosX || posZ != lastPosZ)
             {
                 lastPosX = posX;
                 lastPosZ = posZ;
@@ -31,7 +39,7 @@ public class BuildingSystem : MonoBehaviour
                 ghostObj.position = new Vector3(posX, 0.0f, posZ);
             }
 
-            if(Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1"))
             {
                 Instantiate(obj, ghostObj.position, Quaternion.identity);
             }
