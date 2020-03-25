@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance { get; private set; }
 
     public bool rtsMode = true, buildMode = false;
+    public SelectionController selectionController;
     public Camera rtsCam, fpsCam;
     public Transform player;
 
@@ -36,6 +37,11 @@ public class GameController : MonoBehaviour
     {
         if(Input.GetButtonDown("ModeSwitch"))
         {
+            if(rtsMode && (selectionController.selectedObj != null))
+            {
+                selectionController.Deselect();
+            }
+
             rtsMode = !rtsMode;
         }
 

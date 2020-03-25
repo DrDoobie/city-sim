@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class SelectionController : MonoBehaviour
 {
+    public int resources;
     public Transform selectedObj;
     public Material[] materials;
     
-    string tag = "Selectable";
+    string reqTag = "Selectable";
     Transform _selectedObj;
     Material ogMaterial;
 
@@ -22,19 +23,21 @@ public class SelectionController : MonoBehaviour
 
     private void SelectionSystem()
     {
-        if(Input.GetButtonDown("ModeSwitch") && (selectedObj != null))
+        /*if(Input.GetButtonDown("ModeSwitch") && (selectedObj != null))
         {
+            Debug.Log("Switching modes");
             Deselect();
-        }
+        }*/
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if(Physics.Raycast(ray, out hit))
         {
-            if(Input.GetButtonDown("Fire1") && hit.transform.CompareTag(tag))
+            //Left click
+            if(Input.GetButtonDown("Fire1") && hit.transform.CompareTag(reqTag))
             {
-                //This is handling deselection
+                //This is handling deselection when you click the selected object
                 if(hit.transform == selectedObj)
                 {
                     Deselect();
@@ -61,10 +64,25 @@ public class SelectionController : MonoBehaviour
                     selectionRenderer.material = materials[0];
                 }
             }
+
+            //Right click
+            if(Input.GetButtonDown("Fire2") && hit.transform.CompareTag(reqTag))
+            {
+                if(selectedObj != null && (hit.transform == selectedObj))
+                {
+                    Harvest();
+                }
+            }
         }
     }
 
-    private void Deselect()
+    private void Harvest()
+    {
+        Destroy(selectedObj.gameObject);
+        resources++;
+    }
+
+    public void Deselect()
     {
         selectedObj.GetComponent<Renderer>().material = ogMaterial;
 
