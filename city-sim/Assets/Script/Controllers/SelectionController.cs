@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SelectionController : MonoBehaviour
 {
-    public int resources;
+    public NewBehaviourScript newBehaviourScript;
     public Transform selectedObj;
     public Material[] materials;
     
@@ -23,12 +23,6 @@ public class SelectionController : MonoBehaviour
 
     private void SelectionSystem()
     {
-        /*if(Input.GetButtonDown("ModeSwitch") && (selectedObj != null))
-        {
-            Debug.Log("Switching modes");
-            Deselect();
-        }*/
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
@@ -79,7 +73,10 @@ public class SelectionController : MonoBehaviour
     private void Harvest()
     {
         Destroy(selectedObj.gameObject);
-        resources++;
+        
+        selectedObj = null;
+
+        newBehaviourScript.resources++;
     }
 
     public void Deselect()
@@ -87,7 +84,5 @@ public class SelectionController : MonoBehaviour
         selectedObj.GetComponent<Renderer>().material = ogMaterial;
 
         selectedObj = null;
-
-        return;
     }
 }
