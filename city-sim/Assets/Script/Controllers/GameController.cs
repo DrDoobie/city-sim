@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 
     public bool rtsMode = true, buildMode = false;
     public SelectionController selectionController;
+    public ResourceController resourceController;
     public Camera rtsCam, fpsCam;
     public Transform player;
 

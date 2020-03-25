@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SelectionController : MonoBehaviour
 {
-    public ResourceController resourceController;
     public Transform selectedObj;
     public Material[] materials;
     
@@ -76,7 +75,7 @@ public class SelectionController : MonoBehaviour
         
         selectedObj = null;
 
-        resourceController.resources++;
+        GameController.Instance.resourceController.resources++;
     }
 
     public void Deselect()

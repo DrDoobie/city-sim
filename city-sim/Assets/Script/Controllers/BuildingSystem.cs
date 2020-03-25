@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildingSystem : MonoBehaviour
 {
+    public int reqResources;
     public Transform ghostObj;
     public GameObject obj;
 
@@ -47,8 +48,18 @@ public class BuildingSystem : MonoBehaviour
 
             if(Input.GetButtonDown("Fire1"))
             {
-                Instantiate(obj, ghostObj.position, Quaternion.identity);
+                Place();
             }
+        }
+    }
+
+    private void Place()
+    {
+        if(GameController.Instance.resourceController.resources >= reqResources)
+        {
+            Instantiate(obj, ghostObj.position, Quaternion.identity);
+        
+            GameController.Instance.resourceController.resources--;
         }
     }
 }

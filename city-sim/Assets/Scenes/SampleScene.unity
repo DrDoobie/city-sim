@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8541c07e0a237fb4589e8fb475a64e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reqResources: 1
   ghostObj: {fileID: 2054561697}
   obj: {fileID: 1816423525343204951, guid: 4d15ea66571ff3d478a29008aa3acacc, type: 3}
 --- !u!1 &426430229
@@ -415,6 +416,7 @@ MonoBehaviour:
   rtsMode: 1
   buildMode: 0
   selectionController: {fileID: 523899777}
+  resourceController: {fileID: 523899778}
   rtsCam: {fileID: 7927960}
   fpsCam: {fileID: 1482480927}
   player: {fileID: 1528754823}
@@ -430,7 +432,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886e1eab70889c4408eeabbabd3a2c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  resourceController: {fileID: 523899778}
   selectedObj: {fileID: 0}
   materials:
   - {fileID: 2100000, guid: 399243b1c30d0fb478ddc234cf107cb4, type: 2}
