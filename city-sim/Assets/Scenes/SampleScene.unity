@@ -430,7 +430,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 886e1eab70889c4408eeabbabd3a2c35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  newBehaviourScript: {fileID: 523899778}
+  resourceController: {fileID: 523899778}
   selectedObj: {fileID: 0}
   materials:
   - {fileID: 2100000, guid: 399243b1c30d0fb478ddc234cf107cb4, type: 2}
@@ -447,7 +447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   resources: 0
-  resourcesString: 'Resources: '
+  text: 'Resources: '
   resourcesText: {fileID: 1512916648}
 --- !u!1001 &537298801
 PrefabInstance:
@@ -1123,6 +1123,7 @@ GameObject:
   - component: {fileID: 1512916647}
   - component: {fileID: 1512916649}
   - component: {fileID: 1512916648}
+  - component: {fileID: 1512916650}
   m_Layer: 5
   m_Name: Resources.text
   m_TagString: Untagged
@@ -1189,6 +1190,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1512916646}
   m_CullTransparentMesh: 0
+--- !u!114 &1512916650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512916646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1528754821
 GameObject:
   m_ObjectHideFlags: 0

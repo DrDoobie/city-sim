@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ResourceController : MonoBehaviour
 {
     public int resources;
-    public string resourcesString;
+    public string text;
     public Text resourcesText;
 
     void Update ()
@@ -16,6 +16,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void UIController()
     {
-        resourcesText.text = resourcesString + resources.ToString();
+        resourcesText.text = text + resources.ToString();
     }
 }
