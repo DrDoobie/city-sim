@@ -21,7 +21,7 @@ public class MouseLook : MonoBehaviour
 
         //Future reference, this is where to invert mouse y
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90.0f, 90.0f);
+        xRotation = Mathf.Clamp(xRotation, -89.0f, 89.0f);
 
         transform.localRotation = Quaternion.Euler(xRotation, 0.0f, 0.0f);
         playerBod.Rotate(Vector3.up * mouseX);
