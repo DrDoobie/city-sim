@@ -237,7 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reqResources: 1
-  ghostObj: {fileID: 2054561697}
+  ghostMaterial: {fileID: 2100000, guid: 9d7053d54db8b224a9452afb4278a1ae, type: 2}
+  ghostObj: {fileID: 0}
   obj: {fileID: 7648791614364893517, guid: 02861e9ea9178a841bfdff90341f7eee, type: 3}
 --- !u!1 &426430229
 GameObject:
@@ -1539,7 +1540,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh14038
+  m_Name: pb_Mesh14040
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -1724,10 +1725,10 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2054561692}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
+  m_IsTrigger: 1
+  m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 1986453800}
 --- !u!114 &2054561694

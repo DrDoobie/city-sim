@@ -5,11 +5,17 @@ using UnityEngine;
 public class BuildingSystem : MonoBehaviour
 {
     public int reqResources;
-    public Transform ghostObj;
+    public Material ghostMaterial;
+    public GameObject ghostObj;
     public GameObject obj;
 
     int lastPosX, lastPosY, lastPosZ;
     Vector3 mousePos;
+
+    void Start ()
+    {
+        SwitchObj();
+    }
 
     // Update is called once per frame
     void Update()
@@ -43,21 +49,38 @@ public class BuildingSystem : MonoBehaviour
                 lastPosX = posX;
                 lastPosZ = posZ;
 
-                ghostObj.position = new Vector3(posX, 0.0f, posZ);
+                ghostObj.transform.position = new Vector3(posX, 0.0f, posZ);
             }
 
             if(Input.GetButtonDown("Fire1"))
             {
-                Place();
+                PlaceObj();
             }
         }
     }
 
-    private void Place()
+    private void SwitchObj()
+    {
+        GameObject go = Instantiate(obj);
+
+        go.GetComponent<Renderer>().material = ghostMaterial;
+
+        if(go.GetComponent<MeshCollider>())
+        {
+            go.GetComponent<MeshCollider>().convex = true;
+            go.GetComponent<MeshCollider>().isTrigger = true;
+        }
+
+        go.layer = 2;
+
+        ghostObj = go;
+    }
+
+    private void PlaceObj()
     {
         if(GameController.Instance.resourceController.resources >= reqResources)
         {
-            Instantiate(obj, ghostObj.position, Quaternion.identity);
+            Instantiate(obj, ghostObj.transform.position, Quaternion.identity);
         
             GameController.Instance.resourceController.resources--;
         }
