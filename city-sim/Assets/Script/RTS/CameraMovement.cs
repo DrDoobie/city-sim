@@ -42,8 +42,11 @@ public class CameraMovement : MonoBehaviour
         }
 
         //This handles camera zoom
-        float scroll = Input.GetAxis("Mouse ScrollWheel");
-        pos.y -= scroll * (scrollSpeed * 100.0f) * Time.deltaTime;
+        if(!GameController.Instance.buildMode)
+        {
+            float scroll = Input.GetAxis("Mouse ScrollWheel");
+            pos.y -= scroll * (scrollSpeed * 100.0f) * Time.deltaTime;
+        }
 
         pos.x = Mathf.Clamp(pos.x, -panLimit.x, panLimit.x);
         pos.y = Mathf.Clamp(pos.y, minY, maxY);

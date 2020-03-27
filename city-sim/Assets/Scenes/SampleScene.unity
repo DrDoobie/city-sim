@@ -239,8 +239,7 @@ MonoBehaviour:
   reqResources: 1
   ghostMaterial: {fileID: 2100000, guid: 9d7053d54db8b224a9452afb4278a1ae, type: 2}
   ghostObj: {fileID: 0}
-  objToPlace: {fileID: 1816423525343204951, guid: 4d15ea66571ff3d478a29008aa3acacc,
-    type: 3}
+  objToPlace: {fileID: 0}
   objects:
   - {fileID: 1816423525343204951, guid: 4d15ea66571ff3d478a29008aa3acacc, type: 3}
   - {fileID: 7648791614364893517, guid: 02861e9ea9178a841bfdff90341f7eee, type: 3}

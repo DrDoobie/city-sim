@@ -22,8 +22,6 @@ public class BuildingSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SwitchObj();
-
         if(GameController.Instance.buildMode && GameController.Instance.rtsMode)
         {
             ghostObj.GetComponent<MeshRenderer>().enabled = true;
@@ -38,6 +36,8 @@ public class BuildingSystem : MonoBehaviour
 
     private void BuildController()
     {
+        SwitchObj();
+
         mousePos = Input.mousePosition;
 
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
@@ -62,28 +62,11 @@ public class BuildingSystem : MonoBehaviour
             }
         }
     }
-
-    private void SetGhost()
-    {
-        GameObject go = Instantiate(objToPlace);
-
-        go.GetComponent<Renderer>().material = ghostMaterial;
-
-        if(go.GetComponent<MeshCollider>())
-        {
-            go.GetComponent<MeshCollider>().convex = true;
-            go.GetComponent<MeshCollider>().isTrigger = true;
-        }
-
-        go.layer = 2;
-
-        ghostObj = go;
-    }
-
+    
     private void SwitchObj()
     {
         float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
-    
+        
         if(scroll > 0)
         {
             obj++;
@@ -107,6 +90,34 @@ public class BuildingSystem : MonoBehaviour
             Instantiate(objToPlace, ghostObj.transform.position, Quaternion.identity);
         
             GameController.Instance.resourceController.resources--;
+
+            Debug.Log("Placed " + objToPlace);
         }
+    }
+
+    private void SetGhost()
+    {
+        if(ghostObj != null)
+        {
+            Destroy(ghostObj);
+
+            ghostObj = null;
+        }
+
+        GameObject go = Instantiate(objects[obj]);
+
+        go.GetComponent<Renderer>().material = ghostMaterial;
+
+        if(go.GetComponent<MeshCollider>())
+        {
+            go.GetComponent<MeshCollider>().convex = true;
+            go.GetComponent<MeshCollider>().isTrigger = true;
+        }
+
+        go.layer = 2;
+        
+        ghostObj = go;
+
+        Debug.Log("Set ghost object to " + go);
     }
 }
