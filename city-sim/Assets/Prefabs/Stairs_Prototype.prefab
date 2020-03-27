@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 385927510649626786}
   m_Layer: 8
   m_Name: Stairs_Prototype
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
