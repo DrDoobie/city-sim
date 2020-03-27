@@ -18,6 +18,7 @@ public class CameraMovement : MonoBehaviour
 
     private void MovementController()
     {
+        //This handles camera panning
         Vector3 pos = transform.position;
 
         if (Input.GetKey("w") || Input.mousePosition.y >= (Screen.height - panBorderThickness))
@@ -40,6 +41,7 @@ public class CameraMovement : MonoBehaviour
             pos.x += (panSpeed * Time.deltaTime);
         }
 
+        //This handles camera zoom
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         pos.y -= scroll * (scrollSpeed * 100.0f) * Time.deltaTime;
 

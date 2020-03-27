@@ -7,19 +7,23 @@ public class BuildingSystem : MonoBehaviour
     public int reqResources;
     public Material ghostMaterial;
     public GameObject ghostObj;
-    public GameObject obj;
+    public GameObject objToPlace;
+    public GameObject[] objects;
 
     int lastPosX, lastPosY, lastPosZ;
+    [SerializeField] int obj;
     Vector3 mousePos;
 
     void Start ()
     {
-        SwitchObj();
+        SetGhost();
     }
 
     // Update is called once per frame
     void Update()
     {
+        SwitchObj();
+
         if(GameController.Instance.buildMode && GameController.Instance.rtsMode)
         {
             ghostObj.GetComponent<MeshRenderer>().enabled = true;
@@ -59,9 +63,9 @@ public class BuildingSystem : MonoBehaviour
         }
     }
 
-    private void SwitchObj()
+    private void SetGhost()
     {
-        GameObject go = Instantiate(obj);
+        GameObject go = Instantiate(objToPlace);
 
         go.GetComponent<Renderer>().material = ghostMaterial;
 
@@ -76,11 +80,31 @@ public class BuildingSystem : MonoBehaviour
         ghostObj = go;
     }
 
+    private void SwitchObj()
+    {
+        float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
+    
+        if(scroll > 0)
+        {
+            obj++;
+        }
+
+        if(scroll < 0)
+        {
+            obj--;
+        }
+
+        //Clamp
+        obj = Mathf.Clamp(obj, 0, (objects.Length - 1));
+
+        objToPlace = objects[obj];
+    }
+
     private void PlaceObj()
     {
         if(GameController.Instance.resourceController.resources >= reqResources)
         {
-            Instantiate(obj, ghostObj.transform.position, Quaternion.identity);
+            Instantiate(objToPlace, ghostObj.transform.position, Quaternion.identity);
         
             GameController.Instance.resourceController.resources--;
         }
