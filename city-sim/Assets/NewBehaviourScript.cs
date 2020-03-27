@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public float time;
+    float _time;
+
+    void Start () {
+        _time = time;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        time -= Time.deltaTime;
+
+        if(time <= 0)
+        {
+            GameController.Instance.resourceController.resources++;
+
+            time = _time;
+        }
     }
 }

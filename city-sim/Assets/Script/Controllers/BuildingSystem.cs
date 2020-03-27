@@ -10,8 +10,7 @@ public class BuildingSystem : MonoBehaviour
     public GameObject objToPlace;
     public GameObject[] objects;
 
-    int lastPosX, lastPosY, lastPosZ;
-    [SerializeField] int obj;
+    int lastPosX, lastPosY, lastPosZ, obj;
     float lastScroll;
     Vector3 mousePos, lastPos;
 
@@ -25,14 +24,14 @@ public class BuildingSystem : MonoBehaviour
     {
         if(GameController.Instance.buildMode && GameController.Instance.rtsMode)
         {
-            ghostObj.GetComponent<MeshRenderer>().enabled = true;
+            ghostObj.SetActive(true);
 
             BuildController();
 
             return;
         }
 
-        ghostObj.GetComponent<MeshRenderer>().enabled = false;
+        ghostObj.SetActive(false);
     }
 
     private void BuildController()
@@ -102,6 +101,8 @@ public class BuildingSystem : MonoBehaviour
             Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
             return;
         }
+
+        Debug.Log("Error: couldn't afford to place");
     }
 
     private void SetGhost()
