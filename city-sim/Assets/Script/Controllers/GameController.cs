@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance { get; private set; }
 
     public bool rtsMode = true, buildMode = false;
+    public BuildingSystem buildingSystem;
     public SelectionController selectionController;
     public ResourceController resourceController;
     public Camera rtsCam, fpsCam;

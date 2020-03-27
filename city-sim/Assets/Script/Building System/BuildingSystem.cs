@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BuildingSystem : MonoBehaviour
 {
     public int reqResources;
-    public Material ghostMaterial;
+    public Text buildText;
+    public Material[] ghostMaterial;
     public GameObject ghostObj;
     public GameObject objToPlace;
     public GameObject[] objects;
@@ -31,6 +33,7 @@ public class BuildingSystem : MonoBehaviour
             return;
         }
 
+        buildText.text = "";
         ghostObj.SetActive(false);
     }
 
@@ -39,6 +42,9 @@ public class BuildingSystem : MonoBehaviour
         SwitchObj();
 
         mousePos = Input.mousePosition;
+
+        buildText.text = objToPlace.name;
+        buildText.transform.position = mousePos;
 
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
         RaycastHit hit;
@@ -94,11 +100,17 @@ public class BuildingSystem : MonoBehaviour
     {
         if(GameController.Instance.resourceController.resources >= reqResources)
         {
-            GameObject go = Instantiate(objToPlace, ghostObj.transform.position, Quaternion.identity);
+            if(ghostObj.GetComponent<GhostObject>().canPlace)
+            {
+                GameObject go = Instantiate(objToPlace, ghostObj.transform.position, Quaternion.identity);
         
-            GameController.Instance.resourceController.resources--;
+                GameController.Instance.resourceController.resources--;
 
-            Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
+                Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
+                return;
+            }
+
+            Debug.Log("Error: not enough space to place");
             return;
         }
 
@@ -110,6 +122,7 @@ public class BuildingSystem : MonoBehaviour
         if(ghostObj != null)
         {
             lastPos = ghostObj.transform.position;
+
             Destroy(ghostObj);
 
             ghostObj = null;
@@ -118,15 +131,8 @@ public class BuildingSystem : MonoBehaviour
         ghostObj = objects[obj];
 
         GameObject go = Instantiate(ghostObj, lastPos, Quaternion.identity);
-        
-        go.layer = 2;
-        go.GetComponent<Renderer>().material = ghostMaterial;
 
-        if(go.GetComponent<MeshCollider>())
-        {
-            go.GetComponent<MeshCollider>().convex = true;
-            go.GetComponent<MeshCollider>().isTrigger = true;
-        }
+        go.AddComponent(typeof(GhostObject));
     
         ghostObj = go;
     }
