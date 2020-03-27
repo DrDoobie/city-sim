@@ -12,6 +12,7 @@ public class BuildingSystem : MonoBehaviour
 
     int lastPosX, lastPosY, lastPosZ;
     [SerializeField] int obj;
+    float lastScroll;
     Vector3 mousePos;
 
     void Start ()
@@ -67,6 +68,13 @@ public class BuildingSystem : MonoBehaviour
     {
         float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         
+        if(scroll != lastScroll)
+        {
+            lastScroll = scroll;
+            
+            SetGhost();
+        }
+
         if(scroll > 0)
         {
             obj++;
@@ -103,8 +111,9 @@ public class BuildingSystem : MonoBehaviour
 
             ghostObj = null;
         }
-
-        GameObject go = Instantiate(objects[obj]);
+        
+        ghostObj = objects[obj];
+        GameObject go = Instantiate(ghostObj);
 
         go.GetComponent<Renderer>().material = ghostMaterial;
 
@@ -115,9 +124,6 @@ public class BuildingSystem : MonoBehaviour
         }
 
         go.layer = 2;
-        
         ghostObj = go;
-
-        Debug.Log("Set ghost object to " + go);
     }
 }

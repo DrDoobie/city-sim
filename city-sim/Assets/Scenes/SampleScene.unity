@@ -243,7 +243,8 @@ MonoBehaviour:
   objects:
   - {fileID: 1816423525343204951, guid: 4d15ea66571ff3d478a29008aa3acacc, type: 3}
   - {fileID: 7648791614364893517, guid: 02861e9ea9178a841bfdff90341f7eee, type: 3}
-  obj: 0
+  obj: 1
+  lastObj: 0
 --- !u!1 &426430229
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,7 +761,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 6.46e-43, y: 2.7043218e+32, z: 6.45e-43, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -784,7 +785,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-1210
+  m_Name: pb_Mesh-1212
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
