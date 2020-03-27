@@ -13,7 +13,7 @@ public class BuildingSystem : MonoBehaviour
     int lastPosX, lastPosY, lastPosZ;
     [SerializeField] int obj;
     float lastScroll;
-    Vector3 mousePos;
+    Vector3 mousePos, lastPos;
 
     void Start ()
     {
@@ -95,11 +95,11 @@ public class BuildingSystem : MonoBehaviour
     {
         if(GameController.Instance.resourceController.resources >= reqResources)
         {
-            Instantiate(objToPlace, ghostObj.transform.position, Quaternion.identity);
+            GameObject go = Instantiate(objToPlace, ghostObj.transform.position, Quaternion.identity);
         
             GameController.Instance.resourceController.resources--;
 
-            Debug.Log("Placed " + objToPlace);
+            Debug.Log("Placed " + objToPlace + "at position " + go.transform.position);
         }
     }
 
@@ -107,13 +107,14 @@ public class BuildingSystem : MonoBehaviour
     {
         if(ghostObj != null)
         {
+            lastPos = ghostObj.transform.position;
             Destroy(ghostObj);
 
             ghostObj = null;
         }
-        
+
         ghostObj = objects[obj];
-        GameObject go = Instantiate(ghostObj);
+        GameObject go = Instantiate(ghostObj, lastPos, Quaternion.identity);
 
         go.GetComponent<Renderer>().material = ghostMaterial;
 
