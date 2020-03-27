@@ -99,7 +99,8 @@ public class BuildingSystem : MonoBehaviour
         
             GameController.Instance.resourceController.resources--;
 
-            Debug.Log("Placed " + objToPlace + "at position " + go.transform.position);
+            Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
+            return;
         }
     }
 
@@ -114,8 +115,10 @@ public class BuildingSystem : MonoBehaviour
         }
 
         ghostObj = objects[obj];
-        GameObject go = Instantiate(ghostObj, lastPos, Quaternion.identity);
 
+        GameObject go = Instantiate(ghostObj, lastPos, Quaternion.identity);
+        
+        go.layer = 2;
         go.GetComponent<Renderer>().material = ghostMaterial;
 
         if(go.GetComponent<MeshCollider>())
@@ -123,8 +126,7 @@ public class BuildingSystem : MonoBehaviour
             go.GetComponent<MeshCollider>().convex = true;
             go.GetComponent<MeshCollider>().isTrigger = true;
         }
-
-        go.layer = 2;
+    
         ghostObj = go;
     }
 }
