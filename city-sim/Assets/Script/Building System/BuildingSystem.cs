@@ -62,6 +62,12 @@ public class BuildingSystem : MonoBehaviour
                 ghostObj.transform.position = new Vector3(posX, 0.0f, posZ);
             }
 
+            //Rotation
+            if(Input.GetButtonDown("Rotate"))
+            {
+                ghostObj.transform.Rotate(Vector3.up, 90.0f);
+            }
+
             if(Input.GetButtonDown("Fire1"))
             {
                 PlaceObj();
@@ -102,7 +108,7 @@ public class BuildingSystem : MonoBehaviour
         {
             if(ghostObj.GetComponent<GhostObject>().canPlace)
             {
-                GameObject go = Instantiate(objToPlace, ghostObj.transform.position, Quaternion.identity);
+                GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);
         
                 GameController.Instance.resourceController.resources--;
 
