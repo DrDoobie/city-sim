@@ -14,12 +14,19 @@ public class GhostObject : MonoBehaviour
 
         gameObject.layer = 2;
 
+        //Checking for and removing components
+        if(GetComponent<Timer>())
+        {
+            Destroy(GetComponent<Timer>());
+        }
+
         if(GetComponent<MeshCollider>())
         {
             GetComponent<MeshCollider>().convex = true;
             GetComponent<MeshCollider>().isTrigger = true;
         }
 
+        //Adding components
         gameObject.AddComponent(typeof(Rigidbody));
 
         GetComponent<Rigidbody>().useGravity = false;
