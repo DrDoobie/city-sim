@@ -10,8 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf55352fd1ab942428c2aa60d590f074, type: 3}
-  m_Name: 0
+  m_Name: 1
   m_EditorClassIdentifier: 
-  objInfo: "[Oil Well]\nCost - 5 resources\nAutomatically harvests 1 \nresource every
-    5 seconds."
-  cost: 5
+  objInfo: '[Wall]
+
+    Cost - 2 resources
+
+    A wall to keep someone
+
+    or something
+    either in or out.'
+  cost: 2

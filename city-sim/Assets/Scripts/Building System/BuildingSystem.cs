@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class BuildingSystem : MonoBehaviour
 {
-    public int reqResources;
     public float rotateAngle;
     public Text buildText;
     public Material[] ghostMaterial;
@@ -45,13 +44,9 @@ public class BuildingSystem : MonoBehaviour
         mousePos = Input.mousePosition;
 
         //Text ui stuff
-        if(objToPlace.GetComponent<ObjectInfo>())
-        {
-            buildText.text = objToPlace.GetComponent<ObjectInfo>().obj.objInfo;
+        ObjectInfo objInfo = objToPlace.GetComponent<ObjectInfo>();
 
-        } else {
-            buildText.text = objToPlace.transform.name;
-        }
+        buildText.text = objInfo.obj.objInfo;
 
         buildText.transform.position = mousePos;
 
@@ -114,13 +109,15 @@ public class BuildingSystem : MonoBehaviour
 
     private void PlaceObj()
     {
-        if(GameController.Instance.resourceController.resources >= reqResources)
+        ObjectInfo objInfo = objToPlace.GetComponent<ObjectInfo>();
+
+        if(GameController.Instance.resourceController.resources >= objInfo.obj.cost)
         {
             if(ghostObj.GetComponent<GhostObject>().canPlace)
             {
                 GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);
         
-                GameController.Instance.resourceController.resources--;
+                GameController.Instance.resourceController.resources -= objInfo.obj.cost;
 
                 Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
                 return;

@@ -6,4 +6,5 @@ using UnityEngine;
 public class Object : ScriptableObject
 {
     [TextArea] public string objInfo;
+    public int cost;
 }
