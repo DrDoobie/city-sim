@@ -5,6 +5,8 @@ using UnityEngine;
 public class GhostObject : MonoBehaviour
 {
     public bool canPlace = true;
+    
+    string reqTag = "Terrain";
 
     void Awake()
     {
@@ -17,6 +19,11 @@ public class GhostObject : MonoBehaviour
             GetComponent<MeshCollider>().convex = true;
             GetComponent<MeshCollider>().isTrigger = true;
         }
+
+        gameObject.AddComponent(typeof(Rigidbody));
+
+        GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Rigidbody>().isKinematic = true;
     }
 
     void Update()
@@ -33,9 +40,12 @@ public class GhostObject : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        canPlace = false;
+        if(!other.CompareTag(reqTag))
+        {
+            canPlace = false;
 
-        Debug.Log("!");
+            Debug.Log("Colliding with " + other);
+        }
     }
 
     void OnTriggerExit(Collider other)
