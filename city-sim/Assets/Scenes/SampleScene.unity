@@ -330,7 +330,6 @@ MonoBehaviour:
   objToPlace: {fileID: 0}
   objects:
   - {fileID: 3322090982347625357, guid: c7ad42291c5d3f244b3d18fa7b7e7f6f, type: 3}
-  - {fileID: 2211297754665828994, guid: 857e629dec7c768409834350bd71eb99, type: 3}
 --- !u!43 &226849962
 Mesh:
   m_ObjectHideFlags: 0
