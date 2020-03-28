@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Timer : MonoBehaviour
 {
     public float time;
     float _time;
@@ -18,9 +18,14 @@ public class NewBehaviourScript : MonoBehaviour
 
         if(time <= 0)
         {
-            GameController.Instance.resourceController.resources++;
+            Function();
 
             time = _time;
         }
+    }
+
+    private static void Function()
+    {
+        GameController.Instance.resourceController.resources++;
     }
 }
