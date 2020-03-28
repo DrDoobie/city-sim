@@ -31,9 +31,11 @@ public class GhostObject : MonoBehaviour
         GetComponent<Renderer>().material = GameController.Instance.buildingSystem.ghostMaterial[1];
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         canPlace = false;
+
+        Debug.Log("!");
     }
 
     void OnTriggerExit(Collider other)

@@ -17,6 +17,13 @@ public class SelectionController : MonoBehaviour
         if(!GameController.Instance.buildMode && GameController.Instance.rtsMode)
         {
             SelectionSystem();
+
+            return;
+        }
+
+        if(selectedObj != null)
+        {
+            Deselect();
         }
     }
 
