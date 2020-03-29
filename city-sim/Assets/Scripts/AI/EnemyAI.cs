@@ -6,18 +6,17 @@ using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public float wanderRadius, awarenessRadius;
+    public float wanderTime, wanderRadius, awarenessRadius;
     public Transform target;
     public GameObject ui;
     public Text infoText;
     public NavMeshAgent agent;
     public Creature creature;
 
-    float wanderTime, _wanderTime;
+    float _wanderTime;
 
     void Start ()
     {
-        wanderTime = creature.wanderTime;
         _wanderTime = wanderTime;
 
         infoText.text = creature.info;

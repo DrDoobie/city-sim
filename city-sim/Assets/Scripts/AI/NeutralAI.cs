@@ -7,13 +7,13 @@ using UnityEngine.UI;
 public class NeutralAI : MonoBehaviour
 {
     public bool baby, male, female, givenBirth;
-    public float wanderRadius, awarenessRadius;
+    public float wanderTime, wanderRadius, awarenessRadius;
     public NavMeshAgent agent;
     public GameObject ui;
     public Text infoText;
     public Creature creature;
 
-    float wanderTime, growTime, birthCoolDown;
+    float growTime, birthCoolDown;
     float _wanderTime, _growTime, _birthCoolDown;
 
     // Start is called before the first frame update
@@ -56,7 +56,6 @@ public class NeutralAI : MonoBehaviour
 
     void SetValues()
     {
-        wanderTime = creature.wanderTime;
         growTime = creature.growTime;
         birthCoolDown = creature.birthCoolDown;
 

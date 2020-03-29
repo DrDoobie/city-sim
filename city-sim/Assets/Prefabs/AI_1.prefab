@@ -293,6 +293,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31d12922c128bed418438d86521b43c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wanderTime: 10
+  wanderRadius: 25
+  awarenessRadius: 10
   target: {fileID: 0}
   ui: {fileID: 8728467036982087392}
   infoText: {fileID: 1599016043232665495}

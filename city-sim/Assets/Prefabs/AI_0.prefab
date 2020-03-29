@@ -297,6 +297,9 @@ MonoBehaviour:
   male: 0
   female: 0
   givenBirth: 0
+  wanderTime: 5
+  wanderRadius: 5
+  awarenessRadius: 5
   agent: {fileID: -8461875176006254695}
   ui: {fileID: 8728467036982087392}
   infoText: {fileID: 1599016043232665495}
