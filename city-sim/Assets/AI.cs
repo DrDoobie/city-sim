@@ -5,12 +5,11 @@ using UnityEngine.AI;
 
 public class AI : MonoBehaviour
 {
-    public bool baby, male, female;
+    public bool baby, male, female, givenBirth;
     public float wanderTime, growTime;
     public NavMeshAgent agent;
     public GameObject babyAI;
 
-    bool givenBirth;
     float _wanderTime;
 
     // Start is called before the first frame update
@@ -84,9 +83,9 @@ public class AI : MonoBehaviour
 
             if(!baby)
             {
-                if(male)
+                if(female)
                 {
-                    if(otherAI.female)
+                    if(otherAI.male)
                     {
                         Birth();
                     }
