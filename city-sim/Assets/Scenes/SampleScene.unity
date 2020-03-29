@@ -328,6 +328,7 @@ MonoBehaviour:
   ghostObj: {fileID: 0}
   objToPlace: {fileID: 0}
   objects:
+  - {fileID: 8042501080422931851, guid: 260d5dd374a8d994ab295ab1e403f16b, type: 3}
   - {fileID: 3322090982347625357, guid: c7ad42291c5d3f244b3d18fa7b7e7f6f, type: 3}
 --- !u!43 &45533483
 Mesh:
