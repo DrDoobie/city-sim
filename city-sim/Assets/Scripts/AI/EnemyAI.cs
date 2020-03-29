@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
+    public float wanderRadius, awarenessRadius;
     public Transform target;
     public GameObject ui;
     public Text infoText;
@@ -20,6 +21,11 @@ public class EnemyAI : MonoBehaviour
         _wanderTime = wanderTime;
 
         infoText.text = creature.info;
+
+        if(GetComponent<SphereCollider>())
+        {
+            GetComponent<SphereCollider>().radius = awarenessRadius;
+        }
     }
 
     void Update ()
@@ -46,7 +52,7 @@ public class EnemyAI : MonoBehaviour
 
         if(wanderTime <= 0.0f)
         {
-            Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f)) + transform.position;
+            Vector3 position = new Vector3(Random.Range(-wanderRadius, wanderRadius), 0, Random.Range(-wanderRadius, wanderRadius)) + transform.position;
 
             agent.SetDestination(position);
 

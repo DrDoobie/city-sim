@@ -14,7 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: '[Creature_1]
 
-    A harmless purple creature.'
+    A harmless purple creature.
+
+    Reproduces at an average
+    rate.
+
+'
   wanderTime: 10
   growTime: 30
   birthCoolDown: 60

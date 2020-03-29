@@ -50,7 +50,10 @@ public class SelectionController : MonoBehaviour
                 {
                     _selectedObj = selectedObj;
 
-                    _selectedObj.GetComponent<Renderer>().material = ogMaterial;
+                    if(GetComponent<Renderer>())
+                    {
+                        _selectedObj.GetComponent<Renderer>().material = ogMaterial;
+                    }
                 }
 
                 //Selecting new object

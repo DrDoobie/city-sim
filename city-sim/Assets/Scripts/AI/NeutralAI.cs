@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class NeutralAI : MonoBehaviour
 {
     public bool baby, male, female, givenBirth;
+    public float wanderRadius, awarenessRadius;
     public NavMeshAgent agent;
     public GameObject ui;
     public Text infoText;
@@ -21,6 +22,11 @@ public class NeutralAI : MonoBehaviour
         baby = true;
 
         infoText.text = creature.info;
+
+        if(GetComponent<SphereCollider>())
+        {
+            GetComponent<SphereCollider>().radius = awarenessRadius;
+        }
 
         SetValues();
         AssignGender();
@@ -96,7 +102,7 @@ public class NeutralAI : MonoBehaviour
 
         if(wanderTime <= 0.0f)
         {
-            Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f)) + transform.position;
+            Vector3 position = new Vector3(Random.Range(-wanderRadius, wanderRadius), 0, Random.Range(-wanderRadius, wanderRadius)) + transform.position;
 
             agent.SetDestination(position);
 
