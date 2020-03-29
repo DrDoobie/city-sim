@@ -14,12 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   info: '[Creature_2]
 
-    An aggresive red
-
-    creature. Reproduces at
-
-    a faster
-    than average rate.'
+    An aggresive red creature.'
   wanderTime: 5
   growTime: 15
   birthCoolDown: 40

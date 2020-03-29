@@ -298,6 +298,7 @@ MonoBehaviour:
   female: 0
   givenBirth: 0
   agent: {fileID: -8461875176006254695}
+  ui: {fileID: 8728467036982087392}
   infoText: {fileID: 1599016043232665495}
   creature: {fileID: 11400000, guid: 7f50ecfb354fc1448967db23a5c40510, type: 2}
 --- !u!1 &8728467036982087392

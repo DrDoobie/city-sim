@@ -8,6 +8,7 @@ public class NeutralAI : MonoBehaviour
 {
     public bool baby, male, female, givenBirth;
     public NavMeshAgent agent;
+    public GameObject ui;
     public Text infoText;
     public Creature creature;
 
@@ -19,6 +20,8 @@ public class NeutralAI : MonoBehaviour
     {
         baby = true;
 
+        infoText.text = creature.info;
+
         SetValues();
         AssignGender();
     }
@@ -26,7 +29,7 @@ public class NeutralAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        TextController();
+        UIController();
         WanderController();
         BirthController();
 
@@ -56,16 +59,16 @@ public class NeutralAI : MonoBehaviour
         _birthCoolDown = birthCoolDown;
     }
 
-    private void TextController()
+    private void UIController()
     {
         if(GameController.Instance.selectionController.selectedObj == this.gameObject.transform)
         {
-            infoText.text = creature.info;
+            ui.SetActive(true);
 
             return;
         }
 
-        infoText.text = "";
+        ui.SetActive(false);
     }
 
     private void AssignGender()

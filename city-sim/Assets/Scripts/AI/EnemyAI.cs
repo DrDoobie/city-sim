@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public bool aggro;
     public Transform target;
+    public GameObject ui;
     public Text infoText;
     public NavMeshAgent agent;
     public Creature creature;
@@ -18,32 +18,26 @@ public class EnemyAI : MonoBehaviour
     {
         wanderTime = creature.wanderTime;
         _wanderTime = wanderTime;
+
+        infoText.text = creature.info;
     }
 
     void Update ()
     {
-        TextController();
-
-        //if(!aggro)
-        //{
-            WanderController();
-
-        //    return;
-        //}
-
-        //TargetController();
+        UIController();
+        WanderController();
     }
 
-    private void TextController()
+    private void UIController()
     {
         if(GameController.Instance.selectionController.selectedObj == this.gameObject.transform)
         {
-            infoText.text = creature.info;
+            ui.SetActive(true);
 
             return;
         }
 
-        infoText.text = "";
+        ui.SetActive(false);
     }
 
     private void WanderController()

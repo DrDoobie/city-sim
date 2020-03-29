@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 3734183712630840907}
   - component: {fileID: 2855178019802394331}
   - component: {fileID: 5757185545724679153}
-  - component: {fileID: 5673853388567827047}
+  - component: {fileID: 8273543277847132113}
   m_Layer: 0
   m_Name: AI_1
   m_TagString: Creature
@@ -281,7 +281,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5673853388567827047
+--- !u!114 &8273543277847132113
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -294,6 +294,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  ui: {fileID: 8728467036982087392}
   infoText: {fileID: 1599016043232665495}
   agent: {fileID: -8461875176006254695}
   creature: {fileID: 11400000, guid: db80192b1877fd84584d8e1c57ea22f0, type: 2}
