@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class ResourceController : MonoBehaviour
 {
-    public int resources, reqFood;
+    public bool starving;
+    public int resources;
+    public float reqFood;
     public Text resourcesText, foodText;
 
-    int food;
+    float food;
 
     void Start()
     {
@@ -18,11 +20,20 @@ public class ResourceController : MonoBehaviour
     void Update ()
     {
         UIController();
+
+        if(food <= 0)
+        {
+            starving = true;
+
+            return;
+        }
+
+        food -= Time.deltaTime;
     }
 
     private void UIController()
     {
         resourcesText.text = "Resources: " + resources.ToString();
-        foodText.text = "Food: " + food.ToString() + "/" + reqFood;
+        foodText.text = "Food: " + food.ToString("#") + "/" + reqFood;
     }
 }

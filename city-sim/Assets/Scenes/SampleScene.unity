@@ -1422,10 +1422,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04dd43f10ddd0de47b4dbddafedbea30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  starving: 0
   resources: 5
   reqFood: 10
   resourcesText: {fileID: 1512916648}
-  foodText: {fileID: 0}
+  foodText: {fileID: 2107465764}
 --- !u!1001 &537298801
 PrefabInstance:
   m_ObjectHideFlags: 0

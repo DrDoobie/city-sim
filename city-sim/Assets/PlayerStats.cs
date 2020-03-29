@@ -18,13 +18,20 @@ public class PlayerStats : MonoBehaviour
     void Update ()
     {
         UIController();
+        Hunger();
+    }
 
-        if(hunger <= 0)
+    private void Hunger()
+    {
+        if(GameController.Instance.resourceController.starving)
         {
-            return;
-        }
+            if(hunger <= 0)
+            {
+                return;
+            }
 
-        hunger -= Time.deltaTime;
+            hunger -= Time.deltaTime;
+        }
     }
 
     private void UIController()
