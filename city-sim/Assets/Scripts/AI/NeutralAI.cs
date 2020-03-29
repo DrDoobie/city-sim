@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UI;
 
-public class AI : MonoBehaviour
+public class NeutralAI : MonoBehaviour
 {
     public bool baby, male, female, givenBirth;
     public NavMeshAgent agent;
@@ -119,9 +119,9 @@ public class AI : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<AI>())
+        if(other.GetComponent<NeutralAI>())
         {
-            AI otherAI = other.GetComponent<AI>();
+            NeutralAI otherAI = other.GetComponent<NeutralAI>();
             //Debug.Log("Met " + other.transform.name);
 
             if(!baby)
