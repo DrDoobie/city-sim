@@ -10,7 +10,13 @@ public class PlayerMovement : MonoBehaviour
     public LayerMask groundMask;
 
     bool isGrounded;
+    float _movementSpeed;
     Vector3 velocity;
+
+    void Start()
+    {
+        _movementSpeed = movementSpeed;
+    }
 
     // Update is called once per frame
     void Update()
@@ -32,11 +38,13 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 move = (transform.right * x) + (transform.forward * z);
 
+        //Movement
         if(!GameController.Instance.rtsMode)
         {
             controller.Move(move * movementSpeed * Time.deltaTime);
         }
 
+        //Jumping
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
