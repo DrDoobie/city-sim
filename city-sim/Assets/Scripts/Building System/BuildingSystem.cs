@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class BuildingSystem : MonoBehaviour
 {
     public float rotateAngle;
-    public Text buildText;
     public Material[] ghostMaterial;
     public GameObject ghostObj;
     public GameObject objToPlace;
@@ -33,7 +32,8 @@ public class BuildingSystem : MonoBehaviour
             return;
         }
 
-        buildText.text = "";
+        GameController.Instance.infoText.text = "";
+        
         ghostObj.SetActive(false);
     }
 
@@ -46,9 +46,9 @@ public class BuildingSystem : MonoBehaviour
         //Text ui stuff
         ObjectInfo objInfo = objToPlace.GetComponent<ObjectInfo>();
 
-        buildText.text = objInfo.obj.objInfo;
+        GameController.Instance.infoText.text = objInfo.obj.objInfo;
 
-        buildText.transform.position = mousePos;
+        GameController.Instance.infoText.transform.position = mousePos;
 
         //Movement of cursor/ghost
         Ray ray = Camera.main.ScreenPointToRay(mousePos);

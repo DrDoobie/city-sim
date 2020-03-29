@@ -1,17 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; }
-
     public bool rtsMode = true, buildMode = false;
+    public Camera rtsCam, fpsCam;
+    public Transform player;
+    public Text infoText;
     public BuildingSystem buildingSystem;
     public SelectionController selectionController;
     public ResourceController resourceController;
-    public Camera rtsCam, fpsCam;
-    public Transform player;
 
     // Start is called before the first frame update
     void Awake()

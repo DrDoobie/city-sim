@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SelectionController : MonoBehaviour
 {
+    public string[] otherTag;
     public Transform selectedObj;
     public Material[] materials;
     
@@ -65,6 +66,19 @@ public class SelectionController : MonoBehaviour
                 }
             }
 
+            if(Input.GetButtonDown("Fire1") && hit.transform.CompareTag(otherTag[0]))
+            {
+                if(hit.transform == selectedObj)
+                {
+                    Deselect();
+                    return;
+                }
+
+                selectedObj = hit.transform;
+                
+                Debug.Log("Selected AI");
+            }
+
             //Right click
             if(Input.GetButtonDown("Fire2") && hit.transform.CompareTag(reqTag))
             {
@@ -87,7 +101,10 @@ public class SelectionController : MonoBehaviour
 
     public void Deselect()
     {
-        selectedObj.GetComponent<Renderer>().material = ogMaterial;
+        if(selectedObj.GetComponent<Renderer>())
+        {
+            selectedObj.GetComponent<Renderer>().material = ogMaterial;
+        }
 
         selectedObj = null;
     }

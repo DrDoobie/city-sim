@@ -2,30 +2,31 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class AI : MonoBehaviour
 {
     public bool baby, male, female, givenBirth;
-    public float wanderTime, growTime, birthCoolDown;
     public NavMeshAgent agent;
-    public GameObject babyAI;
+    public Text infoText;
+    public Creature creature;
 
-    float _wanderTime, _birthCoolDown;
+    float wanderTime, growTime, birthCoolDown;
+    float _wanderTime, _growTime, _birthCoolDown;
 
     // Start is called before the first frame update
     void Start()
     {
         baby = true;
 
-        _wanderTime = wanderTime;
-        _birthCoolDown = birthCoolDown;
-
+        SetValues();
         AssignGender();
     }
 
     // Update is called once per frame
     void Update()
     {
+        TextController();
         WanderController();
         BirthController();
 
@@ -37,17 +38,40 @@ public class AI : MonoBehaviour
             {
                 baby = false;
 
-                Debug.Log("grown up");
+                //Debug.Log("Grown up!");
 
                 growTime = 0.0f;
             }
         }
     }
 
+    void SetValues()
+    {
+        wanderTime = creature.wanderTime;
+        growTime = creature.growTime;
+        birthCoolDown = creature.birthCoolDown;
+
+        _wanderTime = wanderTime;
+        _growTime = growTime;
+        _birthCoolDown = birthCoolDown;
+    }
+
+    private void TextController()
+    {
+        if(GameController.Instance.selectionController.selectedObj == this.gameObject.transform)
+        {
+            infoText.text = creature.info;
+
+            return;
+        }
+
+        infoText.text = "";
+    }
+
     private void AssignGender()
     {
         int value = Random.Range(0, 2);
-        Debug.Log(value);
+        //Debug.Log(value);
 
         if (value == 1)
         {
@@ -86,7 +110,7 @@ public class AI : MonoBehaviour
             if(birthCoolDown <= 0.0f)
             {
                 givenBirth = false;
-                Debug.Log("Ready to give birth again");
+                //Debug.Log("Ready to give birth again!");
 
                 birthCoolDown = _birthCoolDown;
             }
@@ -98,7 +122,7 @@ public class AI : MonoBehaviour
         if(other.GetComponent<AI>())
         {
             AI otherAI = other.GetComponent<AI>();
-            Debug.Log("Met " + other.transform.name);
+            //Debug.Log("Met " + other.transform.name);
 
             if(!baby)
             {
@@ -117,8 +141,8 @@ public class AI : MonoBehaviour
     {
         if(!givenBirth)
         {
-            Debug.Log("Sex!");
-            Instantiate(babyAI, transform.position, Quaternion.identity);
+            //Debug.Log("Gave birth!");
+            Instantiate(creature.baby, transform.position, Quaternion.identity);
 
             givenBirth = true;
         }
