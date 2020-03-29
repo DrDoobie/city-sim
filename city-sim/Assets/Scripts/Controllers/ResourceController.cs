@@ -5,9 +5,15 @@ using UnityEngine.UI;
 
 public class ResourceController : MonoBehaviour
 {
-    public int resources;
-    public string text;
-    public Text resourcesText;
+    public int resources, reqFood;
+    public Text resourcesText, foodText;
+
+    int food;
+
+    void Start()
+    {
+        food = reqFood;
+    }
 
     void Update ()
     {
@@ -16,6 +22,7 @@ public class ResourceController : MonoBehaviour
 
     private void UIController()
     {
-        resourcesText.text = text + resources.ToString();
+        resourcesText.text = "Resources: " + resources.ToString();
+        foodText.text = "Food: " + food.ToString() + "/" + reqFood;
     }
 }
