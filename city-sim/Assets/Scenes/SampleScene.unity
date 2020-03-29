@@ -1425,6 +1425,7 @@ MonoBehaviour:
   starving: 0
   resources: 5
   reqFood: 10
+  foodLossRate: 5
   resourcesText: {fileID: 1512916648}
   foodText: {fileID: 2107465764}
 --- !u!1001 &537298801

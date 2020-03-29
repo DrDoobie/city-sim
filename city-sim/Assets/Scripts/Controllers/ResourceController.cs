@@ -7,7 +7,7 @@ public class ResourceController : MonoBehaviour
 {
     public bool starving;
     public int resources;
-    public float reqFood;
+    public float reqFood, foodLossRate;
     public Text resourcesText, foodText;
 
     float food;
@@ -28,12 +28,12 @@ public class ResourceController : MonoBehaviour
             return;
         }
 
-        food -= Time.deltaTime;
+        food -= Time.deltaTime * (foodLossRate * 0.1f);
     }
 
     private void UIController()
     {
-        resourcesText.text = "Resources: " + resources.ToString();
-        foodText.text = "Food: " + food.ToString("#") + "/" + reqFood;
+        resourcesText.text = "Resources: " + resources.ToString("0#");
+        foodText.text = "Food: " + food.ToString("0#") + "/" + reqFood.ToString("0#");
     }
 }
