@@ -218,7 +218,9 @@ MonoBehaviour:
   baby: 0
   male: 0
   female: 0
-  wanderTime: 8
-  growTime: 5
+  givenBirth: 0
+  wanderTime: 10
+  growTime: 30
+  birthCoolDown: 60
   agent: {fileID: -8461875176006254695}
   babyAI: {fileID: 5821484922195907989}

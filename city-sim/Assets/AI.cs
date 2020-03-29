@@ -6,17 +6,19 @@ using UnityEngine.AI;
 public class AI : MonoBehaviour
 {
     public bool baby, male, female, givenBirth;
-    public float wanderTime, growTime;
+    public float wanderTime, growTime, birthCoolDown;
     public NavMeshAgent agent;
     public GameObject babyAI;
 
-    float _wanderTime;
+    float _wanderTime, _birthCoolDown;
 
     // Start is called before the first frame update
     void Start()
     {
         baby = true;
+
         _wanderTime = wanderTime;
+        _birthCoolDown = birthCoolDown;
 
         AssignGender();
     }
@@ -25,12 +27,13 @@ public class AI : MonoBehaviour
     void Update()
     {
         WanderController();
+        BirthController();
 
         if(baby)
         {
             growTime -= Time.deltaTime;
 
-            if(growTime <= 0)
+            if(growTime <= 0.0f)
             {
                 baby = false;
 
@@ -64,13 +67,29 @@ public class AI : MonoBehaviour
     {
         wanderTime -= Time.deltaTime;
 
-        if(wanderTime <= 0)
+        if(wanderTime <= 0.0f)
         {
             Vector3 position = new Vector3(Random.Range(-10.0f, 10.0f), 0, Random.Range(-10.0f, 10.0f)) + transform.position;
 
             agent.SetDestination(position);
 
             wanderTime = _wanderTime;
+        }
+    }
+
+    private void BirthController()
+    {
+        if(givenBirth)
+        {
+            birthCoolDown -= Time.deltaTime;
+
+            if(birthCoolDown <= 0.0f)
+            {
+                givenBirth = false;
+                Debug.Log("Ready to give birth again");
+
+                birthCoolDown = _birthCoolDown;
+            }
         }
     }
 
