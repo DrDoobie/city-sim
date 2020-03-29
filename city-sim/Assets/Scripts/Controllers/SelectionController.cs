@@ -75,8 +75,6 @@ public class SelectionController : MonoBehaviour
                 }
 
                 selectedObj = hit.transform;
-                
-                Debug.Log("Selected AI");
             }
 
             //Right click

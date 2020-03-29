@@ -19,7 +19,7 @@ MonoBehaviour:
     They reproduce at a slower
     than
 
-    average speed.'
+    average rate.'
   wanderTime: 10
   growTime: 30
   birthCoolDown: 60
