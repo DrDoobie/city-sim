@@ -46,11 +46,11 @@ public class SelectionController : MonoBehaviour
                 }
 
                 //Storing last selected object values
-                if (selectedObj != null)
+                if(selectedObj != null)
                 {
                     _selectedObj = selectedObj;
 
-                    if(GetComponent<Renderer>())
+                    if(_selectedObj.GetComponent<Renderer>())
                     {
                         _selectedObj.GetComponent<Renderer>().material = ogMaterial;
                     }

@@ -7,11 +7,9 @@ public class ResourceController : MonoBehaviour
 {
     public bool starving;
     public int resources;
-    public float reqFood, foodLossRate;
+    public float food, reqFood, foodLossRate;
     public Text resourcesText, foodText;
-
-    float food;
-
+    
     void Start()
     {
         food = reqFood;

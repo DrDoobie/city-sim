@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3736996301607578811}
   - component: {fileID: 1018333371227313375}
   - component: {fileID: 1599016043232665495}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Info.text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 5821484920650112960}
   - component: {fileID: 5821484920650112961}
   - component: {fileID: 5821484920650112962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,8 @@ GameObject:
   - component: {fileID: 2855178019802394331}
   - component: {fileID: 5757185545724679153}
   - component: {fileID: -7042573665900569286}
-  m_Layer: 0
+  - component: {fileID: -2015035712827607359}
+  m_Layer: 9
   m_Name: AI_0
   m_TagString: Creature
   m_Icon: {fileID: 0}
@@ -304,6 +305,21 @@ MonoBehaviour:
   ui: {fileID: 8728467036982087392}
   infoText: {fileID: 1599016043232665495}
   creature: {fileID: 11400000, guid: 7f50ecfb354fc1448967db23a5c40510, type: 2}
+--- !u!114 &-2015035712827607359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5821484922195907989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f38211652b78d479cabc94bf11a99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  health: 0
+  body: {fileID: 5821484922195907989}
 --- !u!1 &8728467036982087392
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +333,7 @@ GameObject:
   - component: {fileID: 1227141719230946272}
   - component: {fileID: 8024206037694304871}
   - component: {fileID: 286678876393876136}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}

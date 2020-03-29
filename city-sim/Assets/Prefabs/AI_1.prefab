@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3736996301607578811}
   - component: {fileID: 1018333371227313375}
   - component: {fileID: 1599016043232665495}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Info.text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 5821484920650112960}
   - component: {fileID: 5821484920650112961}
   - component: {fileID: 5821484920650112962}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ GameObject:
   - component: {fileID: 2855178019802394331}
   - component: {fileID: 5757185545724679153}
   - component: {fileID: 8273543277847132113}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: AI_1
   m_TagString: Creature
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   - component: {fileID: 1227141719230946272}
   - component: {fileID: 8024206037694304871}
   - component: {fileID: 286678876393876136}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
