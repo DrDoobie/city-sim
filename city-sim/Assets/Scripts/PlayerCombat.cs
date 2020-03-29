@@ -28,6 +28,7 @@ public class PlayerCombat : MonoBehaviour
         //Apply damage
         foreach(Collider enemy in hitEnemies)
         {
+            //Damaging enemies
             if(enemy.GetComponent<Health>() == null)
             {
                 return;

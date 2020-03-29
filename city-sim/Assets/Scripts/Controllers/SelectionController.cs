@@ -53,7 +53,7 @@ public class SelectionController : MonoBehaviour
                     if(_selectedObj.GetComponent<Renderer>())
                     {
                         _selectedObj.GetComponent<Renderer>().material = ogMaterial;
-                    }
+                    } 
                 }
 
                 //Selecting new object
@@ -75,6 +75,16 @@ public class SelectionController : MonoBehaviour
                 {
                     Deselect();
                     return;
+                }
+
+                if(selectedObj != null)
+                {
+                    _selectedObj = selectedObj;
+
+                    if(_selectedObj.GetComponent<Renderer>())
+                    {
+                        _selectedObj.GetComponent<Renderer>().material = ogMaterial;
+                    } 
                 }
 
                 selectedObj = hit.transform;

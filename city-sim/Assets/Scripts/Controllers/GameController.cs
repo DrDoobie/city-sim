@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public Camera rtsCam, fpsCam;
     public Transform player;
     public Text infoText;
+    public GameObject crosshair;
     public BuildingSystem buildingSystem;
     public SelectionController selectionController;
     public ResourceController resourceController;
@@ -34,8 +35,9 @@ public class GameController : MonoBehaviour
     void Update()
     {
         ModeController();
+        Crosshair();
     }
-
+    
     private void ModeController()
     {
         if(Input.GetButtonDown("ModeSwitch"))
@@ -77,5 +79,17 @@ public class GameController : MonoBehaviour
         rtsCam.GetComponent<AudioListener>().enabled = false;
 
         fpsCam.GetComponent<AudioListener>().enabled = true;
+    }
+
+    private void Crosshair()
+    {
+        if (rtsMode)
+        {
+            crosshair.SetActive(false);
+
+            return;
+        }
+
+        crosshair.SetActive(true);
     }
 }
