@@ -2,15 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 
 public class NeutralAI : MonoBehaviour
 {
     public bool baby, male, female, givenBirth;
     public float wanderTime, wanderRadius, awarenessRadius;
     public NavMeshAgent agent;
-    public GameObject ui;
-    public Text infoText;
     public Creature creature;
 
     float growTime, birthCoolDown;
@@ -20,9 +17,7 @@ public class NeutralAI : MonoBehaviour
     void Start()
     {
         baby = true;
-
-        infoText.text = creature.info;
-
+        
         if(GetComponent<SphereCollider>())
         {
             GetComponent<SphereCollider>().radius = awarenessRadius;
@@ -35,7 +30,6 @@ public class NeutralAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UIController();
         WanderController();
         BirthController();
 
@@ -62,18 +56,6 @@ public class NeutralAI : MonoBehaviour
         _wanderTime = wanderTime;
         _growTime = growTime;
         _birthCoolDown = birthCoolDown;
-    }
-
-    private void UIController()
-    {
-        if(GameController.Instance.selectionController.selectedObj == this.gameObject.transform)
-        {
-            ui.SetActive(true);
-
-            return;
-        }
-
-        ui.SetActive(false);
     }
 
     private void AssignGender()
