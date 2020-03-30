@@ -104,7 +104,7 @@ MonoBehaviour:
   male: 0
   female: 0
   givenBirth: 0
-  wanderTime: 5
+  wanderTime: 10
   wanderRadius: 20
   awarenessRadius: 5
   animator: {fileID: 5381573661485343852}
@@ -130,7 +130,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: d3ae656d6a4a7f346b7f70c4f766a360,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: d3ae656d6a4a7f346b7f70c4f766a360,
         type: 3}
