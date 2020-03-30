@@ -528,6 +528,7 @@ GameObject:
   - component: {fileID: 4926328006361018947}
   - component: {fileID: 4926328006361018944}
   - component: {fileID: 4926328006361018951}
+  - component: {fileID: 7995996109754884602}
   m_Layer: 0
   m_Name: Pig
   m_TagString: Untagged
@@ -657,6 +658,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7995996109754884602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4926328006361018945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24726c4fa3f35f44b8de4854ff4c7fb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5262466996406964804
 GameObject:
   m_ObjectHideFlags: 0
