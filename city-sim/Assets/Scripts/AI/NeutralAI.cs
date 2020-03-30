@@ -122,7 +122,7 @@ public class NeutralAI : MonoBehaviour
         if(other.GetComponent<NeutralAI>())
         {
             NeutralAI otherAI = other.GetComponent<NeutralAI>();
-            //Debug.Log("Met " + other.transform.name);
+            Debug.Log("Met " + other.transform.name);
 
             if(!baby)
             {
