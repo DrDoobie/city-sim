@@ -15,9 +15,9 @@ public class GhostObject : MonoBehaviour
         gameObject.layer = 2;
 
         //Checking for and removing components
-        if(GetComponent<Timer>())
+        if(GetComponent<ResourceGenerator>())
         {
-            Destroy(GetComponent<Timer>());
+            Destroy(GetComponent<ResourceGenerator>());
         }
 
         if(GetComponent<MeshCollider>())

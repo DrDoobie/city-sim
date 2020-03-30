@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Timer : MonoBehaviour
+public class ResourceGenerator : MonoBehaviour
 {
+    public bool genResources, genFood;
     public float time;
     float _time;
 
@@ -24,8 +25,16 @@ public class Timer : MonoBehaviour
         }
     }
 
-    private static void Function()
+    void Function()
     {
-        GameController.Instance.resourceController.resources++;
+        if(genResources)
+        {
+            GameController.Instance.resourceController.resources++;
+        }
+
+        if(genFood)
+        {
+            GameController.Instance.resourceController.food++;
+        }
     }
 }
