@@ -89,15 +89,15 @@ public class NeutralAI : MonoBehaviour
             agent.SetDestination(position);
 
             //Debug.Log("Walking!");
-            animator.SetTrigger("isWalking");
+            animator.Play("Walk");
 
             wanderTime = _wanderTime;
         }
 
-        if(agent.remainingDistance > agent.stoppingDistance)
+        if(agent.remainingDistance <= agent.stoppingDistance)
         {
-            Debug.Log("Reached destination");
-            //animator.Play("Idle");
+            //Debug.Log("Reached destination");
+            animator.Play("Idle");
         }
     }
 
