@@ -26,6 +26,8 @@ public class ResourceController : MonoBehaviour
             return;
         }
 
+        starving = false;
+
         food -= Time.deltaTime * (foodLossRate * 0.1f);
     }
 
