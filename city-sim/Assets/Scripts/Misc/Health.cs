@@ -24,7 +24,6 @@ public class Health : MonoBehaviour
     {
         //Debug.Log(transform.name + "Died!");
         GameController.Instance.resourceController.food += 5.0f;
-
         Destroy(body);
     }
 }
