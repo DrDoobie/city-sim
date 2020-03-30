@@ -6,18 +6,31 @@ public class AIAnimation : MonoBehaviour
 {
     public Animator animator;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.O))
         {
-            animator.Play("Walk");
+            animator.CrossFade("Walk", 0.5f);
         }
+
+        if(Input.GetKeyDown(KeyCode.O))
+        {
+            animator.SetBool("isIdle", false);
+            animator.SetBool("isWalking", true);
+
+            return; 
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            animator.CrossFade("Die", 0.5f);
+
+            return;
+        }
+
+        animator.CrossFade("Idle", 0.5f);
+        animator.SetBool("isIdle", true);
+        animator.SetBool("isWalking", false);
     }
 }

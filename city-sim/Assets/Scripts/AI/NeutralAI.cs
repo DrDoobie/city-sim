@@ -7,6 +7,7 @@ public class NeutralAI : MonoBehaviour
 {
     public bool baby, male, female, givenBirth;
     public float wanderTime, wanderRadius, awarenessRadius;
+    public Animator animator;
     public NavMeshAgent agent;
     public Creature creature;
 
@@ -83,11 +84,20 @@ public class NeutralAI : MonoBehaviour
 
         if(wanderTime <= 0.0f)
         {
-            Vector3 position = new Vector3(Random.Range(-wanderRadius, wanderRadius), 0, Random.Range(-wanderRadius, wanderRadius)) + transform.position;
+            Vector3 position = new Vector3(Random.Range(-wanderRadius, wanderRadius), 0, Random.Range(-wanderRadius, wanderRadius)) + transform.position; 
 
             agent.SetDestination(position);
 
+            //Debug.Log("Walking!");
+            animator.SetTrigger("isWalking");
+
             wanderTime = _wanderTime;
+        }
+
+        if(agent.remainingDistance > agent.stoppingDistance)
+        {
+            Debug.Log("Reached destination");
+            //animator.Play("Idle");
         }
     }
 
