@@ -117,9 +117,9 @@ MonoBehaviour:
   male: 0
   female: 0
   givenBirth: 0
-  wanderTime: 10
+  wanderTime: 5
   wanderRadius: 20
-  awarenessRadius: 10
+  awarenessRadius: 5
   animator: {fileID: 2728134081321120496}
   agent: {fileID: 5381573660571457953}
   creature: {fileID: 11400000, guid: 7f50ecfb354fc1448967db23a5c40510, type: 2}
