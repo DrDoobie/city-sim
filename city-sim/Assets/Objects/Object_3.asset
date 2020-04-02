@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf55352fd1ab942428c2aa60d590f074, type: 3}
-  m_Name: Object_2
+  m_Name: Object_3
   m_EditorClassIdentifier: 
-  objInfo: '[1x1 Wall]
+  objInfo: '[2x1 Wall]
 
-    Cost - 1 resources
+    Cost - 2 resources
 
-    1x1 wall piece
+    2x1 wall piece
 
     build with.'
-  cost: 1
+  cost: 2
