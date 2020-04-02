@@ -88,7 +88,7 @@ public class NeutralAI : MonoBehaviour
 
             agent.SetDestination(position);
 
-            //Debug.Log("Walking!");
+            //Debug.Log("Walking");
             animator.Play("Walk");
 
             wanderTime = _wanderTime;
@@ -96,7 +96,7 @@ public class NeutralAI : MonoBehaviour
 
         if(agent.remainingDistance <= agent.stoppingDistance)
         {
-            //Debug.Log("Reached destination");
+            //Debug.Log("Reached destination!");
             animator.Play("Idle");
         }
     }
@@ -110,7 +110,7 @@ public class NeutralAI : MonoBehaviour
             if(birthCoolDown <= 0.0f)
             {
                 givenBirth = false;
-                //Debug.Log("Ready to give birth again!");
+                //Debug.Log("Ready to give birth again");
 
                 birthCoolDown = _birthCoolDown;
             }

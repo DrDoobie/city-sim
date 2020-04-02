@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.UI;
 
 public class EnemyAI : MonoBehaviour
 {
+    public bool aggro;
     public float wanderTime, wanderRadius, awarenessRadius;
     public Transform target;
-    public GameObject ui;
-    public Text infoText;
+    public Animator animator;
     public NavMeshAgent agent;
     public Creature creature;
 
@@ -19,8 +18,6 @@ public class EnemyAI : MonoBehaviour
     {
         _wanderTime = wanderTime;
 
-        infoText.text = creature.info;
-
         if(GetComponent<SphereCollider>())
         {
             GetComponent<SphereCollider>().radius = awarenessRadius;
@@ -29,56 +26,63 @@ public class EnemyAI : MonoBehaviour
 
     void Update ()
     {
-        UIController();
-        WanderController();
+        MovementController();
     }
 
-    private void UIController()
-    {
-        if(GameController.Instance.selectionController.selectedObj == this.gameObject.transform)
-        {
-            ui.SetActive(true);
-
-            return;
-        }
-
-        ui.SetActive(false);
-    }
-
-    private void WanderController()
+    private void MovementController()
     {
         wanderTime -= Time.deltaTime;
 
+        //This is handling random walking around
         if(wanderTime <= 0.0f)
         {
             Vector3 position = new Vector3(Random.Range(-wanderRadius, wanderRadius), 0, Random.Range(-wanderRadius, wanderRadius)) + transform.position;
 
             agent.SetDestination(position);
 
+            Debug.Log("Walking");
+            animator.SetBool("isWalking", true);
+            animator.SetBool("isIdle", false);
+
             wanderTime = _wanderTime;
         }
-    }
 
-    private void TargetController()
-    {
-        if(target != null)
+        //This is for checking distance between target and ai
+        float dist = Vector3.Distance(agent.destination, transform.position);
+
+        //Debug.Log(Vector3.Distance(agent.destination, transform.position));
+
+        if(dist <= agent.stoppingDistance)
         {
-            agent.SetDestination(target.position);
-            //Debug.Log("Set target to " + target.name);
+            if(aggro)
+            {
+                Debug.Log("Attacking!");
+
+                return;
+            }
+            //Debug.Log("Reached destination!");
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isIdle", true);
         }
     }
 
     void OnTriggerStay(Collider other)
     {
-        if(other.transform.tag == "Player" || other.transform.tag == "Creature")
+        if(other.transform.tag == "Player")
         {
-            //aggro = true;
+            aggro = true;
 
             target = other.transform;    
 
-            TargetController();
+            agent.SetDestination(target.position);
         }
     }
 
-
+    void OnTriggerExit(Collider other)
+    {
+        if(other.transform.tag == "Player")
+        {
+            aggro = false;
+        }
+    }
 }
