@@ -5,12 +5,9 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public bool aggro;
     public float wanderTime, wanderRadius, awarenessRadius;
-    public Transform target;
     public Animator animator;
     public NavMeshAgent agent;
-    public Creature creature;
 
     float _wanderTime;
 
@@ -54,12 +51,6 @@ public class EnemyAI : MonoBehaviour
 
         if(dist <= agent.stoppingDistance)
         {
-            if(aggro)
-            {
-                Debug.Log("Attacking!");
-
-                return;
-            }
             //Debug.Log("Reached destination!");
             animator.SetBool("isWalking", false);
             animator.SetBool("isIdle", true);
@@ -70,19 +61,10 @@ public class EnemyAI : MonoBehaviour
     {
         if(other.transform.tag == "Player")
         {
-            aggro = true;
+            agent.SetDestination(other.transform.position);
 
-            target = other.transform;    
-
-            agent.SetDestination(target.position);
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if(other.transform.tag == "Player")
-        {
-            aggro = false;
+            animator.SetBool("isWalking", true);
+            animator.SetBool("isIdle", false);
         }
     }
 }
