@@ -25,6 +25,11 @@ public class GhostObject : MonoBehaviour
             GetComponent<MeshCollider>().convex = true;
             GetComponent<MeshCollider>().isTrigger = true;
         }
+        
+        if(GetComponent<BoxCollider>())
+        {
+            GetComponent<BoxCollider>().isTrigger = true;
+        }
 
         //Adding components
         gameObject.AddComponent(typeof(Rigidbody));
