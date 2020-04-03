@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 5679316422067500623}
   - component: {fileID: 5679316422067500622}
   - component: {fileID: 5679316422067500657}
-  - component: {fileID: -2594009201703155801}
-  - component: {fileID: 5679316422067500656}
   - component: {fileID: -5068775476546563823}
-  m_Layer: 8
+  - component: {fileID: 5679316422067500656}
+  - component: {fileID: -1750253755023902514}
+  m_Layer: 10
   m_Name: Stone
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -838,36 +838,6 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
---- !u!54 &-2594009201703155801
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679316422067500659}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!64 &5679316422067500656
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679316422067500659}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!208 &-5068775476546563823
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -884,3 +854,33 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.24, y: 0.48, z: -0.78}
   m_TimeToStationary: 0.5
+--- !u!64 &5679316422067500656
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679316422067500659}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!114 &-1750253755023902514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679316422067500659}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cb12174fce98a4c8490b1ca68edf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 1
+  maxHealth: 45
+  health: 0
+  body: {fileID: 5679316422067500659}

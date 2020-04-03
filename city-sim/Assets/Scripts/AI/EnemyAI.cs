@@ -37,7 +37,7 @@ public class EnemyAI : MonoBehaviour
 
             agent.SetDestination(position);
 
-            Debug.Log("Walking");
+            //Debug.Log("Walking");
             animator.SetBool("isWalking", true);
             animator.SetBool("isIdle", false);
 

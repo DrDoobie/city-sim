@@ -6,7 +6,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public float attackRange = 0.5f, damage = 15.0f;
     public Transform attackPoint;
-    public LayerMask enemyLayers;
+    public LayerMask hittableLayers;
 
     // Update is called once per frame
     void Update()
@@ -23,21 +23,27 @@ public class PlayerCombat : MonoBehaviour
     void Attack()
     {
         //Detect enemies in range
-        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+        Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
 
-        //Apply damage
-        foreach(Collider enemy in hitEnemies)
+        //Apply damage to eat hit object
+        foreach(Collider hit in gotHit)
         {
-            //Damaging enemies
-            if(enemy.GetComponent<Health>() == null)
+            //Mine
+            if(hit.GetComponent<Resource>())
+            {
+                Debug.Log("Getting resource");
+            }
+
+            //Damage enemy
+            if(hit.GetComponent<Health>() == null)
             {
                 return;
             }
 
-            Health enemyHealth = enemy.GetComponent<Health>();
+            Health enemyHealth = hit.GetComponent<Health>();
 
             enemyHealth.health -= damage;
-            Debug.Log("Dealt " + damage + " to " + enemy.transform.name);
+            Debug.Log("Dealt " + damage + " to " + hit.transform.name);
         }
     }
 
