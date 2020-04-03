@@ -15,7 +15,6 @@ public class GameController : MonoBehaviour
     public SelectionController selectionController;
     public ResourceController resourceController;
 
-    // Start is called before the first frame update
     void Awake()
     {
         if(Instance == null)
@@ -31,7 +30,6 @@ public class GameController : MonoBehaviour
         fpsCam.GetComponent<AudioListener>().enabled = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         ModeController();
@@ -83,7 +81,7 @@ public class GameController : MonoBehaviour
 
     private void Crosshair()
     {
-        if (rtsMode)
+        if(rtsMode)
         {
             crosshair.SetActive(false);
 

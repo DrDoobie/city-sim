@@ -14,6 +14,4 @@ public class Billboard : MonoBehaviour
         transform.LookAt(transform.position + mainCam.transform.rotation * Vector3.forward,
         mainCam.transform.rotation * Vector3.up);
     }
-    
-	//Code by Neil Carter
 }

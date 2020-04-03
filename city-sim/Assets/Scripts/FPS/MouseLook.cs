@@ -8,7 +8,6 @@ public class MouseLook : MonoBehaviour
     public Transform playerBod;
     private float xRotation = 0.0f;
 
-    // Update is called once per frame
     void Update()
     {
         if(!GameController.Instance.rtsMode)
