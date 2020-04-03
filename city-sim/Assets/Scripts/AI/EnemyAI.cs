@@ -5,12 +5,14 @@ using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
-    public bool aggro;
-    public float wanderTime, wanderRadius, awarenessRadius;
+    public bool aggro = false;
+    public float wanderTime = 5.0f, wanderRadius = 25.0f, awarenessRadius = 5.0f, attackRange = 1.0f, attackRate = 2.0f, attackDamage = 20.0f;
     public Animator animator;
     public NavMeshAgent agent;
+    public Transform attackPoint;
+    public LayerMask hittableLayers;
 
-    float _wanderTime;
+    float _wanderTime, nextAttackTime = 0.0f;
 
     void Start ()
     {
@@ -55,7 +57,8 @@ public class EnemyAI : MonoBehaviour
         {
             if(aggro)
             {
-                //Debug.Log("Attacking!");
+                Attack();
+
                 animator.SetBool("isAttacking", true);
                 animator.SetBool("isWalking", false);
                 animator.SetBool("isIdle", false);
@@ -72,18 +75,21 @@ public class EnemyAI : MonoBehaviour
 
     void Attack()
     {
-        
         //Detect hittables in range
         Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
 
-        
+        //Apply damage to each hit object
         foreach(Collider hit in gotHit)
         {
-            
-            if(hit.GetComponent<Resource>())
+            if(hit.GetComponent<PlayerStats>())
             {
-                Debug.Log("Getting resource!");
-                hit.GetComponent<Resource>().health -= damage;
+               if(Time.time >= nextAttackTime)
+               {
+                   Debug.Log("Eating player");
+                   hit.GetComponent<PlayerStats>().health -= attackDamage;
+
+                   nextAttackTime = Time.time + (1.0f / attackRate);
+               }
             }
         }
     }
@@ -108,5 +114,15 @@ public class EnemyAI : MonoBehaviour
         {
             aggro = false;
         }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if(attackPoint == null)
+        {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

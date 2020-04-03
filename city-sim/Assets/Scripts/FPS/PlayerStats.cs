@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
-    public float maxHealth, maxHunger;
-    public Slider hungerBar;
+    public float maxHealth, maxHunger, health;
+    public Slider healthBar, hungerBar;
 
-    float health, hunger;
+    float hunger;
 
     void Start () {
         health = maxHealth;
@@ -18,15 +18,18 @@ public class PlayerStats : MonoBehaviour
     void Update ()
     {
         UIController();
-        Hunger();
+        HungerController();
+        HealthController();
     }
 
-    private void Hunger()
+    private void HungerController()
     {
         if(GameController.Instance.resourceController.starving)
         {
-            if(hunger <= 0)
+            if(hunger <= 0.0f)
             {
+                health -= Time.deltaTime;
+
                 return;
             }
 
@@ -34,9 +37,22 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    private void HealthController()
+    {
+        if(health <= 0.0f)
+        {
+            Debug.Log("Died!");
+
+            Time.timeScale = 0.0f;
+        }
+    }
+
     private void UIController()
     {
         hungerBar.maxValue = maxHunger;
         hungerBar.value = hunger;
+
+        healthBar.maxValue = maxHealth;
+        healthBar.value = health;
     }
 }
