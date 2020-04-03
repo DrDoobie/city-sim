@@ -28,10 +28,11 @@ public class PlayerCombat : MonoBehaviour
         //Apply damage to eat hit object
         foreach(Collider hit in gotHit)
         {
-            //Mine
+            //Get resources
             if(hit.GetComponent<Resource>())
             {
-                Debug.Log("Getting resource");
+                //Debug.Log("Getting resource!");
+                hit.GetComponent<Resource>().health -= damage;
             }
 
             //Damage enemy
