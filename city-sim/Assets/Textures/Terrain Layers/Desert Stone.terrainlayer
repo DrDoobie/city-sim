@@ -6,11 +6,11 @@ TerrainLayer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Desert Stone_1
+  m_Name: Desert Stone
   m_DiffuseTexture: {fileID: 2800000, guid: d4cd781cbf6f85540928e5178da48ca8, type: 3}
   m_NormalMapTexture: {fileID: 2800000, guid: 44290fe9223dc4e4e90124a3dcb4c5a9, type: 3}
   m_MaskMapTexture: {fileID: 0}
-  m_TileSize: {x: 1, y: 20}
+  m_TileSize: {x: 2, y: 2}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0
