@@ -11,7 +11,6 @@ public class PlayerCombat : MonoBehaviour
 
     float nextAttackTime = 0.0f;
 
-    // Update is called once per frame
     void Update()
     {
         if(!GameController.Instance.rtsMode)
