@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 8862563126662899836}
   - component: {fileID: 8862563126662899837}
   - component: {fileID: 8862563126662899834}
-  - component: {fileID: -9192880441348551239}
   - component: {fileID: 8862563126662899835}
+  - component: {fileID: -9192880441348551239}
   - component: {fileID: -5008780517426838054}
   m_Layer: 10
   m_Name: Wood
@@ -840,6 +840,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!64 &8862563126662899835
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8862563126662899832}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!208 &-9192880441348551239
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -856,20 +870,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
---- !u!64 &8862563126662899835
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8862563126662899832}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &-5008780517426838054
 MonoBehaviour:
   m_ObjectHideFlags: 0

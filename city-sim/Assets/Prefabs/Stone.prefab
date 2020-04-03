@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 5679316422067500623}
   - component: {fileID: 5679316422067500622}
   - component: {fileID: 5679316422067500657}
-  - component: {fileID: -5068775476546563823}
   - component: {fileID: 5679316422067500656}
+  - component: {fileID: -5068775476546563823}
   - component: {fileID: -1750253755023902514}
   m_Layer: 10
   m_Name: Stone
@@ -838,6 +838,20 @@ MonoBehaviour:
   m_SelectedFaces: 
   m_SelectedEdges: []
   m_SelectedVertices: 
+--- !u!64 &5679316422067500656
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5679316422067500659}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!208 &-5068775476546563823
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -854,20 +868,6 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.24, y: 0.48, z: -0.78}
   m_TimeToStationary: 0.5
---- !u!64 &5679316422067500656
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5679316422067500659}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &-1750253755023902514
 MonoBehaviour:
   m_ObjectHideFlags: 0
