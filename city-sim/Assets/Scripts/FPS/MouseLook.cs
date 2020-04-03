@@ -11,7 +11,10 @@ public class MouseLook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LookController();
+        if(!GameController.Instance.rtsMode)
+        {
+            LookController();
+        }
     }
 
     private void LookController()

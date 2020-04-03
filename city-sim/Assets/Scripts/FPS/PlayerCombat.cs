@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class PlayerCombat : MonoBehaviour
 {
-    public float attackRange = 0.5f, damage = 15.0f;
+    public float attackRange = 0.5f, damage = 15.0f, attackRate = 2.0f;
     public Transform attackPoint;
     public Animator animator;
     public LayerMask hittableLayers;
+
+    float nextAttackTime = 0.0f;
 
     // Update is called once per frame
     void Update()
     {
         if(!GameController.Instance.rtsMode)
         {
-            if(Input.GetButtonDown("Fire1"))
+            if(Time.time >= nextAttackTime)
             {
-                Attack();
-            }
+                if(Input.GetButtonDown("Fire1"))
+                {
+                    Attack();
+
+                    nextAttackTime = Time.time + (1.0f / attackRate);
+                }
+            }            
         }
     }
 
@@ -34,7 +41,7 @@ public class PlayerCombat : MonoBehaviour
             //Get resources
             if(hit.GetComponent<Resource>())
             {
-                Debug.Log("Getting resource!");
+                //Debug.Log("Getting resource!");
                 hit.GetComponent<Resource>().health -= damage;
             }
 
@@ -47,7 +54,7 @@ public class PlayerCombat : MonoBehaviour
             Health enemyHealth = hit.GetComponent<Health>();
 
             enemyHealth.health -= damage;
-            Debug.Log("Dealt " + damage + " to " + hit.transform.name);
+            //Debug.Log("Dealt " + damage + " to " + hit.transform.name);
         }
     }
 
