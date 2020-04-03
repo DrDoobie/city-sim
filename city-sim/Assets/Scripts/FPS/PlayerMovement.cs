@@ -21,7 +21,10 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MovementController();
+        if(!GameController.Instance.rtsMode)
+        {
+            MovementController();
+        }
     }
 
     private void MovementController()

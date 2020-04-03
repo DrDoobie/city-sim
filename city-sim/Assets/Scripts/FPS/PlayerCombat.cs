@@ -41,7 +41,7 @@ public class PlayerCombat : MonoBehaviour
             //Get resources
             if(hit.GetComponent<Resource>())
             {
-                //Debug.Log("Getting resource!");
+                Debug.Log("Getting resource!");
                 hit.GetComponent<Resource>().health -= damage;
             }
 
@@ -54,7 +54,7 @@ public class PlayerCombat : MonoBehaviour
             Health enemyHealth = hit.GetComponent<Health>();
 
             enemyHealth.health -= damage;
-            //Debug.Log("Dealt " + damage + " to " + hit.transform.name);
+            Debug.Log("Dealt " + damage + " to " + hit.transform.name);
         }
     }
 

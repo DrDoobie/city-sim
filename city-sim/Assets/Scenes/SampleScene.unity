@@ -9332,6 +9332,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackRange: 0.75
   damage: 15
+  attackRate: 2
   attackPoint: {fileID: 192172058}
   animator: {fileID: 8296172668870687525}
   hittableLayers:
