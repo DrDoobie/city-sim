@@ -6,6 +6,7 @@ public class PlayerCombat : MonoBehaviour
 {
     public float attackRange = 0.5f, damage = 15.0f;
     public Transform attackPoint;
+    public Animator animator;
     public LayerMask hittableLayers;
 
     // Update is called once per frame
@@ -22,6 +23,8 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
+        animator.Play("Punch");
+
         //Detect enemies in range
         Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
 
@@ -31,7 +34,7 @@ public class PlayerCombat : MonoBehaviour
             //Get resources
             if(hit.GetComponent<Resource>())
             {
-                //Debug.Log("Getting resource!");
+                Debug.Log("Getting resource!");
                 hit.GetComponent<Resource>().health -= damage;
             }
 
