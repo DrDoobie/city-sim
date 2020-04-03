@@ -32,10 +32,10 @@ public class PlayerCombat : MonoBehaviour
     {
         animator.Play("Punch");
 
-        //Detect enemies in range
+        //Detect hittables in range
         Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
 
-        //Apply damage to eat hit object
+        //Apply damage to each hit object
         foreach(Collider hit in gotHit)
         {
             //Get resources
