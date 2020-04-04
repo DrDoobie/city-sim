@@ -140,7 +140,7 @@ MonoBehaviour:
   attackRange: 2
   attackRate: 2
   attackDamage: 20
-  animator: {fileID: 0}
+  animator: {fileID: 4356293279132335907}
   agent: {fileID: 6839334695856820345}
   attackPoint: {fileID: 1680657421781505408}
   hittableLayers:

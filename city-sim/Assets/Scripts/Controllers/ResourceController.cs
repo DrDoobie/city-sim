@@ -28,7 +28,7 @@ public class ResourceController : MonoBehaviour
 
         starving = false;
 
-        food -= Time.deltaTime * (foodLossRate * 0.1f);
+        food -= Time.deltaTime * (foodLossRate * population * 0.1f);
     }
 
     private void UIController()
