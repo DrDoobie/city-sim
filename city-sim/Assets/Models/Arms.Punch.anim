@@ -33348,7 +33348,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 1.7083334
-    functionName: TestFunction
+    functionName: ReferenceFunction
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

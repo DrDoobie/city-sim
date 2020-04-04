@@ -6,6 +6,7 @@ public class CameraMovement : MonoBehaviour
 {
     public float panSpeed = 10.0f, panBorderThickness = 10.0f, zoomSpeed = 5.0f, minY = 1.0f, maxY = 20.0f;
     public Vector2 panLimit;
+    public Transform player;
     
     void Update()
     {
@@ -52,5 +53,17 @@ public class CameraMovement : MonoBehaviour
         pos.z = Mathf.Clamp(pos.z, -panLimit.y, panLimit.y);
 
         transform.position = pos;  
+    }
+
+    public void FocusCamera()
+    {
+        //Debug.Log("Focusing camera");
+
+        Vector3 pos = transform.position;
+
+        pos.x = player.position.x;
+        pos.z = player.position.z;
+
+        transform.position = pos;
     }
 }

@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour
     float hunger;
 
     void Start () {
+        GameController.Instance.resourceController.population++;
+        
         health = maxHealth;
         hunger = maxHunger;
     }

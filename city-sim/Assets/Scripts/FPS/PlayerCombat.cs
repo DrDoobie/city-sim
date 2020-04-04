@@ -21,8 +21,6 @@ public class PlayerCombat : MonoBehaviour
                 {
                     animator.Play("Punch");
 
-                    //Attack();
-
                     nextAttackTime = Time.time + (1.0f / attackRate);
                 }
             }            
@@ -31,8 +29,6 @@ public class PlayerCombat : MonoBehaviour
 
     public void Attack()
     {
-        //animator.Play("Punch");
-
         //Detect hittables in range
         Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
 
