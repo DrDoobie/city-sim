@@ -19,7 +19,9 @@ public class PlayerCombat : MonoBehaviour
             {
                 if(Input.GetButtonDown("Fire1"))
                 {
-                    Attack();
+                    animator.Play("Punch");
+
+                    //Attack();
 
                     nextAttackTime = Time.time + (1.0f / attackRate);
                 }
@@ -27,9 +29,9 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    void Attack()
+    public void Attack()
     {
-        animator.Play("Punch");
+        //animator.Play("Punch");
 
         //Detect hittables in range
         Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
