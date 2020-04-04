@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float movementSpeed = 5.0f, gravity = -9.81f, groundDistance = 0.4f, jumpHeight = 1.0f, crouchHeight = 1.0f;
+    public float movementSpeed = 5.0f, sprintSpeed = 8.0f, gravity = -9.81f, groundDistance = 0.4f, jumpHeight = 1.0f, crouchHeight = 1.0f;
     public CharacterController controller;
     public Transform groundCheck;
     public LayerMask groundMask;
@@ -44,40 +44,36 @@ public class PlayerMovement : MonoBehaviour
         Vector3 move = (transform.right * x) + (transform.forward * z);
 
         //Movement
-        if (!GameController.Instance.rtsMode)
+        if(!GameController.Instance.rtsMode)
         {
             controller.Move(move * movementSpeed * Time.deltaTime);
         }
 
-        //Crouching
-        if(Input.GetButton("Crouch"))
+        //Sprinting
+        if(Input.GetButton("Sprint"))
         {
-            isCrouching = true;
+            movementSpeed = sprintSpeed;
 
         } else {
-            isCrouching = false;
+            movementSpeed = _movementSpeed;
         }
 
-        CrouchCheck();
-
-        //Jumping
-        if (Input.GetButtonDown("Jump") && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
-        }
-
-        velocity.y += gravity * Time.deltaTime;
-        controller.Move(velocity * Time.deltaTime);
-    }
-
-    private void CrouchCheck()
-    {
-        if(isCrouching)
+        //Crouching
+        if(Input.GetButton("Crouch"))
         {
             controller.height = crouchHeight;
 
         } else {
             controller.height = originalHeight;
         }
+
+        //Jumping
+        if(Input.GetButtonDown("Jump") && isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime);
     }
 }

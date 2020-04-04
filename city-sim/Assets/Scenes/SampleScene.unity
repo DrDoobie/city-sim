@@ -10804,6 +10804,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 8
+  sprintSpeed: 12
   gravity: -9.81
   groundDistance: 0.4
   jumpHeight: 1
