@@ -1,20 +1,20 @@
 fileFormatVersion: 2
-guid: 76320f9f8c3153e40a903eec1826e258
+guid: a4ce02e2b37f4b948bf977ac8f9bce14
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
+  - first:
       74: 4723146814002874508
-    second: Cheetah.Attack
+    second: Leopard.Attack
   - first:
       74: -8945691123924629249
-    second: Cheetah.Idle
+    second: Leopard.Idle
   - first:
       74: -7551964380084998518
-    second: Cheetah.Run
-  - first:
-      74: 8349542763059015795
-    second: Cheetah.Walk
+    second: Leapord.Run
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -44,11 +44,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Cheetah.Attack
+      name: Leopard.Attack
       takeName: Armature|Attack
       internalID: 0
       firstFrame: 0
-      lastFrame: 21
+      lastFrame: 59
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -73,11 +73,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cheetah.Idle
+      name: Leopard.Idle
       takeName: Armature|Idle
       internalID: 0
       firstFrame: 0
-      lastFrame: 21
+      lastFrame: 59
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -102,40 +102,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cheetah.Run
+      name: Leapord.Run
       takeName: Armature|Run
       internalID: 0
       firstFrame: 0
-      lastFrame: 21
-      wrapMode: 0
-      orientationOffsetY: 0
-      level: 0
-      cycleOffset: 0
-      loop: 0
-      hasAdditiveReferencePose: 0
-      loopTime: 1
-      loopBlend: 0
-      loopBlendOrientation: 0
-      loopBlendPositionY: 0
-      loopBlendPositionXZ: 0
-      keepOriginalOrientation: 0
-      keepOriginalPositionY: 1
-      keepOriginalPositionXZ: 0
-      heightFromFeet: 0
-      mirror: 0
-      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
-      curves: []
-      events: []
-      transformMask: []
-      maskType: 3
-      maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
-    - serializedVersion: 16
-      name: Cheetah.Walk
-      takeName: Armature|Walk
-      internalID: 0
-      firstFrame: 0
-      lastFrame: 20
+      lastFrame: 79
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

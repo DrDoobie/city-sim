@@ -132,7 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a8f371baeb84fe478c53bb783359c9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderTime: 5
+  wanderTime: 7
   wanderRadius: 20
   animator: {fileID: 6402244610224231930}
   agent: {fileID: 5381573660571457953}
@@ -158,6 +158,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4627717638937697981}
     m_Modifications:
+    - target: {fileID: -7780734103960978560, guid: 7f38ddab2609054489f9dbcf9be6ed00,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b4431ab59f2fb60498a4795cedb44051, type: 2}
+    - target: {fileID: -7780734103960978560, guid: 7f38ddab2609054489f9dbcf9be6ed00,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: ba3a5f56e5f29bf42a65f4a5e5fcc6f5, type: 2}
     - target: {fileID: -4216859302048453862, guid: 7f38ddab2609054489f9dbcf9be6ed00,
         type: 3}
       propertyPath: m_LocalPosition.x
