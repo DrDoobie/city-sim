@@ -10211,7 +10211,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
@@ -10807,11 +10807,14 @@ MonoBehaviour:
   gravity: -9.81
   groundDistance: 0.4
   jumpHeight: 1
+  crouchHeight: 1
   controller: {fileID: 1528754822}
   groundCheck: {fileID: 451550928}
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  isGrounded: 0
+  isCrouching: 0
 --- !u!114 &1528754825
 MonoBehaviour:
   m_ObjectHideFlags: 0
