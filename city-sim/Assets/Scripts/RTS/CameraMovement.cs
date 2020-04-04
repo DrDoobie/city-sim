@@ -62,7 +62,7 @@ public class CameraMovement : MonoBehaviour
         Vector3 pos = transform.position;
 
         pos.x = player.position.x;
-        pos.z = player.position.z;
+        pos.z = player.position.z - 10.0f;
 
         transform.position = pos;
     }
