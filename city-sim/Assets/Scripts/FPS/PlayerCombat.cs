@@ -35,6 +35,14 @@ public class PlayerCombat : MonoBehaviour
         //Apply damage to each hit object
         foreach(Collider hit in gotHit)
         {
+            //Build ghost
+            if(hit.GetComponent<BuildingGhost>())
+            {
+                hit.GetComponent<BuildingGhost>().resources++;
+
+                GameController.Instance.resourceController.resources --;
+            }
+
             //Get resources
             if(hit.GetComponent<Resource>())
             {

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 7355198268641692702}
   - component: {fileID: -807271384652372823}
   - component: {fileID: 8099646518334682158}
-  - component: {fileID: 8538505713387366064}
-  m_Layer: 0
+  - component: {fileID: 9192944183042607499}
+  m_Layer: 11
   m_Name: Hut_Ghost
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 11400000, guid: a1f1192d689ee8a45a281ad677f48303, type: 2}
---- !u!114 &8538505713387366064
+--- !u!114 &9192944183042607499
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,6 +135,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3930878343165891680}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb94b90a3fff594fab5d0625bd1abfa, type: 3}
+  m_Script: {fileID: 11500000, guid: 0562d0b131c29124fa614758182e7ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reqResources: 5
+  resources: 0
+  building: {fileID: 3930878343165891680, guid: 3c9efc3627605a3429ed898c9b11c89e,
+    type: 3}

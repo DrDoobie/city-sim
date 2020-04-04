@@ -40,14 +40,16 @@ public class GhostObject : MonoBehaviour
 
     void Update()
     {
+        Renderer rend = GetComponent<Renderer>();
+
         if(canPlace)
         {
-            GetComponent<Renderer>().material = GameController.Instance.buildingSystem.ghostMaterial[0];
+            rend.material = GameController.Instance.buildingSystem.ghostMaterial[0];
 
             return;
         }
 
-        GetComponent<Renderer>().material = GameController.Instance.buildingSystem.ghostMaterial[1];
+        rend.material = GameController.Instance.buildingSystem.ghostMaterial[1];
     }
 
     void OnTriggerStay(Collider other)

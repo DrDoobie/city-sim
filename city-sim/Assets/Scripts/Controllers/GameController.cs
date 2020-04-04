@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public Camera rtsCam, fpsCam;
     public Transform player;
     public Text infoText;
+    public Text displayText;
     public GameObject focusButton, crosshair;
     public BuildingSystem buildingSystem;
     public SelectionController selectionController;
