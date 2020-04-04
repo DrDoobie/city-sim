@@ -3422,6 +3422,7 @@ MonoBehaviour:
   fpsCam: {fileID: 1482480927}
   player: {fileID: 1528754823}
   infoText: {fileID: 587052823}
+  focusButton: {fileID: 1162886245}
   crosshair: {fileID: 1886503967}
   buildingSystem: {fileID: 7927963}
   selectionController: {fileID: 523899777}

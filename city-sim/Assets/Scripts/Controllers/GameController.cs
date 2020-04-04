@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     public Camera rtsCam, fpsCam;
     public Transform player;
     public Text infoText;
-    public GameObject crosshair;
+    public GameObject focusButton, crosshair;
     public BuildingSystem buildingSystem;
     public SelectionController selectionController;
     public ResourceController resourceController;
@@ -83,10 +83,14 @@ public class GameController : MonoBehaviour
     {
         if(rtsMode)
         {
+            focusButton.SetActive(true);
+
             crosshair.SetActive(false);
 
             return;
         }
+
+        focusButton.SetActive(false);
 
         crosshair.SetActive(true);
     }
