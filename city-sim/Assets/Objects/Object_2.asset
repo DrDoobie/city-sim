@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf55352fd1ab942428c2aa60d590f074, type: 3}
   m_Name: Object_2
   m_EditorClassIdentifier: 
-  objInfo: '[1x1 Wall]
+  objInfo: '[Hutl]
 
-    Cost - 1 resources
+    Cost - 5 resources
 
-    1x1 wall piece
-
-    build with.'
-  cost: 1
+    A hut that will house 1 person.'
+  cost: 5

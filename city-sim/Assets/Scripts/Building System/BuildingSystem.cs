@@ -46,9 +46,15 @@ public class BuildingSystem : MonoBehaviour
         //Text ui stuff
         ObjectInfo objInfo = objToPlace.GetComponent<ObjectInfo>();
 
-        GameController.Instance.infoText.text = objInfo.obj.objInfo;
+        if(objInfo != null)
+        {
+            GameController.Instance.infoText.text = objInfo.obj.objInfo;
 
-        GameController.Instance.infoText.transform.position = mousePos;
+            GameController.Instance.infoText.transform.position = mousePos;
+
+        } else {
+            Debug.Log("No object data!");
+        }
 
         //Movement of cursor/ghost
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
@@ -143,7 +149,7 @@ public class BuildingSystem : MonoBehaviour
 
         ghostObj = objects[obj];
 
-        GameObject go = Instantiate(ghostObj, lastPos, Quaternion.identity);
+        GameObject go = Instantiate(ghostObj, lastPos, ghostObj.transform.rotation);
 
         go.AddComponent(typeof(GhostObject));
     
