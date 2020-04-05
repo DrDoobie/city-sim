@@ -4696,6 +4696,11 @@ MonoBehaviour:
     name: Build
     clip: {fileID: 8300000, guid: c62aebfa2d291bc4383377908be91732, type: 3}
     source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    name: Damage
+    clip: {fileID: 8300000, guid: f9ac8cacd85b0db4685bc03a668df018, type: 3}
+    source: {fileID: 0}
 --- !u!43 &524706215
 Mesh:
   m_ObjectHideFlags: 0
