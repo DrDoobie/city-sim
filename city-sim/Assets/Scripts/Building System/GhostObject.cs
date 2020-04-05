@@ -49,6 +49,22 @@ public class GhostObject : MonoBehaviour
             return;
         }
 
+        if(rend.materials.Length > 1)
+        {
+            Debug.Log("More than 1 material active");
+            
+            Material[] ghostMats;
+
+            ghostMats = rend.materials;
+
+            ghostMats[0] = GameController.Instance.buildingSystem.ghostMaterial[1];
+            ghostMats[1] = GameController.Instance.buildingSystem.ghostMaterial[1];
+
+            rend.materials = ghostMats;
+
+            return;
+        }
+
         rend.material = GameController.Instance.buildingSystem.ghostMaterial[1];
     }
 
