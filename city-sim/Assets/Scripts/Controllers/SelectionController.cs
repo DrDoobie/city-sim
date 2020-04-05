@@ -42,7 +42,7 @@ public class SelectionController : MonoBehaviour
         if(Physics.Raycast(ray, out hit))
         {
             //Left click
-            if(Input.GetButtonDown("Fire1") && (hit.transform.CompareTag(reqTag) || hit.transform.CompareTag(otherTag[0])))
+            if(Input.GetButtonDown("Fire1") && hit.transform.CompareTag(reqTag))
             {
                 //This is handling deselection when you click the selected object
                 if(hit.transform == selectedObj)
@@ -72,6 +72,16 @@ public class SelectionController : MonoBehaviour
                     ogMaterial = selectionRenderer.material; 
                         
                     selectionRenderer.material = materials[0];
+                }
+            }
+
+            //Point and click movement
+            if(Input.GetButtonDown("Fire1"))
+            {
+                if(selectedObj == null)
+                {
+                    Debug.Log(hit.point);
+                    player.SetDestination(hit.point);
                 }
             }
 
