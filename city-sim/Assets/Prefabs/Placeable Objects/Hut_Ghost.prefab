@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6703832160403068254}
   - component: {fileID: 187995989375190554}
   m_Layer: 11
-  m_Name: Graphics
+  m_Name: Hut_Ghost
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
