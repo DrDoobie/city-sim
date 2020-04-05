@@ -36,7 +36,7 @@ public class PlayerCombat : MonoBehaviour
         foreach(Collider hit in gotHit)
         {
             //Build ghost
-            if(hit.GetComponent<BuildingGhost>())
+            if(hit.GetComponent<BuildingGhost>() && GameController.Instance.resourceController.resources >= 1)
             {
                 hit.GetComponent<BuildingGhost>().resources++;
 
