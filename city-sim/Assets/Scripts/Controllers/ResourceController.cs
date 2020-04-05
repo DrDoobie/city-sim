@@ -6,9 +6,9 @@ using UnityEngine.UI;
 public class ResourceController : MonoBehaviour
 {
     public bool starving;
-    public int resources, population = 0;
+    public int resources, homes = 0, population = 0;
     public float food, reqFood, foodLossRate;
-    public Text resourcesText, populationText, foodText;
+    public Text resourcesText, homesText, populationText, foodText;
     
     void Start()
     {
@@ -34,6 +34,7 @@ public class ResourceController : MonoBehaviour
     private void UIController()
     {
         resourcesText.text = "Resources: " + resources.ToString("0#");
+        homesText.text = "Homes: " + homes.ToString("0#");
         populationText.text = "Population: " + population.ToString("0#");
         foodText.text = "Food: " + food.ToString("0#") + "/" + reqFood.ToString("0#");
     }
