@@ -6,6 +6,7 @@ public class SelectionController : MonoBehaviour
 {
     public string[] otherTag;
     public Transform selectedObj;
+    public UnityEngine.AI.NavMeshAgent player;
     public Material[] materials;
     
     string reqTag = "Selectable";
@@ -82,11 +83,13 @@ public class SelectionController : MonoBehaviour
 
     private void Harvest()
     {
-        Destroy(selectedObj.gameObject);
-        
-        selectedObj = null;
+        player.SetDestination(selectedObj.gameObject.transform.position);
 
-        GameController.Instance.resourceController.resources++;
+        //Destroy(selectedObj.gameObject);
+        
+        //selectedObj = null;
+
+        //GameController.Instance.resourceController.resources++;
     }
 
     public void Deselect()
