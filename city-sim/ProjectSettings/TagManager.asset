@@ -7,7 +7,6 @@ TagManager:
   - Selectable
   - Terrain
   - Creature
-  - Water
   layers:
   - Default
   - TransparentFX
