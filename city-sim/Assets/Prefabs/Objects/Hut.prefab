@@ -139,3 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf0d64e12a5a4784486fbbbe5f513de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxOccupants: 1
+  occupants: 0
+  occupant: {fileID: 3599642957610055903, guid: 291c63238c9e1dd4a87f8f030cd005cd,
+    type: 3}

@@ -1152,6 +1152,7 @@ GameObject:
   - component: {fileID: 3599642957610055901}
   - component: {fileID: 3599642957610055900}
   - component: {fileID: 7649078881509834110}
+  - component: {fileID: 8587474084204871161}
   - component: {fileID: 6664157592123229963}
   m_Layer: 0
   m_Name: Human
@@ -1233,6 +1234,18 @@ MonoBehaviour:
   wanderRadius: 5
   animator: {fileID: 3599642957782537329}
   agent: {fileID: 3599642957610055900}
+--- !u!114 &8587474084204871161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3599642957610055903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2071518ecd2c0141bf2cdcc6b69940e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &6664157592123229963
 MonoBehaviour:
   m_ObjectHideFlags: 0
