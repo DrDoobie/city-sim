@@ -18,7 +18,7 @@ public class PlayerCombat : MonoBehaviour
 
         if(Time.time >= nextAttackTime)
         {
-            if(Input.GetButtonDown("Fire1") && !GameController.Instance.rtsMode)
+            if(Input.GetButton("Fire1") && !GameController.Instance.rtsMode)
             {
                 animator.Play("Punch");
 

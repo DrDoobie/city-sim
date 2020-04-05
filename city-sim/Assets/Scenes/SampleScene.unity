@@ -13329,7 +13329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inRange: 0
-  attackRange: 2
+  attackRange: 1.5
   damage: 15
   attackRate: 2
   attackPoint: {fileID: 192172058}
