@@ -5,7 +5,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Object", menuName = "Object")]
 public class Object : ScriptableObject
 {
-    public bool rotX, rotY, rotZ;
-    [TextArea] public string objInfo;
+    public bool layerSpecific, rotX, rotY, rotZ;
     public int cost;
+    [TextArea] public string objInfo;
+    public LayerMask layerMask;
 }

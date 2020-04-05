@@ -7,17 +7,26 @@ public class ResourceController : MonoBehaviour
 {
     public bool starving;
     public int resources, homes = 0, population = 0;
-    public float food, reqFood, foodLossRate;
+    public float food, maxFood, foodLossRate;
     public Text resourcesText, homesText, populationText, foodText;
     
     void Start()
     {
-        food = reqFood;
+        food = maxFood;
     }
 
     void Update ()
     {
         UIController();
+        FoodController();
+    }
+
+    private void FoodController()
+    {
+        if(food >= maxFood)
+        {
+            food = maxFood;
+        }
 
         if(food <= 0)
         {
@@ -36,6 +45,6 @@ public class ResourceController : MonoBehaviour
         resourcesText.text = "Resources: " + resources.ToString("0#");
         homesText.text = "Homes: " + homes.ToString("0#");
         populationText.text = "Population: " + population.ToString("0#");
-        foodText.text = "Food: " + food.ToString("0#") + "/" + reqFood.ToString("0#");
+        foodText.text = "Food: " + food.ToString("0#") + "/" + maxFood.ToString("0#");
     }
 }

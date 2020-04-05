@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf55352fd1ab942428c2aa60d590f074, type: 3}
   m_Name: Object_2
   m_EditorClassIdentifier: 
+  layerSpecific: 1
   rotX: 0
   rotY: 0
   rotZ: 1
+  cost: 2
   objInfo: '[Fish Trap]
 
     Cost - 2 resources
@@ -25,4 +27,6 @@ MonoBehaviour:
     food. Can only place
 
     in water.'
-  cost: 2
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 16

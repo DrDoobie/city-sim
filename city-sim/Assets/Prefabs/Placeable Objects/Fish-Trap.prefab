@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 9032782903999712170}
   m_Layer: 0
   m_Name: Fish-Trap
-  m_TagString: Untagged
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,4 +122,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   genResources: 0
   genFood: 1
-  time: 5
+  time: 10

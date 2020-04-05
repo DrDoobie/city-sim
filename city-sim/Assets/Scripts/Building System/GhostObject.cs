@@ -40,6 +40,7 @@ public class GhostObject : MonoBehaviour
 
     void Update()
     {
+        //Material controller
         Renderer rend = GetComponent<Renderer>();
 
         if(canPlace)
@@ -86,6 +87,8 @@ public class GhostObject : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
+        //
+
         if(!other.CompareTag(reqTag))
         {
             canPlace = false;
