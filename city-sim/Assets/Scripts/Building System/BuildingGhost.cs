@@ -17,16 +17,10 @@ public class BuildingGhost : MonoBehaviour
             if(inRange)
             {
                 CheckResources();
-
-                return;
             }
-
-            GameController.Instance.displayText.text = "";
 
             return;
         }
-
-        GameController.Instance.displayText.text = "";
     }
 
     private void CheckResources()
@@ -61,6 +55,8 @@ public class BuildingGhost : MonoBehaviour
         if(other.tag == "Player")
         {
             inRange = false;
+
+            GameController.Instance.displayText.text = "";
         }
     }
 }
