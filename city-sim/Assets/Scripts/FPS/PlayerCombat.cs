@@ -46,7 +46,7 @@ public class PlayerCombat : MonoBehaviour
             //Get resources
             if(hit.GetComponent<Resource>())
             {
-                Debug.Log("Harvesting resource!");
+                //Debug.Log("Harvesting resource!");
                 hit.GetComponent<Resource>().health -= damage;
             }
 

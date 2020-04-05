@@ -145,7 +145,7 @@ public class BuildingSystem : MonoBehaviour
         
                 GameController.Instance.resourceController.resources -= objInfo.obj.cost;
 
-                Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
+                //Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
                 return;
             }
 
