@@ -80,7 +80,7 @@ public class SelectionController : MonoBehaviour
             {
                 if(selectedObj == null)
                 {
-                    Debug.Log(hit.point);
+                    //Debug.Log(hit.point);
                     player.SetDestination(hit.point);
                 }
             }
