@@ -8365,10 +8365,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Elephant
       objectReference: {fileID: 0}
+    - target: {fileID: 3821042650899350083, guid: e3e9ab98a6625bb4db8d94b18753d078,
+        type: 3}
+      propertyPath: wanderRadius
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 3821042650899350085, guid: e3e9ab98a6625bb4db8d94b18753d078,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -10.63
       objectReference: {fileID: 0}
     - target: {fileID: 3821042650899350085, guid: e3e9ab98a6625bb4db8d94b18753d078,
         type: 3}
@@ -8378,7 +8383,7 @@ PrefabInstance:
     - target: {fileID: 3821042650899350085, guid: e3e9ab98a6625bb4db8d94b18753d078,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 121.75
+      value: 124.6
       objectReference: {fileID: 0}
     - target: {fileID: 3821042650899350085, guid: e3e9ab98a6625bb4db8d94b18753d078,
         type: 3}
