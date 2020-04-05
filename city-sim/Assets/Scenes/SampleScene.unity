@@ -362,7 +362,6 @@ MonoBehaviour:
   objects:
   - {fileID: 6703832160403068249, guid: 754b1b74f248778409320738b73ce5c9, type: 3}
   - {fileID: 4167084913302868385, guid: cfa56d9fc045ee74cb3e653d30b682b3, type: 3}
-  - {fileID: 3830026711300637085, guid: 46410bafc7f85564d9618a44f8b525dd, type: 3}
 --- !u!1001 &9380678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4667,7 +4666,7 @@ MonoBehaviour:
   population: 0
   food: 0
   maxFood: 10
-  foodLossRate: 2
+  foodLossRate: 0.5
   resourcesText: {fileID: 1512916648}
   homesText: {fileID: 520959424}
   populationText: {fileID: 2039046435}
@@ -11056,9 +11055,9 @@ GameObject:
   - component: {fileID: 1277783378}
   - component: {fileID: 1277783377}
   - component: {fileID: 1277783376}
-  m_Layer: 4
+  m_Layer: 0
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Water
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

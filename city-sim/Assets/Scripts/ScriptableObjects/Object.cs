@@ -8,5 +8,4 @@ public class Object : ScriptableObject
     public bool layerSpecific, rotX, rotY, rotZ;
     public int cost;
     [TextArea] public string objInfo;
-    public LayerMask layerMask;
 }
