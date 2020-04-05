@@ -250,7 +250,6 @@ GameObject:
   - component: {fileID: 7927959}
   - component: {fileID: 7927962}
   - component: {fileID: 7927963}
-  - component: {fileID: 7927964}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -364,18 +363,6 @@ MonoBehaviour:
   - {fileID: 8042501080422931851, guid: 260d5dd374a8d994ab295ab1e403f16b, type: 3}
   - {fileID: 3322090982347625357, guid: c7ad42291c5d3f244b3d18fa7b7e7f6f, type: 3}
   - {fileID: 3930878343165891680, guid: 7ba634b254d2fe444973cd96a5909318, type: 3}
---- !u!114 &7927964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7927958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 675fb040987e0e34bb09c00de3e3e922, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &9380678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12952,6 +12939,7 @@ GameObject:
   - component: {fileID: 1528754824}
   - component: {fileID: 1528754825}
   - component: {fileID: 1528754826}
+  - component: {fileID: 1528754828}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -13049,7 +13037,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d52b858a05508794da14ce65809795e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 0.75
+  inRange: 0
+  attackRange: 1
   damage: 15
   attackRate: 2
   attackPoint: {fileID: 192172058}
@@ -13071,7 +13060,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -13079,6 +13068,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &1528754828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528754821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2ff8064c3726b4999b10273c8919ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 8296172668870687525}
 --- !u!43 &1533405105
 Mesh:
   m_ObjectHideFlags: 0

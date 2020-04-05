@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class SelectionController : MonoBehaviour
 {
     public string[] otherTag;
     public Transform selectedObj;
-    public UnityEngine.AI.NavMeshAgent player;
+    public NavMeshAgent player;
     public Material[] materials;
     
     string reqTag = "Selectable";
@@ -20,8 +21,12 @@ public class SelectionController : MonoBehaviour
         {
             SelectionSystem();
 
+            player.enabled = true;
+
             return;
         }
+
+        player.enabled = false;
 
         if(selectedObj != null)
         {
@@ -84,12 +89,6 @@ public class SelectionController : MonoBehaviour
     private void Harvest()
     {
         player.SetDestination(selectedObj.gameObject.transform.position);
-
-        //Destroy(selectedObj.gameObject);
-        
-        //selectedObj = null;
-
-        //GameController.Instance.resourceController.resources++;
     }
 
     public void Deselect()
