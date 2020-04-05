@@ -48,6 +48,8 @@ public class PlayerCombat : MonoBehaviour
             {
                 //Debug.Log("Harvesting resource!");
                 hit.GetComponent<Resource>().health -= damage;
+
+                FindObjectOfType<AudioManager>().PlaySound("Hit Marker");
             }
 
             //Damage enemy
@@ -59,7 +61,10 @@ public class PlayerCombat : MonoBehaviour
             Health enemyHealth = hit.GetComponent<Health>();
 
             enemyHealth.health -= damage;
-            Debug.Log("Dealt " + damage + " dmg to " + hit.transform.name);
+
+            FindObjectOfType<AudioManager>().PlaySound("Hit Marker");
+
+            //Debug.Log("Dealt " + damage + " dmg to " + hit.transform.name);
         }
     }
 
