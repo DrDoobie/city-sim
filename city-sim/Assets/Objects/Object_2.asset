@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf55352fd1ab942428c2aa60d590f074, type: 3}
   m_Name: Object_2
   m_EditorClassIdentifier: 
-  objInfo: '[Hutl]
+  rotX: 0
+  rotY: 0
+  rotZ: 1
+  objInfo: '[Fish Trap]
 
-    Cost - 5 resources
+    Cost - 2 resources
 
-    A hut that will house 1 person.'
-  cost: 5
+    Use this to automatically
+
+    generate
+    food. Can only place
+
+    in water.'
+  cost: 2

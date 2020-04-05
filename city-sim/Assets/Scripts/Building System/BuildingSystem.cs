@@ -10,7 +10,8 @@ public class BuildingSystem : MonoBehaviour
     public GameObject ghostObj;
     public GameObject objToPlace;
     public GameObject[] objects;
-
+    
+    bool rotX, rotY, rotZ;
     int lastPosX, lastPosY, lastPosZ, obj;
     float lastScroll;
     Vector3 mousePos, lastPos;
@@ -74,9 +75,28 @@ public class BuildingSystem : MonoBehaviour
             }
 
             //Rotation
+            rotX = objInfo.obj.rotX;
+
+            rotY = objInfo.obj.rotY;
+
+            rotZ = objInfo.obj.rotZ;
+
             if(Input.GetButtonDown("Rotate"))
             {
-                ghostObj.transform.Rotate(Vector3.up, rotateAngle);
+                if(rotX)
+                {
+                    ghostObj.transform.Rotate(Vector3.left, rotateAngle);
+                }
+
+                if(rotY)
+                {
+                    ghostObj.transform.Rotate(Vector3.up, rotateAngle);
+                }
+
+                if(rotZ)
+                {
+                    ghostObj.transform.Rotate(Vector3.forward, rotateAngle);
+                }
             }
 
             if(Input.GetButtonDown("Fire1"))

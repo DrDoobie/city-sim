@@ -12,6 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf55352fd1ab942428c2aa60d590f074, type: 3}
   m_Name: Object_0
   m_EditorClassIdentifier: 
-  objInfo: "[Oil Well]\nCost - 5 resources\nAutomatically harvests 1 \nresource every
-    5 seconds."
+  rotX: 0
+  rotY: 0
+  rotZ: 1
+  objInfo: '[Hutl]
+
+    Cost - 5 resources
+
+    A hut that will house 1 person.'
   cost: 5

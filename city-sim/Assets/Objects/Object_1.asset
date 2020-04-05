@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf55352fd1ab942428c2aa60d590f074, type: 3}
   m_Name: Object_1
   m_EditorClassIdentifier: 
-  objInfo: '[Rabbit Trap]
+  rotX: 0
+  rotY: 0
+  rotZ: 1
+  objInfo: '[Lumber Mill]
 
-    Cost - 2 resources
+    Cost - 10 resources
 
-    Use this to automatically
+    Lumber mills automatically
 
     generate
-    food.'
-  cost: 2
+    resources over time.'
+  cost: 10
