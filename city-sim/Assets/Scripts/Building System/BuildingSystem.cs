@@ -145,6 +145,8 @@ public class BuildingSystem : MonoBehaviour
         
                 GameController.Instance.resourceController.resources -= objInfo.obj.cost;
 
+                FindObjectOfType<AudioManager>().PlaySound("Build");
+
                 //Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
                 return;
             }

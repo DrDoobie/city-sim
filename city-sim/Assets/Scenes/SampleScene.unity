@@ -4691,6 +4691,11 @@ MonoBehaviour:
     name: Hit Marker
     clip: {fileID: 8300000, guid: 5412f44945e2e2145b7039d0036c9603, type: 3}
     source: {fileID: 0}
+  - volume: 1
+    pitch: 1
+    name: Build
+    clip: {fileID: 8300000, guid: c62aebfa2d291bc4383377908be91732, type: 3}
+    source: {fileID: 0}
 --- !u!43 &524706215
 Mesh:
   m_ObjectHideFlags: 0

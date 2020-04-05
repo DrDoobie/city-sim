@@ -49,6 +49,13 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
+    public void TakeDamage(float value)
+    {
+        health -= value;
+
+        FindObjectOfType<AudioManager>().PlaySound("Damage");
+    }
+
     private void UIController()
     {
         hungerBar.maxValue = maxHunger;

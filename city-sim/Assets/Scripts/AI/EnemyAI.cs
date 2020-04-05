@@ -86,7 +86,7 @@ public class EnemyAI : MonoBehaviour
                if(Time.time >= nextAttackTime)
                {
                    Debug.Log("Eating player");
-                   hit.GetComponent<PlayerStats>().health -= attackDamage;
+                   hit.GetComponent<PlayerStats>().TakeDamage(attackDamage);
 
                    nextAttackTime = Time.time + (1.0f / attackRate);
                }

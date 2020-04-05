@@ -41,6 +41,8 @@ public class PlayerCombat : MonoBehaviour
                 hit.GetComponent<BuildingGhost>().resources++;
 
                 GameController.Instance.resourceController.resources --;
+
+                FindObjectOfType<AudioManager>().PlaySound("Build");
             }
 
             //Get resources
