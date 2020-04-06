@@ -2372,6 +2372,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!4 &265257425 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 60254191426938483, guid: 3c9efc3627605a3429ed898c9b11c89e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1828714976}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &265356408
 Mesh:
   m_ObjectHideFlags: 0
@@ -8303,12 +8309,13 @@ MonoBehaviour:
   fleeing: 0
   maxHealth: 100
   health: 0
-  wanderCoolDown: 5
-  wanderRadius: 10
-  fleeTime: 3
   destination: {x: 0, y: 0, z: 0}
   animator: {fileID: 5653122790322845904}
   agent: {fileID: 6630857826686039179}
+  wanderCoolDown: 5
+  wanderRadius: 5
+  awarenessRadius: 7.1
+  fleeTime: 3
 --- !u!43 &959261420
 Mesh:
   m_ObjectHideFlags: 0
@@ -15101,7 +15108,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 6630857826686039180}
     m_Modifications:
     - target: {fileID: 60254191426938483, guid: 3c9efc3627605a3429ed898c9b11c89e,
         type: 3}
@@ -15141,7 +15148,7 @@ PrefabInstance:
     - target: {fileID: 60254191426938483, guid: 3c9efc3627605a3429ed898c9b11c89e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 60254191426938483, guid: 3c9efc3627605a3429ed898c9b11c89e,
         type: 3}
@@ -19155,6 +19162,7 @@ GameObject:
   - component: {fileID: 6630857826686039177}
   - component: {fileID: 6630857826686039179}
   - component: {fileID: 956540794}
+  - component: {fileID: 6630857826686039178}
   m_Layer: 9
   m_Name: NewPig
   m_TagString: Creature
@@ -19175,6 +19183,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.2911956, z: 2.1023278}
   m_Center: {x: 0, y: 0.6455978, z: 0.16987133}
+--- !u!114 &6630857826686039178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6630857826686039176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 530004235b5c37f46a68ca6fe4ced4b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  viewRadius: 10
+  viewAngle: 0
 --- !u!195 &6630857826686039179
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -19209,8 +19231,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6238134298931131287}
+  - {fileID: 265257425}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6722871656344559251
 GameObject:

@@ -5,10 +5,18 @@ using UnityEngine.AI;
 public class Animal : MonoBehaviour
 {
     public bool walking = false, fleeing = false;
-    public float maxHealth = 100.0f, health, wanderCoolDown = 5.0f, wanderRadius = 15.0f, fleeTime;
+    public float maxHealth = 100.0f, health;
     public Vector3 destination;
     public Animator animator;
     public NavMeshAgent agent;
+
+    [Header("AI Settings")]
+    public float wanderCoolDown = 5.0f;
+    [Range(0.0f, 50.0f)]
+    public float wanderRadius = 15.0f;
+    [Range(0.0f, 50.0f)]
+    public float awarenessRadius = 15.0f;
+    public float fleeTime = 3.0f;
 
     bool isAnimated = false;
     Transform enemy;
@@ -18,7 +26,7 @@ public class Animal : MonoBehaviour
         {
             isAnimated = true;
         }
-
+        
         Idle();
 
         health = maxHealth; 
