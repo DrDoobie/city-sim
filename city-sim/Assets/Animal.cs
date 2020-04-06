@@ -26,7 +26,7 @@ public class Animal : MonoBehaviour
         {
             isAnimated = true;
         }
-        
+
         Idle();
 
         health = maxHealth; 
@@ -46,7 +46,7 @@ public class Animal : MonoBehaviour
 
     void Idle()
     {
-        Debug.Log("Idle");
+        //Debug.Log("Idle");
     }
 
     IEnumerator Wander()
@@ -90,7 +90,7 @@ public class Animal : MonoBehaviour
             return;
         }
 
-        Debug.Log("Fleeing!");
+        //Debug.Log("Fleeing!");
         Vector3 disFromEnemy = transform.position - enemy.position;
 
         Vector3 runPosition = transform.position + disFromEnemy;
