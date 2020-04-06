@@ -55,14 +55,14 @@ public class PlayerCombat : MonoBehaviour
             }
 
             //Damage enemy
-            if(hit.GetComponent<Health>() == null)
+            if(hit.GetComponent<Animal>() == null)
             {
                 return;
             }
 
-            Health enemyHealth = hit.GetComponent<Health>();
+            Animal enemyHealth = hit.GetComponent<Animal>();
 
-            enemyHealth.health -= damage;
+            enemyHealth.TakeDamage(damage, this.transform);
 
             FindObjectOfType<AudioManager>().PlaySound("Hit Marker");
 

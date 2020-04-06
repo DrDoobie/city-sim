@@ -1,16 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.AI;
 
 public class Animal : MonoBehaviour
 {
-    public bool idle;
-    public float wanderCoolDown, wanderRadius;
+    public bool walking = false, fleeing = false;
+    public float maxHealth = 100.0f, health, wanderCoolDown = 5.0f, wanderRadius = 15.0f, fleeTime;
     public Vector3 destination;
     public Animator animator;
     public NavMeshAgent agent;
 
     bool isAnimated = false;
-    float _wanderCoolDown;
+    Transform enemy;
 
     void Start(){
         if(animator != null)
@@ -20,16 +21,17 @@ public class Animal : MonoBehaviour
 
         Idle();
 
-        _wanderCoolDown = wanderCoolDown;
+        health = maxHealth; 
+
+        StartCoroutine(Wander());   
     }
 
     void Update()
     {
         agent.SetDestination(destination);
 
-        Wander();
-
-        //Run away
+        WanderCheck();
+        FleeCheck();
 
         //Attack
     }
@@ -37,23 +39,64 @@ public class Animal : MonoBehaviour
     void Idle()
     {
         Debug.Log("Idle");
-        idle = true;
     }
 
-    void Wander()
+    IEnumerator Wander()
     {
-        idle = false;
+        Vector3 wanderPosition = new Vector3(Random.Range(-wanderRadius, wanderRadius), 0, Random.Range(-wanderRadius, wanderRadius)) + transform.position; 
 
-        wanderCoolDown -= Time.deltaTime;
+        //Debug.Log("Walking");
+        walking = true;
 
-        if(wanderCoolDown <= 0.0f)
+        destination = wanderPosition;
+
+        yield return new WaitForSeconds(wanderCoolDown);
+
+        StartCoroutine(Wander());
+    }
+
+    private void WanderCheck()
+    {
+        float disToTarget = Vector3.Distance(agent.destination, transform.position);
+
+        if(disToTarget <= agent.stoppingDistance)
         {
-            Vector3 wanderPosition = new Vector3(Random.Range(-wanderRadius, wanderRadius), 0, Random.Range(-wanderRadius, wanderRadius)) + transform.position; 
-
-            Debug.Log("Walking");
-            destination = wanderPosition;
-
-            wanderCoolDown = _wanderCoolDown;
+            //Debug.Log("Reached destination");
+            walking = false;
         }
+    }
+
+    IEnumerator Flee()
+    {
+        fleeing = true;
+
+        yield return new WaitForSeconds(fleeTime);
+
+        fleeing = false;
+    }
+
+    void FleeCheck()
+    {
+        if(!fleeing)
+        {
+            return;
+        }
+
+        Debug.Log("Fleeing!");
+        Vector3 disFromEnemy = transform.position - enemy.position;
+
+        Vector3 runPosition = transform.position + disFromEnemy;
+
+        destination = runPosition;
+    }
+
+    public void TakeDamage(float value, Transform target)
+    {
+        Debug.Log("Taking damage!");
+        health -= value;
+
+        enemy = target;
+
+        StartCoroutine(Flee());
     }
 }
