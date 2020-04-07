@@ -15,7 +15,6 @@ public class Animal : MonoBehaviour
     [Range(0.0f, 50.0f)]
     public float wanderRadius = 15.0f;
     [Range(0.0f, 50.0f)]
-    public float awarenessRadius = 15.0f;
     public float fleeTime = 3.0f;
 
     bool isAnimated = false;
