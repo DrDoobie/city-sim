@@ -40,6 +40,11 @@ public class Animal : MonoBehaviour
     {
         agent.SetDestination(destination);
 
+        if(isAnimated)
+        {
+            AnimationControl();
+        }
+
         WanderCheck();
         FleeCheck();
 
@@ -49,6 +54,20 @@ public class Animal : MonoBehaviour
     void Idle()
     {
         //Debug.Log("Idle");
+    }
+
+    void AnimationControl()
+    {
+        if(walking)
+        {
+            animator.SetBool("isWalking", true);
+            animator.SetBool("isIdle", false);
+
+            return;
+        }
+
+        animator.SetBool("isWalking", false);
+        animator.SetBool("isIdle", true);
     }
 
     IEnumerator Wander()

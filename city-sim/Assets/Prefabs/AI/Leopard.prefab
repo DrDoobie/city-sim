@@ -40,6 +40,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1425346256463927588}
+  - component: {fileID: 7481856714740609421}
   - component: {fileID: 1425346256463927586}
   - component: {fileID: 1425346256463927577}
   - component: {fileID: 1425346256463927590}
@@ -66,6 +67,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7481856714740609421
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425346256463927591}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6492224, y: 1.3307595, z: 2.0937512}
+  m_Center: {x: -0.0141469985, y: 0.66537976, z: 0.0862571}
 --- !u!195 &1425346256463927586
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -107,9 +121,18 @@ MonoBehaviour:
   destination: {x: 0, y: 0, z: 0}
   animator: {fileID: 8167634016030258808}
   agent: {fileID: 1425346256463927586}
-  wanderCoolDown: 5
-  wanderRadius: 15
+  isAggresive: 1
+  wanderCoolDown: 10
+  wanderRadius: 50
   fleeTime: 3
+  attackDamage: 15
+  attackRate: 2
+  attackCoolDown: 0
+  attackRange: 1
+  attackPoint: {fileID: 6520947761088748763}
+  hittableLayers:
+    serializedVersion: 2
+    m_Bits: 4096
 --- !u!114 &1425346256463927590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 15
-  viewAngle: 45
+  viewAngle: 120
   targetMask:
     serializedVersion: 2
     m_Bits: 4096
@@ -155,7 +178,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3819059479502015998}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.408, y: 1, z: 1.5}
+  m_LocalPosition: {x: 0, y: 1, z: 1.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1425346256463927588}
