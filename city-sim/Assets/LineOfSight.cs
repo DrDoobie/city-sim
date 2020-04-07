@@ -35,7 +35,13 @@ public class LineOfSight : MonoBehaviour
                 {
                     visibleTargets.Add(target);
 
-                    //THIS IS WHERE WE DO THINGS TO THE DETECTED ENEMY/WHATEVER
+                    //Handling attack
+                    if(GetComponent<Animal>())
+                    {
+                        gameObject.SendMessage("CheckForTarget", target);
+
+                        gameObject.SendMessage("Attack");
+                    }
                 }
             }
         }

@@ -11,11 +11,14 @@ public class Animal : MonoBehaviour
     public NavMeshAgent agent;
 
     [Header("AI Settings")]
+    public bool isAggresive;
     public float wanderCoolDown = 5.0f;
     [Range(0.0f, 50.0f)]
     public float wanderRadius = 15.0f;
-    [Range(0.0f, 50.0f)]
     public float fleeTime = 3.0f;
+    public float attackDamage = 15.0f, attackRate = 2.0f, attackCoolDown, attackRange = 1.0f;
+    public Transform attackPoint;
+    public LayerMask hittableLayers;
 
     bool isAnimated = false;
     Transform enemy;
@@ -40,7 +43,7 @@ public class Animal : MonoBehaviour
         WanderCheck();
         FleeCheck();
 
-        //Attack
+        //Chase 
     }
 
     void Idle()
@@ -97,6 +100,35 @@ public class Animal : MonoBehaviour
         destination = runPosition;
     }
 
+    void Attack()
+    {
+        //Detect hittables in range
+        Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
+
+        //Apply damage to each hit object
+        foreach(Collider hit in gotHit)
+        {
+            if(hit.GetComponent<PlayerStats>())
+            {
+               if(Time.time >= attackCoolDown)
+               {
+                   Debug.Log("Attacking!");
+                   hit.GetComponent<PlayerStats>().TakeDamage(attackDamage);
+
+                   attackCoolDown = Time.time + (1.0f / attackRate);
+               }
+            }
+        }
+    }
+
+    void CheckForTarget(Transform target)
+    {
+        if(isAggresive)
+        {
+            destination = target.position;
+        }
+    }
+
     public void TakeDamage(float value, Transform target)
     {
         Debug.Log("Taking damage!");
@@ -105,5 +137,16 @@ public class Animal : MonoBehaviour
         enemy = target;
 
         StartCoroutine(Flee());
+    }
+
+    //Visualizes the attack range/collider
+    void OnDrawGizmosSelected()
+    {
+        if(attackPoint == null)
+        {
+            return;
+        }
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

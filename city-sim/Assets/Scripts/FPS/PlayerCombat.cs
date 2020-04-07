@@ -64,7 +64,7 @@ public class PlayerCombat : MonoBehaviour
 
             enemyHealth.TakeDamage(damage, this.transform);
 
-            FindObjectOfType<AudioManager>().PlaySound("Hit Marker");
+            FindObjectOfType<AudioManager>().PlaySound("Smack");
 
             //Debug.Log("Dealt " + damage + " dmg to " + hit.transform.name);
         }
