@@ -150,12 +150,19 @@ public class Animal : MonoBehaviour
 
     public void TakeDamage(float value, Transform target)
     {
-        Debug.Log("Taking damage!");
+        //Debug.Log("Taking damage!");
         health -= value;
 
         enemy = target;
 
-        StartCoroutine(Flee());
+        if(!isAggresive)
+        {
+            StartCoroutine(Flee());
+
+            return;
+        }
+
+        transform.LookAt(target);
     }
 
     //Visualizes the attack range/collider
