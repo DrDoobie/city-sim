@@ -108,7 +108,7 @@ public class Animal : MonoBehaviour
         //Apply damage to each hit object
         foreach(Collider hit in gotHit)
         {
-            if(hit.GetComponent<PlayerStats>())
+            if(hit.GetComponent<PlayerStats>() && isAggresive)
             {
                if(Time.time >= attackCoolDown)
                {
