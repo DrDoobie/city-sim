@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class ResourceController : MonoBehaviour
 {
     public bool starving;
-    public int resources, homes = 0, population = 0;
+    public int resources, homes = 0;
     public float food, maxFood, foodLossRate;
     public Text resourcesText, homesText, populationText, foodText;
+    public List<GameObject> population = new List<GameObject>();
     
     void Start()
     {
@@ -37,14 +38,14 @@ public class ResourceController : MonoBehaviour
 
         starving = false;
 
-        food -= Time.deltaTime * (foodLossRate * population * 0.1f);
+        food -= Time.deltaTime * (foodLossRate * population.Capacity * 0.1f);
     }
 
     private void UIController()
     {
         resourcesText.text = "Resources: " + resources.ToString("0#");
         homesText.text = "Homes: " + homes.ToString("0#");
-        populationText.text = "Population: " + population.ToString("0#");
+        populationText.text = "Population: " + population.Capacity.ToString("0#");
         foodText.text = "Food: " + food.ToString("0#") + "/" + maxFood.ToString("0#");
     }
 }

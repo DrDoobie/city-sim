@@ -24,8 +24,6 @@ public class Human : MonoBehaviour
     Transform enemy;
 
     void Start(){
-        GameController.Instance.resourceController.population++;
-
         if(animator != null)
         {
             isAnimated = true;

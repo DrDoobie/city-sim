@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: -7044372583463770043}
   - component: {fileID: 3806092163039948607}
   - component: {fileID: 1614153304505264736}
-  - component: {fileID: 1761788122225036677}
   m_Layer: 0
   m_Name: Lumber-Mill
   m_TagString: Selectable
@@ -127,18 +126,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
---- !u!114 &1761788122225036677
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 98998544037707947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 311a051f83cad194eba2c9d82d965ee1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  genResources: 1
-  genFood: 0
-  time: 5

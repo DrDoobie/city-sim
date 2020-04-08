@@ -127,7 +127,7 @@ MonoBehaviour:
   fleeTime: 3
   attackDamage: 15
   attackRate: 2
-  attackCoolDown: 0
+  attackCoolDown: 1
   attackRange: 1
   attackPoint: {fileID: 6520947761088748763}
   hittableLayers:

@@ -152,8 +152,8 @@ MonoBehaviour:
   animator: {fileID: 3857756969215532005}
   agent: {fileID: 3857756970438489590}
   isAggresive: 0
-  wanderCoolDown: 5
-  wanderRadius: 15
+  wanderCoolDown: 10
+  wanderRadius: 5
   fleeTime: 3
   attackDamage: 15
   attackRate: 2
