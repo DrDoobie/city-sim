@@ -153,6 +153,11 @@ public class Animal : MonoBehaviour
         //Debug.Log("Taking damage!");
         health -= value;
 
+        if(health <= 0)
+        {
+            Die();
+        }
+
         enemy = target;
 
         if(!isAggresive)
@@ -163,9 +168,6 @@ public class Animal : MonoBehaviour
         }
 
         transform.LookAt(target);
-
-        if(health <= 0)
-            Die();
     }
 
     void Die()
