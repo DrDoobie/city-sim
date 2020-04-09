@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -26,7 +27,13 @@ public class PlayerMovement : MonoBehaviour
         if(!GameController.Instance.rtsMode)
         {
             MovementController();
+
+            GetComponent<NavMeshAgent>().enabled = false;
+
+            return;
         }
+
+        GetComponent<NavMeshAgent>().enabled = true;
     }
 
     private void MovementController()

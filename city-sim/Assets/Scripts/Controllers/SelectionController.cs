@@ -15,7 +15,10 @@ public class SelectionController : MonoBehaviour
 
     void Update()
     {
-        RayController();
+        if(GameController.Instance.rtsMode)
+        {
+            RayController();
+        }
     }
 
     void RayController()
