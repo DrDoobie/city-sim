@@ -36,8 +36,8 @@ public class GameController : MonoBehaviour
         ModeController();
         Crosshair();
     }
-    
-    private void ModeController()
+
+    void ModeController()
     {
         if(Input.GetButtonDown("ModeSwitch"))
         {
@@ -80,7 +80,7 @@ public class GameController : MonoBehaviour
         fpsCam.GetComponent<AudioListener>().enabled = true;
     }
 
-    private void Crosshair()
+    void Crosshair()
     {
         if(rtsMode)
         {

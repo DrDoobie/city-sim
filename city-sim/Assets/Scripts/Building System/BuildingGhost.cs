@@ -12,14 +12,14 @@ public class BuildingGhost : MonoBehaviour
     
     private void Update()
     {
-        if(!GameController.Instance.rtsMode)
+        if(inRange)
         {
-            if(inRange)
-            {
-                CheckResources();
-            }
+            CheckResources();
+        }
 
-            return;
+        if(GameController.Instance.rtsMode)
+        {
+            GameController.Instance.displayText.text = "";
         }
     }
 

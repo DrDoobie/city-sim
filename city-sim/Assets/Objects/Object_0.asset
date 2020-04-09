@@ -16,7 +16,7 @@ MonoBehaviour:
   rotX: 0
   rotY: 0
   rotZ: 1
-  cost: 5
+  cost: 1
   objInfo: '[Hut]
 
     Cost - 5 resources

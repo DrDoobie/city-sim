@@ -16,7 +16,7 @@ MonoBehaviour:
   rotX: 0
   rotY: 0
   rotZ: 1
-  cost: 10
+  cost: 1
   objInfo: '[Lumber Mill]
 
     Cost - 10 resources

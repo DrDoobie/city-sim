@@ -24,7 +24,16 @@ public class PlayerStats : MonoBehaviour
         HealthController();
     }
 
-    private void HungerController()
+    void UIController()
+    {
+        hungerBar.maxValue = maxHunger;
+        hungerBar.value = hunger;
+
+        healthBar.maxValue = maxHealth;
+        healthBar.value = health;
+    }
+
+    void HungerController()
     {
         if(GameController.Instance.resourceController.starving)
         {
@@ -39,14 +48,25 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    private void HealthController()
+    void HealthController()
     {
         if(health <= 0.0f)
         {
-            Debug.Log("Died!");
-
-            Time.timeScale = 0.0f;
+            Die();
         }
+    }
+
+    void Die()
+    {
+        Debug.Log("Player death");
+
+        GameController.Instance.player.position = new Vector3(0.0f, 0.0f, 0.0f);
+
+        GameController.Instance.rtsMode = true;
+
+        hunger = maxHunger;
+        
+        health = maxHealth;
     }
 
     public void TakeDamage(float value)
@@ -54,14 +74,5 @@ public class PlayerStats : MonoBehaviour
         health -= value;
 
         FindObjectOfType<AudioManager>().PlaySound("Damage");
-    }
-
-    private void UIController()
-    {
-        hungerBar.maxValue = maxHunger;
-        hungerBar.value = hunger;
-
-        healthBar.maxValue = maxHealth;
-        healthBar.value = health;
     }
 }
