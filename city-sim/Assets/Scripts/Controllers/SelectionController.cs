@@ -90,15 +90,17 @@ public class SelectionController : MonoBehaviour
             {
                 if(selectedObj != null && (hit.transform == selectedObj))
                 {
-                    Harvest();
+                    RemoveObject();
                 }
             }
         }
     }
 
-    private void Harvest()
+    private void RemoveObject()
     {
-        player.SetDestination(selectedObj.gameObject.transform.position);
+        GetComponent<ResourceController>().resources++;
+
+        Destroy(selectedObj.gameObject);
     }
 
     public void Deselect()
