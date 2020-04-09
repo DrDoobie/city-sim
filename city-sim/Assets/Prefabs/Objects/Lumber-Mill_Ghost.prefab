@@ -121,6 +121,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0562d0b131c29124fa614758182e7ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reqResources: 10
+  reqResources: 9
   resources: 0
   building: {fileID: 98998544037707947, guid: a2bbc7fd3c102ee4fa333a7b32242266, type: 3}

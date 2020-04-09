@@ -18,7 +18,10 @@ public class SelectionController : MonoBehaviour
     {
         if(GameController.Instance.rtsMode)
         {
-            RayController();
+            if(!GameController.Instance.buildMode)
+            {
+                RayController();
+            }
         }
     }
 

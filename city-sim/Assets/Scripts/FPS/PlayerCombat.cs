@@ -35,6 +35,14 @@ public class PlayerCombat : MonoBehaviour
         //Apply damage to each hit object
         foreach(Collider hit in gotHit)
         {
+            //Chop tree
+            if(hit.GetComponent<TreeScript>())
+            {
+                hit.GetComponent<TreeScript>().ChopTree(damage);
+
+                FindObjectOfType<AudioManager>().PlaySound("Hit Marker");
+            }
+
             //Build ghost
             if(hit.GetComponent<BuildingGhost>() && GameController.Instance.resourceController.resources >= 1)
             {
