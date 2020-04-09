@@ -1,115 +1,142 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class SelectionController : MonoBehaviour
 {
-    public string[] otherTag;
-    public Transform selectedObj;
-    public NavMeshAgent player;
     public Material[] materials;
-    
-    string reqTag = "Selectable";
-    Transform _selectedObj;
-    Material ogMaterial;
+    public Transform selectedObject;
+    public string selectionTag = "Selectable", playerWalkableTag = "Terrain";
+    public NavMeshAgent player;
 
-    // Update is called once per frame
+    [SerializeField] Material ogMat, ogMat2;
+    [SerializeField] Transform _selectedObject;
+
     void Update()
     {
-        if(!GameController.Instance.buildMode && GameController.Instance.rtsMode)
-        {
-            SelectionSystem();
-
-            player.enabled = true;
-
-            return;
-        }
-
-        player.enabled = false;
-
-        if(selectedObj != null)
-        {
-            Deselect();
-        }
+        RayController();
     }
 
-    private void SelectionSystem()
+    void RayController()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
         if(Physics.Raycast(ray, out hit))
         {
-            //Left click
-            if(Input.GetButtonDown("Fire1") && hit.transform.CompareTag(reqTag))
+            if(Input.GetButtonDown("Fire1"))
             {
-                //This is handling deselection when you click the selected object
-                if(hit.transform == selectedObj)
-                {
-                    Deselect();
+                if(hit.transform.CompareTag(selectionTag) && hit.transform != selectedObject)
+                {   
+                    if(selectedObject != null)
+                    {
+                        DeselectObject();
+                    }
+
+                    SelectObject(hit.transform);
+
                     return;
                 }
 
-                //Storing last selected object values
-                if(selectedObj != null)
+                if(hit.transform == selectedObject)
                 {
-                    _selectedObj = selectedObj;
+                    DeselectObject();
 
-                    if(_selectedObj.GetComponent<Renderer>())
-                    {
-                        _selectedObj.GetComponent<Renderer>().material = ogMaterial;
-                    } 
+                    return;
                 }
 
-                //Selecting new object
-                selectedObj = hit.transform;
-
-                Renderer selectionRenderer = selectedObj.GetComponent<Renderer>();
-
-                if(selectionRenderer != null)
+                if(hit.transform.CompareTag(playerWalkableTag))
                 {
-                    ogMaterial = selectionRenderer.material; 
-                        
-                    selectionRenderer.material = materials[0];
+                    MovePlayer(hit.point);
                 }
             }
 
-            //Point and click movement
-            if(Input.GetButtonDown("Fire1"))
+            if(Input.GetButtonDown("Fire2"))
             {
-                if(selectedObj == null)
+                if(hit.transform == selectedObject)
                 {
-                    //Debug.Log(hit.point);
-                    player.SetDestination(hit.point);
-                }
-            }
-
-            //Right click
-            if(Input.GetButtonDown("Fire2") && hit.transform.CompareTag(reqTag))
-            {
-                if(selectedObj != null && (hit.transform == selectedObj))
-                {
-                    RemoveObject();
+                    RemoveObject(hit.transform.gameObject);
                 }
             }
         }
     }
 
-    private void RemoveObject()
+    void SelectObject(Transform transform)
+    {
+        //Debug.Log("Selected " + transform.name);
+        selectedObject = transform;
+
+        SetMaterial();
+    }
+
+    void SetMaterial()
+    {
+        Renderer rend = selectedObject.GetComponent<Renderer>();
+
+        ogMat = rend.material;
+
+        if(rend.materials.Length > 1)
+        {
+            ogMat2 = rend.materials[1];
+
+            //Debug.Log("More than 1 material active");
+            Material[] mats;
+
+            mats = rend.materials;
+
+            mats[0] = materials[0];
+            mats[1] = materials[0];
+
+            rend.materials = mats;
+
+            return;
+        }
+
+        rend.material = materials[0];
+    }
+    
+    void ResetMaterial()
+    {
+        //Debug.Log("Reset material!");
+        if(_selectedObject.GetComponent<Renderer>().materials.Length > 1)
+        {
+            //Debug.Log("More than 1 material active");
+            Material[] mats;
+
+            mats = _selectedObject.GetComponent<Renderer>().materials;
+
+            mats[0] = ogMat;
+            mats[1] = ogMat2;
+
+            _selectedObject.GetComponent<Renderer>().materials = mats;
+
+            return;
+        }
+
+        _selectedObject.GetComponent<Renderer>().material = ogMat;
+    }
+
+    public void DeselectObject()
+    {
+        //Debug.Log("Deselected object");
+        _selectedObject = selectedObject;
+
+        ResetMaterial();
+
+        selectedObject = null;
+    }
+
+    void RemoveObject(GameObject obj)
     {
         GetComponent<ResourceController>().resources++;
 
-        Destroy(selectedObj.gameObject);
+        Destroy(obj);
     }
 
-    public void Deselect()
+    void MovePlayer(Vector3 clickPos)
     {
-        if(selectedObj.GetComponent<Renderer>())
-        {
-            selectedObj.GetComponent<Renderer>().material = ogMaterial;
-        }
-
-        selectedObj = null;
+        //Debug.Log("Move player to " + clickPos);
+        player.SetDestination(clickPos);
     }
 }

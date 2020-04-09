@@ -4816,7 +4816,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3bcaef00628d1d41b149b39ccfdbde9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  materials: []
+  materials:
+  - {fileID: 2100000, guid: 399243b1c30d0fb478ddc234cf107cb4, type: 2}
   selectedObject: {fileID: 0}
   selectionTag: Selectable
   playerWalkableTag: Terrain

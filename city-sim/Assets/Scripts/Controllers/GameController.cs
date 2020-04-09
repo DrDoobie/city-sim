@@ -41,9 +41,9 @@ public class GameController : MonoBehaviour
     {
         if(Input.GetButtonDown("ModeSwitch"))
         {
-            if(rtsMode && (selectionController.selectedObj != null))
+            if(rtsMode && (selectionController.selectedObject != null))
             {
-                selectionController.Deselect();
+                selectionController.DeselectObject();
             }
 
             rtsMode = !rtsMode;
