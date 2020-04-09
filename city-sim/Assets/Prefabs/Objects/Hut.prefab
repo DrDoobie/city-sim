@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5969565672380109032}
   - component: {fileID: -807271384652372823}
   - component: {fileID: 8099646518334682158}
+  - component: {fileID: 2602146874881484134}
   m_Layer: 0
   m_Name: Hut
   m_TagString: Selectable
@@ -126,3 +127,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
+--- !u!114 &2602146874881484134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930878343165891680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1e908b4e4b1f1d41984db7d1fe4b932, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxOccupants: 1
+  currentOccupants: 0
+  occupantObj: {fileID: 3857756970438489587, guid: 009b7587f3cd6234bbdd1a0ad95ad4e8,
+    type: 3}

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class WorkPlace : MonoBehaviour
 {
-    public int maxEmployees, currentEmployees;
-    public float resourceGenCoolDown;
+    public int maxEmployees = 3, currentEmployees = 0;
+    public float resourceGenCoolDown = 10.0f;
 
     float _resourceGenCoolDown;
 
@@ -48,6 +48,6 @@ public class WorkPlace : MonoBehaviour
 
     void GenerateResources()
     {
-        GameController.Instance.resourceController.resources ++;
+        GameController.Instance.resourceController.resources += (1 * currentEmployees);
     }
 }
