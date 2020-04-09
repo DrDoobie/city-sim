@@ -10,6 +10,24 @@ public class GhostObject : MonoBehaviour
 
     void Awake()
     {
+        Renderer rend = GetComponent<Renderer>();
+
+        if(rend.materials.Length > 1)
+        {
+            //Debug.Log("More than 1 material active");
+                
+            Material[] ghostMats;
+
+            ghostMats = rend.materials;
+
+            ghostMats[0] = GameController.Instance.buildingSystem.ghostMaterial[0];
+            ghostMats[1] = GameController.Instance.buildingSystem.ghostMaterial[0];
+
+            rend.materials = ghostMats;
+
+            return;
+        }
+
         GetComponent<Renderer>().material = GameController.Instance.buildingSystem.ghostMaterial[0];
 
         gameObject.layer = 2;
