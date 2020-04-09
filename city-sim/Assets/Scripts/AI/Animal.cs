@@ -163,6 +163,15 @@ public class Animal : MonoBehaviour
         }
 
         transform.LookAt(target);
+
+        if(health <= 0)
+            Die();
+    }
+
+    void Die()
+    {
+        Debug.Log(transform.name + " died!");
+        Destroy(this.gameObject);
     }
 
     //Visualizes the attack range/collider

@@ -116,7 +116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walking: 0
   fleeing: 0
-  maxHealth: 100
+  maxHealth: 50
   health: 0
   destination: {x: 0, y: 0, z: 0}
   animator: {fileID: 8167634016030258808}
