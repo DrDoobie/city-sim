@@ -2,6 +2,7 @@
 //using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 
 public class SelectionController : MonoBehaviour
 {
@@ -9,9 +10,12 @@ public class SelectionController : MonoBehaviour
     public Transform selectedObject;
     public string selectionTag = "Selectable", playerWalkableTag = "Terrain";
     public NavMeshAgent player;
+    public Text selectionInfoText;
+    public GameObject selectionInfoImage;
+    public GameObject selectionInfoPanel;
 
-    [SerializeField] Material ogMat, ogMat2;
-    [SerializeField] Transform _selectedObject;
+    Material ogMat, ogMat2;
+    Transform _selectedObject;
 
     void Update()
     {
@@ -19,6 +23,36 @@ public class SelectionController : MonoBehaviour
         {
             RayController();
         }
+
+        UIController();
+    }
+
+    void UIController()
+    {
+        if(selectedObject == null || selectionInfoImage == null || selectionInfoPanel == null || selectionInfoText == null)
+        {
+            selectionInfoPanel.SetActive(false);
+
+            return;
+        }
+
+        selectionInfoPanel.SetActive(true);
+
+        selectionInfoImage.GetComponent<Image>().sprite = selectedObject.GetComponent<ObjectInfo>().obj.icon;
+
+        //Different types of objects
+        WorkPlace workPlace = selectedObject.GetComponent<WorkPlace>();
+
+        if(workPlace)
+        {
+            selectionInfoText.text = "Max Employees: " + workPlace.maxEmployees + 
+            "\nRequired Employees: " + workPlace.reqEmployees + 
+            "\nCurrent Employees: " + workPlace.currentEmployees;
+
+            return;
+        }
+
+        selectionInfoText.text = selectedObject.GetComponent<ObjectInfo>().obj.objInfo;
     }
 
     void RayController()

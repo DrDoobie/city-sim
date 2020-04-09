@@ -9,6 +9,8 @@ public class Homes : MonoBehaviour
 
     void Start()
     {
+        GameController.Instance.resourceController.homes++;
+
         if(currentOccupants < maxOccupants)
         {
             SpawnOccupant();

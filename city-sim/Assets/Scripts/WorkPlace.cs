@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WorkPlace : MonoBehaviour
 {
-    public int maxEmployees = 3, currentEmployees = 0;
+    public int maxEmployees = 3, currentEmployees = 0, reqEmployees = 1;
     public float resourceGenCoolDown = 10.0f;
 
     float _resourceGenCoolDown;
@@ -21,7 +21,7 @@ public class WorkPlace : MonoBehaviour
             Employ();
         }
 
-        if(currentEmployees > 0)
+        if(currentEmployees >= reqEmployees)
         {
             ResourceGenTimer();
         }
