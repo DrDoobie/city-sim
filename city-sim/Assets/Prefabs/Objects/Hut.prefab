@@ -124,5 +124,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxOccupants: 1
   currentOccupants: 0
-  occupantObj: {fileID: 3857756970438489587, guid: 009b7587f3cd6234bbdd1a0ad95ad4e8,
+  occupantObj: {fileID: 4675650310250807104, guid: 04c501548b69e044eb0e0532782841a1,
     type: 3}

@@ -10,6 +10,7 @@ public class SelectionController : MonoBehaviour
     public Transform selectedObject;
     public string selectionTag = "Selectable", playerWalkableTag = "Terrain";
     public NavMeshAgent player;
+    public CameraMovement cam;
 
     Material ogMat, ogMat2;
     Transform _selectedObject;
@@ -22,6 +23,11 @@ public class SelectionController : MonoBehaviour
             {
                 RayController();
             }
+        }
+
+        if(selectedObject != null)
+        {
+            FocusCamOnSelected();
         }
     }
 
@@ -69,6 +75,11 @@ public class SelectionController : MonoBehaviour
         }
     }
 
+    void FocusCamOnSelected()
+    {
+        cam.GetComponent<CameraMovement>().FocusCamera(selectedObject);
+    }
+
     void SelectObject(Transform transform)
     {
         //Debug.Log("Selected " + transform.name);
@@ -81,47 +92,63 @@ public class SelectionController : MonoBehaviour
     {
         Renderer rend = selectedObject.GetComponent<Renderer>();
 
-        ogMat = rend.material;
-
-        if(rend.materials.Length > 1)
+        if(rend)
         {
-            ogMat2 = rend.materials[1];
+            ogMat = rend.material;
 
-            //Debug.Log("More than 1 material active");
-            Material[] mats;
+            if(rend.materials.Length > 1)
+            {
+                ogMat2 = rend.materials[1];
 
-            mats = rend.materials;
+                //Debug.Log("More than 1 material active");
+                Material[] mats;
 
-            mats[0] = materials[0];
-            mats[1] = materials[0];
+                mats = rend.materials;
 
-            rend.materials = mats;
+                mats[0] = materials[0];
+                mats[1] = materials[0];
+
+                rend.materials = mats;
+
+                return;
+            }
+
+            rend.material = materials[0];
 
             return;
         }
 
-        rend.material = materials[0];
+        Debug.Log("No renderer");
     }
     
     void ResetMaterial()
     {
-        //Debug.Log("Reset material!");
-        if(_selectedObject.GetComponent<Renderer>().materials.Length > 1)
+        Renderer rend = _selectedObject.GetComponent<Renderer>();
+
+        if(rend)
         {
-            //Debug.Log("More than 1 material active");
-            Material[] mats;
+                //Debug.Log("Reset material!");
+            if(rend.materials.Length > 1)
+            {
+                //Debug.Log("More than 1 material active");
+                Material[] mats;
 
-            mats = _selectedObject.GetComponent<Renderer>().materials;
+                mats = rend.materials;
 
-            mats[0] = ogMat;
-            mats[1] = ogMat2;
+                mats[0] = ogMat;
+                mats[1] = ogMat2;
 
-            _selectedObject.GetComponent<Renderer>().materials = mats;
+                rend.materials = mats;
+
+                return;
+            }
+
+            rend.material = ogMat;
 
             return;
         }
 
-        _selectedObject.GetComponent<Renderer>().material = ogMat;
+        //Debug.Log("No renderer");
     }
 
     public void DeselectObject()

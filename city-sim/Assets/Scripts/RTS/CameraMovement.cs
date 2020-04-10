@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
-    public float panSpeed = 10.0f, panBorderThickness = 10.0f, zoomSpeed = 5.0f, minY = 1.0f, maxY = 20.0f;
+    public float focusOffset = -10.0f, panSpeed = 10.0f, panBorderThickness = 10.0f, zoomSpeed = 5.0f, minY = 1.0f, maxY = 20.0f;
     public Vector2 panLimit;
     public Transform player;
     
@@ -55,14 +55,14 @@ public class CameraMovement : MonoBehaviour
         transform.position = pos;  
     }
 
-    public void FocusCamera()
+    public void FocusCamera(Transform target)
     {
         //Debug.Log("Focusing camera");
 
         Vector3 pos = transform.position;
 
-        pos.x = player.position.x;
-        pos.z = player.position.z - 10.0f;
+        pos.x = target.position.x;
+        pos.z = target.position.z - focusOffset;
 
         transform.position = pos;
     }

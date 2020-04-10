@@ -1,8 +1,11 @@
 fileFormatVersion: 2
-guid: 87eea2ff6c860874bb2bc56c98220ea1
+guid: bb9c3944fe00ad043b6cfa436174f0ef
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
+  - first:
+      74: 4781951162920444690
+    second: Armature|ArmatureAction
   - first:
       74: -8945691123924629249
     second: Tribesman.Idle
