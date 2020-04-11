@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 26794010466998871}
   - component: {fileID: 4675650310250807111}
   m_Layer: 0
-  m_Name: 'Tribesman '
+  m_Name: Tribesman_0
   m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,6 +210,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4675650310788191236}
     m_Modifications:
+    - target: {fileID: -7780734103960978560, guid: bb9c3944fe00ad043b6cfa436174f0ef,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04711c9f9a9afe940a73acc883969e9a, type: 2}
     - target: {fileID: -4216859302048453862, guid: bb9c3944fe00ad043b6cfa436174f0ef,
         type: 3}
       propertyPath: m_LocalPosition.x
