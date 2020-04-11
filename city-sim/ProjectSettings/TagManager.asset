@@ -6,7 +6,7 @@ TagManager:
   tags:
   - Selectable
   - Terrain
-  - Creature
+  - Farmable
   layers:
   - Default
   - TransparentFX

@@ -33,6 +33,11 @@ public class GhostObject : MonoBehaviour
 
         Renderer rend = GetComponent<Renderer>();
 
+        if(!rend)
+        {
+            return;
+        }
+
         if(rend.materials.Length > 1)
         {
             //Debug.Log("More than 1 material active");
@@ -56,6 +61,11 @@ public class GhostObject : MonoBehaviour
     {
         //Material controller
         Renderer rend = GetComponent<Renderer>();
+
+        if(!rend)
+        {
+            return;
+        }
 
         if(canPlace)
         {
