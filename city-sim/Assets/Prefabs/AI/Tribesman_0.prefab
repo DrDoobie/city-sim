@@ -92,7 +92,7 @@ MonoBehaviour:
   agent: {fileID: 4675650310250807109}
   isAggresive: 0
   wanderCoolDown: 10
-  wanderRadius: 5
+  wanderRadius: 15
   fleeTime: 3
   attackDamage: 15
   attackRate: 2

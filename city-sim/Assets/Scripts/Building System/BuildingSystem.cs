@@ -6,11 +6,14 @@ using UnityEngine.UI;
 public class BuildingSystem : MonoBehaviour
 {
     public float rotateAngle;
-    public Material[] ghostMaterial;
-    public GameObject ghostObj;
     public GameObject objToPlace;
-    public GameObject[] objects;
+    public GameObject[] rtsObjects;
     
+    [Header("Ghost")]
+    public GameObject ghostObj;
+    public Material[] ghostMaterial;
+
+
     bool rotX, rotY, rotZ;
     int lastPosX, lastPosY, lastPosZ, obj;
     float lastScroll;
@@ -128,9 +131,9 @@ public class BuildingSystem : MonoBehaviour
         }
 
         //Clamp
-        obj = Mathf.Clamp(obj, 0, (objects.Length - 1));
+        obj = Mathf.Clamp(obj, 0, (rtsObjects.Length - 1));
 
-        objToPlace = objects[obj];
+        objToPlace = rtsObjects[obj];
     }
 
     private void PlaceObj()
@@ -169,7 +172,7 @@ public class BuildingSystem : MonoBehaviour
             ghostObj = null;
         }
 
-        ghostObj = objects[obj];
+        ghostObj = rtsObjects[obj];
 
         GameObject go = Instantiate(ghostObj, lastPos, ghostObj.transform.rotation);
 

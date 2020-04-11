@@ -5,31 +5,31 @@ using UnityEngine;
 public class GhostObject : MonoBehaviour
 {
     public bool canPlace = true;
-    
-    string reqTag = "Terrain";
 
     void Awake()
     {
         gameObject.layer = 2;
 
         //Checking for and removing components
+        MeshCollider meshCollider = GetComponent<MeshCollider>();
 
-        if(GetComponent<MeshCollider>())
+        BoxCollider boxCollider = GetComponent<BoxCollider>();
+
+        if(meshCollider)
         {
-            GetComponent<MeshCollider>().convex = true;
-            GetComponent<MeshCollider>().isTrigger = true;
+            meshCollider.convex = true;
+            meshCollider.isTrigger = true;
         }
         
-        if(GetComponent<BoxCollider>())
+        if(boxCollider)
         {
-            GetComponent<BoxCollider>().isTrigger = true;
+            boxCollider.isTrigger = true;
         }
 
         //Adding components
-        gameObject.AddComponent(typeof(Rigidbody));
+        Rigidbody rigidBody = gameObject.AddComponent<Rigidbody>();
 
-        GetComponent<Rigidbody>().useGravity = false;
-        GetComponent<Rigidbody>().isKinematic = true;
+        rigidBody.isKinematic = true;
 
         Renderer rend = GetComponent<Renderer>();
 
@@ -101,9 +101,7 @@ public class GhostObject : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        //
-
-        if(!other.CompareTag(reqTag))
+        if(!other.CompareTag(GetComponent<ObjectInfo>().obj.placementTag))
         {
             canPlace = false;
 

@@ -49,13 +49,13 @@ public class GameController : MonoBehaviour
             rtsMode = !rtsMode;
         }
 
+        if(Input.GetButtonDown("BuildMode"))
+        {
+            buildMode = !buildMode;
+        }
+
         if(rtsMode)
         {
-            if(Input.GetButtonDown("BuildMode"))
-            {
-                buildMode = !buildMode;
-            }
-
             Cursor.lockState = CursorLockMode.None;
 
             rtsCam.GetComponent<Camera>().enabled = true;

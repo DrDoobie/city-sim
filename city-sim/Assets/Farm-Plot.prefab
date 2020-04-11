@@ -13,10 +13,9 @@ GameObject:
   - component: {fileID: 4051249436817139436}
   - component: {fileID: 6084471718174254474}
   - component: {fileID: 4051249436817139433}
-  - component: {fileID: -8012381670346156933}
   m_Layer: 0
-  m_Name: Farming Plot
-  m_TagString: Untagged
+  m_Name: Farm-Plot
+  m_TagString: Selectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4051249436817139426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.5, y: 0, z: 7.19}
+  m_LocalPosition: {x: -3, y: 0, z: -15}
   m_LocalScale: {x: 5, y: 0.1, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -61,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cd4c029e57d86164691577ce0c6e80ac, type: 2}
+  - {fileID: 2100000, guid: 47e1e0eb590ceaf4594abd1ae1947534, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108,22 +107,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 11400000, guid: e6bd28cf36f107a438a7f873bc94e06e, type: 2}
---- !u!114 &-8012381670346156933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4051249436817139426}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a11f811ca6b6f94b9df887f34169ea6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inRange: 0
-  text: {fileID: 0}
-  rend: {fileID: 4051249436817139436}
-  isBuilt: 0
-  resources: 0
-  reqResources: 0
-  builtMaterial: {fileID: 0}
