@@ -14,7 +14,6 @@ public class GhostObject : MonoBehaviour
 
         //Checking for and removing components
         MeshCollider meshCollider = GetComponent<MeshCollider>();
-
         BoxCollider boxCollider = GetComponent<BoxCollider>();
 
         if(meshCollider)
@@ -117,7 +116,7 @@ public class GhostObject : MonoBehaviour
         {
             canPlace = false;
 
-            //Debug.Log("Colliding with " + other);
+            Debug.Log("Colliding with " + other);
         }
     }
 

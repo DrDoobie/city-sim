@@ -101,11 +101,7 @@ public class PlayerCombat : MonoBehaviour
                 //Building ghosts
                 if(buildingGhost && GameController.Instance.resourceController.resources >= 1)
                 {
-                    buildingGhost.resources++;
-
-                    GameController.Instance.resourceController.resources --;
-
-                    audioManager.PlaySound("Build");
+                    buildingGhost.AddResources(1);
                 }
 
                 //Hit animal

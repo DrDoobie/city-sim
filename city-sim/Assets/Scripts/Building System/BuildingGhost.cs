@@ -14,7 +14,6 @@ public class BuildingGhost : MonoBehaviour
     void Start()
     {
         Homes home = GetComponent<Homes>();
-
         WorkPlace workPlace = GetComponent<WorkPlace>();
 
         if(home)
@@ -49,13 +48,20 @@ public class BuildingGhost : MonoBehaviour
 
     void Build()
     {
+        MeshCollider meshCollider = GetComponent<MeshCollider>();
+        Homes home = GetComponent<Homes>();
+        WorkPlace workPlace = GetComponent<WorkPlace>();
+
         rend.material = finishedMaterial;
 
         GameController.Instance.displayText.text = "";
 
-        Homes home = GetComponent<Homes>();
+        if(meshCollider)
+        {
+            meshCollider.isTrigger = false;
 
-        WorkPlace workPlace = GetComponent<WorkPlace>();
+            meshCollider.convex = false;    
+        }
 
         if(home)
             home.enabled = true;
@@ -64,6 +70,20 @@ public class BuildingGhost : MonoBehaviour
             workPlace.enabled = true;
 
         Destroy(this);
+    }
+
+    public void AddResources(int value)
+    {
+        PlayerCombat playerCombat = FindObjectOfType<PlayerCombat>();
+
+        if(playerCombat.itemInHand != null && playerCombat.itemInHand.GetComponent<UseableItem>().item.itemType == "building tool")
+        {
+            resources += value;
+
+            GameController.Instance.resourceController.resources--;
+
+            FindObjectOfType<AudioManager>().PlaySound("Build");
+        }
     }
 
     void OnTriggerEnter(Collider other)
