@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AutoHarvest : MonoBehaviour
 {
+    public string attackAnimation;
     public Animator animator;
 
     void Update()
@@ -22,7 +23,7 @@ public class AutoHarvest : MonoBehaviour
         {
             if(playerComb.inRange)
             {
-                animator.Play("Punch");
+                animator.Play(attackAnimation);
             }
         }
     }

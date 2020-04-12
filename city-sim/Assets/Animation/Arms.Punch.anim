@@ -33350,7 +33350,8 @@ AnimationClip:
   - time: 1.7083334
     functionName: ReferenceFunction
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 11500000, guid: f8a0c31f253c14f4cb5d6b88dbbc0ad9,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
