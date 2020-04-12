@@ -5,10 +5,15 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public bool inRange;
-    public float attackRange = 1.5f, attackSpeed = 2.0f, attackDamage = 15.0f;
+    public Transform itemInHand, hand;
+    public AudioManager audioManager;
+
+    [Header("Attack")]
+    public float attackRange = 1.5f;
+    public float attackSpeed = 2.0f;
+    public float attackDamage = 15.0f;
     public Transform attackPoint;
     public LayerMask hittableLayers;
-    public AudioManager audioManager;
 
     [Header("Animation")]
     public bool isAnimated;
@@ -20,17 +25,21 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
         CheckRange();
+        HandController();
 
-        if(Input.GetButton("Fire1") && !GameController.Instance.rtsMode)
+        if(!GameController.Instance.rtsMode)
         {
-            if(isAnimated)
+            if(Input.GetButton("Fire1"))
             {
-                animator.Play(attackAnimation);
+                if(isAnimated)
+                {
+                    animator.Play(attackAnimation);
 
-                return;
+                    return;
+                }
+
+                Attack();
             }
-
-            Attack();
         }
     }
 
@@ -65,6 +74,7 @@ public class PlayerCombat : MonoBehaviour
                 TreeScript hitTree = hit.GetComponent<TreeScript>();
                 BuildingGhost buildingGhost = hit.GetComponent<BuildingGhost>();
                 Animal animal = hit.GetComponent<Animal>();
+                UseableItem item= hit.GetComponent<UseableItem>();
 
                 //Getting resources
                 if(hitResource)
@@ -101,10 +111,27 @@ public class PlayerCombat : MonoBehaviour
 
                     //Debug.Log("Dealt " + damage + " dmg to " + hit.transform.name);
                 }
+
+                //Pickup item
+                if(item)
+                {
+                    Debug.Log("!");
+                    itemInHand = hit.transform;
+                }
             }
 
             attackCoolDown = Time.time + (1.0f / attackSpeed);
         }
+    }
+
+    void HandController()
+    {
+        if(itemInHand == null)
+        {
+            return;
+        }
+
+        itemInHand.position = hand.position;
     }
 
     void OnDrawGizmosSelected()
