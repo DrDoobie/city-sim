@@ -9,12 +9,15 @@ public class GameController : MonoBehaviour
     public bool rtsMode = true, buildMode = false;
     public Camera rtsCam, fpsCam;
     public Transform player;
-    public Text infoText;
-    public Text displayText;
-    public GameObject focusButton, crosshair;
     public BuildingSystem buildingSystem;
     public SelectionController selectionController;
     public ResourceController resourceController;
+
+    [Header("UI Stuff")]
+    bool panelIsOpen = false;
+    public Text infoText;
+    public Text displayText;
+    public GameObject panel, focusButton, crosshair;
 
     void Awake()
     {
@@ -33,8 +36,27 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        UIController();
         ModeController();
+    }
+
+    void UIController()
+    {
         Crosshair();
+
+        if(Input.GetButtonDown("Panel"))
+        {
+            panelIsOpen = !panelIsOpen;
+        }
+
+        if(panelIsOpen)
+        {
+            panel.SetActive(true);
+
+            return;
+        }
+
+        panel.SetActive(false);
     }
 
     void ModeController()

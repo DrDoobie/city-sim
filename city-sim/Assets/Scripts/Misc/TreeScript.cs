@@ -21,7 +21,7 @@ public class TreeScript : MonoBehaviour
     {
         PlayerCombat playerCombat = FindObjectOfType<PlayerCombat>();
 
-        if(playerCombat.itemInHand != null && playerCombat.itemInHand.GetComponent<UseableItem>().item.itemType == "axe")
+        if(playerCombat.itemInHand != null && playerCombat.itemInHand.GetComponent<UseableItem>().item.itemType == "axe" && health >= 0)
         {
             health -= value;
 
