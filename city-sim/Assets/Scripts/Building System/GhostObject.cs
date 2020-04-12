@@ -116,7 +116,7 @@ public class GhostObject : MonoBehaviour
         {
             canPlace = false;
 
-            Debug.Log("Colliding with " + other);
+            //Debug.Log("Colliding with " + other);
         }
     }
 

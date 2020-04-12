@@ -131,7 +131,17 @@ public class BuildingSystem : MonoBehaviour
         }
 
         //Clamp
-        obj = Mathf.Clamp(obj, 0, (rtsObjects.Length - 1));
+        if(obj > (rtsObjects.Length - 1))
+        {
+            obj = 0;
+        }
+
+        if(obj < 0)
+        {
+            obj = (rtsObjects.Length - 1);
+        }
+
+        //obj = Mathf.Clamp(obj, 0, (rtsObjects.Length - 1));
 
         objToPlace = rtsObjects[obj];
     }

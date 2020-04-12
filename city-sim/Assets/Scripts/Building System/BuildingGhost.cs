@@ -76,15 +76,18 @@ public class BuildingGhost : MonoBehaviour
 
     public void AddResources(int value)
     {
-        PlayerCombat playerCombat = FindObjectOfType<PlayerCombat>();
-
-        if(playerCombat.itemInHand != null && playerCombat.itemInHand.GetComponent<UseableItem>().item.itemType == "building tool")
+        if(inRange)
         {
-            resources += value;
+            PlayerCombat playerCombat = FindObjectOfType<PlayerCombat>();
 
-            GameController.Instance.resourceController.resources--;
+            if(playerCombat.itemInHand != null && playerCombat.itemInHand.GetComponent<UseableItem>().item.itemType == "building tool")
+            {
+                resources += value;
 
-            FindObjectOfType<AudioManager>().PlaySound("Build");
+                GameController.Instance.resourceController.resources--;
+
+                FindObjectOfType<AudioManager>().PlaySound("Build");
+            }
         }
     }
 
