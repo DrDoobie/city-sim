@@ -24,21 +24,26 @@ public class FarmPlot : MonoBehaviour
 
     public void PlantSeed()
     {
-        PlayerCombat playerCombat = FindObjectOfType<PlayerCombat>();
-
-        if(playerCombat.itemInHand != null && playerCombat.itemInHand.GetComponent<UseableItem>().item.itemType == "farming tool")
+        if(GameController.Instance.resourceController.resources > 0)
         {
-            foreach(Transform spot in seedSpots)
+            PlayerCombat playerCombat = FindObjectOfType<PlayerCombat>();
+
+            if(playerCombat.itemInHand != null && playerCombat.itemInHand.GetComponent<UseableItem>().item.itemType == "farming tool")
             {
-                if(spot.childCount == 0)
+                foreach(Transform spot in seedSpots)
                 {
-                    GameObject seed = Instantiate(plant, spot.position, Quaternion.identity);
+                    if(spot.childCount == 0)
+                    {
+                        GameObject seed = Instantiate(plant, spot.position, Quaternion.identity);
 
-                    seed.transform.parent = spot;
+                        seed.transform.parent = spot;
 
-                    FindObjectOfType<AudioManager>().PlaySound("Plant Seed");
+                        GameController.Instance.resourceController.resources--;
 
-                    return;
+                        FindObjectOfType<AudioManager>().PlaySound("Plant Seed");
+
+                        return;
+                    }
                 }
             }
         }
