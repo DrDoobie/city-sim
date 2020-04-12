@@ -121,10 +121,14 @@ public class PlayerCombat : MonoBehaviour
                 //Pickup item
                 if(item)
                 {
-                    Debug.Log("!");
-                    item.pickedUp = true;
+                    if(itemInHand == null)
+                    {
+                        item.pickedUp = true;
 
-                    itemInHand = hit.transform;
+                        itemInHand = hit.transform;
+
+                        audioManager.PlaySound("Item Pickup");
+                    }
                 }
             }
 

@@ -19,7 +19,16 @@ public class TreeScript : MonoBehaviour
 
     public void ChopTree(float value)
     {
-        health -= value;
+        PlayerCombat playerCombat = FindObjectOfType<PlayerCombat>();
+
+        if(playerCombat.itemInHand != null && playerCombat.itemInHand.GetComponent<UseableItem>().item.itemType == "axe")
+        {
+            health -= value;
+
+            return;
+        }
+
+        Debug.Log("Incorrect item type...");
     }
 
     void Die()

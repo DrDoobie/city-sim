@@ -7,4 +7,5 @@ using UnityEngine.UI;
 public class Item : ScriptableObject
 {
     public float damage;
+    public string itemType;
 }
