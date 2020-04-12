@@ -359,7 +359,7 @@ MonoBehaviour:
   rtsObjects:
   - {fileID: 1288834111831420727, guid: 223d0e519f8d0a1498342357f424539b, type: 3}
   - {fileID: 5117328630030095872, guid: a2bbc7fd3c102ee4fa333a7b32242266, type: 3}
-  - {fileID: 1769159599799910101, guid: 654cdcd35bdb85444a57733535db121d, type: 3}
+  - {fileID: 1506437527600326601, guid: 654cdcd35bdb85444a57733535db121d, type: 3}
   - {fileID: 6816313214096901651, guid: e42a9b6879cc9fb4189828199a2b9108, type: 3}
   ghostObj: {fileID: 0}
   ghostMaterial:

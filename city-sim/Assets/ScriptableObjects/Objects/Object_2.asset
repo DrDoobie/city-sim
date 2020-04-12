@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerSpecific: 0
   rotX: 0
-  rotY: 1
-  rotZ: 0
+  rotY: 0
+  rotZ: 1
   cost: 2
   objInfo: '[Wall]
 
