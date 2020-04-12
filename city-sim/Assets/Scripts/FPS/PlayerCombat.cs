@@ -5,80 +5,36 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public bool inRange;
-    public float attackRange = 0.5f, damage = 15.0f, attackRate = 2.0f;
+    public float attackRange = 1.5f, attackSpeed = 2.0f, attackDamage = 15.0f;
     public Transform attackPoint;
-    public Animator animator;
     public LayerMask hittableLayers;
+    public AudioManager audioManager;
 
-    float nextAttackTime = 0.0f;
+    [Header("Animation")]
+    public bool isAnimated;
+    public string attackAnimation;
+    public Animator animator;
+
+    float attackCoolDown;
 
     void Update()
     {
         CheckRange();
 
-        if(Time.time >= nextAttackTime)
+        if(Input.GetButton("Fire1") && !GameController.Instance.rtsMode)
         {
-            if(Input.GetButton("Fire1") && !GameController.Instance.rtsMode)
+            if(isAnimated)
             {
-                animator.Play("Punch");
+                animator.Play(attackAnimation);
 
-                nextAttackTime = Time.time + (1.0f / attackRate);
-            }
-        }               
-    }
-
-    public void Attack()
-    {
-        //Detect hittables in range
-        Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
-
-        //Apply damage to each hit object
-        foreach(Collider hit in gotHit)
-        {
-            //Chop tree
-            if(hit.GetComponent<TreeScript>())
-            {
-                hit.GetComponent<TreeScript>().ChopTree(damage);
-
-                FindObjectOfType<AudioManager>().PlaySound("Hit Marker");
-            }
-
-            //Build ghost
-            if(hit.GetComponent<BuildingGhost>() && GameController.Instance.resourceController.resources >= 1)
-            {
-                hit.GetComponent<BuildingGhost>().resources++;
-
-                GameController.Instance.resourceController.resources --;
-
-                FindObjectOfType<AudioManager>().PlaySound("Build");
-            }
-
-            //Get resources
-            if(hit.GetComponent<Resource>())
-            {
-                //Debug.Log("Harvesting resource!");
-                hit.GetComponent<Resource>().health -= damage;
-
-                FindObjectOfType<AudioManager>().PlaySound("Hit Marker");
-            }
-
-            //Damage enemy
-            if(hit.GetComponent<Animal>() == null)
-            {
                 return;
             }
 
-            Animal enemyHealth = hit.GetComponent<Animal>();
-
-            enemyHealth.TakeDamage(damage, this.transform);
-
-            FindObjectOfType<AudioManager>().PlaySound("Smack");
-
-            //Debug.Log("Dealt " + damage + " dmg to " + hit.transform.name);
+            Attack();
         }
     }
 
-    public void CheckRange()
+    void CheckRange()
     {
         //Detect hittables in range
         Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
@@ -92,6 +48,62 @@ public class PlayerCombat : MonoBehaviour
         if(gotHit.Length == 0)
         {
             inRange = false;
+        }
+    }
+
+    public void Attack()
+    {
+        if(Time.time >= attackCoolDown)
+        {
+            //Detect hittables in range
+            Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
+
+            //Apply damage to each hit object
+            foreach(Collider hit in gotHit)
+            {
+                Resource hitResource = hit.GetComponent<Resource>();
+                TreeScript hitTree = hit.GetComponent<TreeScript>();
+                BuildingGhost buildingGhost = hit.GetComponent<BuildingGhost>();
+                Animal animal = hit.GetComponent<Animal>();
+
+                //Getting resources
+                if(hitResource)
+                {
+                    hitResource.health -= attackDamage;
+
+                    audioManager.PlaySound("Hit Marker");
+                }
+
+                //Tree chopping
+                if(hitTree)
+                {
+                    hitTree.ChopTree(attackDamage);
+
+                    audioManager.PlaySound("Hit Marker");
+                }
+
+                //Building ghosts
+                if(buildingGhost && GameController.Instance.resourceController.resources >= 1)
+                {
+                    buildingGhost.resources++;
+
+                    GameController.Instance.resourceController.resources --;
+
+                    audioManager.PlaySound("Build");
+                }
+
+                //Hit animal
+                if(animal)
+                {
+                    animal.TakeDamage(attackDamage, this.transform);
+
+                    audioManager.PlaySound("Smack");
+
+                    //Debug.Log("Dealt " + damage + " dmg to " + hit.transform.name);
+                }
+            }
+
+            attackCoolDown = Time.time + (1.0f / attackSpeed);
         }
     }
 

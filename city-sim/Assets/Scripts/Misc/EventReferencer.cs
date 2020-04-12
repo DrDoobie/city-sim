@@ -8,6 +8,6 @@ public class EventReferencer : MonoBehaviour
     
     public void ReferenceFunction()
     {
-        obj.GetComponent<PlayerCombat2>().Attack();
+        obj.GetComponent<PlayerCombat>().Attack();
     }
 }

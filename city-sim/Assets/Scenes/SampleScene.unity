@@ -13623,7 +13623,6 @@ GameObject:
   - component: {fileID: 1528754827}
   - component: {fileID: 1528754824}
   - component: {fileID: 1528754825}
-  - component: {fileID: 1528754826}
   - component: {fileID: 1528754829}
   - component: {fileID: 1528754828}
   m_Layer: 12
@@ -13711,27 +13710,6 @@ MonoBehaviour:
   health: 0
   healthBar: {fileID: 1705753327}
   hungerBar: {fileID: 1803228388}
---- !u!114 &1528754826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1528754821}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d52b858a05508794da14ce65809795e7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inRange: 0
-  attackRange: 1.5
-  damage: 15
-  attackRate: 2
-  attackPoint: {fileID: 192172058}
-  animator: {fileID: 8296172668870687525}
-  hittableLayers:
-    serializedVersion: 2
-    m_Bits: 3584
 --- !u!195 &1528754827
 NavMeshAgent:
   m_ObjectHideFlags: 0
