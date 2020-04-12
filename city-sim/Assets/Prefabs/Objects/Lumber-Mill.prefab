@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 5359259097872976014}
   - component: {fileID: 1829412157158339703}
   - component: {fileID: -7044372583463770043}
+  - component: {fileID: 5912187213570057305}
+  - component: {fileID: 3022777592482410622}
+  - component: {fileID: -3393433950191124096}
   - component: {fileID: -2928464089052230678}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Lumber-Mill
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -60,8 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 632de40eb9dea274b83ead4aa4e3152a, type: 2}
-  - {fileID: 2100000, guid: a1e2b2aab3fc0904abc8dc4410c8177b, type: 2}
+  - {fileID: 2100000, guid: cd4c029e57d86164691577ce0c6e80ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,6 +98,48 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 57fc3ee5e3fadf4489222cfea745b154, type: 3}
+--- !u!65 &5912187213570057305
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98998544037707947}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.042015433, y: 0.048061747, z: 0.030062275}
+  m_Center: {x: -0.00899228, y: 0, z: 0.015031137}
+--- !u!114 &3022777592482410622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98998544037707947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468d720ca4f5440448415ede775883f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 11400000, guid: a0797ade1359d82458a52d8307b7665a, type: 2}
+--- !u!114 &-3393433950191124096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 98998544037707947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0562d0b131c29124fa614758182e7ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reqResources: 10
+  resources: 0
+  finishedMaterial: {fileID: 2100000, guid: a1e2b2aab3fc0904abc8dc4410c8177b, type: 2}
+  rend: {fileID: 1829412157158339703}
 --- !u!114 &-2928464089052230678
 MonoBehaviour:
   m_ObjectHideFlags: 0

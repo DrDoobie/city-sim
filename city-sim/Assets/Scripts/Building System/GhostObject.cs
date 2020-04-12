@@ -5,6 +5,8 @@ using UnityEngine;
 public class GhostObject : MonoBehaviour
 {
     public bool canPlace = true;
+    
+    string reqTag = "Terrain";
 
     void Awake()
     {
@@ -111,7 +113,7 @@ public class GhostObject : MonoBehaviour
 
     void OnTriggerStay(Collider other)
     {
-        if(!other.CompareTag(GetComponent<ObjectInfo>().obj.placementTag))
+        if(!other.CompareTag(reqTag))
         {
             canPlace = false;
 

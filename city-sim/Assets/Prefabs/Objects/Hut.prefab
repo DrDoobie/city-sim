@@ -12,8 +12,11 @@ GameObject:
   - component: {fileID: 9046911833313909829}
   - component: {fileID: 3364645263904858300}
   - component: {fileID: -5969565672380109032}
+  - component: {fileID: 6648634833834251207}
+  - component: {fileID: 5963003990322635583}
+  - component: {fileID: -1872471336740009458}
   - component: {fileID: 2602146874881484134}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hut
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -60,8 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3372af5e924be884fa90034d10eab198, type: 2}
-  - {fileID: 2100000, guid: ed2202f8f37b4ff4488d350348c220bf, type: 2}
+  - {fileID: 2100000, guid: cd4c029e57d86164691577ce0c6e80ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,6 +98,48 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 5ae1803cedccf06438b09e85e891b1d6, type: 3}
+--- !u!65 &6648634833834251207
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930878343165891680}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.025557598, y: 0.025557598, z: 0.02968746}
+  m_Center: {x: -4.3858156e-10, y: 0.0007088017, z: 0.014701998}
+--- !u!114 &5963003990322635583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930878343165891680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468d720ca4f5440448415ede775883f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 11400000, guid: 1c839b9ccd539d641a279f8ceed09f89, type: 2}
+--- !u!114 &-1872471336740009458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3930878343165891680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0562d0b131c29124fa614758182e7ea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reqResources: 5
+  resources: 0
+  finishedMaterial: {fileID: 2100000, guid: ed2202f8f37b4ff4488d350348c220bf, type: 2}
+  rend: {fileID: 3364645263904858300}
 --- !u!114 &2602146874881484134
 MonoBehaviour:
   m_ObjectHideFlags: 0
