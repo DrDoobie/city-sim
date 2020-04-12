@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3661681512520041851}
   - component: {fileID: 6816313214096901656}
   - component: {fileID: 3415774027023598405}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Farm-Plot
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6816313214096901651}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.5, y: 0, z: -9}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 0.1, z: 5}
   m_Children:
   - {fileID: 7395056982360531375}
@@ -140,6 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a11f811ca6b6f94b9df887f34169ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soilMoisture: 0.25
+  plant: {fileID: 5946289547601647333, guid: 58161ffdc7e58ef4baaa735bbc206f88, type: 3}
+  seedSpots: []
 --- !u!1 &7395056982132125024
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,7 +152,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056982132125025}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -179,7 +182,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056982189717290}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -209,7 +212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056982292399691}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -239,7 +242,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056982360531375}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -269,7 +272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056982435185542}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -299,7 +302,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056982484650993}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -329,7 +332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056982638732674}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -359,7 +362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056982988196734}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -389,7 +392,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983121664984}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -419,7 +422,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983222146524}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -449,7 +452,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983271125684}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -479,7 +482,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983284029034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -509,7 +512,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983527826993}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -539,7 +542,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983609040377}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -569,7 +572,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983641573228}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -599,7 +602,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983648693969}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -629,7 +632,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983793315671}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -659,7 +662,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983914527588}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -689,7 +692,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056983932165371}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
@@ -719,7 +722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7395056984198847122}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Seed-Spot
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}

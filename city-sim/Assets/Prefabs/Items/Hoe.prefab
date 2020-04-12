@@ -124,4 +124,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickedUp: 0
-  item: {fileID: 11400000, guid: 8d94ff6e1c9ac7142b49c004bc194085, type: 2}
+  item: {fileID: 11400000, guid: 642986cb1a5ea1943849299b7640cec5, type: 2}

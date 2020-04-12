@@ -81,6 +81,7 @@ public class PlayerCombat : MonoBehaviour
                 BuildingGhost buildingGhost = hit.GetComponent<BuildingGhost>();
                 Animal animal = hit.GetComponent<Animal>();
                 UseableItem item= hit.GetComponent<UseableItem>();
+                FarmPlot farmPlot = hit.GetComponent<FarmPlot>();
 
                 //Getting resources
                 if(hitResource)
@@ -125,6 +126,12 @@ public class PlayerCombat : MonoBehaviour
 
                         audioManager.PlaySound("Item Pickup");
                     }
+                }
+                
+                //Farming
+                if(farmPlot)
+                {
+                    farmPlot.PlantSeed();
                 }
             }
 
