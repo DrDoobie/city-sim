@@ -5,13 +5,18 @@ using UnityEngine;
 public class PlayerCombat : MonoBehaviour
 {
     public bool inRange;
-    public Transform itemInHand, hand;
     public AudioManager audioManager;
+
+    [Header("Hand")]
+    public Transform itemInHand;
+    public Transform hand;
+    public Vector3 itemPosition;
+    public Quaternion itemRotation;
 
     [Header("Attack")]
     public float attackRange = 1.5f;
     public float attackSpeed = 2.0f;
-    public float attackDamage = 15.0f;
+    public float attackDamage, handDamage = 15.0f;
     public Transform attackPoint;
     public LayerMask hittableLayers;
 
@@ -25,6 +30,7 @@ public class PlayerCombat : MonoBehaviour
     void Update()
     {
         CheckRange();
+        CombatController();
         HandController();
 
         if(!GameController.Instance.rtsMode)
@@ -116,6 +122,8 @@ public class PlayerCombat : MonoBehaviour
                 if(item)
                 {
                     Debug.Log("!");
+                    item.pickedUp = true;
+
                     itemInHand = hit.transform;
                 }
             }
@@ -124,14 +132,47 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
+    void CombatController()
+    {
+        if(itemInHand != null)
+        {
+            attackDamage = itemInHand.GetComponent<UseableItem>().item.damage;
+
+            return;
+        }
+
+        attackDamage = handDamage;
+    }
+
     void HandController()
     {
+        if(Input.GetButtonDown("Drop Item"))
+        {
+            DropItemInHand();
+        }
+
         if(itemInHand == null)
         {
             return;
         }
 
-        itemInHand.position = hand.position;
+        itemInHand.parent = hand;
+
+        itemInHand.localPosition = itemPosition;
+
+        itemInHand.localRotation = itemRotation;
+    }
+
+    void DropItemInHand()
+    {
+        if(itemInHand != null)
+        {
+            itemInHand.GetComponent<UseableItem>().pickedUp = false;
+
+            itemInHand.parent = null;
+
+            itemInHand = null;
+        }
     }
 
     void OnDrawGizmosSelected()
