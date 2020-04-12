@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 5117328630030095875}
   - component: {fileID: 5117328630030095874}
   - component: {fileID: 5117328630030095873}
+  - component: {fileID: 3281330150092624421}
   m_Layer: 11
-  m_Name: Lumber-Mill
+  m_Name: Lumber Mill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,3 +126,19 @@ MonoBehaviour:
   resources: 0
   finishedMaterial: {fileID: 2100000, guid: a1e2b2aab3fc0904abc8dc4410c8177b, type: 2}
   rend: {fileID: 6861428963725763292}
+--- !u!114 &3281330150092624421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5117328630030095872}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b19987fce3373d44fbe6887da53c7efb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxEmployees: 3
+  currentEmployees: 0
+  reqEmployees: 1
+  resourceGenCoolDown: 10
