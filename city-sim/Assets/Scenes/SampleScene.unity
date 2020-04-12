@@ -13947,7 +13947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe2ff8064c3726b4999b10273c8919ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackAnimation: 
+  attackAnimation: Punch
   animator: {fileID: 8296172668870687525}
 --- !u!114 &1528754829
 MonoBehaviour:
