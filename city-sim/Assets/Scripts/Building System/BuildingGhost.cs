@@ -69,6 +69,8 @@ public class BuildingGhost : MonoBehaviour
         if(workPlace)
             workPlace.enabled = true;
 
+        gameObject.layer = 0;
+
         Destroy(this);
     }
 
