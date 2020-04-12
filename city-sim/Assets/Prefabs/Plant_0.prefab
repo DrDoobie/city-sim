@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7268298587274798326}
   - component: {fileID: 2424233751132155260}
+  - component: {fileID: 3509757228477361720}
   - component: {fileID: -8569416656357671084}
   m_Layer: 0
   m_Name: Plant_0
@@ -136,6 +137,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &3509757228477361720
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5946289547601647333}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.115723684, y: 0.59164464, z: 0.14366177}
+  m_Center: {x: -0.0038546994, y: 0.29582232, z: 0.0073640645}
 --- !u!114 &-8569416656357671084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   growSpeed: 0.2
+  growTime: 15
   animator: {fileID: 2424233751132155260}
 --- !u!1 &6441470152008536859
 GameObject:

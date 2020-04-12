@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 3415774027023598405}
   m_Layer: 9
   m_Name: Farm-Plot
-  m_TagString: Selectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a11f811ca6b6f94b9df887f34169ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soilMoisture: 0.25
+  soilMoisture: 0.5
   plant: {fileID: 5946289547601647333, guid: 58161ffdc7e58ef4baaa735bbc206f88, type: 3}
   seedSpots: []
 --- !u!1 &7395056982132125024

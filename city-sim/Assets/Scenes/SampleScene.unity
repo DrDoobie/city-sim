@@ -357,8 +357,8 @@ MonoBehaviour:
   rotateAngle: 45
   objToPlace: {fileID: 0}
   rtsObjects:
-  - {fileID: 3930878343165891680, guid: 3c9efc3627605a3429ed898c9b11c89e, type: 3}
-  - {fileID: 98998544037707947, guid: a2bbc7fd3c102ee4fa333a7b32242266, type: 3}
+  - {fileID: 1288834111831420727, guid: 223d0e519f8d0a1498342357f424539b, type: 3}
+  - {fileID: 5117328630030095872, guid: a2bbc7fd3c102ee4fa333a7b32242266, type: 3}
   - {fileID: 1769159599799910101, guid: 654cdcd35bdb85444a57733535db121d, type: 3}
   - {fileID: 6816313214096901651, guid: e42a9b6879cc9fb4189828199a2b9108, type: 3}
   ghostObj: {fileID: 0}
@@ -10049,80 +10049,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1001 &1039434617
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3415774027023598405, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: soilMoisture
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901651, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_Name
-      value: Farm-Plot
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6816313214096901663, guid: e42a9b6879cc9fb4189828199a2b9108,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e42a9b6879cc9fb4189828199a2b9108, type: 3}
 --- !u!1001 &1047423867
 PrefabInstance:
   m_ObjectHideFlags: 0

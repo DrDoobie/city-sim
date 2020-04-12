@@ -82,6 +82,7 @@ public class PlayerCombat : MonoBehaviour
                 Animal animal = hit.GetComponent<Animal>();
                 UseableItem item= hit.GetComponent<UseableItem>();
                 FarmPlot farmPlot = hit.GetComponent<FarmPlot>();
+                Plant plant = hit.GetComponent<Plant>();
 
                 //Getting resources
                 if(hitResource)
@@ -132,6 +133,11 @@ public class PlayerCombat : MonoBehaviour
                 if(farmPlot)
                 {
                     farmPlot.PlantSeed();
+                }
+
+                if(plant)
+                {
+                    plant.Harvest();
                 }
             }
 
