@@ -34,14 +34,6 @@ public class LineOfSight : MonoBehaviour
                 if(!Physics.Raycast(transform.position, dirToTarget, distToTarget, obstacleMask))
                 {
                     visibleTargets.Add(target);
-
-                    //Handling attack
-                    if(GetComponent<Animal>())
-                    {
-                        gameObject.SendMessage("CheckForTarget", target);
-
-                        gameObject.SendMessage("Attack");
-                    }
                 }
             }
         }

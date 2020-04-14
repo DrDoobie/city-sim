@@ -128,11 +128,12 @@ MonoBehaviour:
   attackDamage: 15
   attackRate: 2
   attackCoolDown: 1
-  attackRange: 1
+  attackRange: 3
   attackPoint: {fileID: 6520947761088748763}
   hittableLayers:
     serializedVersion: 2
     m_Bits: 4096
+  isAnimated: 0
 --- !u!114 &1425346256463927590
 MonoBehaviour:
   m_ObjectHideFlags: 0

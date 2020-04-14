@@ -46,6 +46,7 @@ public class Animal : MonoBehaviour
         }
 
         WanderCheck();
+        AttackController();
         FleeCheck();
 
         //Chase 
@@ -62,12 +63,14 @@ public class Animal : MonoBehaviour
         {
             animator.SetBool("isWalking", true);
             animator.SetBool("isIdle", false);
+            animator.SetBool("isAttacking", false);
 
             return;
         }
 
         animator.SetBool("isWalking", false);
         animator.SetBool("isIdle", true);
+        animator.SetBool("isAttacking", false);
     }
 
     IEnumerator Wander()
@@ -117,6 +120,36 @@ public class Animal : MonoBehaviour
         Vector3 runPosition = transform.position + disFromEnemy;
 
         destination = runPosition;
+    }
+
+    void AttackController()
+    {
+        LineOfSight lineOfSight = GetComponent<LineOfSight>();
+
+        if(lineOfSight && lineOfSight.visibleTargets.Count > 0)
+        {
+            //Debug.Log("Enemy spotted");
+            StopCoroutine(Wander());
+
+            destination = lineOfSight.visibleTargets[0].position;
+
+            float disToTarget = Vector3.Distance(agent.destination, transform.position);
+
+            if(disToTarget <= agent.stoppingDistance)
+            {
+                if(isAnimated)
+                {
+                    animator.SetBool("isWalking", false);
+                    animator.SetBool("isIdle", false);
+                    animator.SetBool("isAttacking", true);
+
+                    return;
+                }
+
+                //Debug.Log("Reached enemy");
+                Attack();
+            }
+        }
     }
 
     void Attack()
