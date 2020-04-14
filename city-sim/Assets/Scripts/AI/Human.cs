@@ -65,14 +65,12 @@ public class Human : MonoBehaviour
         {
             animator.SetBool("isWalking", true);
             animator.SetBool("isIdle", false);
-            animator.SetBool("isAttacking", false);
 
             return;
         }
 
         animator.SetBool("isWalking", false);
         animator.SetBool("isIdle", true);
-        animator.SetBool("isAttacking", false);
     }
 
     void GatherController()
