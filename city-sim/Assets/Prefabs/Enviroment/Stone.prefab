@@ -866,7 +866,7 @@ NavMeshObstacle:
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0.24, y: 0.48, z: -0.78}
+  m_Center: {x: 0.58, y: 0.48, z: -0.78}
   m_TimeToStationary: 0.5
 --- !u!114 &-1750253755023902514
 MonoBehaviour:
@@ -883,4 +883,3 @@ MonoBehaviour:
   value: 1
   maxHealth: 50
   health: 0
-  body: {fileID: 5679316422067500659}

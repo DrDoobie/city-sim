@@ -20,7 +20,7 @@ public class Animal : MonoBehaviour
     public Transform attackPoint;
     public LayerMask hittableLayers;
 
-    bool isAnimated = false;
+    [HideInInspector] public bool isAnimated = false;
     Transform enemy;
 
     void Start(){
@@ -29,7 +29,7 @@ public class Animal : MonoBehaviour
             isAnimated = true;
         }
 
-        Idle();
+        //Idle();
 
         health = maxHealth; 
 
