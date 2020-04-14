@@ -124,7 +124,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 3
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -152,17 +152,17 @@ MonoBehaviour:
   animator: {fileID: 4660605844228117839}
   agent: {fileID: 3147134841840554583}
   isAggresive: 0
-  wanderCoolDown: 10
+  wanderCoolDown: 5
   wanderRadius: 15
   fleeTime: 3
   attackDamage: 15
   attackRate: 2
-  attackCoolDown: 0
-  attackRange: 1
+  attackCoolDown: 1
+  attackRange: 3
   attackPoint: {fileID: 3147134840184129784}
   hittableLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
 --- !u!114 &3147134841840554581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,11 +175,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 530004235b5c37f46a68ca6fe4ced4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 10
-  viewAngle: 45
+  viewRadius: 25
+  viewAngle: 120
   targetMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
@@ -203,6 +203,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9038132481235513531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714380372530482245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b48ab620cc8ba7d409fd9155b25de1e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 3147134841840554578}
+  functionType: HumanAttack
 --- !u!1001 &4660605844228117836
 PrefabInstance:
   m_ObjectHideFlags: 0

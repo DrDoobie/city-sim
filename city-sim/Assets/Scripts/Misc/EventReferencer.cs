@@ -5,9 +5,18 @@ using UnityEngine;
 public class EventReferencer : MonoBehaviour
 {
     public GameObject obj;
+    public string functionType;
     
     public void ReferenceFunction()
     {
-        obj.GetComponent<PlayerCombat>().Attack();
+        if(functionType == "PlayerAttack")
+        {
+            obj.GetComponent<PlayerCombat>().Attack();
+        }
+
+        if(functionType == "HumanAttack")
+        {
+            obj.GetComponent<Human>().Attack();
+        }
     }
 }

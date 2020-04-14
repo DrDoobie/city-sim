@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class Human : MonoBehaviour
 {
-    public bool walking = false, fleeing = false, attacking = false;
+    public bool walking = false, fleeing = false;
     public float maxHealth = 100.0f, health;
     public Vector3 destination;
     public Animator animator;
@@ -70,15 +70,6 @@ public class Human : MonoBehaviour
             return;
         }
 
-        if(attacking)
-        {
-            animator.SetBool("isWalking", false);
-            animator.SetBool("isIdle", false);
-            animator.SetBool("isAttacking", true);
-
-            return;
-        }
-
         animator.SetBool("isWalking", false);
         animator.SetBool("isIdle", true);
         animator.SetBool("isAttacking", false);
@@ -99,6 +90,13 @@ public class Human : MonoBehaviour
 
             if(disToTarget <= agent.stoppingDistance)
             {
+                if(isAnimated)
+                {
+                    animator.Play("Attack");
+
+                    return;
+                }
+
                 //Debug.Log("Reached resource");
                 Attack();
             }
@@ -111,7 +109,7 @@ public class Human : MonoBehaviour
 
         //Debug.Log("Walking");
         walking = true;
-        attacking = false;
+        //attacking = false;
 
         destination = wanderPosition;
 
@@ -155,7 +153,7 @@ public class Human : MonoBehaviour
         destination = runPosition;
     }
 
-    void Attack()
+    public void Attack()
     {
         //Debug.Log("Attack function");
 
@@ -165,6 +163,8 @@ public class Human : MonoBehaviour
         //Apply damage to each hit object
         foreach(Collider hit in gotHit)
         {
+            Debug.Log("Detected hittable object");
+
             //Gatherable resources
             if(hit.gameObject.layer == 10)
             {
@@ -174,7 +174,6 @@ public class Human : MonoBehaviour
                 {
                     if(Time.time >= attackCoolDown)
                     {
-                        attacking = true;
                         Debug.Log("Gathering resources!");
                         
                         resource.MineResource(attackDamage);
