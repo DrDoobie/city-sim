@@ -18,7 +18,7 @@ public class Resource : MonoBehaviour
         HealthController();
     }
 
-    private void HealthController()
+    void HealthController()
     {
         if(health <= 0)
         {
@@ -26,10 +26,15 @@ public class Resource : MonoBehaviour
         }
     }
 
-    private void Harvest()
+    void Harvest()
     {
         GameController.Instance.resourceController.resources += value;
-        
-        Destroy(body);
+
+        this.gameObject.SetActive(false);
+    }
+
+    public void MineResource(float val)
+    {
+        health -= val;
     }
 }

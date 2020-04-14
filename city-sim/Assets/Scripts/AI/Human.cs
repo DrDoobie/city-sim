@@ -31,7 +31,7 @@ public class Human : MonoBehaviour
             isAnimated = true;
         }
 
-        Idle();
+        //Idle();
 
         health = maxHealth; 
 
@@ -47,8 +47,9 @@ public class Human : MonoBehaviour
             AnimationControl();
         }
 
+        GatherController();
         WanderCheck();
-        FleeCheck();
+        //FleeCheck();
 
         //Chase 
     }
@@ -70,6 +71,27 @@ public class Human : MonoBehaviour
 
         animator.SetBool("isWalking", false);
         animator.SetBool("isIdle", true);
+    }
+
+    void GatherController()
+    {
+        LineOfSight lineOfSight = GetComponent<LineOfSight>();
+
+        if(lineOfSight && lineOfSight.visibleTargets.Count > 0)
+        {
+            //Debug.Log("Resource spotted");
+            StopCoroutine(Wander());
+
+            destination = lineOfSight.visibleTargets[0].position;
+
+            float disToTarget = Vector3.Distance(agent.destination, transform.position);
+
+            if(disToTarget <= agent.stoppingDistance)
+            {
+                //Debug.Log("Reached resource");
+                Attack();
+            }
+        }
     }
 
     IEnumerator Wander()
@@ -123,21 +145,29 @@ public class Human : MonoBehaviour
 
     void Attack()
     {
+        //Debug.Log("Attack function");
+
         //Detect hittables in range
         Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
 
         //Apply damage to each hit object
         foreach(Collider hit in gotHit)
         {
-            if(hit.GetComponent<PlayerStats>() && isAggresive)
+            //Gatherable resources
+            if(hit.gameObject.layer == 10)
             {
-               if(Time.time >= attackCoolDown)
-               {
-                   Debug.Log("Attacking!");
-                   hit.GetComponent<PlayerStats>().TakeDamage(attackDamage);
+                Resource resource = hit.GetComponent<Resource>();
 
-                   attackCoolDown = Time.time + (1.0f / attackRate);
-               }
+                if(resource)
+                {
+                    if(Time.time >= attackCoolDown)
+                    {
+                        Debug.Log("Gathering resources!");
+                        resource.MineResource(attackDamage);
+
+                        attackCoolDown = Time.time + (1.0f / attackRate);
+                    }
+                }
             }
         }
     }

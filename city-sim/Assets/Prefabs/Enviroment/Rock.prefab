@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1124312027150025036}
   - component: {fileID: 1124312027150025037}
   - component: {fileID: 979226734447603900}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -834,17 +834,9 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_IsSelectable: 1
-  m_SelectedFaces: 02000000
-  m_SelectedEdges:
-  - a: 11
-    b: 8
-  - a: 8
-    b: 9
-  - a: 10
-    b: 11
-  - a: 9
-    b: 10
-  m_SelectedVertices: 0b00000008000000090000000a000000
+  m_SelectedFaces: 
+  m_SelectedEdges: []
+  m_SelectedVertices: 
 --- !u!64 &1124312027150025037
 MeshCollider:
   m_ObjectHideFlags: 0
