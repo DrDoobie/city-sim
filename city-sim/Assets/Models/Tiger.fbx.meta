@@ -1,20 +1,17 @@
 fileFormatVersion: 2
-guid: a4ce02e2b37f4b948bf977ac8f9bce14
+guid: c0ffac12cf3ad6a43a23cc28d9cadee2
 ModelImporter:
   serializedVersion: 19300
   internalIDToNameTable:
   - first:
-      74: 4781951162920444690
-    second: Armature|ArmatureAction
-  - first:
       74: 4723146814002874508
-    second: Leopard.Attack
+    second: Tiger.Attack
   - first:
       74: -8945691123924629249
-    second: Leopard.Idle
+    second: Tiger.Idle
   - first:
-      74: -7551964380084998518
-    second: Leapord.Run
+      74: 8349542763059015795
+    second: Tiger.Walk
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -44,11 +41,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Leopard.Attack
+      name: Tiger.Attack
       takeName: Armature|Attack
       internalID: 0
       firstFrame: 0
-      lastFrame: 59
+      lastFrame: 36
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -73,11 +70,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Leopard.Idle
+      name: Tiger.Idle
       takeName: Armature|Idle
       internalID: 0
       firstFrame: 0
-      lastFrame: 59
+      lastFrame: 36
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -102,11 +99,11 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Leapord.Run
-      takeName: Armature|Run
+      name: Tiger.Walk
+      takeName: Armature|Walk
       internalID: 0
       firstFrame: 0
-      lastFrame: 79
+      lastFrame: 36
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
