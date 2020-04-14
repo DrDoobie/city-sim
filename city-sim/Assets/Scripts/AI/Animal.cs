@@ -124,30 +124,33 @@ public class Animal : MonoBehaviour
 
     void AttackController()
     {
-        LineOfSight lineOfSight = GetComponent<LineOfSight>();
-
-        if(lineOfSight && lineOfSight.visibleTargets.Count > 0)
+        if(isAggresive)
         {
-            //Debug.Log("Enemy spotted");
-            StopCoroutine(Wander());
+            LineOfSight lineOfSight = GetComponent<LineOfSight>();
 
-            destination = lineOfSight.visibleTargets[0].position;
-
-            float disToTarget = Vector3.Distance(agent.destination, transform.position);
-
-            if(disToTarget <= agent.stoppingDistance)
+            if(lineOfSight && lineOfSight.visibleTargets.Count > 0)
             {
-                if(isAnimated)
+                //Debug.Log("Enemy spotted");
+                StopCoroutine(Wander());
+
+                destination = lineOfSight.visibleTargets[0].position;
+
+                float disToTarget = Vector3.Distance(agent.destination, transform.position);
+
+                if(disToTarget <= agent.stoppingDistance)
                 {
-                    animator.SetBool("isWalking", false);
-                    animator.SetBool("isIdle", false);
-                    animator.SetBool("isAttacking", true);
+                    if(isAnimated)
+                    {
+                        animator.SetBool("isWalking", false);
+                        animator.SetBool("isIdle", false);
+                        animator.SetBool("isAttacking", true);
 
-                    return;
+                        return;
+                    }
+
+                    //Debug.Log("Reached enemy");
+                    Attack();
                 }
-
-                //Debug.Log("Reached enemy");
-                Attack();
             }
         }
     }
