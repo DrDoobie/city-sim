@@ -155,7 +155,7 @@ public class Animal : MonoBehaviour
         }
     }
 
-    void Attack()
+    public void Attack()
     {
         //Detect hittables in range
         Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);

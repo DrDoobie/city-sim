@@ -18,5 +18,10 @@ public class EventReferencer : MonoBehaviour
         {
             obj.GetComponent<Human>().Attack();
         }
+
+        if(functionType == "AnimalAttack")
+        {
+            obj.GetComponent<Animal>().Attack();
+        }
     }
 }
