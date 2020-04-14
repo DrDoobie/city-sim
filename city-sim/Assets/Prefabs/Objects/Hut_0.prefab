@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0562d0b131c29124fa614758182e7ea0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reqResources: 5
+  reqResources: 4
   resources: 0
   finishedMaterial: {fileID: 2100000, guid: 7b5814d5368d6044194e030103037ef9, type: 2}
   rend: {fileID: 711020941258005483}

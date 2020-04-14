@@ -881,6 +881,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   value: 1
-  maxHealth: 45
+  maxHealth: 50
   health: 0
   body: {fileID: 5679316422067500659}

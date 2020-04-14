@@ -6,7 +6,6 @@ public class Resource : MonoBehaviour
 {
     public int value;
     public float maxHealth, health;
-    public GameObject body;
 
     void Start()
     {

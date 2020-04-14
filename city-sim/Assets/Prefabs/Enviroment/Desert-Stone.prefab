@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 8865036649522666904}
   - component: {fileID: 8865036649522666905}
   - component: {fileID: 900161787188820728}
-  m_Layer: 8
+  - component: {fileID: -2678542726636466871}
+  m_Layer: 10
   m_Name: Desert-Stone
   m_TagString: Selectable
   m_Icon: {fileID: 0}
@@ -867,3 +868,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0.24, y: 0.48, z: -0.78}
   m_TimeToStationary: 0.5
+--- !u!114 &-2678542726636466871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8865036649522666906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79cb12174fce98a4c8490b1ca68edf85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  value: 2
+  maxHealth: 75
+  health: 0
+  body: {fileID: 0}
