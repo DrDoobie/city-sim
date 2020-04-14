@@ -4279,12 +4279,17 @@ PrefabInstance:
     - target: {fileID: 7714895252752348997, guid: d64e8385fb8534644a2853bd6c4b4706,
         type: 3}
       propertyPath: attackRange
-      value: 2.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7714895252752348997, guid: d64e8385fb8534644a2853bd6c4b4706,
         type: 3}
       propertyPath: wanderCoolDown
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7714895252752348997, guid: d64e8385fb8534644a2853bd6c4b4706,
+        type: 3}
+      propertyPath: attackCoolDown
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d64e8385fb8534644a2853bd6c4b4706, type: 3}

@@ -4,7 +4,7 @@ using UnityEngine.AI;
 
 public class Human : MonoBehaviour
 {
-    public bool walking = false, fleeing = false;
+    public bool walking = false, fleeing = false, attacking = false;
     public float maxHealth = 100.0f, health;
     public Vector3 destination;
     public Animator animator;
@@ -65,12 +65,23 @@ public class Human : MonoBehaviour
         {
             animator.SetBool("isWalking", true);
             animator.SetBool("isIdle", false);
+            animator.SetBool("isAttacking", false);
+
+            return;
+        }
+
+        if(attacking)
+        {
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isIdle", false);
+            animator.SetBool("isAttacking", true);
 
             return;
         }
 
         animator.SetBool("isWalking", false);
         animator.SetBool("isIdle", true);
+        animator.SetBool("isAttacking", false);
     }
 
     void GatherController()
@@ -100,6 +111,7 @@ public class Human : MonoBehaviour
 
         //Debug.Log("Walking");
         walking = true;
+        attacking = false;
 
         destination = wanderPosition;
 
@@ -162,7 +174,9 @@ public class Human : MonoBehaviour
                 {
                     if(Time.time >= attackCoolDown)
                     {
+                        attacking = true;
                         Debug.Log("Gathering resources!");
+                        
                         resource.MineResource(attackDamage);
 
                         attackCoolDown = Time.time + (1.0f / attackRate);
