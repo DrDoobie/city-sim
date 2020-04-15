@@ -15216,7 +15216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackAnimation: Punch
-  animator: {fileID: 8296172668870687525}
+  animator: {fileID: 1676987578}
 --- !u!114 &1528754829
 MonoBehaviour:
   m_ObjectHideFlags: 0
