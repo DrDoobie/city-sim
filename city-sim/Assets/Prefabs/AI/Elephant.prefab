@@ -190,7 +190,7 @@ MonoBehaviour:
   fleeTime: 3
   attackDamage: 25
   attackRate: 2
-  attackCoolDown: 2
+  attackCoolDown: 4
   attackRange: 4.53
   attackPoint: {fileID: 2607941408896837827}
   hittableLayers:
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 15
-  viewAngle: 180
+  viewAngle: 120
   targetMask:
     serializedVersion: 2
     m_Bits: 4096
