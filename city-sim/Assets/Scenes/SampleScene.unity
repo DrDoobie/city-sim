@@ -4802,8 +4802,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starving: 0
-  stone: 0
-  wood: 0
+  stone: 4
+  maxStone: 10
+  wood: 19
+  maxWood: 20
   population: 0
   totalWorkers: 0
   avaliableWorkers: 0
@@ -15646,7 +15648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Stone: x'
+  m_Text: 'Stone: x/x'
 --- !u!222 &1512916649
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -19154,7 +19156,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Wood: x'
+  m_Text: 'Wood: x/x'
 --- !u!222 &1801189378
 CanvasRenderer:
   m_ObjectHideFlags: 0
