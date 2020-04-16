@@ -19,7 +19,7 @@ MonoBehaviour:
   cost: 1
   objInfo: '[Hut]
 
-    Cost - 5 resources
+    Cost - 5 wood
 
     A hut that will house 1 person.'
   objType: Wood

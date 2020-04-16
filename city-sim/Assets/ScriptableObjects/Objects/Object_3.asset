@@ -19,11 +19,11 @@ MonoBehaviour:
   cost: 1
   objInfo: '[Farming Plot]
 
-    Cost - 1 resources
+    Cost - 1 wood
 
     Grow food and other
 
-    resources
+    crops
     here.'
   objType: Wood
   placementTag: Terrain
