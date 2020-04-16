@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BuildingSystem : MonoBehaviour
 {
     public AudioManager audioManager;
+    public WallBuilding wallBuilding;
     public float rotateAngle;
     public GameObject objToPlace;
     public GameObject[] rtsObjects;
@@ -80,6 +81,8 @@ public class BuildingSystem : MonoBehaviour
         } else {
             Debug.Log("No object data!");
         }
+
+        WallBuildingController();
 
         //Movement of cursor/ghost
         Ray ray = Camera.main.ScreenPointToRay(mousePos);
@@ -167,13 +170,24 @@ public class BuildingSystem : MonoBehaviour
         objToPlace = rtsObjects[obj];
     }
 
+    void WallBuildingController()
+    {
+        if(objToPlace.GetComponent<ObjectInfo>().obj.objType == "Wall")
+        {
+            wallBuilding.enabled = true;
+
+            return;   
+        }
+
+        wallBuilding.enabled = false;
+    }
+
     void CheckPlace()
     {
         Object obj = objToPlace.GetComponent<ObjectInfo>().obj;
         ResourceController resourceController = GameController.Instance.resourceController;
         GhostObject gObject = ghostObj.GetComponent<GhostObject>();
 
-        //Determine resource needed
         if(obj.objType == "Wood" && resourceController.wood >= obj.cost)
         {
             if(gObject.canPlace)

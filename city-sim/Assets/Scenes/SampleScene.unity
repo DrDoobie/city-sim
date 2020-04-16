@@ -357,12 +357,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioManager: {fileID: 523899779}
+  wallBuilding: {fileID: 7927964}
   rotateAngle: 45
   objToPlace: {fileID: 0}
   rtsObjects:
   - {fileID: 1288834111831420727, guid: 223d0e519f8d0a1498342357f424539b, type: 3}
   - {fileID: 4232712898929787018, guid: f4a134eb9e815244f95a406969addf10, type: 3}
-  - {fileID: 1400897343099081816, guid: 654cdcd35bdb85444a57733535db121d, type: 3}
+  - {fileID: 5295172913736383284, guid: bc261342850764342a8f20cff6f0827b, type: 3}
   - {fileID: 6816313214096901651, guid: e42a9b6879cc9fb4189828199a2b9108, type: 3}
   ghostObj: {fileID: 0}
   ghostMaterial:
@@ -375,7 +376,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7927958}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ba62d9495a4530449770c1f6e01e0fd, type: 3}
   m_Name: 

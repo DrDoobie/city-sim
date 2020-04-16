@@ -18,7 +18,10 @@ public class WallBuilding : MonoBehaviour
 
     void Update()
     {
-        GetInput();
+        if(GameController.Instance.rtsMode)
+        {
+            GetInput();
+        }
     }
 
     void GetInput()
@@ -68,7 +71,8 @@ public class WallBuilding : MonoBehaviour
 
         if(!current.Equals(lastPost.transform.position))
         {
-            CreateFenceSegment(current);
+            if(GameController.Instance.resourceController.wood >= 1)
+                CreateFenceSegment(current);
         }
     }
 
@@ -76,6 +80,9 @@ public class WallBuilding : MonoBehaviour
     {
         GameObject newPost = Instantiate(postObj, current, Quaternion.identity);
 
+        GameController.Instance.resourceController.wood--;
+
+        //Prevent diagonal placement
         float dist = Vector3.Distance(newPost.transform.position, lastPost.transform.position);
 
         if(dist > 1)

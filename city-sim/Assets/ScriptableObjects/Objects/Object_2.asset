@@ -15,7 +15,7 @@ MonoBehaviour:
   layerSpecific: 0
   cost: 1
   placementTag: Terrain
-  objType: Wood
+  objType: Wall
   objInfo: '[Wall]
 
     Cost - 1 wood
