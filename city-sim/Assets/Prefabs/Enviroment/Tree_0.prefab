@@ -134,7 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0514b3b7fd417b46bad0793fdf962e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 2
+  value: 3
   health: 100
   despawnDelay: 10
   treeFallForce: 5

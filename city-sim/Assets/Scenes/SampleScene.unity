@@ -15576,7 +15576,7 @@ MonoBehaviour:
   hand: {fileID: 1773114610}
   itemPosition: {x: -0.001, y: -0.001, z: 0.003}
   itemRotation: {x: -0.03376056, y: -0.00058929314, z: 0.017442506, w: -0.99927753}
-  attackRange: 1
+  attackRange: 1.5
   attackSpeed: 2
   attackDamage: 25
   handDamage: 15

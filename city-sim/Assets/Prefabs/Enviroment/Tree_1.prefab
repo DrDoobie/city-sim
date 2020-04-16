@@ -85,7 +85,7 @@ MeshRenderer:
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
+  m_SelectedEditorRenderState: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0514b3b7fd417b46bad0793fdf962e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  value: 2
+  value: 4
   health: 100
   despawnDelay: 10
   treeFallForce: 5
