@@ -76,6 +76,11 @@ public class WallBuilding : MonoBehaviour
     {
         GameObject newPost = Instantiate(postObj, current, Quaternion.identity);
 
+        float dist = Vector3.Distance(newPost.transform.position, lastPost.transform.position);
+
+        if(dist > 1)
+            return;
+
         Vector3 middle = Vector3.Lerp(newPost.transform.position, lastPost.transform.position, 0.5f);
 
         GameObject newWall = Instantiate(wallObj, middle, Quaternion.identity);
