@@ -13,18 +13,17 @@ MonoBehaviour:
   m_Name: Object_2
   m_EditorClassIdentifier: 
   layerSpecific: 0
-  rotX: 0
-  rotY: 0
-  rotZ: 1
-  cost: 2
+  cost: 1
+  placementTag: Terrain
+  objType: Wood
   objInfo: '[Wall]
 
-    Cost - 2 wood
+    Cost - 1 wood
 
     A wall to keep you safe
 
     from the
     outside world.'
-  objType: Wood
-  placementTag: Terrain
-  icon: {fileID: 21300000, guid: 0c8f6b1b56b68c3438a1c17a7beede39, type: 3}
+  rotX: 0
+  rotY: 0
+  rotZ: 1

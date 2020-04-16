@@ -6,10 +6,10 @@ using UnityEngine.UI;
 [CreateAssetMenu(fileName = "New Object", menuName = "Object")]
 public class Object : ScriptableObject
 {
-    public bool layerSpecific, rotX, rotY, rotZ;
+    public bool layerSpecific;
     public int cost;
-    [TextArea] public string objInfo;
-    public string objType;
     public string placementTag;
-    public Sprite icon;
+    public string objType;
+    [TextArea] public string objInfo;
+    public bool rotX, rotY, rotZ;
 }

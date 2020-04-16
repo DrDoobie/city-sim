@@ -169,43 +169,57 @@ public class BuildingSystem : MonoBehaviour
 
     void CheckPlace()
     {
-        ObjectInfo objInfo = objToPlace.GetComponent<ObjectInfo>();
+        Object obj = objToPlace.GetComponent<ObjectInfo>().obj;
         ResourceController resourceController = GameController.Instance.resourceController;
-        ResourceStorage resourceStorage = objToPlace.GetComponent<ResourceStorage>();
         GhostObject gObject = ghostObj.GetComponent<GhostObject>();
 
         //Determine resource needed
-        if(objInfo.obj.objType == "Wood")
+        if(obj.objType == "Wood" && resourceController.wood >= obj.cost)
         {
-            if(resourceController.wood >= objInfo.obj.cost)
+            if(gObject.canPlace)
             {
-                if(resourceStorage)
-                {
-                    resourceStorage.AddToStorage();
-                }
+                PlaceObj(obj);
 
-                if(gObject.canPlace)
-                {
-                    PlaceObj(objInfo);
-
-                    return;
-                }
-
-                Debug.Log("Error: not enough space to place");
                 return;
             }
+
+            Debug.Log("Error: not enough space to place");
+            return;
+        }
+
+        if(obj.objType == "Stone" && resourceController.stone >= obj.cost)
+        {
+            if(gObject.canPlace)
+            {
+                PlaceObj(obj);
+
+                return;
+            }
+
+            Debug.Log("Error: not enough space to place");
+            return;
         }
             
         Debug.Log("Error: couldn't afford to place");
     }
 
-    void PlaceObj(ObjectInfo objInfo)
+    void PlaceObj(Object obj)
     {
         ResourceController resourceController = GameController.Instance.resourceController;
+        ResourceStorage resourceStorage = objToPlace.GetComponent<ResourceStorage>();
+
+        if(resourceStorage)
+        {
+            resourceStorage.AddToStorage();
+        }
 
         GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);
                 
-        resourceController.wood -= objInfo.obj.cost;
+        if(obj.objType == "Wood")
+            resourceController.wood -= obj.cost;
+
+        if(obj.objType == "Stone")
+            resourceController.stone -= obj.cost;
 
         audioManager.PlaySound("Build");
 
