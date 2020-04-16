@@ -4847,22 +4847,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starving: 0
-  stone: 3
-  maxStone: 10
-  wood: 6
-  maxWood: 10
-  population: 0
-  totalWorkers: 0
-  avaliableWorkers: 0
-  homes: 0
-  food: 0
-  maxFood: 25
-  foodLossRate: 0.1
   stoneText: {fileID: 1512916648}
   woodText: {fileID: 1801189377}
   homesText: {fileID: 520959424}
   populationText: {fileID: 2039046435}
   foodText: {fileID: 2107465764}
+  population: 0
+  totalWorkers: 0
+  avaliableWorkers: 0
+  homes: 0
+  stone: 3
+  maxStone: 10
+  wood: 6
+  maxWood: 15
+  food: 0
+  maxFood: 25
+  foodLossRate: 0.1
 --- !u!114 &523899779
 MonoBehaviour:
   m_ObjectHideFlags: 0

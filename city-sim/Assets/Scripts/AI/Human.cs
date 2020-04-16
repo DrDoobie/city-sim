@@ -184,6 +184,24 @@ public class Human : MonoBehaviour
                     }
                 }
             }
+
+            //Tree chopping
+            /*if(hit.gameObject.layer == 9)
+            {
+                TreeScript tree = hit.GetComponent<TreeScript>();
+
+                if(tree)
+                {
+                    if(Time.time >= attackCoolDown)
+                    {
+                        //Debug.Log("Chopping tree!");
+                            
+                        tree.health -= attackDamage;
+
+                        attackCoolDown = Time.time + (1.0f / attackRate);
+                    }
+                }
+            }*/
         }
     }
 

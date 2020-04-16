@@ -162,7 +162,7 @@ MonoBehaviour:
   attackPoint: {fileID: 3147134840184129784}
   hittableLayers:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1536
 --- !u!114 &3147134841840554581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -176,10 +176,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   viewRadius: 20
-  viewAngle: 180
+  viewAngle: 90
   targetMask:
     serializedVersion: 2
-    m_Bits: 1024
+    m_Bits: 1536
   obstacleMask:
     serializedVersion: 2
     m_Bits: 0
