@@ -1665,7 +1665,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192172057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 1.223}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1528754823}
@@ -4802,10 +4802,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   starving: 0
-  stone: 4
-  maxStone: 10
-  wood: 19
-  maxWood: 20
+  stone: 3
+  maxStone: 5
+  wood: 6
+  maxWood: 10
   population: 0
   totalWorkers: 0
   avaliableWorkers: 0
@@ -15901,7 +15901,7 @@ MonoBehaviour:
   hand: {fileID: 1773114610}
   itemPosition: {x: -0.001, y: -0.001, z: 0.003}
   itemRotation: {x: -0.03376056, y: -0.00058929314, z: 0.017442506, w: -0.99927753}
-  attackRange: 1.5
+  attackRange: 1
   attackSpeed: 2
   attackDamage: 25
   handDamage: 15
