@@ -6,10 +6,19 @@ using UnityEngine.UI;
 public class ResourceController : MonoBehaviour
 {
     public bool starving;
-    public int stone, maxStone, wood, maxWood;
-    public int population = 0, totalWorkers, avaliableWorkers, homes = 0;
+
+    [Header("UI")]
+    public Text stoneText;
+    public Text woodText, homesText, populationText, foodText;
+
+    [Header("Town")]
+    public int population = 0;
+    public int totalWorkers, avaliableWorkers, homes = 0;
+
+    [Header("Resources")]
+    public int stone;
+    public int maxStone, wood, maxWood;
     public float food, maxFood, foodLossRate;
-    public Text stoneText, woodText, homesText, populationText, foodText;
 
     void Start()
     {
