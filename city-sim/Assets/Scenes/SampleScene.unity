@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focusOffset: 4
-  panSpeed: 15
+  panSpeed: 20
   panBorderThickness: 10
   zoomSpeed: 5
   minY: 1
@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8541c07e0a237fb4589e8fb475a64e97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 523899779}
   rotateAngle: 45
   objToPlace: {fileID: 0}
   rtsObjects:

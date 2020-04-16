@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class BuildingSystem : MonoBehaviour
 {
+    public AudioManager audioManager;
     public float rotateAngle;
     public GameObject objToPlace;
     public GameObject[] rtsObjects;
@@ -41,7 +42,27 @@ public class BuildingSystem : MonoBehaviour
         ghostObj.SetActive(false);
     }
 
-    private void BuildController()
+    void SetGhost()
+    {
+        if(ghostObj != null)
+        {
+            lastPos = ghostObj.transform.position;
+
+            Destroy(ghostObj);
+
+            ghostObj = null;
+        }
+
+        ghostObj = rtsObjects[obj];
+
+        GameObject go = Instantiate(ghostObj, lastPos, ghostObj.transform.rotation);
+
+        go.AddComponent(typeof(GhostObject));
+    
+        ghostObj = go;
+    }
+
+    void BuildController()
     {
         SwitchObj();
 
@@ -104,12 +125,12 @@ public class BuildingSystem : MonoBehaviour
 
             if(Input.GetButtonDown("Fire1"))
             {
-                PlaceObj();
+                CheckPlace();
             }
         }
     }
     
-    private void SwitchObj()
+    void SwitchObj()
     {
         float scroll = Input.GetAxisRaw("Mouse ScrollWheel");
         
@@ -146,80 +167,48 @@ public class BuildingSystem : MonoBehaviour
         objToPlace = rtsObjects[obj];
     }
 
-    private void PlaceObj()
+    void CheckPlace()
     {
-        //Determina resource needed
         ObjectInfo objInfo = objToPlace.GetComponent<ObjectInfo>();
+        ResourceController resourceController = GameController.Instance.resourceController;
+        ResourceStorage resourceStorage = objToPlace.GetComponent<ResourceStorage>();
+        GhostObject gObject = ghostObj.GetComponent<GhostObject>();
 
+        //Determine resource needed
         if(objInfo.obj.objType == "Wood")
-            if(GameController.Instance.resourceController.wood >= objInfo.obj.cost)
+        {
+            if(resourceController.wood >= objInfo.obj.cost)
             {
-                ResourceStorage resourceStorage = objToPlace.GetComponent<ResourceStorage>();
-
                 if(resourceStorage)
                 {
                     resourceStorage.AddToStorage();
                 }
 
-                if(ghostObj.GetComponent<GhostObject>().canPlace)
+                if(gObject.canPlace)
                 {
-                    GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);
-                
-                    GameController.Instance.resourceController.wood -= objInfo.obj.cost;
+                    PlaceObj(objInfo);
 
-                    FindObjectOfType<AudioManager>().PlaySound("Build");
-
-                    //Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
                     return;
                 }
 
                 Debug.Log("Error: not enough space to place");
                 return;
             }
-
-        if(objInfo.obj.objType == "Stone")
-            if(GameController.Instance.resourceController.stone >= objInfo.obj.cost)
-            {
-                ResourceStorage resourceStorage = objToPlace.GetComponent<ResourceStorage>();
-
-                if(resourceStorage)
-                {
-                    resourceStorage.AddToStorage();
-                }
-
-                if(ghostObj.GetComponent<GhostObject>().canPlace)
-                {
-                    GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);
-                    
-                    GameController.Instance.resourceController.stone -= objInfo.obj.cost;
-
-                    FindObjectOfType<AudioManager>().PlaySound("Build");
-
-                    //Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
-                    return;
-                }
-            }
-
+        }
+            
         Debug.Log("Error: couldn't afford to place");
     }
 
-    private void SetGhost()
+    void PlaceObj(ObjectInfo objInfo)
     {
-        if(ghostObj != null)
-        {
-            lastPos = ghostObj.transform.position;
+        ResourceController resourceController = GameController.Instance.resourceController;
 
-            Destroy(ghostObj);
+        GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);
+                
+        resourceController.wood -= objInfo.obj.cost;
 
-            ghostObj = null;
-        }
+        audioManager.PlaySound("Build");
 
-        ghostObj = rtsObjects[obj];
-
-        GameObject go = Instantiate(ghostObj, lastPos, ghostObj.transform.rotation);
-
-        go.AddComponent(typeof(GhostObject));
-    
-        ghostObj = go;
+        //Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
     }
 }
