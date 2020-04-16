@@ -39,7 +39,7 @@ public class TreeScript : MonoBehaviour
 
             rigidBody.AddForce(transform.forward * treeFallForce);
 
-            GameController.Instance.resourceController.resources += value;
+            GameController.Instance.resourceController.wood += value;
 
             rigidBodyMade = true;
         }

@@ -885,3 +885,4 @@ MonoBehaviour:
   value: 1
   maxHealth: 45
   health: 0
+  resourceType: Wood

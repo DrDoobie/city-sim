@@ -165,7 +165,7 @@ public class Human : MonoBehaviour
         //Apply damage to each hit object
         foreach(Collider hit in gotHit)
         {
-            Debug.Log("Detected hittable object");
+            //Debug.Log("Detected hittable object");
 
             //Gatherable resources
             if(hit.gameObject.layer == 10)
@@ -176,7 +176,7 @@ public class Human : MonoBehaviour
                 {
                     if(Time.time >= attackCoolDown)
                     {
-                        Debug.Log("Gathering resources!");
+                        //Debug.Log("Gathering resources!");
                         
                         resource.MineResource(attackDamage);
 

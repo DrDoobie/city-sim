@@ -40,14 +40,9 @@ public class WorkPlace : MonoBehaviour
 
         if(resourceGenCoolDown <= 0)
         {
-            GenerateResources();
+            //GenerateResources();
 
             resourceGenCoolDown = _resourceGenCoolDown;
         }
-    }
-
-    void GenerateResources()
-    {
-        GameController.Instance.resourceController.resources += (1 * currentEmployees);
     }
 }

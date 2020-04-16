@@ -22,5 +22,6 @@ MonoBehaviour:
     Cost - 5 resources
 
     A hut that will house 1 person.'
+  objType: Wood
   placementTag: Terrain
   icon: {fileID: 21300000, guid: 05f2c80f7f516e24688927bb2a117dbd, type: 3}

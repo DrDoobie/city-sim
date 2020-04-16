@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BuildingGhost : MonoBehaviour
 {
     public int reqResources, resources;
+    public string requiredResource;
     public Material finishedMaterial;
     public Renderer rend;
 
@@ -82,9 +83,19 @@ public class BuildingGhost : MonoBehaviour
 
             if(playerCombat.itemInHand != null && playerCombat.itemInHand.GetComponent<UseableItem>().item.itemType == "building tool")
             {
-                resources += value;
+                if(requiredResource == "Wood")
+                {
+                    resources += value;
 
-                GameController.Instance.resourceController.resources--;
+                    GameController.Instance.resourceController.wood--;
+                }
+
+                if(requiredResource == "Stone")
+                {
+                    resources += value;
+                    
+                    GameController.Instance.resourceController.stone--;    
+                }
 
                 FindObjectOfType<AudioManager>().PlaySound("Build");
             }

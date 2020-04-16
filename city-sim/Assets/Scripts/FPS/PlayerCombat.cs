@@ -101,9 +101,19 @@ public class PlayerCombat : MonoBehaviour
                 }
 
                 //Building ghosts
-                if(buildingGhost && GameController.Instance.resourceController.resources >= 1)
+                if(buildingGhost)
                 {
-                    buildingGhost.AddResources(1);
+                    if(buildingGhost.requiredResource == "Wood")
+                        if(GameController.Instance.resourceController.wood >= 1)
+                        {
+                            buildingGhost.AddResources(1);
+                        }
+                    
+                    if(buildingGhost.requiredResource == "Stone")
+                        if(GameController.Instance.resourceController.stone >= 1)
+                        {
+                            buildingGhost.AddResources(1);
+                        }
                 }
 
                 //Hit animal

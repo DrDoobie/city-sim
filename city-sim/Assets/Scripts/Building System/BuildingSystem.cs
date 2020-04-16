@@ -150,23 +150,40 @@ public class BuildingSystem : MonoBehaviour
     {
         ObjectInfo objInfo = objToPlace.GetComponent<ObjectInfo>();
 
-        if(GameController.Instance.resourceController.resources >= objInfo.obj.cost)
-        {
-            if(ghostObj.GetComponent<GhostObject>().canPlace)
+        if(objInfo.obj.objType == "Wood")
+            if(GameController.Instance.resourceController.wood >= objInfo.obj.cost)
             {
-                GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);
-        
-                GameController.Instance.resourceController.resources -= objInfo.obj.cost;
+                if(ghostObj.GetComponent<GhostObject>().canPlace)
+                {
+                    GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);
+                
+                    GameController.Instance.resourceController.wood -= objInfo.obj.cost;
 
-                FindObjectOfType<AudioManager>().PlaySound("Build");
+                    FindObjectOfType<AudioManager>().PlaySound("Build");
 
-                //Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
+                    //Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
+                    return;
+                }
+
+                Debug.Log("Error: not enough space to place");
                 return;
             }
 
-            Debug.Log("Error: not enough space to place");
-            return;
-        }
+        if(objInfo.obj.objType == "Stone")
+            if(GameController.Instance.resourceController.stone >= objInfo.obj.cost)
+            {
+                if(ghostObj.GetComponent<GhostObject>().canPlace)
+                {
+                    GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);
+                    
+                    GameController.Instance.resourceController.stone -= objInfo.obj.cost;
+
+                    FindObjectOfType<AudioManager>().PlaySound("Build");
+
+                    //Debug.Log("Placed " + objToPlace + " at position " + go.transform.position);
+                    return;
+                }
+            }
 
         Debug.Log("Error: couldn't afford to place");
     }

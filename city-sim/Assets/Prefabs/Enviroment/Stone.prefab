@@ -883,3 +883,4 @@ MonoBehaviour:
   value: 1
   maxHealth: 50
   health: 0
+  resourceType: Stone

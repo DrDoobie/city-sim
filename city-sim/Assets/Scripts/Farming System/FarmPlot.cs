@@ -24,7 +24,7 @@ public class FarmPlot : MonoBehaviour
 
     public void PlantSeed()
     {
-        if(GameController.Instance.resourceController.resources > 0)
+        if(GameController.Instance.resourceController.food > 0)
         {
             PlayerCombat playerCombat = FindObjectOfType<PlayerCombat>();
 
@@ -38,7 +38,7 @@ public class FarmPlot : MonoBehaviour
 
                         seed.transform.parent = spot;
 
-                        GameController.Instance.resourceController.resources--;
+                        GameController.Instance.resourceController.food--;
 
                         FindObjectOfType<AudioManager>().PlaySound("Plant Seed");
 

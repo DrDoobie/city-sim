@@ -6,6 +6,7 @@ public class Resource : MonoBehaviour
 {
     public int value;
     public float maxHealth, health;
+    public string resourceType;
 
     void Start()
     {
@@ -27,8 +28,12 @@ public class Resource : MonoBehaviour
 
     void Harvest()
     {
-        GameController.Instance.resourceController.resources += value;
+        if(resourceType == "Wood")
+            GameController.Instance.resourceController.wood += value;
 
+        if(resourceType == "Stone")
+            GameController.Instance.resourceController.stone += value;
+            
         this.gameObject.SetActive(false);
     }
 

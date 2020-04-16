@@ -69,7 +69,7 @@ public class SelectionController : MonoBehaviour
             {
                 if(hit.transform == selectedObject)
                 {
-                    RemoveObject(hit.transform.gameObject);
+                    //RemoveObject(hit.transform.gameObject);
                 }
             }
         }
@@ -159,13 +159,6 @@ public class SelectionController : MonoBehaviour
         ResetMaterial();
 
         selectedObject = null;
-    }
-
-    void RemoveObject(GameObject obj)
-    {
-        GetComponent<ResourceController>().resources++;
-
-        Destroy(obj);
     }
 
     void MovePlayer(Vector3 clickPos)
