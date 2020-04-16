@@ -148,19 +148,19 @@ public class BuildingSystem : MonoBehaviour
 
     private void PlaceObj()
     {
-        ResourceStorage resourceStorage = objToPlace.GetComponent<ResourceStorage>();
-
-        if(resourceStorage)
-        {
-            resourceStorage.AddToStorage();
-        }
-
         //Determina resource needed
         ObjectInfo objInfo = objToPlace.GetComponent<ObjectInfo>();
 
         if(objInfo.obj.objType == "Wood")
             if(GameController.Instance.resourceController.wood >= objInfo.obj.cost)
             {
+                ResourceStorage resourceStorage = objToPlace.GetComponent<ResourceStorage>();
+
+                if(resourceStorage)
+                {
+                    resourceStorage.AddToStorage();
+                }
+
                 if(ghostObj.GetComponent<GhostObject>().canPlace)
                 {
                     GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);
@@ -180,6 +180,13 @@ public class BuildingSystem : MonoBehaviour
         if(objInfo.obj.objType == "Stone")
             if(GameController.Instance.resourceController.stone >= objInfo.obj.cost)
             {
+                ResourceStorage resourceStorage = objToPlace.GetComponent<ResourceStorage>();
+
+                if(resourceStorage)
+                {
+                    resourceStorage.AddToStorage();
+                }
+
                 if(ghostObj.GetComponent<GhostObject>().canPlace)
                 {
                     GameObject go = Instantiate(objToPlace, ghostObj.transform.position, ghostObj.transform.rotation);

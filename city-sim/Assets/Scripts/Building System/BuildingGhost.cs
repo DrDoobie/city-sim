@@ -39,7 +39,11 @@ public class BuildingGhost : MonoBehaviour
 
     void CheckResources()
     {
-        GameController.Instance.displayText.text = "[Left Click] to add resources: " + resources.ToString("0#") + "/" + reqResources.ToString("0#");
+        if(requiredResource == "Wood")
+            GameController.Instance.displayText.text = "[Left Click] to add wood: " + resources.ToString("0#") + "/" + reqResources.ToString("0#");
+
+        if(requiredResource == "Stone")
+            GameController.Instance.displayText.text = "[Left Click] to add stone: " + resources.ToString("0#") + "/" + reqResources.ToString("0#");
 
         if(resources >= reqResources)
         {

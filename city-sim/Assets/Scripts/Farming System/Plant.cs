@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Plant : MonoBehaviour
 {
-    public float growSpeed = 0.1f, growTime = 15.0f;
+    public float value, growSpeed = 0.1f, growTime = 15.0f;
     public Animator animator;
 
     void Update()
@@ -37,7 +37,7 @@ public class Plant : MonoBehaviour
         if(GameController.Instance.resourceController.food < GameController.Instance.resourceController.maxFood)
         {
             //Debug.Log("Harvest");
-            GameController.Instance.resourceController.food += 1;
+            GameController.Instance.resourceController.food += value;
 
             Destroy(this.gameObject);
 
