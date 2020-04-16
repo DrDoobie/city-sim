@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5304238580227369152}
   - component: {fileID: 5304238580227369155}
   - component: {fileID: -3880002917691201803}
+  - component: {fileID: 8504341592337812899}
   m_Layer: 0
   m_Name: Wood Shed
   m_TagString: Untagged
@@ -126,3 +127,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 11400000, guid: a0797ade1359d82458a52d8307b7665a, type: 2}
+--- !u!114 &8504341592337812899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4232712898929787018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a14c2c34b18d8844a940279ebeec9c83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storageValue: 10

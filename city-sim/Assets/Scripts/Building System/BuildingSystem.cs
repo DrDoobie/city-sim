@@ -148,6 +148,14 @@ public class BuildingSystem : MonoBehaviour
 
     private void PlaceObj()
     {
+        ResourceStorage resourceStorage = objToPlace.GetComponent<ResourceStorage>();
+
+        if(resourceStorage)
+        {
+            resourceStorage.AddToStorage();
+        }
+
+        //Determina resource needed
         ObjectInfo objInfo = objToPlace.GetComponent<ObjectInfo>();
 
         if(objInfo.obj.objType == "Wood")

@@ -15,11 +15,11 @@ MonoBehaviour:
   layerSpecific: 0
   rotX: 0
   rotY: 0
-  rotZ: 1
-  cost: 3
+  rotZ: 0
+  cost: 5
   objInfo: '[Wood Shed]
 
-    Cost - 3 wood
+    Cost - 5 wood
 
     Gives +10 extra storage
 
