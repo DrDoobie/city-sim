@@ -44,6 +44,6 @@ public class TreeScript : MonoBehaviour
             rigidBodyMade = true;
         }
 
-        Destroy(this.gameObject, despawnDelay);
+        this.gameObject.SetActive(false);
     }
 }
