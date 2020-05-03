@@ -12,11 +12,18 @@ public class RTSCamera : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButton("Sprint"))
+        Controller();
+    }
+
+    void Controller()
+    {
+        if (Input.GetButton("Sprint"))
         {
             moveSpeed = shiftSpeed;
 
-        } else {
+        }
+        else
+        {
             moveSpeed = normalSpeed;
         }
 
