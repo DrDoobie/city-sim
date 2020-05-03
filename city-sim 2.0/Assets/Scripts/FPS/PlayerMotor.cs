@@ -60,7 +60,7 @@ public class PlayerMotor : MonoBehaviour
         //Jumping
         if(Input.GetButtonDown("Jump") && isGrounded)
         {
-            Jump();
+            //Jump();
         }
 
         if(isAnimated)

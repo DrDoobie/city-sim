@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class GameController : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameController : MonoBehaviour
     public bool rtsMode;
     public GameObject rtsCam, fpsCam;
     public PlayerMotor playerMotor;
+    public NavMeshAgent playerAgent;
 
     void Awake()
     {
@@ -43,6 +45,7 @@ public class GameController : MonoBehaviour
             fpsCam.SetActive(false);
 
             playerMotor.enabled = false;
+            playerAgent.enabled = true;
 
             return;
         }
@@ -53,5 +56,6 @@ public class GameController : MonoBehaviour
         fpsCam.SetActive(true);
 
         playerMotor.enabled = true;
+        playerAgent.enabled = false;
     }
 }
