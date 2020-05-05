@@ -9,8 +9,8 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public LayerMask hittableLayers;
 
-    [Header("Animation")]
-    public Animator animator;
+    //[Header("Animation")]
+    // Animator animator;
 
     float nextAttackTime = 0.0f;
 
@@ -29,12 +29,12 @@ public class PlayerCombat : MonoBehaviour
 
     void TriggerAttack()
     {
-        if(animator != null)
+        /*if(animator != null)
         {
             animator.SetTrigger("Attack");
 
             return;
-        }
+        }*/
 
         Attack();
     }
