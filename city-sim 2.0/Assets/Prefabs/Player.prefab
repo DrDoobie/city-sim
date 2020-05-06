@@ -97,7 +97,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 3383
+    m_Bits: 11575
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -329,6 +329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 5
   cam: {fileID: 4807151488120052605}
+  notificationsText: {fileID: 0}
+  hitObj: {fileID: 0}
   layerMask:
     serializedVersion: 2
     m_Bits: 8192
@@ -465,7 +467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8641151547307957025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 1}
+  m_LocalPosition: {x: 0, y: 2, z: 1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4807151489175242208}

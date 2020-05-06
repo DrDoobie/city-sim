@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1584456404566325228}
   - component: {fileID: 5098523240558447381}
   - component: {fileID: 6844699385266012111}
+  - component: {fileID: 3312697968793571448}
   m_Layer: 13
   m_Name: Hoe
   m_TagString: Untagged
@@ -94,3 +95,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: 620cb790988f6524daa0bfa273163b0e, type: 3}
+--- !u!114 &3312697968793571448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6844699385266012105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a51fc834a8d5ef94ab6b7ac3e7a320e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

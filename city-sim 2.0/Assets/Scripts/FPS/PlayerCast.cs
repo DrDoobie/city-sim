@@ -32,6 +32,7 @@ public class PlayerCast : MonoBehaviour
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, range, layerMask))
         {
             //Debug.Log(hit.transform.name);
+
             hitObj = hit.transform;
         
         } else {
