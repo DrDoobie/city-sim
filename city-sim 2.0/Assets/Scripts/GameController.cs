@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+//using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; }
+
+    //[Header("UI Stuff")]
+    //public Text notificationsText;
 
     [Header("Mode Controller")]
     public bool rtsMode;
