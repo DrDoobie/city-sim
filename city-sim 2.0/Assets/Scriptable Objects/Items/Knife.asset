@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dc35a9118fabc346abe08c0cb04da87, type: 3}
+  m_Name: Knife
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5965055163243327179, guid: 359d1c4f74567db4f9a3cf1bc16cefda, type: 3}
+  type: 1
+  description: A small, but well crafted knife.
+  attackBonus: 10
+  defenseBonus: 6
