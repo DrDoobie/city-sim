@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Mud
   m_EditorClassIdentifier: 
   prefab: {fileID: 0}
-  type: 2
-  description: A small ball of caked mud.
+  type: 3
+  description: A small ball of caked up mud.

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1853119671105971730, guid: e7f9b2a270d4d174b9421b38b7f4268b, type: 3}
   type: 0
-  description: A rough axe made from a stick and stone.
+  description: A crudely crafted building hammer.
   attackBonus: 10
   defenseBonus: 1

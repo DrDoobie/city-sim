@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5295104149265056934, guid: fab3e109fa74cee4cb26668dd6397434, type: 3}
   type: 0
-  description: A rough axe made from a stick and stone.
+  description: A simple farming tool.
   attackBonus: 10
   defenseBonus: 1

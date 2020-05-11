@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 7770089008121263654, guid: edcc96b234552f2469f0aa3b6d7673f0, type: 3}
   type: 1
-  description: A hand crafted sword.
+  description: A hand crafted, wooden training sword.
   attackBonus: 15
   defenseBonus: 5
