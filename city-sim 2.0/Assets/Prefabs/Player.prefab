@@ -97,7 +97,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 11575
+    m_Bits: 27959
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -246,7 +246,7 @@ CharacterController:
   m_Height: 3
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.7
+  m_StepOffset: 0.8
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.5, z: 0}
@@ -333,7 +333,8 @@ MonoBehaviour:
   hitObj: {fileID: 0}
   layerMask:
     serializedVersion: 2
-    m_Bits: 8192
+    m_Bits: 24576
+  inventory: {fileID: 11400000, guid: 1d987bae43862b14d86cfbea3397707b, type: 2}
 --- !u!1 &4807151489550679342
 GameObject:
   m_ObjectHideFlags: 0
