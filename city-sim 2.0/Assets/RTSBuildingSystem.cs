@@ -3,51 +3,74 @@ using System.Collections;
  
 public class RTSBuildingSystem : MonoBehaviour
 {
-    public enum CursorState{Building,Rotating}
+    public enum CursorState{Building}
  
+    public float rotateSpeed;
     public CursorState state = CursorState.Building;
     public Camera cam;
-    public Transform ObjToMove;
-    public GameObject ObjToPlace;
+    public Transform ghostObj;
+    public GameObject objToPlace;
     public LayerMask mask;
+
+    float lastPosX,lastPosY,lastPosZ;
     GameObject builtObject;
-    float LastPosX,LastPosY,LastPosZ;
     Vector3 mousePos;
    
-    // Update is called once per frame
-    void Update ()
+    void Update()
+    {
+        BuildMode();
+    }
+
+    void BuildMode()
     {
         mousePos = Input.mousePosition;
         Ray ray = cam.ScreenPointToRay(mousePos);
         RaycastHit hit;
-       
-        if(Physics.Raycast(ray, out hit,Mathf.Infinity,mask))
+
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
         {
-            float PosX = hit.point.x;
-            float PosY = hit.point.y;
-            float PosZ = hit.point.z;
- 
-            if(PosX != LastPosX || PosY != LastPosY || PosZ != LastPosZ)
+            //Recording mouse position
+            float posX = hit.point.x;
+            float posY = hit.point.y;
+            float posZ = hit.point.z;
+
+            if(posX != lastPosX || posY != lastPosY || posZ != lastPosZ)
             {
-                LastPosX = PosX;
-                LastPosY = PosY;
-                LastPosZ = PosZ;
-                ObjToMove.position = new Vector3(LastPosX,LastPosY+.5f,LastPosZ);
+                lastPosX = posX;
+                lastPosY = posY;
+                lastPosZ = posZ;
+
+                ghostObj.position = new Vector3(lastPosX, lastPosY + .5f, lastPosZ);
             }
-            if(Input.GetMouseButton(0))
+
+            //Rotation
+            if(Input.GetKey(KeyCode.E))
             {
-                if(state == CursorState.Building)
+                ghostObj.transform.Rotate(Vector3.up, (-rotateSpeed * 10.0f) * Time.deltaTime);
+            }
+
+            if(Input.GetKey(KeyCode.Q))
+            {
+                ghostObj.transform.Rotate(Vector3.up, (rotateSpeed * 10.0f) * Time.deltaTime);
+            }
+
+            if(Input.GetMouseButtonDown(0))
+            {
+                //Building
+                if (state == CursorState.Building)
                 {
-                    GameObject building = (GameObject)Instantiate(ObjToPlace,ObjToMove.position,Quaternion.identity);
+                    GameObject building = (GameObject)Instantiate(objToPlace, ghostObj.position, ghostObj.rotation);
+
                     builtObject = building;
-                    state = CursorState.Rotating;
+
+                    //state = CursorState.Rotating;
                 }
-                if(state == CursorState.Rotating)
-                    builtObject.transform.LookAt(new Vector3(LastPosX,builtObject.transform.position.y,LastPosZ));
             }
+
             if(Input.GetMouseButtonUp(0))
             {
                 builtObject = null;
+
                 state = CursorState.Building;
             }
         }
