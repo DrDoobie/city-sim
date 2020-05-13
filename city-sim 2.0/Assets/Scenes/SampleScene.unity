@@ -189,6 +189,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6792580663636452168, guid: c0b547ce8c4818442aec2aa4e5dce93a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ab53c3534e0ed24eb94e3c8e33bdf67, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0b547ce8c4818442aec2aa4e5dce93a, type: 3}
 --- !u!1001 &14385382
@@ -1076,7 +1081,7 @@ GameObject:
   - component: {fileID: 583005728}
   - component: {fileID: 583005729}
   m_Layer: 0
-  m_Name: CameraParent
+  m_Name: RTSController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1141,12 +1146,15 @@ MonoBehaviour:
   rotateSpeed: 10
   state: 0
   cam: {fileID: 1219718730}
-  ghostObj: {fileID: 1605670456}
   objToPlace: {fileID: 5716378576904790394, guid: c0b547ce8c4818442aec2aa4e5dce93a,
     type: 3}
   mask:
     serializedVersion: 2
     m_Bits: 256
+  ghostObj: {fileID: 1605670456}
+  ghostObjGraphics: {fileID: 859656609}
+  ghostMaterials:
+  - {fileID: 2100000, guid: 74c009231b4a9c244a7bf241f2da853b, type: 2}
 --- !u!1 &595886275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1438,6 +1446,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b67f612ef1a65c42a30d4350eaa88c0, type: 3}
+--- !u!1 &859656609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5078035162096129940, guid: c0b547ce8c4818442aec2aa4e5dce93a,
+    type: 3}
+  m_PrefabInstance: {fileID: 7117239}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &879521930
 PrefabInstance:
   m_ObjectHideFlags: 0

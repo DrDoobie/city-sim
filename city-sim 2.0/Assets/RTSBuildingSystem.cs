@@ -8,9 +8,13 @@ public class RTSBuildingSystem : MonoBehaviour
     public float rotateSpeed;
     public CursorState state = CursorState.Building;
     public Camera cam;
-    public Transform ghostObj;
     public GameObject objToPlace;
     public LayerMask mask;
+
+    [Header("Ghost Object")]
+    public Transform ghostObj;
+    public GameObject ghostObjGraphics;
+    public Material[] ghostMaterials;
 
     float lastPosX,lastPosY,lastPosZ;
     GameObject builtObject;
@@ -19,6 +23,8 @@ public class RTSBuildingSystem : MonoBehaviour
     void Update()
     {
         BuildMode();
+
+        GhostObject();
     }
 
     void BuildMode()
@@ -74,5 +80,12 @@ public class RTSBuildingSystem : MonoBehaviour
                 state = CursorState.Building;
             }
         }
+    }
+
+    void GhostObject()
+    {
+        MeshRenderer rend = ghostObjGraphics.GetComponent<MeshRenderer>();
+
+        rend.material = ghostMaterials[0];
     }
 }
