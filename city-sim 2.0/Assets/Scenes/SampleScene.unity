@@ -189,11 +189,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6792580663636452168, guid: c0b547ce8c4818442aec2aa4e5dce93a,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 0ab53c3534e0ed24eb94e3c8e33bdf67, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c0b547ce8c4818442aec2aa4e5dce93a, type: 3}
 --- !u!1001 &14385382
@@ -1155,6 +1150,7 @@ MonoBehaviour:
   ghostObjGraphics: {fileID: 859656609}
   ghostMaterials:
   - {fileID: 2100000, guid: 74c009231b4a9c244a7bf241f2da853b, type: 2}
+  - {fileID: 2100000, guid: 1d377fd744e738241843cd95bfc53576, type: 2}
 --- !u!1 &595886275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1843,7 +1839,7 @@ MonoBehaviour:
     m_Bits: 4096
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 1
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -1944,6 +1940,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7944a392d09c32c4f89ec387f01b7243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rtsBuildingSystem: {fileID: 583005729}
   rtsMode: 1
   rtsCam: {fileID: 583005725}
   fpsCam: {fileID: 1321133190}

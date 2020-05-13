@@ -13,7 +13,6 @@ public class RTSBuildingSystem : MonoBehaviour
 
     [Header("Ghost Object")]
     public Transform ghostObj;
-    public GameObject ghostObjGraphics;
     public Material[] ghostMaterials;
 
     float lastPosX,lastPosY,lastPosZ;
@@ -23,8 +22,6 @@ public class RTSBuildingSystem : MonoBehaviour
     void Update()
     {
         BuildMode();
-
-        GhostObject();
     }
 
     void BuildMode()
@@ -80,12 +77,5 @@ public class RTSBuildingSystem : MonoBehaviour
                 state = CursorState.Building;
             }
         }
-    }
-
-    void GhostObject()
-    {
-        MeshRenderer rend = ghostObjGraphics.GetComponent<MeshRenderer>();
-
-        rend.material = ghostMaterials[0];
     }
 }
