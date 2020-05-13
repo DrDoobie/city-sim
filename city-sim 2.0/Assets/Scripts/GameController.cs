@@ -2,13 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-//using UnityEngine.UI;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; }
 
+    public bool buildMode = false;
     public RTSBuildingSystem rtsBuildingSystem;
+
+    [Header("UI")]
+    public Text modeText;
 
     [Header("Mode Controller")]
     public bool rtsMode;
@@ -30,7 +34,20 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        UIController();
         ModeController();
+    }
+
+    void UIController()
+    {
+        if(rtsBuildingSystem.buildMode)
+        {
+            modeText.text = "Build Mode";
+
+            return;
+        }
+
+        modeText.text = "";
     }
 
     void ModeController()

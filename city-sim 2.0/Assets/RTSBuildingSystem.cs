@@ -3,31 +3,48 @@ using System.Collections;
  
 public class RTSBuildingSystem : MonoBehaviour
 {
-    public enum CursorState{Building}
- 
+    public bool buildMode;
     public float rotateSpeed;
-    public CursorState state = CursorState.Building;
     public Camera cam;
-    public GameObject objToPlace;
     public LayerMask mask;
 
     [Header("Ghost Object")]
+    public bool canPlace;
     public Transform ghostObj;
     public Material[] ghostMaterials;
+    public GameObject ghostObjectContainer;
 
     float lastPosX,lastPosY,lastPosZ;
-    GameObject builtObject;
+    GameObject objToPlace;
     Vector3 mousePos;
-   
+
     void Update()
     {
-        BuildMode();
+        if(Input.GetButtonDown("Build Mode"))
+        {
+            buildMode = !buildMode;
+
+            ghostObj.GetComponentInChildren<GhostObject>().collisions = 0;
+        }
+
+        if(buildMode)
+        {
+            ghostObjectContainer.SetActive(true);
+
+            BuildMode();
+
+            return;
+        }
+
+        ghostObjectContainer.SetActive(false);
     }
 
     void BuildMode()
     {
         mousePos = Input.mousePosition;
+
         Ray ray = cam.ScreenPointToRay(mousePos);
+
         RaycastHit hit;
 
         if(Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
@@ -57,25 +74,21 @@ public class RTSBuildingSystem : MonoBehaviour
                 ghostObj.transform.Rotate(Vector3.up, (rotateSpeed * 10.0f) * Time.deltaTime);
             }
 
-            if(Input.GetMouseButtonDown(0))
+            if(Input.GetButtonDown("Fire1"))
             {
-                //Building
-                if (state == CursorState.Building)
+                //Build object
+                if(canPlace)
                 {
-                    GameObject building = (GameObject)Instantiate(objToPlace, ghostObj.position, ghostObj.rotation);
-
-                    builtObject = building;
-
-                    //state = CursorState.Rotating;
+                    Build();
                 }
             }
-
-            if(Input.GetMouseButtonUp(0))
-            {
-                builtObject = null;
-
-                state = CursorState.Building;
-            }
         }
+    }
+
+    void Build()
+    {
+        objToPlace = ghostObj.GetComponentInChildren<GhostObject>().prefab;
+
+        GameObject building = (GameObject)Instantiate(objToPlace, ghostObj.position, ghostObj.rotation);
     }
 }

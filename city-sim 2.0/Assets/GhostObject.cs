@@ -2,24 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TestScript : MonoBehaviour
+public class GhostObject : MonoBehaviour
 {
-    public bool canPlace = true;
+    public GameObject prefab;
 
-    int collisions;
+    bool canPlace = true;
+    [HideInInspector] public int collisions;
 
     void Update()
     {
-        MaterialController();
-
         if(collisions >= 1)
         {
             canPlace = false;
 
-            return;
+        } else {
+            canPlace = true;
         }
+        
+        GameController.Instance.rtsBuildingSystem.canPlace = canPlace;
 
-        canPlace = true;
+        MaterialController();
     }
 
     void MaterialController()
