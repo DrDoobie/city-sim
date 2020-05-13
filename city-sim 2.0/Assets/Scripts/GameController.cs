@@ -54,6 +54,13 @@ public class GameController : MonoBehaviour
     {
         if(Input.GetButtonDown("Mode Switch"))
         {
+            if(rtsMode)
+            {
+                rtsBuildingSystem.buildMode = false;
+
+                rtsBuildingSystem.ghostObjectContainer.SetActive(false);
+            }
+
             rtsMode = !rtsMode;
         }
 

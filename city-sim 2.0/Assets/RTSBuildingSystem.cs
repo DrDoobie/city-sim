@@ -22,16 +22,16 @@ public class RTSBuildingSystem : MonoBehaviour
     {
         if(Input.GetButtonDown("Build Mode"))
         {
-            buildMode = !buildMode;
-
             ghostObj.GetComponentInChildren<GhostObject>().collisions = 0;
+
+            buildMode = !buildMode;
         }
 
         if(buildMode)
         {
-            ghostObjectContainer.SetActive(true);
-
             BuildMode();
+
+            ghostObjectContainer.SetActive(true);
 
             return;
         }

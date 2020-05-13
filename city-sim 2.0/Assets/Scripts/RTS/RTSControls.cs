@@ -23,6 +23,11 @@ public class RTSControls : MonoBehaviour
         {
             if(Physics.Raycast(ray, out hit))
             {
+                if(GameController.Instance.rtsBuildingSystem.buildMode)
+                {
+                    return;
+                }
+                
                 //Debug.Log(hit.point);
 
                 GameController.Instance.playerAgent.destination = hit.point;
