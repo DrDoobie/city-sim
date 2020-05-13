@@ -1,20 +1,8 @@
 fileFormatVersion: 2
-guid: 49fea23a268391a4e82b1927e16a6315
+guid: 3c4a917d5f6c37442874fd499ccd4e97
 ModelImporter:
   serializedVersion: 19300
-  internalIDToNameTable:
-  - first:
-      74: -1559071518392153964
-    second: Armature|Cube.001Action
-  - first:
-      74: -8945691123924629249
-    second: Armature|Idle
-  - first:
-      74: 7549088838577149333
-    second: Armature|Punch
-  - first:
-      74: 8349542763059015795
-    second: Armature|Walk
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -101,7 +89,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
