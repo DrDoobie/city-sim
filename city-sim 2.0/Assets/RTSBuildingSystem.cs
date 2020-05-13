@@ -31,12 +31,12 @@ public class RTSBuildingSystem : MonoBehaviour
         {
             BuildMode();
 
-            ghostObjectContainer.SetActive(true);
+            ghostObj.GetComponentInChildren<MeshRenderer>().enabled = true;
 
             return;
         }
 
-        ghostObjectContainer.SetActive(false);
+        ghostObj.GetComponentInChildren<MeshRenderer>().enabled = false;
     }
 
     void BuildMode()
