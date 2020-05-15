@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2318539091316696823}
   - component: {fileID: 6734602985550568641}
   - component: {fileID: 1029799088797589560}
-  - component: {fileID: 1618554629155394790}
+  - component: {fileID: 823908414442791013}
   - component: {fileID: -734481508749392080}
   m_Layer: 13
   m_Name: Hammer
@@ -81,8 +81,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1618554629155394790
-MeshCollider:
+--- !u!65 &823908414442791013
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -91,10 +91,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5495902117074765545, guid: fa9ae56a4969e0b47a36e40356e97e03, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 5.815154, y: 10.168665, z: 1.9953655}
+  m_Center: {x: 0, y: 0.00000014369924, z: 0.6027184}
 --- !u!114 &-734481508749392080
 MonoBehaviour:
   m_ObjectHideFlags: 0
