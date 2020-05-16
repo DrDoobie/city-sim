@@ -1091,6 +1091,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1219718730}
+  isAnimated: 1
+  animator: {fileID: 1747101152}
 --- !u!114 &583005729
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2007,7 +2009,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Axe
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 155771744108224732, guid: 150e6daebc5ef4548be2af4588259e98, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 150e6daebc5ef4548be2af4588259e98, type: 3}
 --- !u!1001 &1371753267
 PrefabInstance:
@@ -2558,10 +2561,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1321133192, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
-      propertyPath: antialiasingMode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1953509527, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
       propertyPath: notificationsText
       value: 
@@ -2628,6 +2627,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
+--- !u!95 &1747101152 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7994402003785334683, guid: 95dc755dffa362842ae028bb545efc4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1747101151}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1789137129
 PrefabInstance:
   m_ObjectHideFlags: 0
