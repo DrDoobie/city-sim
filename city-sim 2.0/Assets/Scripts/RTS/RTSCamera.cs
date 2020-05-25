@@ -11,22 +11,22 @@ public class RTSCamera : MonoBehaviour
     [SerializeField] float moveSpeed;
 
     void Update()
-    {
-        if(GameController.Instance.playerUsingUI)
-            return;
-            
-        Controller();
+    {    
+        if(!GameController.Instance.playerUsingUI)
+        {
+            Controller();
+        }
+
+        GetCameraRotation();
     }
 
     void Controller()
     {
-        if (Input.GetButton("Sprint"))
+        if(Input.GetButton("Sprint"))
         {
             moveSpeed = shiftSpeed;
 
-        }
-        else
-        {
+        } else {
             moveSpeed = normalSpeed;
         }
 
@@ -57,8 +57,6 @@ public class RTSCamera : MonoBehaviour
         Vector3 move = (lateralMove + forwardMove) * Time.deltaTime;
 
         transform.position += move;
-
-        GetCameraRotation();
     }
 
     void GetCameraRotation ()
