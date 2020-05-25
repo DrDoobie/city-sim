@@ -140,7 +140,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &13856913
 RectTransform:
   m_ObjectHideFlags: 0
@@ -148,14 +148,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13856912}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 355454285}
   - {fileID: 1784624587}
-  m_Father: {fileID: 1719555524}
-  m_RootOrder: 3
+  m_Father: {fileID: 1286695265}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2144,15 +2144,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1422493955, guid: fd9e75b75cfdb6749ab220dd108f88ba, type: 3}
+      propertyPath: inputFieldGO
+      value: 
+      objectReference: {fileID: 13856912}
+    - target: {fileID: 1422493955, guid: fd9e75b75cfdb6749ab220dd108f88ba, type: 3}
+      propertyPath: inputField
+      value: 
+      objectReference: {fileID: 13856914}
     - target: {fileID: 7107826507560804984, guid: fd9e75b75cfdb6749ab220dd108f88ba,
         type: 3}
       propertyPath: m_Name
       value: Flag
-      objectReference: {fileID: 0}
-    - target: {fileID: 7107826507560804984, guid: fd9e75b75cfdb6749ab220dd108f88ba,
-        type: 3}
-      propertyPath: m_Layer
-      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7597281365616271647, guid: fd9e75b75cfdb6749ab220dd108f88ba,
         type: 3}
@@ -2211,6 +2214,42 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fd9e75b75cfdb6749ab220dd108f88ba, type: 3}
+--- !u!1 &1286695264
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1286695265}
+  m_Layer: 5
+  m_Name: Tribe Info
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1286695265
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286695264}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 13856913}
+  m_Father: {fileID: 1719555524}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1320409964
 GameObject:
   m_ObjectHideFlags: 0
@@ -2243,8 +2282,6 @@ MonoBehaviour:
   buildMode: 0
   rtsBuildingSystem: {fileID: 583005729}
   modeText: {fileID: 424705405}
-  inputField: {fileID: 13856914}
-  inputFieldGO: {fileID: 13856912}
   rtsMode: 1
   rtsCam: {fileID: 583005725}
   fpsCam: {fileID: 1321133190}
@@ -2425,24 +2462,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1371753267}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1422493950 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1192796718769929291, guid: fd9e75b75cfdb6749ab220dd108f88ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 1255567577}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1422493955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422493950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74ea132804fadee428cf49a964e3cd0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1444694084
 GameObject:
   m_ObjectHideFlags: 0
@@ -2783,7 +2802,7 @@ RectTransform:
   - {fileID: 424705403}
   - {fileID: 2005019776}
   - {fileID: 394176666}
-  - {fileID: 13856913}
+  - {fileID: 1286695265}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

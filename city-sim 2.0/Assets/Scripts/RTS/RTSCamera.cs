@@ -12,6 +12,9 @@ public class RTSCamera : MonoBehaviour
 
     void Update()
     {
+        if(GameController.Instance.playerUsingUI)
+            return;
+            
         Controller();
     }
 

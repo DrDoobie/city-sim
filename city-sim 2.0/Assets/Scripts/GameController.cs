@@ -8,13 +8,11 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; }
 
-    public bool buildMode = false;
+    public bool buildMode = false, playerUsingUI = false;
     public RTSBuildingSystem rtsBuildingSystem;
 
     [Header("UI")]
     public Text modeText;
-    public InputField inputField;
-    public GameObject inputFieldGO;
 
     [Header("Mode Controller")]
     public bool rtsMode;
@@ -37,6 +35,10 @@ public class GameController : MonoBehaviour
     void Update()
     {
         UIController();
+
+        if(playerUsingUI)
+            return;
+
         ModeController();
     }
 

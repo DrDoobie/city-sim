@@ -12,8 +12,11 @@ public class RTSControls : MonoBehaviour
     public Animator animator;
 
     void Update()
-    {
-        Controller();
+    {    
+        if(!GameController.Instance.playerUsingUI)
+        {
+            Controller();
+        }
 
         if(isAnimated)
         {
@@ -47,6 +50,9 @@ public class RTSControls : MonoBehaviour
         {
             if(Physics.Raycast(ray, out hit))
             {
+                /*Ugly code delete soon*/if(hit.transform.gameObject.layer == 14)
+                    return;
+
                 if(GameController.Instance.rtsBuildingSystem.buildMode)
                 {
                     return;

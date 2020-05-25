@@ -5,16 +5,12 @@ using UnityEngine.UI;
 
 public class Flag : MonoBehaviour
 {
+    [Header("UI")]
+    public GameObject inputFieldGO;
+    public InputField inputField;
+
     [SerializeField]
     bool active, tribeDeclared = false;
-    GameObject inputFieldGO;
-    InputField inputField;
-
-    void Start()
-    {
-        inputFieldGO = GameController.Instance.inputFieldGO;
-        inputField = GameController.Instance.inputField;
-    }
 
     void Update()
     {
@@ -28,20 +24,15 @@ public class Flag : MonoBehaviour
 
     void Controller()
     {
-        if(active)
+        if(GameController.Instance.playerUsingUI)
         {
             inputFieldGO.SetActive(true);
 
             if(Input.GetKeyDown(KeyCode.Return))
             {
-                if(!tribeDeclared)
-                {
-                    //if they typed something
-                    tribeDeclared = true;
-                    inputField.interactable = false;
-                }
+                TribeDeclaration();
 
-                active = false;
+                GameController.Instance.playerUsingUI = false;
             }
 
             return;
@@ -50,8 +41,20 @@ public class Flag : MonoBehaviour
         inputFieldGO.SetActive(false);
     }
 
+    void TribeDeclaration()
+    {
+        if(!tribeDeclared)
+        {
+            if(inputField.text.Length > 0)
+            {
+                inputField.interactable = false;
+                tribeDeclared = true;
+            }
+        }
+    }
+
     public void UseFlag()
     {
-        active = true;
+        GameController.Instance.playerUsingUI = true;
     }
 }

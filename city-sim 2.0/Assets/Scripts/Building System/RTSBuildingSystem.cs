@@ -20,6 +20,9 @@ public class RTSBuildingSystem : MonoBehaviour
 
     void Update()
     {
+        if(GameController.Instance.playerUsingUI)
+            return;
+        
         if(Input.GetButtonDown("Build Mode"))
         {
             ghostObj.GetComponentInChildren<GhostObject>().collisions = 0;

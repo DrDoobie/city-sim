@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6597198599548941422}
   - component: {fileID: 626418469480056983}
   - component: {fileID: 7182193973350835520}
+  - component: {fileID: 1422493955}
   m_Layer: 14
   m_Name: Graphics
   m_TagString: Untagged
@@ -93,6 +94,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.022366416, y: 0.019492527, z: 0.8185885}
   m_Center: {x: 0.0014369416, y: 5.594327e-17, z: 0.3823019}
+--- !u!114 &1422493955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192796718769929291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74ea132804fadee428cf49a964e3cd0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputFieldGO: {fileID: 0}
+  inputField: {fileID: 0}
+  active: 0
+  tribeDeclared: 0
 --- !u!1 &7107826507560804984
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,7 +119,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7597281365616271647}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Flag
   m_TagString: Untagged
   m_Icon: {fileID: 0}
