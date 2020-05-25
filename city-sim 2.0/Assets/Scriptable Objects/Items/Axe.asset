@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa00228c4dc2824bb57ca9f241c6db6, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
+  itemName: Axe
   prefab: {fileID: 7739376449857306182, guid: b153667b815538e4ca54910e5d5564b5, type: 3}
   type: 0
   description: A rough axe made from a stick and stone.

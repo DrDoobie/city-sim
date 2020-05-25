@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c815377c3f81db34088a8c9867ab6bdb, type: 3}
   m_Name: Venison
   m_EditorClassIdentifier: 
+  itemName: Venison
   prefab: {fileID: 0}
   type: 2
   description: Freshly butchered venison ready for eating!

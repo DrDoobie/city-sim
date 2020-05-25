@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa00228c4dc2824bb57ca9f241c6db6, type: 3}
   m_Name: Hoe
   m_EditorClassIdentifier: 
+  itemName: Hoe
   prefab: {fileID: 5295104149265056934, guid: fab3e109fa74cee4cb26668dd6397434, type: 3}
   type: 0
   description: A simple farming tool.

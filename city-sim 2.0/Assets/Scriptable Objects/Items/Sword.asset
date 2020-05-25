@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc35a9118fabc346abe08c0cb04da87, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
+  itemName: Sword
   prefab: {fileID: 7770089008121263654, guid: edcc96b234552f2469f0aa3b6d7673f0, type: 3}
   type: 1
   description: A hand crafted, wooden training sword.

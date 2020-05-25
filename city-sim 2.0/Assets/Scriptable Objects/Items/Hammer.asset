@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0aa00228c4dc2824bb57ca9f241c6db6, type: 3}
   m_Name: Hammer
   m_EditorClassIdentifier: 
+  itemName: Hammer
   prefab: {fileID: 1853119671105971730, guid: e7f9b2a270d4d174b9421b38b7f4268b, type: 3}
   type: 0
   description: A crudely crafted building hammer.

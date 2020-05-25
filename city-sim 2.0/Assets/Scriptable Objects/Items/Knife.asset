@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dc35a9118fabc346abe08c0cb04da87, type: 3}
   m_Name: Knife
   m_EditorClassIdentifier: 
+  itemName: Knife
   prefab: {fileID: 5965055163243327179, guid: 359d1c4f74567db4f9a3cf1bc16cefda, type: 3}
   type: 1
   description: A small, but well crafted knife.
