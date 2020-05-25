@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
 
     [Header("UI")]
     public Text modeText;
+    public InputField inputField;
+    public GameObject inputFieldGO;
 
     [Header("Mode Controller")]
     public bool rtsMode;

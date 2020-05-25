@@ -30,14 +30,6 @@ public class PlayerRaycast : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.E))
             {
                 ItemPickup(hit);
-
-                //Handling flag object
-                var flag = hit.transform.GetComponent<Flag>();
-
-                if(flag)
-                {
-                    Debug.Log("Flag!");
-                }
             }
 
             hitObj = hit.transform;

@@ -1,18 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Flag : MonoBehaviour
 {
-    // Start is called before the first frame update
+    bool active;
+    GameObject inputFieldGO;
+    InputField inputField;
+
     void Start()
     {
-        
+        inputFieldGO = GameController.Instance.inputFieldGO;
+        inputField = GameController.Instance.inputField;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if(!GameController.Instance.rtsMode)
+        {
+            return;
+        }
+
+        Controller();
+    }
+
+    void Controller()
+    {
+        if(active)
+        {
+            inputFieldGO.SetActive(true);
+
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                active = false;
+            }
+
+            return;
+        }
+
+        inputFieldGO.SetActive(false);
+    }
+
+    public void UseFlag()
+    {
+        active = true;
     }
 }
