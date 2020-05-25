@@ -2561,6 +2561,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1814507746, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 240
+      objectReference: {fileID: 0}
     - target: {fileID: 1953509527, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
       propertyPath: notificationsText
       value: 
