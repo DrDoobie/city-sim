@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Flag : MonoBehaviour
 {
-    bool active;
+    [SerializeField]
+    bool active, tribeDeclared = false;
     GameObject inputFieldGO;
     InputField inputField;
 
@@ -33,6 +34,13 @@ public class Flag : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Return))
             {
+                if(!tribeDeclared)
+                {
+                    //if they typed something
+                    tribeDeclared = true;
+                    inputField.interactable = false;
+                }
+
                 active = false;
             }
 

@@ -741,7 +741,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1274,6 +1274,7 @@ GameObject:
   - component: {fileID: 583005727}
   - component: {fileID: 583005728}
   - component: {fileID: 583005729}
+  - component: {fileID: 583005730}
   m_Layer: 0
   m_Name: RTSController
   m_TagString: Untagged
@@ -1352,6 +1353,22 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 74c009231b4a9c244a7bf241f2da853b, type: 2}
   - {fileID: 2100000, guid: 1d377fd744e738241843cd95bfc53576, type: 2}
   ghostObjectContainer: {fileID: 423313603}
+--- !u!114 &583005730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 583005725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd204b16d1bf07489ecdd6261bdb279, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 1219718730}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 16384
 --- !u!1 &595886275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2131,6 +2148,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Flag
+      objectReference: {fileID: 0}
+    - target: {fileID: 7107826507560804984, guid: fd9e75b75cfdb6749ab220dd108f88ba,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7597281365616271647, guid: fd9e75b75cfdb6749ab220dd108f88ba,
         type: 3}
@@ -3021,7 +3043,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 0
     m_HorizontalOverflow: 1

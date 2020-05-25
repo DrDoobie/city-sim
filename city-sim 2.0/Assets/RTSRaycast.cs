@@ -22,7 +22,12 @@ public class RTSRaycast : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
-            
+            var flag = hit.transform.GetComponent<Flag>();
+
+            if(flag)
+            {
+                flag.UseFlag();
+            }
         }
     }
 }
