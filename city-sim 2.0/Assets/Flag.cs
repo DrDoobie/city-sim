@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Flag : MonoBehaviour
 {
     [Header("UI")]
-    public GameObject inputFieldGO;
+    public GameObject tribeInfo;
     public InputField inputField;
 
     [SerializeField]
@@ -26,7 +26,7 @@ public class Flag : MonoBehaviour
     {
         if(GameController.Instance.playerUsingUI)
         {
-            inputFieldGO.SetActive(true);
+            tribeInfo.SetActive(true);
 
             if(Input.GetKeyDown(KeyCode.Return))
             {
@@ -38,7 +38,7 @@ public class Flag : MonoBehaviour
             return;
         }
 
-        inputFieldGO.SetActive(false);
+        tribeInfo.SetActive(false);
     }
 
     void TribeDeclaration()
