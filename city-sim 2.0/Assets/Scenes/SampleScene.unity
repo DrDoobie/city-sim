@@ -1619,6 +1619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 1219718730}
+  playerDestination: {x: 0, y: 0, z: 0}
   isAnimated: 1
   animator: {fileID: 1747101152}
 --- !u!114 &583005729
@@ -1660,7 +1661,8 @@ MonoBehaviour:
   cam: {fileID: 1219718730}
   layerMask:
     serializedVersion: 2
-    m_Bits: 16384
+    m_Bits: 18432
+  selectedObject: {fileID: 0}
 --- !u!1 &595886275
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,6 +3216,30 @@ Transform:
   m_Father: {fileID: 1175596873}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1522216838 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4807151489175242211, guid: 95dc755dffa362842ae028bb545efc4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1747101151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1522216839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1522216838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0471840b159f3a94ba4a02f53e80943c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectsSomething: 0
+  detectionRange: 2
+  detectionPoint: {fileID: 2010139738}
+  hittableLayers:
+    serializedVersion: 2
+    m_Bits: 26624
 --- !u!4 &1569270540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7540741064060800474, guid: 6b67f612ef1a65c42a30d4350eaa88c0,
@@ -3604,7 +3630,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
       propertyPath: attackRange
-      value: 1.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1747101152}
+    - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
+      propertyPath: attackRate
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1953509527, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
       propertyPath: notificationsText
@@ -3905,7 +3939,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 1747101151}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1522216838}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a843534c02952bf4e8bb1eeb11bbb768, type: 3}
@@ -4264,6 +4298,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2005019775}
   m_CullTransparentMesh: 0
+--- !u!4 &2010139738 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3263541651926126688, guid: 95dc755dffa362842ae028bb545efc4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1747101151}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2095466296
 GameObject:
   m_ObjectHideFlags: 0

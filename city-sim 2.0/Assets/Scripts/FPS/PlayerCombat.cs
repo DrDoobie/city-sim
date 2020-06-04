@@ -9,10 +9,10 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public LayerMask hittableLayers;
 
-    //[Header("Animation")]
-    // Animator animator;
+    [Header("Animation")]
+    public Animator animator;
 
-    float nextAttackTime = 0.0f;
+    [HideInInspector] public float nextAttackTime = 0.0f;
 
     void Update()
     {
@@ -21,10 +21,17 @@ public class PlayerCombat : MonoBehaviour
 
         if(Input.GetButton("Fire1") && !GameController.Instance.rtsMode)
         {
-            Attack();
-
-            nextAttackTime = Time.time + (1.0f / attackRate);
+            TriggerAttack();
         }
+    }
+
+    public void TriggerAttack()
+    {
+        //Attack();
+
+        animator.SetTrigger("Attack");
+
+        nextAttackTime = Time.time + (1.0f / attackRate);
     }
 
     public void Attack()

@@ -20,10 +20,10 @@ public class RTSControls : MonoBehaviour
         {
             MovementController();
 
-            if(Input.GetKeyDown(KeyCode.J))
+            /*if(Input.GetKeyDown(KeyCode.J))
             {
                 animator.SetTrigger("Attack");
-            }
+            }*/
         }
 
         if(isAnimated)
