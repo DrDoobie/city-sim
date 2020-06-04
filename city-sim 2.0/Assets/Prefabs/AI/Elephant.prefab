@@ -10,6 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8972638295137315171}
   - component: {fileID: -5518558643794951772}
+  - component: {fileID: 146155677}
+  - component: {fileID: 146155678}
+  - component: {fileID: 3036416978333576716}
   m_Layer: 0
   m_Name: Elephant
   m_TagString: Untagged
@@ -46,6 +49,59 @@ CapsuleCollider:
   m_Height: 6
   m_Direction: 1
   m_Center: {x: 0, y: 2.5, z: 1}
+--- !u!195 &146155677
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8972638295137315164}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 3.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 5
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!95 &146155678
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8972638295137315164}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 77f63780839e4b14da22bfc830747806, type: 3}
+  m_Controller: {fileID: 9100000, guid: 6ddcffa69775715478b7adfb382ae88a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3036416978333576716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8972638295137315164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d941140be361049be67c1755b7349a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8972638295752463315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71,7 +127,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 77f63780839e4b14da22bfc830747806,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 77f63780839e4b14da22bfc830747806,
         type: 3}
