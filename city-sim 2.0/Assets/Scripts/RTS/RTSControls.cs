@@ -15,7 +15,13 @@ public class RTSControls : MonoBehaviour
     {    
         if(!GameController.Instance.playerUsingUI)
         {
-            Controller();
+            MovementController();
+
+            if(Input.GetKeyDown(KeyCode.J))
+            {
+                Debug.Log("Attack");
+                animator.SetTrigger("Attack");
+            }
         }
 
         if(isAnimated)
@@ -39,7 +45,7 @@ public class RTSControls : MonoBehaviour
         }
     }
 
-    void Controller()
+    void MovementController()
     {
         Vector3 mousePos = Input.mousePosition;
 

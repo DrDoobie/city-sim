@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 970685650069561265}
   - component: {fileID: 6792580663636452168}
   - component: {fileID: 3225955541315591519}
-  - component: {fileID: 8654629903082206798}
+  - component: {fileID: 6664527195024128332}
   m_Layer: 0
   m_Name: Graphics
   m_TagString: Untagged
@@ -95,7 +95,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2534964839176971238, guid: 371b9cd6c9d653948a19193027841d78, type: 3}
---- !u!208 &8654629903082206798
+--- !u!208 &6664527195024128332
 NavMeshObstacle:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,7 +109,7 @@ NavMeshObstacle:
   m_MoveThreshold: 0.1
   m_Carve: 1
   m_CarveOnlyStationary: 1
-  m_Center: {x: 0, y: 0, z: 0.015000001}
+  m_Center: {x: 0, y: 0, z: 0.013}
   m_TimeToStationary: 0.5
 --- !u!1 &5716378576904790394
 GameObject:
