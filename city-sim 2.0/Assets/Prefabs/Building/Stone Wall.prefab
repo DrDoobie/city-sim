@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1889761906636296054}
   - component: {fileID: 5261683321185039247}
   - component: {fileID: 2410677397549875500}
+  - component: {fileID: 4090641612307018227}
   m_Layer: 0
   m_Name: Stone Wall
   m_TagString: Untagged
@@ -94,3 +95,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 3874432442672741690, guid: f82de171f463c304eab7908cb73ea81f, type: 3}
+--- !u!208 &4090641612307018227
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5852875315420251987}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.027, y: 0.003, z: 0.016}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0.001, y: 0, z: 0.016}
+  m_TimeToStationary: 0.5

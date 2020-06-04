@@ -11,7 +11,7 @@ public class Flag : MonoBehaviour
     GameObject tribeInfo;
     InputField inputField;
 
-    void Start()
+    void Awake()
     {
         tribeInfo = GameObject.FindWithTag("TribeInfoGO");
         inputField = GameObject.FindWithTag("TribeNameInput").GetComponent<InputField>();

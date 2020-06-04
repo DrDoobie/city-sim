@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2593583174377423426}
   - component: {fileID: 8125280207440035515}
   - component: {fileID: 3561959586059376729}
+  - component: {fileID: 6758235156720020359}
   m_Layer: 14
   m_Name: Storage Barrel
   m_TagString: Untagged
@@ -93,3 +94,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.030402975, y: 0.030402977, z: 0.04417802}
   m_Center: {x: 0, y: -0.0000000018626454, z: 0.012089011}
+--- !u!208 &6758235156720020359
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7565516585371929191}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.015000001, y: 0.015000001, z: 0.022000002}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.012}
+  m_TimeToStationary: 0.5

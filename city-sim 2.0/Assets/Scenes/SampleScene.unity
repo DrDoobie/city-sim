@@ -1348,7 +1348,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &583005726
 Transform:
   m_ObjectHideFlags: 0
@@ -2463,7 +2463,7 @@ MonoBehaviour:
   rtsBuildingSystem: {fileID: 583005729}
   modeText: {fileID: 424705405}
   rtsMode: 1
-  rtsCam: {fileID: 583005725}
+  rtsCam: {fileID: 1219718728}
   fpsCam: {fileID: 1321133190}
   playerMotor: {fileID: 1814507745}
   playerAgent: {fileID: 1814507746}
