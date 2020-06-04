@@ -59,7 +59,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1.25
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -102,6 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d941140be361049be67c1755b7349a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wanderCoolDown: 5
+  wanderDistance: 20
+  agent: {fileID: 1928714147}
+  isAnimated: 1
+  animator: {fileID: 1928714146}
 --- !u!1001 &6141674689923350132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -109,6 +114,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6141674689227221657}
     m_Modifications:
+    - target: {fileID: -7780734103960978560, guid: c73f981ebd063c749bc9b27e0d18bacf,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2493fd4862e303b4e86dd366994946ee, type: 2}
     - target: {fileID: -6057140222963153312, guid: c73f981ebd063c749bc9b27e0d18bacf,
         type: 3}
       propertyPath: m_Controller

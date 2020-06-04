@@ -206,7 +206,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9fb3b7f438486ca4ba87c613d564d61c, type: 2}
+  - {fileID: 2100000, guid: 2493fd4862e303b4e86dd366994946ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -873,7 +873,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98613b1e9ccfd394da2bb6675508ac7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderCoolDown: 10
+  wanderCoolDown: 15
   wanderDistance: 50
   agent: {fileID: 25008349047759307}
   isAnimated: 1

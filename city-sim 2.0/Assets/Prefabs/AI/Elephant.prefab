@@ -59,7 +59,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 3.5
-  m_Speed: 3.5
+  m_Speed: 3
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -84,7 +84,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 6ddcffa69775715478b7adfb382ae88a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -102,6 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d941140be361049be67c1755b7349a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wanderCoolDown: 40
+  wanderDistance: 100
+  agent: {fileID: 146155677}
+  isAnimated: 1
+  animator: {fileID: 146155678}
 --- !u!1001 &8972638295752463315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -122,7 +127,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 77f63780839e4b14da22bfc830747806,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 77f63780839e4b14da22bfc830747806,
         type: 3}
@@ -174,6 +179,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Graphics
       objectReference: {fileID: 0}
+    - target: {fileID: 2489302850876048126, guid: 77f63780839e4b14da22bfc830747806,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2493fd4862e303b4e86dd366994946ee, type: 2}
     m_RemovedComponents:
     - {fileID: -6057140222963153312, guid: 77f63780839e4b14da22bfc830747806, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 77f63780839e4b14da22bfc830747806, type: 3}
