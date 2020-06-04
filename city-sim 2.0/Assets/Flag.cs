@@ -5,12 +5,17 @@ using UnityEngine.UI;
 
 public class Flag : MonoBehaviour
 {
-    [Header("UI")]
-    public GameObject tribeInfo;
-    public InputField inputField;
-
     [SerializeField]
     bool active, tribeDeclared = false;
+
+    GameObject tribeInfo;
+    InputField inputField;
+
+    void Start()
+    {
+        tribeInfo = GameObject.FindWithTag("TribeInfoGO");
+        inputField = GameObject.FindWithTag("TribeNameInput").GetComponent<InputField>();
+    }
 
     void Update()
     {
@@ -28,7 +33,7 @@ public class Flag : MonoBehaviour
         {
             tribeInfo.SetActive(true);
 
-            if(Input.GetKeyDown(KeyCode.Return))
+            if(Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Fire2"))
             {
                 TribeDeclaration();
 
@@ -47,7 +52,7 @@ public class Flag : MonoBehaviour
         {
             if(inputField.text.Length > 0)
             {
-                inputField.interactable = false;
+                //inputField.interactable = false;
                 tribeDeclared = true;
             }
         }
