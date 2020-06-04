@@ -6,6 +6,7 @@ public class RTSRaycast : MonoBehaviour
 {
     public Camera cam;
     public LayerMask layerMask;
+    public GameObject selectedObject;
 
     void Update()
     {
@@ -27,6 +28,13 @@ public class RTSRaycast : MonoBehaviour
             if(flag)
             {
                 flag.UseFlag();
+            }
+
+            var resource = hit.transform.GetComponent<Resource>();
+
+            if(resource)
+            {
+                selectedObject = hit.transform.gameObject;
             }
         }
     }

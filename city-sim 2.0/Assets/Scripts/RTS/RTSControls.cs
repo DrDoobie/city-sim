@@ -19,7 +19,6 @@ public class RTSControls : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.J))
             {
-                Debug.Log("Attack");
                 animator.SetTrigger("Attack");
             }
         }
