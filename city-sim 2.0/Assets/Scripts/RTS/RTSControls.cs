@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class RTSControls : MonoBehaviour
 {
     public Camera cam;
+    public Vector3 playerDestination;
 
     [Header("Animation")]
     public bool isAnimated;
@@ -13,6 +14,8 @@ public class RTSControls : MonoBehaviour
 
     void Update()
     {    
+        GameController.Instance.playerAgent.destination = playerDestination;
+
         if(!GameController.Instance.playerUsingUI)
         {
             MovementController();
@@ -65,7 +68,7 @@ public class RTSControls : MonoBehaviour
                 
                 //Debug.Log(hit.point);
 
-                GameController.Instance.playerAgent.destination = hit.point;
+                playerDestination = hit.point;
             }
         }
     }
