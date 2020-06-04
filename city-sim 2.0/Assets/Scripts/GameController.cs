@@ -18,6 +18,7 @@ public class GameController : MonoBehaviour
     public bool rtsMode;
     public GameObject rtsCam, fpsCam;
     public PlayerMotor playerMotor;
+    public CharacterController playerController;
     public NavMeshAgent playerAgent;
 
     void Awake()
@@ -76,6 +77,8 @@ public class GameController : MonoBehaviour
             fpsCam.SetActive(false);
 
             playerMotor.enabled = false;
+            playerController.enabled = false;
+
             playerAgent.enabled = true;
 
             return;
@@ -87,6 +90,8 @@ public class GameController : MonoBehaviour
         fpsCam.SetActive(true);
 
         playerMotor.enabled = true;
+        playerController.enabled = true;
+
         playerAgent.enabled = false;
     }
 }

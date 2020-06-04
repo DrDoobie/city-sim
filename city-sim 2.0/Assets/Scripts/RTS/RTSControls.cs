@@ -12,6 +12,11 @@ public class RTSControls : MonoBehaviour
     public bool isAnimated;
     public Animator animator;
 
+    void Start()
+    {
+        playerDestination = transform.position;
+    }
+
     void Update()
     {    
         GameController.Instance.playerAgent.destination = playerDestination;

@@ -2888,6 +2888,7 @@ MonoBehaviour:
   rtsCam: {fileID: 583005725}
   fpsCam: {fileID: 1321133190}
   playerMotor: {fileID: 1814507745}
+  playerController: {fileID: 1522216841}
   playerAgent: {fileID: 1814507746}
 --- !u!4 &1320409966
 Transform:
@@ -3234,12 +3235,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0471840b159f3a94ba4a02f53e80943c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectsSomething: 0
   detectionRange: 2
   detectionPoint: {fileID: 2010139738}
   hittableLayers:
     serializedVersion: 2
     m_Bits: 26624
+--- !u!143 &1522216841 stripped
+CharacterController:
+  m_CorrespondingSourceObject: {fileID: 4807151489175242214, guid: 95dc755dffa362842ae028bb545efc4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1747101151}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1569270540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7540741064060800474, guid: 6b67f612ef1a65c42a30d4350eaa88c0,
