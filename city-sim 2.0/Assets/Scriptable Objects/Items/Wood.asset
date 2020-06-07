@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9794484b79c433e4d99f37a70601b4be, type: 3}
-  m_Name: Mud
+  m_Name: Wood
   m_EditorClassIdentifier: 
-  itemName: Mud
-  prefab: {fileID: 0}
+  itemName: Wood
+  prefab: {fileID: 5295104149265056934, guid: fa85e2d9acbba16498fa0e91cfadb036, type: 3}
   type: 3
-  description: A small ball of caked up mud.
+  description: A piece of wood.
