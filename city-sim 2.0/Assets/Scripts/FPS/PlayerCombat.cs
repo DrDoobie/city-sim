@@ -11,9 +11,10 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Particles")]
     public float particleDespawnDelay;
-    public ParticleSystem particleEffect;
+    public GameObject particleEffect;
 
     [Header("Animation")]
+    public bool isAnimated = false;
     public Animator animator;
 
     [HideInInspector] public float nextAttackTime = 0.0f;
@@ -31,9 +32,13 @@ public class PlayerCombat : MonoBehaviour
 
     public void TriggerAttack()
     {
-        //Attack();
+        if(isAnimated)
+        {
+            animator.SetTrigger("Attack");
 
-        animator.SetTrigger("Attack");
+        } else {
+            Attack();
+        }
 
         nextAttackTime = Time.time + (1.0f / attackRate);
     }
@@ -56,8 +61,8 @@ public class PlayerCombat : MonoBehaviour
                     hit.rigidbody.AddForce(-hit.normal * 30.0f);
                 }*/
 
-                GameObject go = Instantiate(particleEffect, hit.point, Quaternion.LookRotation(hit.normal));
-                Destroy(go, particleDespawnDelay);
+                GameObject particles = Instantiate(particleEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(particles, particleDespawnDelay);
                 
                 resource.Damage(attackDamage);
             }

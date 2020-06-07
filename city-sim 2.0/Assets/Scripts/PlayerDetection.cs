@@ -10,6 +10,9 @@ public class PlayerDetection : MonoBehaviour
 
     void Update()
     {
+        if(!GameController.Instance.rtsMode)
+            return;
+
         DetectionController();
     }
 

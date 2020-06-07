@@ -3677,6 +3677,15 @@ PrefabInstance:
       propertyPath: hittableLayers.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
+      propertyPath: particleEffect
+      value: 
+      objectReference: {fileID: 674058213163479776, guid: bdb439fab06fc9f41a89a3a54729f783,
+        type: 3}
+    - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
+      propertyPath: particleDespawnDelay
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1953509527, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
       propertyPath: notificationsText
       value: 
