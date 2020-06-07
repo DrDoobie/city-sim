@@ -5,12 +5,24 @@ using UnityEngine.UI;
 
 public class PlayerRaycast : MonoBehaviour
 {
-    public float range;
     public Camera cam;
     public Text notificationsText;
     [HideInInspector] public Transform hitObj;
     public LayerMask layerMask;
     public InventoryObj inventory;
+
+    float range;
+
+    void Start()
+    {
+        if(GetComponent<PlayerCombat>())
+        {
+            range = GetComponent<PlayerCombat>().attackRange;
+
+        } else{
+            Debug.Log("Warning: no range for player raycast...");
+        }
+    }
 
     void Update()
     {

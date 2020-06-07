@@ -328,15 +328,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f400d8bd5a82a46b97f07f5be6ee35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 4807151488120052605}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 2048
   attackDamage: 25
-  attackRange: 5
+  attackRange: 4
   attackRate: 1
   attackPoint: {fileID: 3263541651926126688}
-  cam: {fileID: 4807151488120052605}
   particleDespawnDelay: 2
   particleEffect: {fileID: 674058213163479776, guid: bdb439fab06fc9f41a89a3a54729f783,
     type: 3}
-  isAnimated: 0
   animator: {fileID: 7994402003785334683}
   nextAttackTime: 0
 --- !u!114 &1953509527
@@ -351,7 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11871b655de2a5144b7dd0a2f18f591c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
   cam: {fileID: 4807151488120052605}
   notificationsText: {fileID: 0}
   hitObj: {fileID: 0}
@@ -430,7 +431,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8641151547307957025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 1.25}
+  m_LocalPosition: {x: 0, y: 2, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4807151489175242208}

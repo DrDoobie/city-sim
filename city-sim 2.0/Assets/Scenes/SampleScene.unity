@@ -3629,22 +3629,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
-      propertyPath: attackRange
-      value: 4
+      propertyPath: attackRate
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1953509527, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
       propertyPath: notificationsText
       value: 
       objectReference: {fileID: 2005019778}
-    - target: {fileID: 1953509527, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
-      propertyPath: range
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3263541651926126688, guid: 95dc755dffa362842ae028bb545efc4a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4807151489175242208, guid: 95dc755dffa362842ae028bb545efc4a,
         type: 3}
       propertyPath: m_LocalPosition.x
