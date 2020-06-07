@@ -7,7 +7,11 @@ public class PlayerCombat : MonoBehaviour
     public float attackDamage = 25.0f, attackRange = 0.5f;
     public float attackRate = 2.0f; //How many times you can attack per second
     public Transform attackPoint;
-    public LayerMask hittableLayers;
+    public Camera cam;
+
+    [Header("Particles")]
+    public float particleDespawnDelay;
+    public ParticleSystem particleEffect;
 
     [Header("Animation")]
     public Animator animator;
@@ -36,26 +40,35 @@ public class PlayerCombat : MonoBehaviour
 
     public void Attack()
     {
-        Collider[] hit = Physics.OverlapSphere(attackPoint.position, attackRange, hittableLayers);
+        RaycastHit hit;
 
-        foreach(Collider hittable in hit)
+        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, attackRange))
         {
-            Debug.Log("Hit " + hittable);
+            Debug.Log(("Hit " + hit.transform.name));
 
-            Resource resource = hittable.GetComponent<Resource>();
+            //Gathering resources
+            Resource resource = hit.transform.GetComponent<Resource>();
 
             if(resource)
             {
+                /*if(hit.rigidbody != null)
+                {
+                    hit.rigidbody.AddForce(-hit.normal * 30.0f);
+                }*/
+
+                GameObject go = Instantiate(particleEffect, hit.point, Quaternion.LookRotation(hit.normal));
+                Destroy(go, particleDespawnDelay);
+                
                 resource.Damage(attackDamage);
             }
         }
     }
 
-    void OnDrawGizmosSelected()
+    /*void OnDrawGizmosSelected()
     {
         if(attackPoint == null)
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }
+    }*/
 }
