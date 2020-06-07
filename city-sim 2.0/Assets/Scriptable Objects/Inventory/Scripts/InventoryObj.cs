@@ -3,13 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEditor;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObj : ScriptableObject, ISerializationCallbackReceiver
 {
     public string savePath;
-    public ItemDatabaseObject database;
     public List<InventorySlot> container = new List<InventorySlot>();
+
+    private ItemDatabaseObject database;
+
+    private void OnEnable()
+    {
+#if UNITY_EDITOR
+        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
+#else
+        database = Resources.Load<ItemDatabaseObject>("Database");
+#endif
+    }
 
     public void AddItem(ItemObj _item, int _amount)
     {
@@ -28,12 +39,11 @@ public class InventoryObj : ScriptableObject, ISerializationCallbackReceiver
 
     public void Save()
     {
-        //Binary formatter in jason utility
+        //Binary formatter in json utility
 
         //Serialize scriptable object into a string
 
         //Binary formatter in file stream to create file and save stream in given locatoin
-
         string saveData = JsonUtility.ToJson(this, true);
         BinaryFormatter bf = new BinaryFormatter();
         FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath));
