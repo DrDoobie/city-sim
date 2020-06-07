@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 [CreateAssetMenu(fileName = "New Inventory", menuName = "Inventory System/Inventory")]
 public class InventoryObj : ScriptableObject, ISerializationCallbackReceiver
@@ -34,13 +35,23 @@ public class InventoryObj : ScriptableObject, ISerializationCallbackReceiver
         //Binary formatter in file stream to create file and save stream in given locatoin
 
         string saveData = JsonUtility.ToJson(this, true);
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath));
+        bf.Serialize(file, saveData);
 
-        
+        file.Close();
     }
 
     public void Load()
     {
-        //Load inventory
+        if(File.Exists(string.Concat(Application.persistentDataPath, savePath))) //If there is a save file to load from
+        {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
+            JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
+
+            file.Close();
+        }
     }
 
     public void OnAfterDeserialize()

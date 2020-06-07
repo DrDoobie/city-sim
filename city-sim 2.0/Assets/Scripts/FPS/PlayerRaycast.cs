@@ -14,6 +14,17 @@ public class PlayerRaycast : MonoBehaviour
 
     void Update()
     {
+        //Save and load inventory
+        if(Input.GetKeyDown(KeyCode.K))
+        {
+            inventory.Save();
+        }
+
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            inventory.Load();
+        }
+
         if(GameController.Instance.rtsMode)
             return;
 
