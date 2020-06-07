@@ -26,19 +26,20 @@ public class PlayerCombat : MonoBehaviour
 
         if(Input.GetButton("Fire1") && !GameController.Instance.rtsMode)
         {
-            TriggerAttack();
+            if(isAnimated)
+            {
+                TriggerAttack();
+            }
+
+            Attack();
+
+            nextAttackTime = Time.time + (1.0f / attackRate);
         }
     }
 
     public void TriggerAttack()
     {
-        if(isAnimated)
-        {
-            animator.SetTrigger("Attack");
-
-        } else {
-            Attack();
-        }
+        animator.SetTrigger("Attack");
 
         nextAttackTime = Time.time + (1.0f / attackRate);
     }
