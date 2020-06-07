@@ -8,13 +8,13 @@ public class PlayerCombat : MonoBehaviour
     public float attackRate = 2.0f; //How many times you can attack per second
     public Transform attackPoint;
     public Camera cam;
+    public LayerMask layerMask;
 
     [Header("Particles")]
     public float particleDespawnDelay;
     public GameObject particleEffect;
 
     [Header("Animation")]
-    public bool isAnimated = false;
     public Animator animator;
 
     [HideInInspector] public float nextAttackTime = 0.0f;
@@ -26,12 +26,7 @@ public class PlayerCombat : MonoBehaviour
 
         if(Input.GetButton("Fire1") && !GameController.Instance.rtsMode)
         {
-            if(isAnimated)
-            {
-                TriggerAttack();
-            }
-
-            Attack();
+            FirstPersonAttack();
 
             nextAttackTime = Time.time + (1.0f / attackRate);
         }
@@ -44,11 +39,11 @@ public class PlayerCombat : MonoBehaviour
         nextAttackTime = Time.time + (1.0f / attackRate);
     }
 
-    public void Attack()
+    public void FirstPersonAttack()
     {
         RaycastHit hit;
 
-        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, attackRange))
+        if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, attackRange, layerMask))
         {
             Debug.Log(("Hit " + hit.transform.name));
 
@@ -70,11 +65,21 @@ public class PlayerCombat : MonoBehaviour
         }
     }
 
-    /*void OnDrawGizmosSelected()
+    public void ThirdPersonAttack()
+    {
+        Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, attackRange, layerMask);
+
+        foreach(Collider hit in gotHit)
+        {
+            Debug.Log(hit.transform.name);
+        }
+    }
+
+    void OnDrawGizmosSelected()
     {
         if(attackPoint == null)
             return;
 
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
-    }*/
+    }
 }
