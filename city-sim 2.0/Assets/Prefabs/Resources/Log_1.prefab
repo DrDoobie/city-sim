@@ -109,3 +109,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
+  inventory: {fileID: 11400000, guid: 1d987bae43862b14d86cfbea3397707b, type: 2}
+  item: {fileID: 11400000, guid: d4bc879c345c30949bb360140f48997c, type: 2}

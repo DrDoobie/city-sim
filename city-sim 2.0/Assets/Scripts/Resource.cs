@@ -5,27 +5,31 @@ using UnityEngine;
 public class Resource : MonoBehaviour
 {
     public float maxHealth, health;
+    public InventoryObj inventory;
+    public ItemObj item;
 
     void Start()
     {
         health = maxHealth;
     }
 
-    void Update()
+    public void Damage(float value)
     {
         if(health <= 0)
         {
             Harvest();
-        }
-    }
 
-    public void Damage(float value)
-    {
+            return;
+        }
+
         health -= value;
     }
 
     public void Harvest()
     {
+        //Add resource to inventory
+        inventory.AddItem(item, 1);
+
         this.gameObject.SetActive(false);
     }
 }
