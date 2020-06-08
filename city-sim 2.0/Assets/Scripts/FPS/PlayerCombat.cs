@@ -15,7 +15,7 @@ public class PlayerCombat : MonoBehaviour
 
     [Header("Particles")]
     public float particleDespawnDelay;
-    public GameObject particleEffect;
+    public GameObject[] particleEffect;
 
     [Header("Animation")]
     public Animator animator;
@@ -50,19 +50,39 @@ public class PlayerCombat : MonoBehaviour
         {
             //Debug.Log(("Hit " + hit.transform.name));
 
-            GameObject particles = Instantiate(particleEffect, hit.point, Quaternion.LookRotation(hit.normal));
-            Destroy(particles, particleDespawnDelay);
-
-            Resource resource = hit.transform.GetComponent<Resource>();
-
-            if(resource)
-            {
-                resource.Damage(attackDamage);
-            }
+            HitAI(hit);
+            GatherResource(hit);
         }
     }
 
-    public void ThirdPersonAttack()
+    void HitAI(RaycastHit hit)
+    {
+        Animal animal = hit.transform.GetComponent<Animal>();
+        Human human = hit.transform.GetComponent<Human>();
+
+        if(animal || human)
+        {
+            GameObject particles = Instantiate(particleEffect[1], hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(particles, particleDespawnDelay);
+
+            Debug.Log("Hit an AI!");
+        }
+    }
+
+    void GatherResource(RaycastHit hit)
+    {
+        Resource resource = hit.transform.GetComponent<Resource>();
+
+        if(resource)
+        {
+            GameObject particles = Instantiate(particleEffect[0], hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(particles, particleDespawnDelay);
+
+            resource.Damage(attackDamage);
+        }
+    }
+
+    public void ThirdPersonAttack()//In the future try to make both attacks the same function and use some boolean logic ?
     {
         Collider[] gotHit = Physics.OverlapSphere(attackPoint.position, thirdPersonAttackRange, layerMask);
 
