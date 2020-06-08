@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 961931524488834643}
   - component: {fileID: 1422493955}
   m_Layer: 14
-  m_Name: Graphics
+  m_Name: Flag
   m_TagString: Untagged
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -135,7 +135,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7597281365616271647}
   m_Layer: 14
-  m_Name: Flag
+  m_Name: Flag_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

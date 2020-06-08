@@ -48,7 +48,7 @@ public class PlayerCombat : MonoBehaviour
 
         if(Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, attackRange, layerMask))
         {
-            Debug.Log(("Hit " + hit.transform.name));
+            //Debug.Log(("Hit " + hit.transform.name));
 
             GameObject particles = Instantiate(particleEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(particles, particleDespawnDelay);

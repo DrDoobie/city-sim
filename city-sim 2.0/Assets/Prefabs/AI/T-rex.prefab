@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1279751929413280617}
   - component: {fileID: -2170343728985178049}
-  m_Layer: 0
+  m_Layer: 16
   m_Name: T-rex
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,6 +132,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Graphics
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: f6de68b29a739f74a96eaa8faaa49540,
+        type: 3}
+      propertyPath: m_Layer
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: -6057140222963153312, guid: f6de68b29a739f74a96eaa8faaa49540, type: 3}

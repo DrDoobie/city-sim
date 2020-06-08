@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class RTSRaycast : MonoBehaviour
 {
-    //public LayerMask layerMask;
-    //public GameObject selectedObject;
+    public LayerMask rightClickLayerMask;
+    public GameObject selected;
 
     Camera cam;
 
@@ -18,11 +18,16 @@ public class RTSRaycast : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire1"))
         {
-            Cast();
+            LeftClick();
+        }
+
+        if(Input.GetButtonDown("Fire2"))
+        {
+            RightClick();
         }
     }
 
-    void Cast()
+    void LeftClick()
     {
         RaycastHit hit;
         var ray = cam.ScreenPointToRay(Input.mousePosition);
@@ -43,6 +48,20 @@ public class RTSRaycast : MonoBehaviour
             {
                 selectedObject = hit.transform.gameObject;
             }*/
+        }
+    }
+
+    void RightClick()
+    {
+        RaycastHit hit;
+
+        var ray = cam.ScreenPointToRay(Input.mousePosition);
+
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, rightClickLayerMask))
+        {
+            Debug.Log(hit.transform.name);
+
+            selected = hit.transform.gameObject;
         }
     }
 }

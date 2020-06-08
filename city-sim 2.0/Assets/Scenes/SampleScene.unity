@@ -832,7 +832,7 @@ PrefabInstance:
     - target: {fileID: 6141674689227221656, guid: 27a36ae7ee792f24eb5e32f521b6936a,
         type: 3}
       propertyPath: m_Name
-      value: Pig (1)
+      value: Pig
       objectReference: {fileID: 0}
     - target: {fileID: 6141674689227221657, guid: 27a36ae7ee792f24eb5e32f521b6936a,
         type: 3}
@@ -1657,6 +1657,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fd204b16d1bf07489ecdd6261bdb279, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rightClickLayerMask:
+    serializedVersion: 2
+    m_Bits: 65536
+  selected: {fileID: 0}
 --- !u!1 &595886275
 GameObject:
   m_ObjectHideFlags: 0
@@ -2033,7 +2037,7 @@ PrefabInstance:
     - target: {fileID: 6141674689227221656, guid: 27a36ae7ee792f24eb5e32f521b6936a,
         type: 3}
       propertyPath: m_Name
-      value: Pig (2)
+      value: Pig
       objectReference: {fileID: 0}
     - target: {fileID: 6141674689227221657, guid: 27a36ae7ee792f24eb5e32f521b6936a,
         type: 3}
@@ -2726,7 +2730,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 27447
+    m_Bits: 92983
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -2980,7 +2984,7 @@ PrefabInstance:
     - target: {fileID: 4822992607704110282, guid: 80d11bb1f1f077942ad4bfa1e5d3ee42,
         type: 3}
       propertyPath: m_Name
-      value: Human (1)
+      value: 'Human '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80d11bb1f1f077942ad4bfa1e5d3ee42, type: 3}
@@ -3622,22 +3626,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1522216839, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
-      propertyPath: hittableLayers.m_Bits
-      value: 2048
-      objectReference: {fileID: 0}
-    - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
-      propertyPath: thirdPersonAttackRange
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1953509527, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
       propertyPath: notificationsText
       value: 
       objectReference: {fileID: 2005019778}
-    - target: {fileID: 3263541651926126688, guid: 95dc755dffa362842ae028bb545efc4a,
+    - target: {fileID: 4807151488120052605, guid: 95dc755dffa362842ae028bb545efc4a,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.25
+      propertyPath: m_CullingMask.m_Bits
+      value: 93495
       objectReference: {fileID: 0}
     - target: {fileID: 4807151489175242208, guid: 95dc755dffa362842ae028bb545efc4a,
         type: 3}
