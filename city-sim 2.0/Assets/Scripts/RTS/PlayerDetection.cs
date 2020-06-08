@@ -24,6 +24,9 @@ public class PlayerDetection : MonoBehaviour
         {
             //Debug.Log("Hit " + hittable);
 
+            transform.LookAt(hittable.transform, Vector3.up);
+
+            //Triggers attack animation to gather resources
             var playerCombat = GetComponent<PlayerCombat>();
             var resource = hittable.GetComponent<Resource>();
 

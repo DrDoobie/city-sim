@@ -5,7 +5,6 @@ public class RTSBuildingSystem : MonoBehaviour
 {
     public bool buildMode;
     public float rotateSpeed;
-    public Camera cam;
     public LayerMask mask;
 
     [Header("Ghost Object")]
@@ -16,7 +15,13 @@ public class RTSBuildingSystem : MonoBehaviour
 
     float lastPosX,lastPosY,lastPosZ;
     GameObject objToPlace;
+    Camera cam;
     Vector3 mousePos;
+
+    void Start()
+    {
+        cam = GetComponent<RTSCamera>().rtsCam;
+    }
 
     void Update()
     {

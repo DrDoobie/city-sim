@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class RTSRaycast : MonoBehaviour
 {
-    public Camera cam;
-    public LayerMask layerMask;
-    public GameObject selectedObject;
+    //public LayerMask layerMask;
+    //public GameObject selectedObject;
+
+    Camera cam;
+
+    void Start()
+    {
+        cam = GetComponent<RTSCamera>().rtsCam;
+    }
 
     void Update()
     {
@@ -21,8 +27,9 @@ public class RTSRaycast : MonoBehaviour
         RaycastHit hit;
         var ray = cam.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
+            //Interactions with flag object
             var flag = hit.transform.GetComponent<Flag>();
 
             if(flag)
@@ -30,12 +37,12 @@ public class RTSRaycast : MonoBehaviour
                 flag.UseFlag();
             }
 
-            var resource = hit.transform.GetComponent<Resource>();
+            /*var resource = hit.transform.GetComponent<Resource>();
 
             if(resource)
             {
                 selectedObject = hit.transform.gameObject;
-            }
+            }*/
         }
     }
 }

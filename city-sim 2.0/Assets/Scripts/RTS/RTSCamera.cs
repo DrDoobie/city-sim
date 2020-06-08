@@ -5,6 +5,7 @@ using UnityEngine;
 public class RTSCamera : MonoBehaviour
 {
     public float normalSpeed = 1.0f, shiftSpeed = 5.0f, rotationSpeed = 0.1f;
+    public Camera rtsCam;
 
     Vector2 p1, p2;
 

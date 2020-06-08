@@ -5,15 +5,17 @@ using UnityEngine.AI;
 
 public class RTSControls : MonoBehaviour
 {
-    public Camera cam;
     public Vector3 playerDestination;
 
     [Header("Animation")]
     public bool isAnimated;
     public Animator animator;
+    
+    Camera cam;
 
     void Start()
     {
+        cam = GetComponent<RTSCamera>().rtsCam;
         playerDestination = transform.position;
     }
 
