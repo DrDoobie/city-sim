@@ -33,9 +33,17 @@ public class Flag : MonoBehaviour
         {
             tribeInfo.SetActive(true);
 
-            if(Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("Fire2"))
+            if(Input.GetKeyDown(KeyCode.Return))
             {
                 TribeDeclaration();
+
+                GameController.Instance.playerUsingUI = false;
+            }
+
+            if(Input.GetButtonDown("Fire2"))
+            {
+                if(!tribeDeclared)
+                    inputField.text = null;
 
                 GameController.Instance.playerUsingUI = false;
             }
