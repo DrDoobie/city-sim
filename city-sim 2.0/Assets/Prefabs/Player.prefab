@@ -334,7 +334,9 @@ MonoBehaviour:
     m_Bits: 2048
   attackDamage: 25
   attackRange: 4
-  attackRate: 1
+  thirdPersonAttackRange: 1.66
+  attackRate: 2
+  thirdPersonAttackRate: 1
   attackPoint: {fileID: 3263541651926126688}
   particleDespawnDelay: 2
   particleEffect: {fileID: 674058213163479776, guid: bdb439fab06fc9f41a89a3a54729f783,
@@ -431,7 +433,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8641151547307957025}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2, z: 3}
+  m_LocalPosition: {x: 0, y: 2, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4807151489175242208}

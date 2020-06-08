@@ -10,7 +10,7 @@ public class PlayerCombat : MonoBehaviour
     [Header("Attack Settings")]
     public float attackDamage = 25.0f;
     public float attackRange = 0.5f, thirdPersonAttackRange = 3.0f;
-    public float attackRate = 2.0f; //How many times you can attack per second
+    public float attackRate = 2.0f, thirdPersonAttackRate = 1.0f; //How many times you can attack per second
     public Transform attackPoint;
 
     [Header("Particles")]
@@ -39,7 +39,7 @@ public class PlayerCombat : MonoBehaviour
     {
         animator.SetTrigger("Attack");
 
-        nextAttackTime = Time.time + (1.0f / attackRate);
+        nextAttackTime = Time.time + (1.0f / thirdPersonAttackRate);
     }
 
     public void FirstPersonAttack()

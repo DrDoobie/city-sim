@@ -3628,10 +3628,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
-      propertyPath: attackRate
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1953509527, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
       propertyPath: notificationsText
       value: 
