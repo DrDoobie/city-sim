@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
 
     [Header("UI")]
     public Text modeText;
-    public Dropdown dropDown;
+    public GameObject dropDown;
 
     [Header("Mode Controller")]
     public bool rtsMode;

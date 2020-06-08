@@ -62,6 +62,20 @@ public class RTSRaycast : MonoBehaviour
             Debug.Log(hit.transform.name);
 
             selected = hit.transform.gameObject;
+
+            SelectionController();
+        }
+    }
+
+    void SelectionController()
+    {
+        GameObject dropDownMenu = GameController.Instance.dropDown;
+
+        if(selected != null)
+        {
+            dropDownMenu.GetComponent<DropdownManager>().MoveToCursor();
+
+            dropDownMenu.SetActive(true);
         }
     }
 }
