@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
 
     public bool buildMode = false, playerUsingUI = false;
     public RTSBuildingSystem rtsBuildingSystem;
+    public RTSControls rtsControls;
 
     [Header("UI")]
     public Text modeText;
@@ -63,8 +64,10 @@ public class GameController : MonoBehaviour
             if(rtsMode)
             {
                 rtsBuildingSystem.buildMode = false;
-
                 rtsBuildingSystem.ghostObjectContainer.SetActive(false);
+
+            } else{
+                rtsControls.playerDestination = playerAgent.transform.position;
             }
 
             rtsMode = !rtsMode;
@@ -73,6 +76,7 @@ public class GameController : MonoBehaviour
         if(rtsMode)
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
 
             rtsCam.SetActive(true);
             fpsCam.SetActive(false);
@@ -86,6 +90,7 @@ public class GameController : MonoBehaviour
         }
 
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
         rtsCam.SetActive(false);
         fpsCam.SetActive(true);

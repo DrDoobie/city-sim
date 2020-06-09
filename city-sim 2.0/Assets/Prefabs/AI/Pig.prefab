@@ -102,7 +102,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d941140be361049be67c1755b7349a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanderCoolDown: 5
+  wanderCoolDown: 7.5
   wanderDistance: 20
   agent: {fileID: 1928714147}
   isAnimated: 1

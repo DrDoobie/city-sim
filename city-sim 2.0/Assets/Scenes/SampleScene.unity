@@ -3928,6 +3928,7 @@ MonoBehaviour:
   buildMode: 0
   playerUsingUI: 0
   rtsBuildingSystem: {fileID: 583005729}
+  rtsControls: {fileID: 583005728}
   modeText: {fileID: 424705405}
   dropDown: {fileID: 1462930989}
   rtsMode: 1
