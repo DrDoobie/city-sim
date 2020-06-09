@@ -37,11 +37,12 @@ public class PlayerRaycast : MonoBehaviour
             inventory.Load();
         }
 
+        NotificationController();
+        
         if(GameController.Instance.rtsMode)
             return;
 
         Cast();
-        NotificationController();
     }
 
     void Cast()
@@ -76,7 +77,7 @@ public class PlayerRaycast : MonoBehaviour
 
     void NotificationController()
     {
-        if(hitObj != null)
+        if(hitObj != null && !GameController.Instance.rtsMode)
         {
             notificationsText.text = hitObj.name;
 
