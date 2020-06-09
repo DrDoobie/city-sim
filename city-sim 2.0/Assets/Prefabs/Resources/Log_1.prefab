@@ -12,13 +12,14 @@ GameObject:
   - component: {fileID: 492760232818646829}
   - component: {fileID: 6190808712959222740}
   - component: {fileID: 5966438845123602243}
+  - component: {fileID: -1271921324120994195}
   - component: {fileID: -3543131442152542412}
   m_Layer: 11
   m_Name: Log_1
   m_TagString: Untagged
   m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &8902952827418518811
 Transform:
@@ -95,6 +96,22 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: efa7cd4bd49368e4bb6acb08381a7ca9, type: 3}
+--- !u!208 &-1271921324120994195
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5608949343353689864}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.056, y: 0.012, z: 0.011000001}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0.010000001}
+  m_TimeToStationary: 0.5
 --- !u!114 &-3543131442152542412
 MonoBehaviour:
   m_ObjectHideFlags: 0
