@@ -73,6 +73,8 @@ public class RTSRaycast : MonoBehaviour
 
         if(selected != null)
         {
+            GameController.Instance.playerUsingUI = true;
+
             dropDownMenu.GetComponent<DropdownManager>().MoveToCursor();
 
             dropDownMenu.SetActive(true);

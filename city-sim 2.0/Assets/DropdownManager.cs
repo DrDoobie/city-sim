@@ -8,7 +8,7 @@ public class DropdownManager : MonoBehaviour
     {
         if(Input.GetButtonDown("Fire2"))
         {
-            gameObject.SetActive(false);
+            CloseMenu();
         }
     }
 
@@ -18,14 +18,14 @@ public class DropdownManager : MonoBehaviour
         {
             Debug.Log("0");
 
-            gameObject.SetActive(false);
+            CloseMenu();
         }
 
         if(val == 1)
         {
             Debug.Log("1");
 
-            gameObject.SetActive(false);
+            CloseMenu();
         }
     }
 
@@ -34,5 +34,12 @@ public class DropdownManager : MonoBehaviour
         Vector2 cursorPos = Input.mousePosition;
 
         GameController.Instance.dropDown.transform.position = new Vector2(cursorPos.x, cursorPos.y);
+    }
+
+    void CloseMenu()
+    {
+        gameObject.SetActive(false);
+
+        GameController.Instance.playerUsingUI = false;
     }
 }

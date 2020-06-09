@@ -29,23 +29,22 @@ public class Flag : MonoBehaviour
 
     void Controller()
     {
-        if(GameController.Instance.playerUsingUI)
+        if(active)
         {
             tribeInfo.SetActive(true);
 
             if(Input.GetKeyDown(KeyCode.Return))
             {
                 TribeDeclaration();
-
-                GameController.Instance.playerUsingUI = false;
+                CloseFlag();
             }
 
-            if(Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire2"))
             {
                 if(!tribeDeclared)
                     inputField.text = null;
 
-                GameController.Instance.playerUsingUI = false;
+                CloseFlag();
             }
 
             return;
@@ -68,6 +67,13 @@ public class Flag : MonoBehaviour
 
     public void UseFlag()
     {
+        active = true;
         GameController.Instance.playerUsingUI = true;
+    }
+
+    void CloseFlag()
+    {
+        active = false;
+        GameController.Instance.playerUsingUI = false;
     }
 }

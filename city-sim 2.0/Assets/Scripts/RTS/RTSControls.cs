@@ -26,11 +26,6 @@ public class RTSControls : MonoBehaviour
         if(!GameController.Instance.playerUsingUI)
         {
             MovementController();
-
-            /*if(Input.GetKeyDown(KeyCode.J))
-            {
-                animator.SetTrigger("Attack");
-            }*/
         }
 
         if(isAnimated)
