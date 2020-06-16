@@ -14,7 +14,7 @@ public class PlayerMotor : MonoBehaviour
     public bool isAnimated;
     public Animator animator;
 
-    bool isGrounded, isCrouching;
+    [HideInInspector] public bool isGrounded;
     float _movementSpeed, originalHeight;
     Vector3 velocity;
 

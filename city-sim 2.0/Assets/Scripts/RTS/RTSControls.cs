@@ -21,16 +21,19 @@ public class RTSControls : MonoBehaviour
 
     void Update()
     {    
-        GameController.Instance.playerAgent.destination = playerDestination;
+        if(GameController.Instance.playerAgent.enabled)
+        {
+            GameController.Instance.playerAgent.destination = playerDestination;
+
+            if(isAnimated)
+            {
+                Animation();
+            }
+        }
 
         if(!GameController.Instance.playerUsingUI)
         {
             MovementController();
-        }
-
-        if(isAnimated)
-        {
-            Animation();
         }
     }
 

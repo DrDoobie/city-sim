@@ -81,10 +81,14 @@ public class GameController : MonoBehaviour
             rtsCam.SetActive(true);
             fpsCam.SetActive(false);
 
-            playerMotor.enabled = false;
-            playerController.enabled = false;
+            if(playerMotor.isGrounded)
+            {
+                playerMotor.enabled = false;
 
-            playerAgent.enabled = true;
+                playerAgent.enabled = true;
+            }
+
+            //playerController.enabled = false;
 
             return;
         }
@@ -96,7 +100,7 @@ public class GameController : MonoBehaviour
         fpsCam.SetActive(true);
 
         playerMotor.enabled = true;
-        playerController.enabled = true;
+        //playerController.enabled = true;
 
         playerAgent.enabled = false;
     }
