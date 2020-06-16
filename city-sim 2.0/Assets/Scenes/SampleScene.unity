@@ -5012,33 +5012,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
-      propertyPath: particleEffect.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
-      propertyPath: particleEffect.Array.data[0]
-      value: 
-      objectReference: {fileID: 674058213163479776, guid: bdb439fab06fc9f41a89a3a54729f783,
-        type: 3}
-    - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
-      propertyPath: layerMask.m_Bits
-      value: 67584
-      objectReference: {fileID: 0}
-    - target: {fileID: 1814507747, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
-      propertyPath: particleEffect.Array.data[1]
-      value: 
-      objectReference: {fileID: 674058213163479776, guid: 1d5aefba173d501428729137a5ecf4d8,
-        type: 3}
     - target: {fileID: 1953509527, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}
       propertyPath: notificationsText
       value: 
       objectReference: {fileID: 2005019778}
-    - target: {fileID: 4807151488120052605, guid: 95dc755dffa362842ae028bb545efc4a,
-        type: 3}
-      propertyPath: m_CullingMask.m_Bits
-      value: 93495
-      objectReference: {fileID: 0}
     - target: {fileID: 4807151489175242208, guid: 95dc755dffa362842ae028bb545efc4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5098,11 +5075,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4807151489175242214, guid: 95dc755dffa362842ae028bb545efc4a,
-        type: 3}
-      propertyPath: m_StepOffset
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95dc755dffa362842ae028bb545efc4a, type: 3}

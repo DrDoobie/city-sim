@@ -96,7 +96,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 27959
+    m_Bits: 93495
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -244,13 +244,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 3
+  m_Height: 3.5
   m_Radius: 0.5
   m_SlopeLimit: 45
-  m_StepOffset: 0.8
+  m_StepOffset: 0.2
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.5, z: 0}
+  m_Center: {x: 0, y: 1.75, z: 0}
 --- !u!195 &1814507746
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -260,7 +260,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 4807151489175242211}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.45
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
@@ -269,7 +269,7 @@ NavMeshAgent:
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
-  m_Height: 3
+  m_Height: 3.5
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
@@ -316,6 +316,7 @@ MonoBehaviour:
     m_Bits: 256
   isAnimated: 0
   animator: {fileID: 0}
+  isGrounded: 0
 --- !u!114 &1814507747
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -331,7 +332,7 @@ MonoBehaviour:
   cam: {fileID: 4807151488120052605}
   layerMask:
     serializedVersion: 2
-    m_Bits: 2048
+    m_Bits: 67584
   attackDamage: 25
   attackRange: 4
   thirdPersonAttackRange: 1.5
@@ -339,8 +340,9 @@ MonoBehaviour:
   thirdPersonAttackRate: 1
   attackPoint: {fileID: 3263541651926126688}
   particleDespawnDelay: 2
-  particleEffect: {fileID: 674058213163479776, guid: bdb439fab06fc9f41a89a3a54729f783,
-    type: 3}
+  particleEffect:
+  - {fileID: 674058213163479776, guid: bdb439fab06fc9f41a89a3a54729f783, type: 3}
+  - {fileID: 674058213163479776, guid: 1d5aefba173d501428729137a5ecf4d8, type: 3}
   animator: {fileID: 7994402003785334683}
   nextAttackTime: 0
 --- !u!114 &1953509527
