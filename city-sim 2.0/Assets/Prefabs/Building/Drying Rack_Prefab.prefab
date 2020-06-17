@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1300439978639445024}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Drying Rack_Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,6 +146,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Drying Rack
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 146fee61e71c12e4db2ce51b8d377e3f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 146fee61e71c12e4db2ce51b8d377e3f, type: 3}
