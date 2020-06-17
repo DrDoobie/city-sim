@@ -1983,15 +1983,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildMode: 0
   rotateSpeed: 10
+  selectedObject: 0
   mask:
     serializedVersion: 2
     m_Bits: 256
   canPlace: 0
-  ghostObj: {fileID: 4137913534627214217}
   ghostMaterials:
   - {fileID: 2100000, guid: 74c009231b4a9c244a7bf241f2da853b, type: 2}
   - {fileID: 2100000, guid: 1d377fd744e738241843cd95bfc53576, type: 2}
-  ghostObjectContainer: {fileID: 423313603}
+  ghostObjectContainer: {fileID: 423313604}
 --- !u!114 &583005730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6254,7 +6254,7 @@ GameObject:
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4137913534627214217
 Transform:
   m_ObjectHideFlags: 0

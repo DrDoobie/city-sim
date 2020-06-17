@@ -63,8 +63,8 @@ public class GameController : MonoBehaviour
         {
             if(rtsMode)
             {
-                rtsBuildingSystem.buildMode = false;
-                rtsBuildingSystem.ghostObjectContainer.SetActive(false);
+                rtsBuildingSystem.buildMode = false; //Disabling shit for a smoother experience, ugly code though
+                rtsBuildingSystem.ghostObjectContainer.gameObject.SetActive(false);
 
             } else{
                 rtsControls.playerDestination = playerAgent.transform.position;

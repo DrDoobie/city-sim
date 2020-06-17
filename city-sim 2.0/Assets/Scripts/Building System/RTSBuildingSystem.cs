@@ -5,21 +5,24 @@ public class RTSBuildingSystem : MonoBehaviour
 {
     public bool buildMode;
     public float rotateSpeed;
+    public int selectedObject = 0;
     public LayerMask mask;
 
     [Header("Ghost Object")]
     public bool canPlace;
-    public Transform ghostObj;
     public Material[] ghostMaterials;
-    public GameObject ghostObjectContainer;
+    public Transform ghostObjectContainer;
 
     float lastPosX,lastPosY,lastPosZ;
     GameObject objToPlace;
     Camera cam;
     Vector3 mousePos;
+    Transform ghostObj;
 
     void Start()
     {
+        SelectObject();
+
         cam = GetComponent<RTSCamera>().rtsCam;
     }
 
@@ -28,9 +31,11 @@ public class RTSBuildingSystem : MonoBehaviour
         if(GameController.Instance.playerUsingUI)
             return;
         
+        SelectedObjectController();
+
         if(Input.GetButtonDown("Build Mode"))
         {
-            ghostObj.GetComponentInChildren<GhostObject>().collisions = 0;
+            ghostObj.GetComponentInChildren<GhostObject>().collisions = 0;//I think a bug might come from here
 
             buildMode = !buildMode;
         }
@@ -45,6 +50,54 @@ public class RTSBuildingSystem : MonoBehaviour
         }
 
         ghostObj.GetComponentInChildren<MeshRenderer>().enabled = false;
+    }
+
+    void SelectedObjectController()
+    {
+        int previousSelectedObject = selectedObject;
+
+        if(Input.GetAxis("Mouse ScrollWheel") > 0.0f)
+        {
+            if(selectedObject >= ghostObjectContainer.childCount - 1)
+                selectedObject = 0;
+
+            else
+                selectedObject++;
+        }
+
+        if(Input.GetAxis("Mouse ScrollWheel") < 0.0f)
+        {
+            if(selectedObject <= 0)
+                selectedObject = ghostObjectContainer.childCount - 1;
+
+            else
+                selectedObject--;
+        }
+
+        if(previousSelectedObject != selectedObject)
+        {
+            SelectObject();
+        }
+    }
+
+    void SelectObject() 
+    {
+        int i = 0;
+
+        foreach(Transform obj in ghostObjectContainer)
+        {
+            if(i == selectedObject)
+            {
+                obj.gameObject.SetActive(true);
+
+                ghostObj = obj;
+
+            } else {
+                obj.gameObject.SetActive(false);
+            }
+
+            i++;
+        }
     }
 
     void BuildMode()
