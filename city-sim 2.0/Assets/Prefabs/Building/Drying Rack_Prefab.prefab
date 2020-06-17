@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1315595854720243549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_Children:
   - {fileID: 6522807746903766699}
   m_Father: {fileID: 0}
@@ -44,6 +44,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.023036115, y: 0.115662366, z: 0.056869257}
   m_Center: {x: -0.007102598, y: 0.058458216, z: 0.0005975914}
+--- !u!208 &6998534395930966912
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7844974570922280120}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.012, y: 0.062000003, z: 0.028}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 1
+  m_Center: {x: -0.007, y: 0.055000003, z: 0.001}
+  m_TimeToStationary: 0.5
 --- !u!1001 &2305596549591522737
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,6 +137,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 43.15554
       objectReference: {fileID: 0}
+    - target: {fileID: -1504981713932161579, guid: 146fee61e71c12e4db2ce51b8d377e3f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ed0e940a43fda674c8a1ec6e6f357bf8, type: 2}
     - target: {fileID: -927199367670048503, guid: 146fee61e71c12e4db2ce51b8d377e3f,
         type: 3}
       propertyPath: m_Name
