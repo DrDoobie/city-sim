@@ -16,10 +16,10 @@ public class RTSRaycast : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetButtonDown("Fire1"))
+        /*if(Input.GetButtonDown("Fire1"))
         {
             LeftClick();
-        }
+        }*/
 
         if(Input.GetButtonDown("Fire2"))
         {
@@ -34,20 +34,7 @@ public class RTSRaycast : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit, Mathf.Infinity))
         {
-            //Interactions with flag object
-            var flag = hit.transform.GetComponent<Flag>();
-
-            if(flag)
-            {
-                flag.UseFlag();
-            }
-
-            /*var resource = hit.transform.GetComponent<Resource>();
-
-            if(resource)
-            {
-                selectedObject = hit.transform.gameObject;
-            }*/
+            //Debug.Log(hit.transform.name);
         }
     }
 

@@ -123,5 +123,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Image Variant 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7770089009147141643, guid: edcc96b234552f2469f0aa3b6d7673f0,
+        type: 3}
+      propertyPath: m_FontData.m_FontSize
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edcc96b234552f2469f0aa3b6d7673f0, type: 3}
