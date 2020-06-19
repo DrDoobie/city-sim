@@ -8,8 +8,8 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; }
 
-    public bool buildMode = false, playerUsingUI = false;
-    public RTSBuildingSystem rtsBuildingSystem;
+    public bool playerUsingUI = false;
+    public BuildingSystem buildingSystem;
     public RTSControls rtsControls;
 
     [Header("UI")]
@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
 
     void UIController()
     {
-        if(rtsBuildingSystem.buildMode)
+        if(buildingSystem.buildMode)
         {
             modeText.text = "Build Mode";
 
@@ -63,11 +63,11 @@ public class GameController : MonoBehaviour
         {
             if(rtsMode)
             {
-                rtsBuildingSystem.buildMode = false; //Disabling shit for a smoother experience, ugly code though
-                rtsBuildingSystem.ghostObjectContainer.gameObject.SetActive(false);
+                //rtsBuildingSystem.buildMode = false; //Disabling shit for a smoother experience, ugly code though
+                //rtsBuildingSystem.ghostObjectContainer.gameObject.SetActive(false);
 
             } else{
-                rtsControls.playerDestination = playerAgent.transform.position;
+                rtsControls.playerDestination = playerAgent.transform.position; //Reset player destination
             }
 
             rtsMode = !rtsMode;

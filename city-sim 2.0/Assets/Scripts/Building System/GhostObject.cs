@@ -8,20 +8,27 @@ public class GhostObject : MonoBehaviour
 
     bool canPlace = true;
     [HideInInspector] public int collisions;
+    BuildingSystem buildingSystem;
+
+    void Start()
+    {
+        buildingSystem = GameController.Instance.buildingSystem;
+    }
 
     void Update()
     {
+        MaterialController();
+    
+        buildingSystem.canPlace = canPlace;
+
         if(collisions >= 1)
         {
             canPlace = false;
 
-        } else {
-            canPlace = true;
+            return;
         }
-        
-        GameController.Instance.rtsBuildingSystem.canPlace = canPlace;
 
-        MaterialController();
+        canPlace = true;
     }
 
     void MaterialController()
@@ -30,10 +37,10 @@ public class GhostObject : MonoBehaviour
 
         if(canPlace)
         {
-            rend.material = GameController.Instance.rtsBuildingSystem.ghostMaterials[0];
+            rend.material = buildingSystem.ghostMaterials[0];
 
         } else {
-            rend.material = GameController.Instance.rtsBuildingSystem.ghostMaterials[1];
+            rend.material = buildingSystem.ghostMaterials[1];
         }
     }
 

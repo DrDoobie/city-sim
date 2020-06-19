@@ -3,27 +3,24 @@ using System.Collections;
  
 public class BuildingSystem : MonoBehaviour
 {
-    /*public bool buildMode;
-    public float rotateSpeed;
+    public bool buildMode = false;
     public int selectedObject = 0;
-    public LayerMask mask;
+    public Camera rtsCam, fpsCam;
+    public LayerMask layerMask;
 
     [Header("Ghost Object")]
     public bool canPlace;
+    public float rotationSpeed = 10.0f;
+    public Transform ghostObjectContainer;
     public Material[] ghostMaterials;
 
     float lastPosX,lastPosY,lastPosZ;
-    GameObject objToPlace;
-    Camera cam;
-    Vector3 mousePos;
-    Transform ghostObj;*/
-    public Transform ghostObjectContainer;
+    Camera activeCam;
+    Transform ghostObj;
 
     void Start()
     {
         SelectObject();
-
-        cam = GetComponent<RTSCamera>().rtsCam;
     }
 
     void Update()
@@ -31,12 +28,10 @@ public class BuildingSystem : MonoBehaviour
         if(GameController.Instance.playerUsingUI)
             return;
         
-        SelectedObjectController();
+        SwitchObject();
 
         if(Input.GetButtonDown("Build Mode"))
         {
-            ghostObj.GetComponentInChildren<GhostObject>().collisions = 0;//I think a bug might come from here
-
             buildMode = !buildMode;
         }
 
@@ -52,9 +47,14 @@ public class BuildingSystem : MonoBehaviour
         ghostObj.GetComponentInChildren<MeshRenderer>().enabled = false;
     }
 
-    void SelectedObjectController()
+    void SwitchObject()
     {
         int previousSelectedObject = selectedObject;
+
+        if(Input.GetAxis("Mouse ScrollWheel") != 0.0f)
+        {
+            ResetObjectCollision();
+        }
 
         if(Input.GetAxis("Mouse ScrollWheel") > 0.0f)
         {
@@ -102,54 +102,74 @@ public class BuildingSystem : MonoBehaviour
 
     void BuildMode()
     {
-        mousePos = Input.mousePosition;
+        if(GameController.Instance.rtsMode)
+        {
+            activeCam = rtsCam;
 
-        Ray ray = cam.ScreenPointToRay(mousePos);
+        } else{
+            activeCam = fpsCam;
+        }
 
+        Ray ray = activeCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if(Physics.Raycast(ray, out hit, Mathf.Infinity, mask))
+        if(Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
-            //Recording mouse position
-            float posX = hit.point.x;
-            float posY = hit.point.y;
-            float posZ = hit.point.z;
-
-            if(posX != lastPosX || posY != lastPosY || posZ != lastPosZ)
-            {
-                lastPosX = posX;
-                lastPosY = posY;
-                lastPosZ = posZ;
-
-                ghostObj.position = new Vector3(lastPosX, lastPosY + .5f, lastPosZ);
-            }
-
-            //Rotation
-            if(Input.GetKey(KeyCode.E))
-            {
-                ghostObj.transform.Rotate(Vector3.up, (-rotateSpeed * 10.0f) * Time.deltaTime);
-            }
-
-            if(Input.GetKey(KeyCode.Q))
-            {
-                ghostObj.transform.Rotate(Vector3.up, (rotateSpeed * 10.0f) * Time.deltaTime);
-            }
+            MoveObject(hit);
+            RotateObject();
 
             if(Input.GetButtonDown("Fire1"))
             {
-                //Build object
                 if(canPlace)
                 {
-                    Build();
+                    PlaceObject();
+
+                    return;
                 }
+
+                Debug.Log("Couldn't place object!");
             }
         }
     }
 
-    void Build()
+    void MoveObject(RaycastHit hit)
     {
-        objToPlace = ghostObj.GetComponentInChildren<GhostObject>().prefab;
+        //Recording mouse position
+        float posX = hit.point.x;
+        float posY = hit.point.y;
+        float posZ = hit.point.z;
 
-        GameObject building = (GameObject)Instantiate(objToPlace, ghostObj.position, ghostObj.rotation);
+        if(posX != lastPosX || posY != lastPosY || posZ != lastPosZ)
+        {
+            lastPosX = posX;
+            lastPosY = posY;
+            lastPosZ = posZ;
+
+            ghostObj.position = new Vector3(lastPosX, lastPosY + .5f, lastPosZ);
+        }
+    }
+
+    void RotateObject()
+    {
+        if(Input.GetKey(KeyCode.E))
+        {
+            ghostObj.transform.Rotate(Vector3.up, (-rotationSpeed * 10.0f) * Time.deltaTime);
+        }
+
+        if(Input.GetKey(KeyCode.Q))
+        {
+            ghostObj.transform.Rotate(Vector3.up, (rotationSpeed * 10.0f) * Time.deltaTime);
+        }
+    }
+
+    void PlaceObject()
+    {
+        GameObject obj = (GameObject)Instantiate(ghostObj.GetComponentInChildren<GhostObject>().prefab, 
+        ghostObj.position, ghostObj.rotation);
+    }
+
+    void ResetObjectCollision()
+    {
+        ghostObj.GetComponentInChildren<GhostObject>().collisions = 0;
     }
 }

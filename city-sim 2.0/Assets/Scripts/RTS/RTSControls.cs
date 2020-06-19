@@ -66,7 +66,7 @@ public class RTSControls : MonoBehaviour
                 /*Ugly code delete soon*/if(hit.transform.gameObject.layer == 14)
                     return;
 
-                if(GameController.Instance.rtsBuildingSystem.buildMode)
+                if(GameController.Instance.buildingSystem.buildMode)
                 {
                     return;
                 }

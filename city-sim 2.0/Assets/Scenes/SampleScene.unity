@@ -1682,7 +1682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 423313604}
   m_Layer: 0
-  m_Name: GhostObject Container (RTS)
+  m_Name: Ghost Object Container
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1696,13 +1696,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 423313603}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -71.5, y: -23.25, z: -42.8}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4137913534627214217}
   - {fileID: 6552002260685306000}
-  m_Father: {fileID: 583005726}
-  m_RootOrder: 1
+  m_Father: {fileID: 767830673}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &424705402
 GameObject:
@@ -2461,9 +2461,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1219718731}
-  - {fileID: 423313604}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &583005727
 MonoBehaviour:
@@ -2504,7 +2503,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583005725}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 642cf46d00113054b9e1d9029c1e9581, type: 3}
   m_Name: 
@@ -3234,7 +3233,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 423313604}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3250,6 +3250,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1b5e3472f83fff40b5999f35a845479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buildMode: 0
+  selectedObject: 0
+  rtsCam: {fileID: 1219718730}
+  fpsCam: {fileID: 1747101153}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
+  canPlace: 0
+  rotationSpeed: 20
+  ghostObjectContainer: {fileID: 423313604}
+  ghostMaterials:
+  - {fileID: 2100000, guid: 74c009231b4a9c244a7bf241f2da853b, type: 2}
+  - {fileID: 2100000, guid: 1d377fd744e738241843cd95bfc53576, type: 2}
 --- !u!1 &771126341
 GameObject:
   m_ObjectHideFlags: 0
@@ -5854,9 +5867,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7944a392d09c32c4f89ec387f01b7243, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buildMode: 0
   playerUsingUI: 0
-  rtsBuildingSystem: {fileID: 583005729}
+  buildingSystem: {fileID: 767830674}
   rtsControls: {fileID: 583005728}
   modeText: {fileID: 424705405}
   dropDown: {fileID: 1462930989}
@@ -7503,7 +7515,7 @@ PrefabInstance:
     - target: {fileID: 4807151489175242208, guid: 95dc755dffa362842ae028bb545efc4a,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4807151489175242208, guid: 95dc755dffa362842ae028bb545efc4a,
         type: 3}
@@ -7530,6 +7542,12 @@ PrefabInstance:
 --- !u!95 &1747101152 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 7994402003785334683, guid: 95dc755dffa362842ae028bb545efc4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1747101151}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1747101153 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4807151488120052605, guid: 95dc755dffa362842ae028bb545efc4a,
     type: 3}
   m_PrefabInstance: {fileID: 1747101151}
   m_PrefabAsset: {fileID: 0}
@@ -9289,7 +9307,7 @@ GameObject:
   m_Icon: {fileID: 3443629218296621865, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4137913534627214217
 Transform:
   m_ObjectHideFlags: 0
@@ -9448,7 +9466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!23 &6486945891918920846
 MeshRenderer:
   m_ObjectHideFlags: 0
