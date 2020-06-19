@@ -2442,7 +2442,6 @@ GameObject:
   - component: {fileID: 583005726}
   - component: {fileID: 583005727}
   - component: {fileID: 583005728}
-  - component: {fileID: 583005729}
   - component: {fileID: 583005730}
   m_Layer: 0
   m_Name: RTSController
@@ -2498,29 +2497,6 @@ MonoBehaviour:
   playerDestination: {x: 0, y: 0, z: 0}
   isAnimated: 1
   animator: {fileID: 1747101152}
---- !u!114 &583005729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 583005725}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 642cf46d00113054b9e1d9029c1e9581, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buildMode: 0
-  rotateSpeed: 10
-  selectedObject: 0
-  mask:
-    serializedVersion: 2
-    m_Bits: 256
-  canPlace: 0
-  ghostMaterials:
-  - {fileID: 2100000, guid: 74c009231b4a9c244a7bf241f2da853b, type: 2}
-  - {fileID: 2100000, guid: 1d377fd744e738241843cd95bfc53576, type: 2}
-  ghostObjectContainer: {fileID: 423313604}
 --- !u!114 &583005730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3259,6 +3235,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  placementParticleEffect: {fileID: 0}
   canPlace: 0
   rotationSpeed: 20
   ghostObjectContainer: {fileID: 423313604}
@@ -8526,12 +8503,12 @@ PrefabInstance:
     - target: {fileID: 3997435875820064772, guid: 16cbe5f0de44a5742a761181adcedb5b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.572
+      value: 16.578
       objectReference: {fileID: 0}
     - target: {fileID: 3997435875820064772, guid: 16cbe5f0de44a5742a761181adcedb5b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.478
+      value: -2.34
       objectReference: {fileID: 0}
     - target: {fileID: 3997435875820064772, guid: 16cbe5f0de44a5742a761181adcedb5b,
         type: 3}

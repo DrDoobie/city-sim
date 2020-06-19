@@ -7,6 +7,7 @@ public class BuildingSystem : MonoBehaviour
     public int selectedObject = 0;
     public Camera rtsCam, fpsCam;
     public LayerMask layerMask;
+    public GameObject placementParticleEffect;
 
     [Header("Ghost Object")]
     public bool canPlace;
@@ -166,6 +167,13 @@ public class BuildingSystem : MonoBehaviour
     {
         GameObject obj = (GameObject)Instantiate(ghostObj.GetComponentInChildren<GhostObject>().prefab, 
         ghostObj.position, ghostObj.rotation);
+
+        //Particle effects
+        if(placementParticleEffect != null)
+        {
+            GameObject particles = Instantiate(placementParticleEffect, ghostObj.position, Quaternion.identity);
+            Destroy(particles, 2.0f);
+        }
     }
 
     void ResetObjectCollision()
