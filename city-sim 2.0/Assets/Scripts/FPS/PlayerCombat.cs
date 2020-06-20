@@ -70,6 +70,11 @@ public class PlayerCombat : MonoBehaviour
                 animal.TakeDamage(attackDamage);
             }
 
+            if(human)
+            {
+                human.TakeDamage(this.transform, attackDamage);
+            }
+
             //Debug.Log("Hit an AI!");
         }
     }

@@ -815,6 +815,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1812123745}
     m_Modifications:
+    - target: {fileID: 25008349047759307, guid: 80d11bb1f1f077942ad4bfa1e5d3ee42,
+        type: 3}
+      propertyPath: m_StoppingDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4822992607704110281, guid: 80d11bb1f1f077942ad4bfa1e5d3ee42,
         type: 3}
       propertyPath: m_LocalPosition.x

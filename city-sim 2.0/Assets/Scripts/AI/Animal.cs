@@ -8,7 +8,7 @@ public class Animal : MonoBehaviour
     public float maxHealth, health;
 
     [Header("AI Settings")]
-    public bool isFleeing;
+    //public bool isFleeing;
     public float wanderCoolDown = 10.0f;
     public float wanderDistance = 50.0f;
     public NavMeshAgent agent;
@@ -61,11 +61,13 @@ public class Animal : MonoBehaviour
 
     void Flee()
     {
-        isFleeing = true;
+        //isFleeing = true;
 
         Vector3 runDirection = transform.position - GameObject.FindWithTag("Player").transform.position;
 
-        Vector3 checkPos = transform.position + runDirection;
+        Vector3 checkPos = transform.position + runDirection; //This is working but the ai only runs for like a second prolly cause it needs to be called in an update function
+
+        //Reset wanderCoolDown maybe
         
         agent.SetDestination(checkPos); 
 
@@ -90,8 +92,8 @@ public class Animal : MonoBehaviour
 
     void Wander()
     {
-        if(isFleeing)
-            return;
+        /*if(isFleeing)
+            return;*/
 
         xValue = Random.Range(-wanderDistance, wanderDistance);
         zValue = Random.Range(-wanderDistance, wanderDistance);
