@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d941140be361049be67c1755b7349a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 1000
+  health: 0
   wanderCoolDown: 25
   wanderDistance: 100
   agent: {fileID: 146155677}

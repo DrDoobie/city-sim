@@ -65,7 +65,12 @@ public class PlayerCombat : MonoBehaviour
             GameObject particles = Instantiate(particleEffect[1], hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(particles, particleDespawnDelay);
 
-            Debug.Log("Hit an AI!");
+            if(animal)
+            {
+                animal.TakeDamage(attackDamage);
+            }
+
+            //Debug.Log("Hit an AI!");
         }
     }
 
