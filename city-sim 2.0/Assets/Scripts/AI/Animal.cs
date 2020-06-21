@@ -9,6 +9,7 @@ public class Animal : MonoBehaviour
 
     [Header("AI Settings")]
     public bool isFleeing;
+    public float moveSpeed;
     public float fleeCoolDown = 10.0f;
     public float wanderCoolDown = 10.0f, wanderDistance = 50.0f;
     public NavMeshAgent agent;
@@ -18,13 +19,15 @@ public class Animal : MonoBehaviour
     public Animator animator;
 
     bool isDead = false;
-    float ogFleeCoolDown;
+    float ogMoveSpeed, ogFleeCoolDown;
     float xValue, zValue;
 
     void Start()
     {
-        ogFleeCoolDown = fleeCoolDown;
         health = maxHealth;
+
+        ogMoveSpeed = moveSpeed;
+        ogFleeCoolDown = fleeCoolDown;
 
         StartCoroutine(WanderTimer());
     }
@@ -68,6 +71,9 @@ public class Animal : MonoBehaviour
 
     void Flee()
     {
+        if(isDead)
+            return;
+
         Vector3 runDirection = transform.position - GameObject.FindWithTag("Player").transform.position;
 
         Vector3 checkPos = transform.position + runDirection; 

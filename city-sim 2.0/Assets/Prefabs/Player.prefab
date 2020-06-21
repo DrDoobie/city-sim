@@ -40,8 +40,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4807151488120052607}
   - component: {fileID: 4807151488120052605}
-  - component: {fileID: 4807151488120052604}
   - component: {fileID: 4807151488120052594}
+  - component: {fileID: 8155214526915313650}
   - component: {fileID: 1321133192}
   m_Layer: 2
   m_Name: Camera
@@ -108,14 +108,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4807151488120052604
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4807151488120052606}
-  m_Enabled: 1
 --- !u!114 &4807151488120052594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +124,14 @@ MonoBehaviour:
   clampMin: -60
   clampMax: 75
   playerBod: {fileID: 4807151489175242208}
+--- !u!81 &8155214526915313650
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4807151488120052606}
+  m_Enabled: 1
 --- !u!114 &1321133192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 5
-  sprintSpeed: 8
+  sprintSpeed: 15
   gravity: -9.81
   groundDistance: 0.4
   jumpHeight: 1
@@ -333,7 +333,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 67584
-  attackDamage: 25
+  attackDamage: 10
   attackRange: 4
   thirdPersonAttackRange: 1.5
   attackRate: 2
