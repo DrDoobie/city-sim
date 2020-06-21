@@ -63,8 +63,6 @@ public class Human : MonoBehaviour
                 //Debug.Log("Calmed down");
                 aggroCoolDown = ogAggroCoolDown;
 
-                StartCoroutine(WanderTimer());
-
                 isAggroed = false;
             }
         }
@@ -118,19 +116,16 @@ public class Human : MonoBehaviour
         //Generate new position based off current position and randomly generated values
         Vector3 newPos = new Vector3(currentPos.x + xValue, currentPos.y, currentPos.z + zValue);
 
-        Debug.Log("Set destination to " + newPos);
+        //Debug.Log("Set destination to " + newPos);
         agent.SetDestination(newPos);
     }
 
     IEnumerator WanderTimer()
     {
-        while(!isAggroed)
-        {
-            Wander();
+        Wander();
 
-            yield return new WaitForSeconds(wanderCoolDown);
+        yield return new WaitForSeconds(wanderCoolDown);
 
-            StartCoroutine(WanderTimer());
-        }
+        StartCoroutine(WanderTimer());
     }
 }

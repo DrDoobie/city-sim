@@ -8,9 +8,9 @@ public class Animal : MonoBehaviour
     public float maxHealth, health;
 
     [Header("AI Settings")]
-    //public bool isFleeing;
-    public float wanderCoolDown = 10.0f;
-    public float wanderDistance = 50.0f;
+    public bool isFleeing;
+    public float fleeCoolDown = 10.0f;
+    public float wanderCoolDown = 10.0f, wanderDistance = 50.0f;
     public NavMeshAgent agent;
 
     [Header("Animation")]
@@ -18,10 +18,12 @@ public class Animal : MonoBehaviour
     public Animator animator;
 
     bool isDead = false;
+    float ogFleeCoolDown;
     float xValue, zValue;
 
     void Start()
     {
+        ogFleeCoolDown = fleeCoolDown;
         health = maxHealth;
 
         StartCoroutine(WanderTimer());
@@ -30,6 +32,11 @@ public class Animal : MonoBehaviour
     void Update()
     {
         HealthController();
+
+        if(isFleeing)
+        {
+            Flee();
+        }
 
         if(isAnimated)
         {
@@ -54,20 +61,25 @@ public class Animal : MonoBehaviour
 
     public void TakeDamage(float val)
     {
-        health -= val;
+        isFleeing = true;
 
-        Flee();
+        health -= val;
     }
 
     void Flee()
     {
-        //isFleeing = true;
-
         Vector3 runDirection = transform.position - GameObject.FindWithTag("Player").transform.position;
 
-        Vector3 checkPos = transform.position + runDirection; //This is working but the ai only runs for like a second prolly cause it needs to be called in an update function
+        Vector3 checkPos = transform.position + runDirection; 
 
-        //Reset wanderCoolDown maybe
+        fleeCoolDown -= Time.deltaTime;
+
+        if(fleeCoolDown <= 0)
+        {
+            fleeCoolDown = ogFleeCoolDown;
+            
+            isFleeing = false;
+        }
         
         agent.SetDestination(checkPos); 
 
