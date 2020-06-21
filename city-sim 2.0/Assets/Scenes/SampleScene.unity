@@ -3055,20 +3055,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - volume: 0.5
+  - loop: 0
+    volume: 0.3
     pitch: 1
     name: hit
     clip: {fileID: 8300000, guid: 23bfd64ae1dcd434489f60b5945e1ca8, type: 3}
     source: {fileID: 0}
-  - volume: 0.5
-    pitch: 1
+  - loop: 0
+    volume: 0.3
+    pitch: 1.5
     name: chop
     clip: {fileID: 8300000, guid: 231436338c1192442ad3d9a27062a0e7, type: 3}
-    source: {fileID: 0}
-  - volume: 0.5
-    pitch: 1
-    name: tink
-    clip: {fileID: 8300000, guid: 7dbbe1b9659c5924ebd40a168d5d41fe, type: 3}
     source: {fileID: 0}
 --- !u!4 &738308544
 Transform:
@@ -5912,7 +5909,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerUsingUI: 0
-  audioManager: {fileID: 738308543}
   buildingSystem: {fileID: 767830674}
   rtsControls: {fileID: 583005728}
   modeText: {fileID: 424705405}

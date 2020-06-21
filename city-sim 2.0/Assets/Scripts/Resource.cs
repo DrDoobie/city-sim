@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Resource : MonoBehaviour
 {
+    public bool wood, stone;
     public float maxHealth, health;
     public InventoryObj inventory;
     public ItemObj item;
