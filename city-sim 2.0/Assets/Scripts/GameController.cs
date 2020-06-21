@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour
     public static GameController Instance { get; private set; }
 
     public bool playerUsingUI = false;
+    public AudioManager audioManager;
     public BuildingSystem buildingSystem;
     public RTSControls rtsControls;
 

@@ -57,6 +57,8 @@ public class PlayerCombat : MonoBehaviour
 
     void HitAI(RaycastHit hit)
     {
+        GameController.Instance.audioManager.PlaySound("hit");
+
         Animal animal = hit.transform.GetComponent<Animal>();
         Human human = hit.transform.GetComponent<Human>();
 
