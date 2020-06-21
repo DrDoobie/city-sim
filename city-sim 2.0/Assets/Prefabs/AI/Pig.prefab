@@ -105,6 +105,9 @@ MonoBehaviour:
   maxHealth: 100
   health: 0
   isFleeing: 0
+  defaultSpeed: 3
+  runSpeed: 6
+  fleeCoolDown: 10
   wanderCoolDown: 7.5
   wanderDistance: 20
   agent: {fileID: 1928714147}

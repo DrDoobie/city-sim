@@ -877,6 +877,8 @@ MonoBehaviour:
   health: 0
   target: {fileID: 0}
   isAggroed: 0
+  defaultSpeed: 5
+  runSpeed: 8
   aggroCoolDown: 7.5
   wanderCoolDown: 15
   wanderDistance: 50

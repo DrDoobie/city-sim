@@ -10,6 +10,7 @@ public class Human : MonoBehaviour
 
     [Header("AI Settings")]
     public bool isAggroed;
+    public float defaultSpeed, runSpeed;
     public float aggroCoolDown = 7.5f;
     public float wanderCoolDown = 10.0f;
     public float wanderDistance = 50.0f;
@@ -54,6 +55,8 @@ public class Human : MonoBehaviour
     {
         if(isAggroed && !isDead)
         {
+            agent.speed = runSpeed;
+
             agent.SetDestination(target.position);
 
             aggroCoolDown -= Time.deltaTime;
@@ -62,6 +65,8 @@ public class Human : MonoBehaviour
             {
                 //Debug.Log("Calmed down");
                 aggroCoolDown = ogAggroCoolDown;
+
+                agent.speed = defaultSpeed;
 
                 isAggroed = false;
             }
