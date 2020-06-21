@@ -57,13 +57,13 @@ public class PlayerCombat : MonoBehaviour
 
     void HitAI(RaycastHit hit)
     {
-        GameController.Instance.audioManager.PlaySound("hit");
-
         Animal animal = hit.transform.GetComponent<Animal>();
         Human human = hit.transform.GetComponent<Human>();
 
         if(animal || human)
         {
+            AudioManager.instance.PlaySound("hit");
+
             GameObject particles = Instantiate(particleEffect[1], hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(particles, particleDespawnDelay);
 
@@ -87,6 +87,8 @@ public class PlayerCombat : MonoBehaviour
 
         if(resource)
         {
+            AudioManager.instance.PlaySound("chop");
+
             GameObject particles = Instantiate(particleEffect[0], hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(particles, particleDespawnDelay);
 
