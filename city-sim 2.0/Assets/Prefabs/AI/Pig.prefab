@@ -104,6 +104,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   health: 0
+  amountOfItem: 0
+  item: {fileID: 11400000, guid: 83f0bb15e0d211248b00bb0375bea3c3, type: 2}
+  inventory: {fileID: 11400000, guid: 1d987bae43862b14d86cfbea3397707b, type: 2}
   isFleeing: 0
   defaultSpeed: 3
   runSpeed: 6

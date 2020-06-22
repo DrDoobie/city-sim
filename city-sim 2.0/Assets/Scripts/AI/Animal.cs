@@ -7,6 +7,11 @@ public class Animal : MonoBehaviour
 {
     public float maxHealth, health;
 
+    [Header("Loot Settings")]
+    //public int amountOfItem;
+    public ItemObj item;
+    public InventoryObj inventory;
+
     [Header("AI Settings")]
     public bool isFleeing;
     public float defaultSpeed, runSpeed;
@@ -56,6 +61,8 @@ public class Animal : MonoBehaviour
     void Die()
     {
         isDead = true;
+
+        inventory.AddItem(item, 1);
 
         this.gameObject.SetActive(false);
     }
