@@ -727,17 +727,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Test Object
-
-    This is an object used for things...
-
-    Cost: 1 wood'
+  m_Text: 
 --- !u!222 &119405149
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3413,11 +3409,12 @@ MonoBehaviour:
   selectedObject: 0
   rtsCam: {fileID: 1219718730}
   fpsCam: {fileID: 1747101153}
+  placementParticleEffect: {fileID: 496338328471291211, guid: 497ed2a6efb1a5a47b1cb660dfe0891c,
+    type: 3}
+  objectInfo: {fileID: 119405148}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
-  placementParticleEffect: {fileID: 496338328471291211, guid: 497ed2a6efb1a5a47b1cb660dfe0891c,
-    type: 3}
   canPlace: 0
   rotationSpeed: 20
   ghostObjectContainer: {fileID: 423313604}
@@ -9530,6 +9527,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 7107826507560804984, guid: fd9e75b75cfdb6749ab220dd108f88ba, type: 3}
+  buildingObject: {fileID: 11400000, guid: 2a0a2b1a52905e742a4bf3778e0c5563, type: 2}
   collisions: 0
 --- !u!54 &2526024860711052742
 Rigidbody:
@@ -9628,6 +9626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 3997435875820064773, guid: 16cbe5f0de44a5742a761181adcedb5b, type: 3}
+  buildingObject: {fileID: 11400000, guid: 98ea426431513a84b8b8a62dfbeab8e3, type: 2}
   collisions: 0
 --- !u!1 &4137913534627214216
 GameObject:
@@ -9746,6 +9745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 5716378576904790394, guid: c0b547ce8c4818442aec2aa4e5dce93a, type: 3}
+  buildingObject: {fileID: 11400000, guid: 70bd6dd91c5708f42840a9c3aa98b009, type: 2}
   collisions: 0
 --- !u!54 &4772290478912800852
 Rigidbody:
@@ -9838,6 +9838,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 1315595854720243549, guid: 300375f26e50f3f429ca3744da7308bd, type: 3}
+  buildingObject: {fileID: 11400000, guid: 8326b1793ec9541448169d6e74a6fce0, type: 2}
   collisions: 0
 --- !u!4 &5473684202534530806
 Transform:

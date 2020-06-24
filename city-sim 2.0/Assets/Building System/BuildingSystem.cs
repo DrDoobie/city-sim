@@ -7,9 +7,9 @@ public class BuildingSystem : MonoBehaviour
     public bool buildMode = false;
     public int selectedObject = 0;
     public Camera rtsCam, fpsCam;
-    public LayerMask layerMask;
     public GameObject placementParticleEffect;
     public Text objectInfo;
+    public LayerMask layerMask;
 
     [Header("Ghost Object")]
     public bool canPlace;
@@ -41,14 +41,17 @@ public class BuildingSystem : MonoBehaviour
         if(buildMode)
         {
             BuildMode();
+            UIController();
 
             ghostObj.GetComponentInChildren<MeshRenderer>().enabled = true;
 
             return;
         }
 
+        objectInfo.text = "";
         ghostObj.GetComponentInChildren<MeshRenderer>().enabled = false;
     }
+
 
     void SwitchObject()
     {
@@ -132,6 +135,22 @@ public class BuildingSystem : MonoBehaviour
 
                 Debug.Log("Couldn't place object!");
             }
+        }
+    }
+
+    void UIController()
+    {
+        Vector2 cursorPos = Input.mousePosition;
+
+        objectInfo.transform.position = new Vector2(cursorPos.x, cursorPos.y);
+
+        if(ghostObj.GetComponentInChildren<GhostObject>().buildingObject != null)
+        {
+            objectInfo.text = ghostObj.GetComponentInChildren<GhostObject>().buildingObject.objectInfo;
+
+        } else {
+            Debug.Log("Error: Couldn't find object info");
+            objectInfo.text = "";
         }
     }
 

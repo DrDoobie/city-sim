@@ -5,6 +5,7 @@ using UnityEngine;
 public class GhostObject : MonoBehaviour
 {
     public GameObject prefab;
+    public BuildingObject buildingObject;
 
     bool canPlace = true;
     [HideInInspector] public int collisions;
