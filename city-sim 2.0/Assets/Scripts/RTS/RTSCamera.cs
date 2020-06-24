@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class RTSCamera : MonoBehaviour
 {
+    public bool cameraFocused;
     public float normalSpeed = 1.0f, shiftSpeed = 5.0f, rotationSpeed = 0.1f;
+    [Range(0.0f, 1.0f)]
+    public float smoothSpeed = 0.2f;
+    public Vector3 cameraOffset;
     public Camera rtsCam;
+    public Transform target;
 
     Vector2 p1, p2;
-
-    [SerializeField] float moveSpeed;
+    float moveSpeed;
 
     void Update()
     {    
@@ -19,6 +23,12 @@ public class RTSCamera : MonoBehaviour
         }
 
         GetCameraRotation();
+    }
+
+    void FixedUpdate()
+    {
+        if(cameraFocused)
+            FocusCamera();
     }
 
     void Controller()
@@ -79,5 +89,15 @@ public class RTSCamera : MonoBehaviour
 
             p1 = p2;
         }
+    }
+
+    void FocusCamera()
+    {
+        Vector3 targetPos = target.position + cameraOffset;
+        Vector3 smoothedPos = Vector3.Lerp(transform.position, targetPos, smoothSpeed);
+
+        transform.position = smoothedPos;
+
+        //ransform.LookAt(target);
     }
 }

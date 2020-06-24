@@ -2468,7 +2468,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 583005725}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.5, y: 23.25, z: 42.8}
+  m_LocalPosition: {x: 71.5, y: 20.18002, z: 42.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1219718731}
@@ -2487,11 +2487,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 403093dc2d91013429cec5901c246999, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraFocused: 0
   normalSpeed: 1
   shiftSpeed: 3
   rotationSpeed: 0.1
+  smoothSpeed: 0.2
+  cameraOffset: {x: -6, y: 18, z: -7.5}
   rtsCam: {fileID: 1219718730}
-  moveSpeed: 0
+  target: {fileID: 1291613292}
 --- !u!114 &583005728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5799,6 +5802,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4056082264163907815, guid: ef1ab1f19ddb63a4aa8ee0954f29b9e6,
     type: 3}
   m_PrefabInstance: {fileID: 1274636920}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1291613292 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4807151489175242208, guid: 95dc755dffa362842ae028bb545efc4a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1747101151}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1301044760
 PrefabInstance:
