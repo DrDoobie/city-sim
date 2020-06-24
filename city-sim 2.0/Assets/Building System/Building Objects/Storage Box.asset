@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 32526246f4046c841af207372829f1f1, type: 3}
-  m_Name: Drying Rack
+  m_Name: Storage Box
   m_EditorClassIdentifier: 
-  objectInfo: 'Drying Rack
+  objectInfo: '<b>Storage Box</b>
 
-    Use this to dry various things such as fish.'
+    Use this to store goods in.'

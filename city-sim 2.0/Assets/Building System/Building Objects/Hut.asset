@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32526246f4046c841af207372829f1f1, type: 3}
   m_Name: Hut
   m_EditorClassIdentifier: 
-  objectInfo: 'Hut
+  objectInfo: '<b>Hut</b>
 
     Use this to house your people.'

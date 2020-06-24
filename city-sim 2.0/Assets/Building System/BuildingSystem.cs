@@ -8,8 +8,11 @@ public class BuildingSystem : MonoBehaviour
     public int selectedObject = 0;
     public Camera rtsCam, fpsCam;
     public GameObject placementParticleEffect;
-    public Text objectInfo;
     public LayerMask layerMask;
+
+    [Header("UI")]
+    public Text objectInfo;
+    public Vector2 textOffset;
 
     [Header("Ghost Object")]
     public bool canPlace;
@@ -142,7 +145,7 @@ public class BuildingSystem : MonoBehaviour
     {
         Vector2 cursorPos = Input.mousePosition;
 
-        objectInfo.transform.position = new Vector2(cursorPos.x, cursorPos.y);
+        objectInfo.transform.position = new Vector2(cursorPos.x, cursorPos.y) + textOffset;
 
         if(ghostObj.GetComponentInChildren<GhostObject>().buildingObject != null)
         {
