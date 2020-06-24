@@ -153,7 +153,7 @@ public class BuildingSystem : MonoBehaviour
 
         } else {
             Debug.Log("Error: Couldn't find object info");
-            objectInfo.text = "";
+                objectInfo.text = "";
         }
     }
 

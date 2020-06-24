@@ -48,9 +48,8 @@ public class GhostObject : MonoBehaviour
     {
         if(other.gameObject.layer != 8)
         {
-            Debug.Log("Colliding with " + other.name);
-
-            collisions++;
+            //Debug.Log("Colliding with " + other.name);
+                collisions++;
         }
     }
 
