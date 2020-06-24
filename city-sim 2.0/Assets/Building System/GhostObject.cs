@@ -18,17 +18,16 @@ public class GhostObject : MonoBehaviour
     void Update()
     {
         MaterialController();
-    
-        buildingSystem.canPlace = canPlace;
 
         if(collisions >= 1)
         {
             canPlace = false;
 
-            return;
+        } else{
+            canPlace = true;
         }
-
-        canPlace = true;
+        
+        buildingSystem.canPlace = canPlace;
     }
 
     void MaterialController()

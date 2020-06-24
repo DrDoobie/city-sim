@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
  
 public class BuildingSystem : MonoBehaviour
@@ -8,6 +9,7 @@ public class BuildingSystem : MonoBehaviour
     public Camera rtsCam, fpsCam;
     public LayerMask layerMask;
     public GameObject placementParticleEffect;
+    public Text objectInfo;
 
     [Header("Ghost Object")]
     public bool canPlace;
