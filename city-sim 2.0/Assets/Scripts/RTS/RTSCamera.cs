@@ -17,9 +17,14 @@ public class RTSCamera : MonoBehaviour
 
     void Update()
     {    
-        if(!GameController.Instance.playerUsingUI)
+        if(!GameController.Instance.playerUsingUI && !cameraFocused)
         {
             Controller();
+        }
+
+        if(Input.GetButtonDown("Focus Camera"))
+        {
+            cameraFocused = !cameraFocused;
         }
 
         GetCameraRotation();
@@ -98,6 +103,6 @@ public class RTSCamera : MonoBehaviour
 
         transform.position = smoothedPos;
 
-        //ransform.LookAt(target);
+        //transform.LookAt(target);
     }
 }
