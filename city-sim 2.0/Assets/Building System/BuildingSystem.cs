@@ -12,7 +12,6 @@ public class BuildingSystem : MonoBehaviour
 
     [Header("UI")]
     public Text objectInfo;
-    public Vector2 textOffset;
 
     [Header("Ghost Object")]
     public bool canPlace;
@@ -143,10 +142,6 @@ public class BuildingSystem : MonoBehaviour
 
     void UIController()
     {
-        Vector2 cursorPos = Input.mousePosition;
-
-        objectInfo.transform.position = new Vector2(cursorPos.x, cursorPos.y) + textOffset;
-
         if(ghostObj.GetComponentInChildren<GhostObject>().buildingObject != null)
         {
             objectInfo.text = ghostObj.GetComponentInChildren<GhostObject>().buildingObject.objectInfo;

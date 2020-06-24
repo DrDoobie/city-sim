@@ -661,6 +661,7 @@ GameObject:
   - component: {fileID: 119405148}
   - component: {fileID: 119405147}
   - component: {fileID: 119405150}
+  - component: {fileID: 119405151}
   m_Layer: 5
   m_Name: Object Info.text
   m_TagString: Untagged
@@ -756,6 +757,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 2
+--- !u!114 &119405151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119405145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea89a725d824b6a429a91bc511dbe725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textOffset: {x: 0, y: -25}
 --- !u!1001 &136124509
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3411,10 +3425,10 @@ MonoBehaviour:
   fpsCam: {fileID: 1747101153}
   placementParticleEffect: {fileID: 496338328471291211, guid: 497ed2a6efb1a5a47b1cb660dfe0891c,
     type: 3}
-  objectInfo: {fileID: 119405148}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  objectInfo: {fileID: 119405148}
   canPlace: 0
   rotationSpeed: 20
   ghostObjectContainer: {fileID: 423313604}
@@ -7825,6 +7839,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2095466297}
     m_Modifications:
+    - target: {fileID: 169368048777111731, guid: c0b547ce8c4818442aec2aa4e5dce93a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.06
+      objectReference: {fileID: 0}
     - target: {fileID: 5078035162096129940, guid: c0b547ce8c4818442aec2aa4e5dce93a,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -7843,7 +7862,7 @@ PrefabInstance:
     - target: {fileID: 5716378576904790395, guid: c0b547ce8c4818442aec2aa4e5dce93a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.786293
+      value: -1.77
       objectReference: {fileID: 0}
     - target: {fileID: 5716378576904790395, guid: c0b547ce8c4818442aec2aa4e5dce93a,
         type: 3}
